@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1Plus1Gold — Test Reports</title>
+  <style>
+    /* ── Fonts ──────────────────────────────────────────────────────── */
+    @font-face {
+      font-family: "Cinzel";
+      src: url("./fonts/Cinzel-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Cinzel";
+      src: url("./fonts/Cinzel-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: "Montserrat";
+      src: url("./fonts/Montserrat-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Montserrat";
+      src: url("./fonts/Montserrat-SemiBold.ttf") format("truetype");
+      font-weight: 600;
+    }
+    @font-face {
+      font-family: "Montserrat";
+      src: url("./fonts/Montserrat-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: "CormorantGaramond";
+      src: url("./fonts/CormorantGaramond-Light.ttf") format("truetype");
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "CormorantGaramond";
+      src: url("./fonts/CormorantGaramond-LightItalic.ttf") format("truetype");
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    /* ── Colour tokens ───────────────────────────────────────────────── */
+    :root {
+      --color-bg:          #0A0A08;
+      --color-bg-card:     #1A1810;
+      --color-gold:        #C9A84C;
+      --color-gold-bright: #F0D080;
+      --color-gold-mid:    #A07830;
+      --color-gold-dim:    #7A6030;
+      --color-offwhite:    #E8D5A3;
+      --color-muted:       #8A7440;
+      --color-rule:        #2A2416;
+      --color-success:     #1D9E75;
+      --color-white:       #F5EDD8;
+    }
+
+    /* ── Reset & base ────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background-color: var(--color-bg);
+      color: var(--color-offwhite);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-offwhite);
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-weight: 400;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Scrollbar ───────────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--color-bg); }
+    ::-webkit-scrollbar-thumb { background: var(--color-gold-dim); border-radius: 3px; }
+
+    ::selection { background-color: var(--color-gold-dim); color: var(--color-bg); }
+
+    /* ── Layout ──────────────────────────────────────────────────────── */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── Top nav bar ─────────────────────────────────────────────────── */
+    .topbar {
+      border-bottom: 1px solid var(--color-rule);
+      background-color: var(--color-bg-card);
+      padding: 0.75rem 0;
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* ── Logo ────────────────────────────────────────────────────────── */
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      width: fit-content;
+    }
+    .logo-mark {
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+      line-height: 1;
+    }
+    .logo-one {
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--color-gold);
+    }
+    .logo-plus {
+      font-family: "CormorantGaramond", serif;
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: var(--color-gold);
+    }
+    .logo-gold-label {
+      font-family: "Cinzel", serif;
+      font-weight: 400;
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      padding-left: 0.4em;
+      color: var(--color-gold);
+      margin-top: 1px;
+    }
+
+    .topbar-meta {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.7rem;
+      color: var(--color-muted);
+      text-align: right;
+      line-height: 1.6;
+    }
+    .topbar-meta strong {
+      color: var(--color-gold-mid);
+      font-weight: 600;
+    }
+
+    /* ── Hero ────────────────────────────────────────────────────────── */
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--color-rule);
+    }
+    .hero-eyebrow {
+      font-family: "Cinzel", serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      color: var(--color-gold-mid);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .hero-title {
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: var(--color-gold);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .hero-subtitle {
+      font-family: "CormorantGaramond", serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--color-muted);
+    }
+    .hero-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--color-gold-dim);
+      margin: 1.5rem auto 0;
+    }
+
+    /* ── Stat strip ──────────────────────────────────────────────────── */
+    .stats-strip {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--color-rule);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background-color: var(--color-rule);
+      border: 1px solid var(--color-rule);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .stat-cell {
+      background-color: var(--color-bg-card);
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    .stat-value {
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--color-gold);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-value.green {
+      color: var(--color-success);
+    }
+    .stat-label {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+
+    /* ── Cards section ───────────────────────────────────────────────── */
+    .cards-section {
+      padding: 2.5rem 0;
+    }
+    .section-label {
+      font-family: "Cinzel", serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      color: var(--color-gold-mid);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .report-card {
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-rule);
+      border-top: 2px solid var(--color-gold);
+      border-radius: 4px;
+      padding: 1.5rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: border-color 0.2s, background-color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .report-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .report-card:hover {
+      border-color: var(--color-gold-dim);
+      background-color: #201e14;
+    }
+    .report-card:hover .card-arrow {
+      transform: translateX(4px);
+      color: var(--color-gold);
+    }
+
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--color-gold-dim);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gold);
+    }
+    .card-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .card-title {
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--color-offwhite);
+    }
+    .card-desc {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.72rem;
+      color: var(--color-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--color-rule);
+    }
+    .card-tag {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-gold-mid);
+      background-color: rgba(201,168,76,0.08);
+      border: 1px solid var(--color-gold-dim);
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+    }
+    .card-arrow {
+      font-size: 1rem;
+      color: var(--color-gold-dim);
+      transition: transform 0.2s, color 0.2s;
+      line-height: 1;
+    }
+
+    /* ── Pipeline notice ─────────────────────────────────────────────── */
+    .pipeline-notice {
+      margin: 0 0 2.5rem;
+      border: 1px solid var(--color-rule);
+      border-left: 3px solid var(--color-gold-dim);
+      background-color: var(--color-bg-card);
+      border-radius: 4px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .notice-icon {
+      color: var(--color-gold-mid);
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+    .notice-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .notice-text {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.72rem;
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+    .notice-text strong {
+      color: var(--color-gold-mid);
+      font-weight: 600;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--color-rule);
+      background-color: var(--color-bg-card);
+      padding: 1.5rem 0;
+      margin-top: auto;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .footer-tag {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      border-left: 1px solid var(--color-rule);
+      padding-left: 0.75rem;
+    }
+    .footer-right {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.65rem;
+      color: var(--color-muted);
+    }
+    .footer-right a {
+      color: var(--color-gold-mid);
+      text-decoration: none;
+    }
+    .footer-right a:hover {
+      color: var(--color-gold);
+    }
+
+    /* ── Animations ──────────────────────────────────────────────────── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in { animation: fadeInUp 0.5s ease-out both; }
+    .delay-1 { animation-delay: 0.08s; }
+    .delay-2 { animation-delay: 0.16s; }
+    .delay-3 { animation-delay: 0.24s; }
+    .delay-4 { animation-delay: 0.32s; }
+
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .count-up { animation: countUp 0.4s ease-out both; }
+
+    /* ── Responsive ──────────────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .cards-grid { grid-template-columns: 1fr; }
+      .topbar-meta { display: none; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Top nav bar ─────────────────────────────────────────────────── -->
+  <nav class="topbar">
+    <div class="container topbar-inner">
+      <!-- Logo — stacked, GOLD centred below 1+1 -->
+      <a href="https://1plus1gold.vercel.app" class="logo" title="1Plus1Gold">
+        <div class="logo-mark">
+          <span class="logo-one">1</span>
+          <span class="logo-plus">+</span>
+          <span class="logo-one">1</span>
+        </div>
+        <span class="logo-gold-label">GOLD</span>
+      </a>
+
+      <div class="topbar-meta" id="topbar-meta">
+        <div>Last run: <strong id="ts-display">—</strong></div>
+        <div>Commit: <strong id="sha-display">—</strong></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ────────────────────────────────────────────────────────── -->
+  <section class="hero fade-in">
+    <div class="container">
+      <p class="hero-eyebrow">Quality Assurance</p>
+      <h1 class="hero-title">Test Reports</h1>
+      <p class="hero-subtitle">Every push. Every check. Every gram.</p>
+      <div class="hero-rule"></div>
+    </div>
+  </section>
+
+  <!-- ── Stats strip ─────────────────────────────────────────────────── -->
+  <section class="stats-strip fade-in delay-1">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-cell">
+          <div class="stat-value count-up" id="stat-unit">—</div>
+          <div class="stat-label">Unit Tests</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-value count-up delay-1" id="stat-e2e">—</div>
+          <div class="stat-label">E2E Tests</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-value count-up delay-2" id="stat-coverage">—</div>
+          <div class="stat-label">Coverage</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-value green count-up delay-3" id="stat-failing">0</div>
+          <div class="stat-label">Failing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Report cards ─────────────────────────────────────────────────── -->
+  <main class="cards-section fade-in delay-2">
+    <div class="container">
+
+      <p class="section-label">Reports</p>
+
+      <div class="cards-grid">
+
+        <!-- Unit tests -->
+        <a href="vitest/" class="report-card delay-1 fade-in">
+          <div class="card-icon">
+            <!-- flask / test tube icon -->
+            <svg viewBox="0 0 24 24">
+              <path d="M9 3h6M9 3v8l-4 9h14l-4-9V3M9 3H6M15 3h3"/>
+            </svg>
+          </div>
+          <div class="card-title">Unit Tests</div>
+          <div class="card-desc">
+            Full Vitest report — route handlers, business logic, pricing engine, KYC flow, webhook verification, and admin operations.
+          </div>
+          <div class="card-footer">
+            <span class="card-tag">Vitest</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </a>
+
+        <!-- Coverage -->
+        <a href="coverage/" class="report-card delay-2 fade-in">
+          <div class="card-icon">
+            <!-- shield / coverage icon -->
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <div class="card-title">Coverage</div>
+          <div class="card-desc">
+            V8 statement, branch, function and line coverage per file. Spot coverage gaps before they reach production.
+          </div>
+          <div class="card-footer">
+            <span class="card-tag">V8 Coverage</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </a>
+
+        <!-- E2E -->
+        <a href="playwright/" class="report-card delay-3 fade-in">
+          <div class="card-icon">
+            <!-- monitor / browser icon -->
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <div class="card-title">E2E Tests</div>
+          <div class="card-desc">
+            Playwright browser tests — sign-in, cart pricing, promo codes, Stripe checkout, HitPay redirect, and PayNow flow.
+          </div>
+          <div class="card-footer">
+            <span class="card-tag">Playwright</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Pipeline notice -->
+      <div class="pipeline-notice" style="margin-top:2rem;">
+        <span class="notice-icon">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+        </span>
+        <p class="notice-text">
+          This page is <strong>auto-generated on every push to main</strong> via GitHub Actions.
+          Reports are published to GitHub Pages and reflect the most recent CI run.
+          All tests must pass before a deployment proceeds.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ── Footer ──────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="logo" style="gap:0;">
+          <div class="logo-mark">
+            <span class="logo-one" style="font-size:1rem;">1</span>
+            <span class="logo-plus" style="font-size:0.9rem;">+</span>
+            <span class="logo-one" style="font-size:1rem;">1</span>
+          </div>
+          <span class="logo-gold-label" style="font-size:0.5rem;">GOLD</span>
+        </div>
+        <span class="footer-tag">Test Reports</span>
+      </div>
+      <div class="footer-right">
+        <a href="https://1plus1gold.vercel.app">1plus1gold.vercel.app</a>
+        &nbsp;·&nbsp; Singapore's premier split gold dealer
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Stats loader ─────────────────────────────────────────────────── -->
+  <script>
+    // Load stats.json injected by the CI pipeline.
+    // Shape: { unitTests, e2eTests, coverage, commitSha, timestamp }
+    // Falls back to placeholder values if not present (local viewing).
+    fetch("stats.json")
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (!data) return;
+
+        const $ = id => document.getElementById(id);
+
+        if (data.unitTests   != null) $("stat-unit").textContent     = data.unitTests.toLocaleString();
+        if (data.e2eTests    != null) $("stat-e2e").textContent      = data.e2eTests.toLocaleString();
+        if (data.coverage    != null) $("stat-coverage").textContent = data.coverage + "%";
+        if (data.failing     != null) $("stat-failing").textContent  = data.failing;
+
+        if (data.timestamp) {
+          const d = new Date(data.timestamp);
+          $("ts-display").textContent = d.toLocaleString("en-SG", {
+            day: "2-digit", month: "short", year: "numeric",
+            hour: "2-digit", minute: "2-digit", timeZone: "Asia/Singapore",
+          }) + " SGT";
+        }
+
+        if (data.commitSha) {
+          $("sha-display").textContent = data.commitSha.slice(0, 7);
+        }
+      })
+      .catch(() => {
+        // Silently ignore — stats simply stay at "—"
+      });
+  </script>
+
+</body>
+</html>
