@@ -1,0 +1,1105 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/lib/newsletter/labels.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/lib/newsletter</a> labels.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">57.14% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>4/7</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">25% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>1/4</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">66.66% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>2/3</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">66.66% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>4/6</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line medium'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a>
+<a name='L341'></a><a href='#L341'>341</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">185x</span>
+<span class="cline-any cline-yes">255x</span>
+<span class="cline-any cline-yes">255x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Customer-visible UI strings on the newsletter (PDF + page).
+ *
+ * Includes both short labels (section heads, stat labels, footer) AND
+ * long-prose templates (cover lead, Premium Curve description, "Other
+ * gold stories" bodies, captions, "What's next" nudges). Templates carry
+ * {placeholder} markers the renderer substitutes at render time with
+ * pre-formatted runtime values (grams, money, percentages, names). The
+ * translator preserves {placeholder} markers verbatim — same convention
+ * as {{TOKEN_N}} for tokenised numerics.
+ *
+ * Brand wordmarks ("1PLUS1GOLD", "Premium Curve", "Combibar", "Valcambi")
+ * are intentionally excluded from translation. "Gold Yield" is a
+ * programme name — explicitly translated so non-English readers
+ * understand it (vs left as a brand wordmark).
+ *
+ * Plural handling: plural English nouns are used throughout
+ * ("X items", "X bars", "X times", "X purchases"). Slightly off when
+ * count = 1 in English ("1 bars enrolled") — tolerated for v1 in
+ * exchange for clean translation paths.
+ *
+ * Translation flow:
+ *   EN_LABELS → tokenise (none — placeholders look like tokens) → translator
+ *   → cache in newsletter_translations.translated_template_strings.uiLabels
+ *   → renderer reads via mergeLabels() + fmtLabel() at render time.
+ */
+&nbsp;
+export interface NewsletterLabels {
+  // ── Cover ───────────────────────────────────────────────────────────
+  monthlyEyebrow:        string;   // "The Monthly"
+  newsletterWordmark:    string;   // "Newsletter"
+  issuePrefix:           string;   // "Issue"   (used in "Issue NN / YYYY")
+  forPrefix:             string;   // "For"     (used in "For {name}")
+  yourGoldStoryEyebrow:  string;   // "Your gold story"
+  monthInNumbersFmt:     string;   // "{month} in numbers"
+  spotPriceTrendEyebrow: string;   // "Spot price trend"
+  spotTrendInMonthFmt:   string;   // "in {month} (SGD/g)"
+  spotTrendCaption:      string;
+  /** 3 cover-lead variants — renderer picks one based on customer state */
+  coverLeadAddedFmt:     string;
+  coverLeadHeldUpFmt:    string;
+  coverLeadHeldDownFmt:  string;
+  coverLeadWelcome:      string;
+&nbsp;
+  // ── Hero stats ────────────────────────────────────────────────────
+  statGramsAdded:           string;
+  statGramsAddedSubFmt:     string;   // "{n} purchases" / "no purchases"
+  statGramsAddedSubNone:    string;   // "no purchases"
+  statLifetimeGrams:        string;
+  statLifetimeGramsSubMile: string;   // "{n}× 50g milestones"
+  statLifetimeGramsSubProg: string;   // "Premium Curve in progress"
+  statAvgPremiumYTD:        string;
+  statAvgPremiumYTDSub:     string;   // "weighted by grams"
+  statPremiumToday:         string;
+  statPremiumTodaySub:      string;   // "your next 1g rate"
+&nbsp;
+  // ── Note section ──────────────────────────────────────────────────
+  noteFromUsTitle:        string;     // "A note from us"
+  noteEmptyFallback:      string;
+&nbsp;
+  // ── Story section ────────────────────────────────────────────────
+  whereYouStandTitle:          string;   // "Where you stand"
+  yourPremiumCurveJourney:     string;   // "Your Premium Curve journey"
+  premiumCurveDescription:     string;
+  statCurveLifetimeGrams:      string;
+  statCurveLifetimeGramsSub:   string;
+  statCurveCyclesCompleted:    string;
+  statCurveCyclesCompletedSub: string;
+  statSplitsInDrawer:          string;
+  statSplitsInDrawerReady:     string;
+  statSplitsInDrawerToNextFmt: string;
+  statAvgPremiumPaid:          string;
+  statAvgPremiumPaidSub:       string;
+&nbsp;
+  accumulationSubhead:   string;
+  accumulationCaption:   string;
+  cycleInCycleFmt:       string;
+  cycleNextMilestone:    string;
+  cycleAccumulatedFmt:   string;
+  cycleToGoFmt:          string;
+&nbsp;
+  spendBreakdownSubhead: string;
+&nbsp;
+  yourOtherStoriesSubhead: string;
+  highlightsSubhead:       string;
+&nbsp;
+  // ── Other gold stories — titles + bodies (full prose translated) ──
+  standardBarsTitle:           string;
+  standardBarsBodyFmt:         string;
+  standardBarsAvgPremiumFmt:   string;
+&nbsp;
+  accessoriesTitle:            string;
+  accessoriesBodyFmt:          string;
+  accessoriesThisMonthFmt:     string;
+&nbsp;
+  goldYieldTitle:              string;
+  goldYieldBodyFmt:            string;
+  goldYieldEarningsPaidFmt:    string;
+  goldYieldEarningsPending:    string;
+&nbsp;
+  buybackTitle:                string;
+  buybackBodyFmt:              string;
+  buybackPayoutFmt:            string;
+  buybackPayoutPending:        string;
+  buybackThisMonthFmt:         string;
+&nbsp;
+  conversionsTitle:            string;
+  conversionsBodyFmt:          string;
+  conversionsFeesFmt:          string;
+&nbsp;
+  // ── Market section ────────────────────────────────────────────────
+  marketSectionTitle:        string;
+  marketSpotTrendSubheadFmt: string;
+  marketNumbersSubheadFmt:   string;
+  statMonthOpenFmt:          string;   // "{monthShort} open"
+  statMonthOpenSubFmt:       string;
+  statMonthCloseFmt:         string;
+  statMonthCloseSubFmt:      string;
+  statMonthHighFmt:          string;
+  statMonthHighSubFmt:       string;
+  statMonthChange:           string;
+  statMonthChangeSub:        string;
+  whatDroveItSubhead:        string;
+  didYouKnowSubheadFmt:      string;   // "Did you know? — {term}"
+  thingsWorthKnowingSubhead: string;
+  /** Spot trend caption on Page 4 — base + optional pct portion */
+  dailySpotCloseCaptionFmt:  string;
+  dailySpotClosePctFmt:      string;
+  /** FX disclosure caption — SGD viewers vs other currencies */
+  fxDisclosureSGDFmt:        string;
+  fxDisclosureOtherFmt:      string;
+&nbsp;
+  // ── What's next section ──────────────────────────────────────────
+  whatsNextSubheadFmt:    string;   // "What's next for {name}"
+  statToNext50g:          string;
+  statToNext100g:         string;
+  statToNextSub:          string;
+  statReadyNow:           string;
+  statReadyNowSub:        string;
+  statNext1gRate:         string;
+  statNext1gRateSub:      string;
+  /** 4 nudge variants — renderer picks the most actionable for the customer */
+  nudgeReadyFmt:          string;
+  nudgeNearFmt:           string;
+  nudgeMidFmt:            string;
+  nudgeFar:               string;
+  closingKickerNote:      string;   // "Two things customers tell us help…"
+  closingTagline:         string;   // "Until next month — keep stacking."
+&nbsp;
+  // ── Highlights / block library ────────────────────────────────────
+  // One template per block kind. The block library (blocks.ts) emits a
+  // labelKey + vars per fired block; the renderer reads L[labelKey] and
+  // substitutes. Same pipeline as the rest of the prose.
+  blockWelcomeFirstPurchaseFmt:    string;
+  blockWelcomeNoPurchaseFmt:       string;
+  blockReturningAfterGapFmt:       string;
+  blockMilestoneFirst10g:          string;
+  blockMilestoneHalfway50gFmt:     string;
+  blockMilestoneHalfway50gPaceFmt: string;
+  blockMilestoneHalfway50gNoPace:  string;
+  blockMilestoneCombibar50g:       string;
+  blockMilestoneCombibar100gFmt:   string;
+  blockPurchasedThisMonthFmt:      string;
+  blockDormantWithBalanceFmt:      string;
+  blockSteadyNoPurchaseFmt:        string;
+  blockStreakFmt:                  string;
+  blockPremiumSavingsFmt:          string;
+  blockTreeProgressFmt:            string;
+  blockTreeReachedFmt:             string;
+  blockTreeUngoaledFmt:            string;
+  blockPaceTo50gFmt:               string;
+  blockPaceTo100gFmt:              string;
+&nbsp;
+  // ── Footer ────────────────────────────────────────────────────────
+  footerCompliance:    string;
+  manageProfileLink:   string;
+}
+&nbsp;
+/**
+ * English source labels. The canonical text the translator translates
+ * from; also used as-is when language === "en".
+ */
+export const EN_LABELS: NewsletterLabels = {
+  monthlyEyebrow:        "The Monthly",
+  newsletterWordmark:    "Newsletter",
+  issuePrefix:           "Issue",
+  forPrefix:             "For",
+  yourGoldStoryEyebrow:  "Your gold story",
+  monthInNumbersFmt:     "{month} in numbers",
+  spotPriceTrendEyebrow: "Spot price trend",
+  spotTrendInMonthFmt:   "in {month} (SGD/g)",
+  spotTrendCaption:      "Daily SGD/g closes through the month. Detailed market section below.",
+  coverLeadAddedFmt:     "You added {added} this month, taking your lifetime accumulation to {lifetime}.",
+  coverLeadHeldUpFmt:    "You held {lifetime} steady this month while gold moved up.",
+  coverLeadHeldDownFmt:  "You held {lifetime} steady this month while gold drifted lower.",
+  coverLeadWelcome:      "Welcome to 1Plus1Gold.",
+&nbsp;
+  statGramsAdded:           "Grams added",
+  statGramsAddedSubFmt:     "{n} purchases",
+  statGramsAddedSubNone:    "no purchases",
+  statLifetimeGrams:        "Lifetime grams",
+  statLifetimeGramsSubMile: "{n}× 50g milestones",
+  statLifetimeGramsSubProg: "Premium Curve in progress",
+  statAvgPremiumYTD:        "Avg premium YTD",
+  statAvgPremiumYTDSub:     "weighted by grams",
+  statPremiumToday:         "Premium today",
+  statPremiumTodaySub:      "your next 1g rate",
+&nbsp;
+  noteFromUsTitle:        "A note from us",
+  noteEmptyFallback:      "(No founder note this month.)",
+&nbsp;
+  whereYouStandTitle:          "Where you stand",
+  yourPremiumCurveJourney:     "Your Premium Curve journey",
+  premiumCurveDescription:     "Your accumulated 1g Splits and 50g / 100g Combibars on the Premium Curve. The premium drops as you accumulate; every 50g of Splits in your drawer can be converted into a sealed Combibar.",
+  statCurveLifetimeGrams:      "Lifetime grams",
+  statCurveLifetimeGramsSub:   "on the Premium Curve",
+  statCurveCyclesCompleted:    "Cycles completed",
+  statCurveCyclesCompletedSub: "50g milestones",
+  statSplitsInDrawer:          "Splits in drawer",
+  statSplitsInDrawerReady:     "ready to convert",
+  statSplitsInDrawerToNextFmt: "{g}g to next conversion",
+  statAvgPremiumPaid:          "Avg premium paid",
+  statAvgPremiumPaidSub:       "lifetime, weighted",
+&nbsp;
+  accumulationSubhead: "Your accumulation, last 12 months",
+  accumulationCaption: "Cumulative grams across all paid orders. Dashed lines mark 25g, 50g, 100g milestones.",
+  cycleInCycleFmt:     "{g}g in cycle",
+  cycleNextMilestone:  "50g — next milestone",
+  cycleAccumulatedFmt: "{g}g accumulated",
+  cycleToGoFmt:        "{g}g to go",
+&nbsp;
+  spendBreakdownSubhead: "Where your spend went",
+&nbsp;
+  yourOtherStoriesSubhead: "Your other gold stories",
+  highlightsSubhead:       "Highlights",
+&nbsp;
+  standardBarsTitle:           "Standard bars",
+  standardBarsBodyFmt:         "Alongside your Premium Curve accumulation, you hold {grams} of sealed Valcambi standard bars — bigger denominations purchased outright on the quantity-tier price, not on the curve.{avgPremiumNote} They sit in your portfolio independently of the Premium Curve cycle — neither helping nor hurting your milestone progress.",
+  standardBarsAvgPremiumFmt:   " These bars came in at an average {pct} premium across the lot.",
+&nbsp;
+  accessoriesTitle:            "Accessories",
+  accessoriesBodyFmt:          "{n} accessory items purchased to date — gift boxes, storage cases, the small things that turn a Split into something giftable. Lifetime accessory spend is {totalSpend}.{thisMonthNote} Small spend, but it's often the difference between owning gold and giving gold.",
+  accessoriesThisMonthFmt:     " You added {monthSpend} in accessories this month.",
+&nbsp;
+  goldYieldTitle:              "Gold Yield",
+  goldYieldBodyFmt:            "You have {bars} bars enrolled in our Gold Yield programme — sealed Combibars working a little harder while they sit. To date {grams} have been yielded on your behalf{earningsNote} Importantly, none of this rolls back your Premium Curve loyalty — your milestone progress is preserved exactly as it was the day you enrolled.",
+  goldYieldEarningsPaidFmt:    ", with {paid} paid back to you.",
+  goldYieldEarningsPending:    ", with earnings still pending settlement.",
+&nbsp;
+  buybackTitle:                "Buyback (sell-to-us)",
+  buybackBodyFmt:              "Lifetime, you've sold {grams} back to us — life happens, and gold should be liquid when it matters.{payoutNote}{thisMonthNote} When you sell back, your remaining Premium Curve position stays untouched — sold grams don't reset your cycle.",
+  buybackPayoutFmt:            " Net payout across all sales: {payout}, after the secured pickup fee that covers Lalamove + insurance.",
+  buybackPayoutPending:        " Payout for the most recent sale is pending settlement.",
+  buybackThisMonthFmt:         " This month alone, {grams} moved back to us.",
+&nbsp;
+  conversionsTitle:            "Combibar conversions",
+  conversionsBodyFmt:          "You've crossed the conversion threshold {n} times — turning your accumulated 1g Splits into sealed Valcambi Combibars ({breakdown}).{feesNote} Each Combibar carries its own assay number; once the conversion ships, your Premium Curve cycle resets cleanly to zero, ready for the next 50g.",
+  conversionsFeesFmt:          " Total minting + shipping fee paid across these conversions: {fees}.",
+&nbsp;
+  marketSectionTitle:        "The market this month",
+  marketSpotTrendSubheadFmt: "{month} {year} — daily spot trend",
+  marketNumbersSubheadFmt:   "{month} {year} — the numbers",
+  statMonthOpenFmt:          "{monthShort} open",
+  statMonthOpenSubFmt:       "USD {usd}/oz · first trading day",
+  statMonthCloseFmt:         "{monthShort} close",
+  statMonthCloseSubFmt:      "USD {usd}/oz · last trading day",
+  statMonthHighFmt:          "{monthShort} high",
+  statMonthHighSubFmt:       "USD {usd}/oz · highest close",
+  statMonthChange:           "Month change",
+  statMonthChangeSub:        "open → close",
+  whatDroveItSubhead:        "What drove it",
+  didYouKnowSubheadFmt:      "Did you know? — {term}",
+  thingsWorthKnowingSubhead: "Things worth knowing",
+  dailySpotCloseCaptionFmt:  "Daily SGD/g close. {pctNote}",
+  dailySpotClosePctFmt:      "{pct} open → close.",
+  fxDisclosureSGDFmt:        "SGD/g converted from USD/oz at the {month} month-end FX close (S${fxRate} per US$1). Today's on-screen prices use live spot + FX, so they move while this snapshot is fixed.",
+  fxDisclosureOtherFmt:      "{currency}/g converted from USD/oz via the {month} month-end SGD/USD close (S${fxRate} per US$1) and the live SGD→{currency} rate. Today's on-screen prices use the live spot + FX everywhere, so they move while this snapshot is fixed.",
+&nbsp;
+  whatsNextSubheadFmt:    "What's next for {name}",
+  statToNext50g:          "To next 50g",
+  statToNext100g:         "To next 100g",
+  statToNextSub:          "at trailing 3-month pace",
+  statReadyNow:           "Ready now",
+  statReadyNowSub:        "convertible from your splits",
+  statNext1gRate:         "Next 1g rate",
+  statNext1gRateSub:      "if you bought today",
+  nudgeReadyFmt:          "You have {grams} of Premium Curve Splits sitting in your drawer — enough for {conversions} sealed Combibar conversions whenever you'd like to mint them. The conversion fee covers minting + shipping; the bar arrives sealed by Valcambi with its own assay. Sign in and visit Convert from your account when ready.",
+  nudgeNearFmt:           "At your trailing 3-month pace, you're only {months} months from your first 50g Combibar — and the Premium Curve rate drops with each remaining gram. If a single push gets you across the line earlier, the Calculator on the site can show what that would cost today.",
+  nudgeMidFmt:            "At your trailing 3-month pace, you're roughly {months} months from your next 50g milestone — and the Premium Curve rate drops the closer you get. The Shop on the site is the easiest place to add another gram or two when the moment feels right.",
+  nudgeFar:               "Your Premium Curve rate drops as you accumulate; every gram you add now lowers the premium on the next. Browse the Shop or run a scenario in the Calculator on the site whenever you want to see how a few more grams change the picture.",
+  closingKickerNote:      "Two things customers tell us help: scrolling the Calculator with a number that matters to you, or browsing the Tree to see whose name is sitting at half-a-goal. Either tends to clarify what next looks like.",
+  closingTagline:         "Until next month — keep stacking.",
+&nbsp;
+  blockWelcomeFirstPurchaseFmt:    "Welcome to 1Plus1Gold, {name}. Your first {grams} landed this month — the start of your Premium Curve journey. From here, every gram you add stacks toward your first 50g Combibar, and the rate you pay drops a little with each step.",
+  blockWelcomeNoPurchaseFmt:       "Welcome, {name} — your first month with us. There's no rush here: this newsletter will keep you company every month with the gold market in plain language. When you're ready to start your Premium Curve, even 1g gets you on the cycle.",
+  blockReturningAfterGapFmt:       "Good to see you back, {name}. Your {grams} has been sitting safely while you stepped away — none of your accumulation resets, your Premium Curve position is right where you left it. Pick up wherever feels right.",
+  blockMilestoneFirst10g:          "You crossed your first 10g this month — a quiet milestone, but a real one. The Premium Curve rewards consistency, and you're now firmly past the early-cycle steepest premium. From here, each gram costs a little less than the one before.",
+  blockMilestoneHalfway50gFmt:     "Halfway to your first 50g Combibar. {pace}",
+  blockMilestoneHalfway50gPaceFmt: "At your current pace, you're roughly {months} months from converting your Splits into a sealed bar — minted, certified, and yours.",
+  blockMilestoneHalfway50gNoPace:  "Once your Splits in drawer cross 50g, you can convert them into a sealed Combibar at any time.",
+  blockMilestoneCombibar50g:       "Your first 50g Combibar arrived this month. Every gram you've added since joining now sits in physical form — sealed Valcambi, with its own assay number. A milestone worth noting; some customers print this newsletter and keep it with the bar.",
+  blockMilestoneCombibar100gFmt:   "Your first 100g Combibar arrived this month. That's a substantial physical position — at today's spot, {grams} of Singapore-stored Valcambi gold under your name. Worth taking a moment.",
+  blockPurchasedThisMonthFmt:      "You added {grams} this month across {n} purchases, bringing your lifetime accumulation to {total}. Each gram nudges your Premium Curve position forward — your next purchase will land at a slightly better rate than the last.",
+  blockDormantWithBalanceFmt:      "Your {grams} sat steady this month. No nudge from us — gold doesn't reward urgency, and accumulation is yours to pace. When you do come back, your Premium Curve position is exactly where you left it.",
+  blockSteadyNoPurchaseFmt:        "Your {grams} held steady this month — no new purchases, but the value moved with the market. Your Premium Curve position is preserved; whenever the next gram makes sense, you'll pick up at exactly the rate you'd earned.",
+  blockStreakFmt:                  "{months} months in a row of accumulating. Quiet consistency is what the Premium Curve was designed for — every steady month compounds your rate, and the bigger milestones get noticeably closer.",
+  blockPremiumSavingsFmt:          "Your average premium this year sits at {pct} — comfortably below the typical 4–5% range you'd see at most retail Singapore dealers. The Premium Curve is doing what it was built to do: rewarding the steady accumulator, not the impulse buyer.",
+  blockTreeProgressFmt:            "You allocated gold to {name}'s branch on your tree this month. They're now {pct} of the way to their {goal} goal — visible to them when you choose to share, invisible until you do.",
+  blockTreeReachedFmt:             "{name}'s tree just reached its {goal} goal this month. Whatever the goal was for — a wedding, a milestone, a quiet promise — it's there in physical gold now.",
+  blockTreeUngoaledFmt:            "You allocated gold to {name}'s branch this month. Goal-driven gifting is a slow art, and one this newsletter will keep tracking month by month.",
+  blockPaceTo50gFmt:               "At your trailing 3-month pace, you're roughly {months} months from your first 50g Combibar. The closer you get, the better the Premium Curve rate on each remaining gram — the curve was designed to thank you for finishing the cycle.",
+  blockPaceTo100gFmt:              "At your trailing 3-month pace, you're roughly {months} months from a 100g Combibar — the larger of our two sealed-bar milestones. Two 50g Combibars or one 100g; entirely your call when you cross.",
+&nbsp;
+  footerCompliance:   "This newsletter is for general information only and does not constitute financial advice. 1Plus1Gold is licensed under MAS PSPM regulations.",
+  manageProfileLink:  "Manage preferences",
+};
+&nbsp;
+/**
+ * fmt(template, vars) — substitute {placeholder} tokens in a label.
+ * Used at render time after the dictionary lookup. Unknown placeholders
+ * pass through unchanged so missing translations fail visibly rather
+ * than silently inserting empty strings.
+ */
+export function fmt(template: string, vars: Record&lt;string, string | number&gt;): string {
+  return template.replace(/\{(\w+)\}/g, (m, key) =&gt; {
+    const v = vars[key];
+    return v == null ? <span class="branch-0 cbranch-no" title="branch not covered" >m : S</span>tring(v);
+  });
+}
+&nbsp;
+/**
+ * Merge a translated subset over the English fallback so renderers can
+ * always read every key. Translator may return a partial map (some
+ * languages drop some keys); this fills the gaps with English so the
+ * page never shows an empty section heading.
+ */
+export function <span class="fstat-no" title="function not covered" >mergeLabels(t</span>ranslated?: Partial&lt;NewsletterLabels&gt; | null): NewsletterLabels {
+<span class="cstat-no" title="statement not covered" >  if (!translated) <span class="cstat-no" title="statement not covered" >return EN_LABELS;</span></span>
+<span class="cstat-no" title="statement not covered" >  return { ...EN_LABELS, ...translated };</span>
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-05-06T12:44:01.958Z
+            </div>
+        <script src="../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
+    </body>
+</html>
+    
