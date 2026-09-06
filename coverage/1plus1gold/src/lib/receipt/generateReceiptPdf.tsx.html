@@ -1,0 +1,1603 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/receipt/generateReceiptPdf.tsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/receipt</a> generateReceiptPdf.tsx</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">85% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>51/60</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">80.53% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>91/113</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">93.33% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>14/15</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">85.71% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>48/56</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a>
+<a name='L341'></a><a href='#L341'>341</a>
+<a name='L342'></a><a href='#L342'>342</a>
+<a name='L343'></a><a href='#L343'>343</a>
+<a name='L344'></a><a href='#L344'>344</a>
+<a name='L345'></a><a href='#L345'>345</a>
+<a name='L346'></a><a href='#L346'>346</a>
+<a name='L347'></a><a href='#L347'>347</a>
+<a name='L348'></a><a href='#L348'>348</a>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a>
+<a name='L358'></a><a href='#L358'>358</a>
+<a name='L359'></a><a href='#L359'>359</a>
+<a name='L360'></a><a href='#L360'>360</a>
+<a name='L361'></a><a href='#L361'>361</a>
+<a name='L362'></a><a href='#L362'>362</a>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a>
+<a name='L367'></a><a href='#L367'>367</a>
+<a name='L368'></a><a href='#L368'>368</a>
+<a name='L369'></a><a href='#L369'>369</a>
+<a name='L370'></a><a href='#L370'>370</a>
+<a name='L371'></a><a href='#L371'>371</a>
+<a name='L372'></a><a href='#L372'>372</a>
+<a name='L373'></a><a href='#L373'>373</a>
+<a name='L374'></a><a href='#L374'>374</a>
+<a name='L375'></a><a href='#L375'>375</a>
+<a name='L376'></a><a href='#L376'>376</a>
+<a name='L377'></a><a href='#L377'>377</a>
+<a name='L378'></a><a href='#L378'>378</a>
+<a name='L379'></a><a href='#L379'>379</a>
+<a name='L380'></a><a href='#L380'>380</a>
+<a name='L381'></a><a href='#L381'>381</a>
+<a name='L382'></a><a href='#L382'>382</a>
+<a name='L383'></a><a href='#L383'>383</a>
+<a name='L384'></a><a href='#L384'>384</a>
+<a name='L385'></a><a href='#L385'>385</a>
+<a name='L386'></a><a href='#L386'>386</a>
+<a name='L387'></a><a href='#L387'>387</a>
+<a name='L388'></a><a href='#L388'>388</a>
+<a name='L389'></a><a href='#L389'>389</a>
+<a name='L390'></a><a href='#L390'>390</a>
+<a name='L391'></a><a href='#L391'>391</a>
+<a name='L392'></a><a href='#L392'>392</a>
+<a name='L393'></a><a href='#L393'>393</a>
+<a name='L394'></a><a href='#L394'>394</a>
+<a name='L395'></a><a href='#L395'>395</a>
+<a name='L396'></a><a href='#L396'>396</a>
+<a name='L397'></a><a href='#L397'>397</a>
+<a name='L398'></a><a href='#L398'>398</a>
+<a name='L399'></a><a href='#L399'>399</a>
+<a name='L400'></a><a href='#L400'>400</a>
+<a name='L401'></a><a href='#L401'>401</a>
+<a name='L402'></a><a href='#L402'>402</a>
+<a name='L403'></a><a href='#L403'>403</a>
+<a name='L404'></a><a href='#L404'>404</a>
+<a name='L405'></a><a href='#L405'>405</a>
+<a name='L406'></a><a href='#L406'>406</a>
+<a name='L407'></a><a href='#L407'>407</a>
+<a name='L408'></a><a href='#L408'>408</a>
+<a name='L409'></a><a href='#L409'>409</a>
+<a name='L410'></a><a href='#L410'>410</a>
+<a name='L411'></a><a href='#L411'>411</a>
+<a name='L412'></a><a href='#L412'>412</a>
+<a name='L413'></a><a href='#L413'>413</a>
+<a name='L414'></a><a href='#L414'>414</a>
+<a name='L415'></a><a href='#L415'>415</a>
+<a name='L416'></a><a href='#L416'>416</a>
+<a name='L417'></a><a href='#L417'>417</a>
+<a name='L418'></a><a href='#L418'>418</a>
+<a name='L419'></a><a href='#L419'>419</a>
+<a name='L420'></a><a href='#L420'>420</a>
+<a name='L421'></a><a href='#L421'>421</a>
+<a name='L422'></a><a href='#L422'>422</a>
+<a name='L423'></a><a href='#L423'>423</a>
+<a name='L424'></a><a href='#L424'>424</a>
+<a name='L425'></a><a href='#L425'>425</a>
+<a name='L426'></a><a href='#L426'>426</a>
+<a name='L427'></a><a href='#L427'>427</a>
+<a name='L428'></a><a href='#L428'>428</a>
+<a name='L429'></a><a href='#L429'>429</a>
+<a name='L430'></a><a href='#L430'>430</a>
+<a name='L431'></a><a href='#L431'>431</a>
+<a name='L432'></a><a href='#L432'>432</a>
+<a name='L433'></a><a href='#L433'>433</a>
+<a name='L434'></a><a href='#L434'>434</a>
+<a name='L435'></a><a href='#L435'>435</a>
+<a name='L436'></a><a href='#L436'>436</a>
+<a name='L437'></a><a href='#L437'>437</a>
+<a name='L438'></a><a href='#L438'>438</a>
+<a name='L439'></a><a href='#L439'>439</a>
+<a name='L440'></a><a href='#L440'>440</a>
+<a name='L441'></a><a href='#L441'>441</a>
+<a name='L442'></a><a href='#L442'>442</a>
+<a name='L443'></a><a href='#L443'>443</a>
+<a name='L444'></a><a href='#L444'>444</a>
+<a name='L445'></a><a href='#L445'>445</a>
+<a name='L446'></a><a href='#L446'>446</a>
+<a name='L447'></a><a href='#L447'>447</a>
+<a name='L448'></a><a href='#L448'>448</a>
+<a name='L449'></a><a href='#L449'>449</a>
+<a name='L450'></a><a href='#L450'>450</a>
+<a name='L451'></a><a href='#L451'>451</a>
+<a name='L452'></a><a href='#L452'>452</a>
+<a name='L453'></a><a href='#L453'>453</a>
+<a name='L454'></a><a href='#L454'>454</a>
+<a name='L455'></a><a href='#L455'>455</a>
+<a name='L456'></a><a href='#L456'>456</a>
+<a name='L457'></a><a href='#L457'>457</a>
+<a name='L458'></a><a href='#L458'>458</a>
+<a name='L459'></a><a href='#L459'>459</a>
+<a name='L460'></a><a href='#L460'>460</a>
+<a name='L461'></a><a href='#L461'>461</a>
+<a name='L462'></a><a href='#L462'>462</a>
+<a name='L463'></a><a href='#L463'>463</a>
+<a name='L464'></a><a href='#L464'>464</a>
+<a name='L465'></a><a href='#L465'>465</a>
+<a name='L466'></a><a href='#L466'>466</a>
+<a name='L467'></a><a href='#L467'>467</a>
+<a name='L468'></a><a href='#L468'>468</a>
+<a name='L469'></a><a href='#L469'>469</a>
+<a name='L470'></a><a href='#L470'>470</a>
+<a name='L471'></a><a href='#L471'>471</a>
+<a name='L472'></a><a href='#L472'>472</a>
+<a name='L473'></a><a href='#L473'>473</a>
+<a name='L474'></a><a href='#L474'>474</a>
+<a name='L475'></a><a href='#L475'>475</a>
+<a name='L476'></a><a href='#L476'>476</a>
+<a name='L477'></a><a href='#L477'>477</a>
+<a name='L478'></a><a href='#L478'>478</a>
+<a name='L479'></a><a href='#L479'>479</a>
+<a name='L480'></a><a href='#L480'>480</a>
+<a name='L481'></a><a href='#L481'>481</a>
+<a name='L482'></a><a href='#L482'>482</a>
+<a name='L483'></a><a href='#L483'>483</a>
+<a name='L484'></a><a href='#L484'>484</a>
+<a name='L485'></a><a href='#L485'>485</a>
+<a name='L486'></a><a href='#L486'>486</a>
+<a name='L487'></a><a href='#L487'>487</a>
+<a name='L488'></a><a href='#L488'>488</a>
+<a name='L489'></a><a href='#L489'>489</a>
+<a name='L490'></a><a href='#L490'>490</a>
+<a name='L491'></a><a href='#L491'>491</a>
+<a name='L492'></a><a href='#L492'>492</a>
+<a name='L493'></a><a href='#L493'>493</a>
+<a name='L494'></a><a href='#L494'>494</a>
+<a name='L495'></a><a href='#L495'>495</a>
+<a name='L496'></a><a href='#L496'>496</a>
+<a name='L497'></a><a href='#L497'>497</a>
+<a name='L498'></a><a href='#L498'>498</a>
+<a name='L499'></a><a href='#L499'>499</a>
+<a name='L500'></a><a href='#L500'>500</a>
+<a name='L501'></a><a href='#L501'>501</a>
+<a name='L502'></a><a href='#L502'>502</a>
+<a name='L503'></a><a href='#L503'>503</a>
+<a name='L504'></a><a href='#L504'>504</a>
+<a name='L505'></a><a href='#L505'>505</a>
+<a name='L506'></a><a href='#L506'>506</a>
+<a name='L507'></a><a href='#L507'>507</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">54x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">33x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { renderToBuffer, Document, Page, Text, View, StyleSheet, Font } from "@react-pdf/renderer";
+import fs from "fs";
+import path from "path";
+import { BUSINESS_CONFIG } from "@/lib/business-config";
+import { regulatoryShortLine } from "@/lib/regulatory";
+&nbsp;
+function fontSrc(filename: string): string {
+  const filePath = path.join(process.cwd(), "public", "fonts", filename);
+  return `data:font/truetype;base64,${fs.readFileSync(filePath).toString("base64")}`;
+}
+&nbsp;
+Font.register({
+  family: "Cinzel",
+  fonts: [
+    { src: fontSrc("Cinzel-Regular.ttf"), fontWeight: 400 },
+    { src: fontSrc("Cinzel-Bold.ttf"),    fontWeight: 700 },
+  ],
+});
+&nbsp;
+Font.register({
+  family: "Montserrat",
+  fonts: [
+    { src: fontSrc("Montserrat-Regular.ttf"),  fontWeight: 400 },
+    { src: fontSrc("Montserrat-SemiBold.ttf"), fontWeight: 600 },
+    { src: fontSrc("Montserrat-Bold.ttf"),     fontWeight: 700 },
+  ],
+});
+&nbsp;
+Font.register({
+  family: "Cormorant",
+  fonts: [
+    { src: fontSrc("CormorantGaramond-Light.ttf"),       fontWeight: 300 },
+    { src: fontSrc("CormorantGaramond-LightItalic.ttf"), fontWeight: 300, fontStyle: "italic" },
+  ],
+});
+&nbsp;
+export interface ReceiptItem {
+  label:        string;
+  grams:        number;
+  quantity:     number;
+  price_sgd:    number;
+  /** 'ipm_exempt' = GST-free Investment PM; 'standard_rated' = taxable */
+  gstTreatment: "ipm_exempt" | "standard_rated";
+  /** Premium % snapshot at order creation time. Surfaced under the line
+   *  amount so customers can see exactly what curve/tier rate applied to
+   *  this purchase. NULL for accessories (no premium concept). */
+  premium_applied_pct?: number | null;
+}
+&nbsp;
+export interface ReceiptDeliveryAddress {
+  full_name?:   string;
+  line1?:       string;
+  line2?:       string;
+  postal_code?: string;
+}
+&nbsp;
+export interface ReceiptData {
+  orderId:             string;
+  createdAt:           string;
+  items:               ReceiptItem[];
+  totalGrams:          number;
+  totalSgd:            number;
+  shippingFeeSgd?:     number | null;
+  processingFeeSgd?:   number | null;
+  grandTotalSgd?:      number | null;
+  deliveryAddress?:    ReceiptDeliveryAddress | null;
+  serviceType?:        string | null;
+  /** Customer-facing carrier note (shipper_settings.notes) — e.g. "Best effort
+   *  next day". Shown under the carrier so the receipt states current dispatch
+   *  expectations (and a shipping-pause note reaches every receipt). */
+  carrierNote?:        string | null;
+  customerName?:       string | null;
+  customerPhone?:      string | null;
+  paymentMethod?:      string | null;
+  /** 'paid' | 'unpaid' — drives the payment-confirmation banner + footer wording.
+   *  Online orders (Stripe/HitPay) are paid at creation; COD/bank orders flip to
+   *  'paid' when admin confirms receipt, at which point the receipt is re-sent as
+   *  a payment confirmation.
+   *
+   *  ⚠️ For MARKETPLACE orders this column answers a different question than the
+   *  receipt asks. It tracks whether OUR PAYOUT has landed, so it sits at 'unpaid'
+   *  until the platform remits — while the buyer paid at checkout, which is the
+   *  only reason the order exists at all. See isPaid below. */
+  paymentStatus?:      string | null;
+  /** When a manually-settled order's payment was confirmed (orders.paid_at). */
+  paidAt?:             string | null;
+  /** Discounts applied — shown as deduction rows in the totals section */
+  promoDiscountSgd?:   number | null;
+  referralDiscountSgd?: number | null;
+}
+&nbsp;
+const gold         = "#C9A84C";  // primary gold — numerals, plus, rules, headings
+const goldWordmark = "#A07830";  // muted gold — ONLY for the "GOLD" wordmark (brand spec)
+const dark         = "#1A1711";
+const cream        = "#F5EFE0";
+const muted        = "#8A7E66";
+const rule         = "#DDD5C0";
+const blue         = "#63B3ED";
+&nbsp;
+const s = StyleSheet.create({
+  page:       { backgroundColor: dark, fontFamily: "Montserrat", borderWidth: 1, borderColor: gold },
+&nbsp;
+  header:     { paddingHorizontal: 48, paddingTop: 28, paddingBottom: 20, flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start" },
+  // Brand spec (src/components/LogoMark.tsx + commit e66d36c): "1" = Cinzel
+  // 700 at size × 1.0 (#C9A84C); "+" = Cormorant Garamond 300 at size × 0.77
+  // (same gold); "GOLD" = Cinzel 400/600 at size × 0.32 (MUTED gold #A07830)
+  // with letter-spacing size × 0.065. Using base size 26.
+  //
+  // The "+" is an inline nested Text inside logoNumeral so @react-pdf's
+  // inline baseline handles cross-font alignment correctly — using flex
+  // row + alignItems:baseline leaves a line-height gap that visually
+  // pushes GOLD down.
+  logoNumeral: { fontSize: 26, color: gold, fontFamily: "Cinzel", fontWeight: 700, lineHeight: 1 },
+  logoPlus:    { fontSize: 20, color: gold, fontFamily: "Cormorant", fontWeight: 300 },
+  logoGold:    { fontSize: 8,  color: goldWordmark, fontFamily: "Cinzel", fontWeight: 400, letterSpacing: 1.7, textAlign: "center", marginTop: 0 },
+  receiptLbl: { fontSize: 22, color: gold, fontFamily: "Cinzel", fontWeight: 400, letterSpacing: 6 },
+  paidBadge:  { marginTop: 6, fontSize: 8, color: "#1A1711", backgroundColor: "#7BB88F", fontFamily: "Montserrat", fontWeight: 700, letterSpacing: 1.5, paddingVertical: 2, paddingHorizontal: 7, borderRadius: 3 },
+  paidDate:   { marginTop: 3, fontSize: 6.5, color: cream, fontFamily: "Montserrat", fontWeight: 400, letterSpacing: 0.5 },
+  regText:    { fontSize: 6.5, color: muted, fontFamily: "Montserrat", fontWeight: 400, letterSpacing: 0.5, marginTop: 2, textAlign: "right" },
+&nbsp;
+  goldRule:   { height: 1, backgroundColor: gold },
+&nbsp;
+  body:       { backgroundColor: cream, paddingHorizontal: 48, paddingVertical: 28, borderLeftWidth: 1, borderRightWidth: 1, borderLeftColor: gold, borderRightColor: gold },
+  metaRow:    { flexDirection: "row", gap: 36, marginBottom: 24 },
+  metaLbl:    { fontSize: 7, color: muted, fontFamily: "Montserrat", fontWeight: 400, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 3 },
+  metaVal:    { fontSize: 10, color: dark, fontFamily: "Montserrat", fontWeight: 600 },
+&nbsp;
+  tableHead:  { flexDirection: "row", paddingBottom: 6, borderBottomWidth: 1.5, borderBottomColor: dark },
+  tableRow:   { flexDirection: "row", paddingVertical: 8, borderBottomWidth: 1, borderBottomColor: rule },
+  colItem:    { flex: 3, fontSize: 10, color: dark, fontFamily: "Montserrat", fontWeight: 400 },
+  colQty:     { flex: 1, fontSize: 10, color: dark, fontFamily: "Montserrat", fontWeight: 400, textAlign: "center" },
+  colGrams:   { flex: 1, fontSize: 10, color: dark, fontFamily: "Montserrat", fontWeight: 400, textAlign: "right" },
+  colPrice:   { flex: 1.5, fontSize: 10, color: dark, fontFamily: "Montserrat", fontWeight: 400, textAlign: "right" },
+  colHead:    { fontSize: 7, color: muted, fontFamily: "Montserrat", fontWeight: 700, letterSpacing: 1.2, textTransform: "uppercase" },
+&nbsp;
+  ipmBadge:   { fontSize: 6, color: gold, fontFamily: "Montserrat", fontWeight: 600, letterSpacing: 0.5 },
+  taxBadge:   { fontSize: 6, color: blue, fontFamily: "Montserrat", fontWeight: 600, letterSpacing: 0.5 },
+&nbsp;
+  totalsBox:  { marginTop: 16, alignItems: "flex-end" },
+  totalRow:   { flexDirection: "row", gap: 24, marginBottom: 5 },
+  totalLbl:   { fontSize: 9,  color: muted, fontFamily: "Montserrat", fontWeight: 400, textAlign: "right", width: 140 },
+  totalVal:   { fontSize: 10, color: dark,  fontFamily: "Montserrat", fontWeight: 600, textAlign: "right", width: 90 },
+  discLbl:    { fontSize: 9,  color: muted, fontFamily: "Montserrat", fontWeight: 400, textAlign: "right", width: 140 },
+  discVal:    { fontSize: 10, color: "#2F855A", fontFamily: "Montserrat", fontWeight: 600, textAlign: "right", width: 90 },
+  grandLbl:   { fontSize: 11, color: gold,  fontFamily: "Cinzel",     fontWeight: 700, textAlign: "right", width: 140 },
+  grandVal:   { fontSize: 16, color: gold,  fontFamily: "Cinzel",     fontWeight: 700, textAlign: "right", width: 90 },
+&nbsp;
+  footer:     { backgroundColor: dark, paddingHorizontal: 48, paddingTop: 14, paddingBottom: 18 },
+  footerGold: { fontSize: 7, color: gold,  fontFamily: "Cinzel",     fontWeight: 400, letterSpacing: 2, textAlign: "center", marginBottom: 7 },
+  footerText: { fontSize: 7, color: muted, fontFamily: "Montserrat", fontWeight: 400, textAlign: "center", lineHeight: 1.7, marginBottom: 2 },
+  footerContact: { fontSize: 7.5, color: cream, fontFamily: "Montserrat", fontWeight: 600, textAlign: "center" },
+  footerCopy: { fontSize: 6.5, color: muted, fontFamily: "Montserrat", fontWeight: 400, textAlign: "center", marginTop: 4 },
+  footerReg:  { fontSize: 6.5, color: muted, fontFamily: "Montserrat", fontWeight: 400, textAlign: "center", marginTop: 3, letterSpacing: 0.3 },
+});
+&nbsp;
+function fmtSgd(n: number) {
+  return "S$ " + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+&nbsp;
+function fmtDateTimeSGT(iso: string) {
+  return new Date(iso).toLocaleString("en-SG", {
+    day: "2-digit", month: "short", year: "numeric",
+    hour: "2-digit", minute: "2-digit", hour12: true,
+    timeZone: "Asia/Singapore",
+  }) + " SGT";
+}
+&nbsp;
+&nbsp;
+function <span class="fstat-no" title="function not covered" >formatServiceType(r</span>aw: string | null | undefined): string | null {
+<span class="cstat-no" title="statement not covered" >  if (!raw) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+<span class="cstat-no" title="statement not covered" >  switch (raw.toUpperCase()) {</span>
+    case "MOTORCYCLE": <span class="cstat-no" title="statement not covered" >return "Lalamove Express";</span>
+    case "SEDAN":      <span class="cstat-no" title="statement not covered" >return "Lalamove Express (Car)";</span>
+    case "NEXT_DAY":   <span class="cstat-no" title="statement not covered" >return "NinjaVan Next Day";</span>
+    default:           <span class="cstat-no" title="statement not covered" >return raw;</span>
+  }
+}
+&nbsp;
+function sanitizeText(s: string | null | undefined): string | null {
+  if (!s) return null;
+  return s.replace(/[\x00-\x1F\x7F&lt;&gt;]/g, "").slice(0, 100).trim() || <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+}
+&nbsp;
+function paymentFooterLine(method: string | null | undefined, isPaid: boolean): string | null {
+  // Once payment is confirmed the receipt IS the payment confirmation — never show
+  // "arrange payment within 4h" on a paid order.
+  if (isPaid) {
+    return "Payment received with thanks. This receipt confirms your payment in full. All amounts in SGD.";
+  }
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!method) {
+<span class="cstat-no" title="statement not covered" >    return "Payment via PayNow or Bank Transfer — details shared via WhatsApp or email. All amounts in SGD.";</span>
+  }
+  if (method.startsWith("stripe_") || method.startsWith("hitpay_")) {
+    return null;
+  }
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (method === "cod") {
+    return "Payment must be arranged within 4 hours of order confirmation via bank transfer or cash on delivery. Orders unpaid after this period will be automatically cancelled.";
+  }
+<span class="cstat-no" title="statement not covered" >  return "Payment via PayNow or Bank Transfer — details shared via WhatsApp. All amounts in SGD.";</span>
+}
+&nbsp;
+/** Split-invoice badge/footnote metadata for a page. Defined inline (not imported
+ *  from split-invoice.ts) to avoid a circular import — split-invoice imports the
+ *  ReceiptData type FROM this module, never the other way. */
+export interface SplitPageMeta {
+  index: number;   // 1-based ordinal within the split set
+  total: number;   // number of split invoices
+  mode: "merchandise_only" | "proportional";
+}
+&nbsp;
+/**
+ * The single invoice &lt;Page&gt;. Used for the standalone receipt AND for every page
+ * of a split-invoice document. When `split` is provided the page reads as
+ * "TAX INVOICE · Split X of N" (no PAID badge — payment is on the master page)
+ * and carries a footnote pointing at the master invoice.
+ */
+export function ReceiptPage({ receipt, split }: { receipt: ReceiptData; split?: SplitPageMeta }) {
+  const baseRef         = receipt.orderId.slice(0, 8).toUpperCase();
+  const ref             = split ? `${baseRef}-S${split.index}` : baseRef;
+  const customerName    = sanitizeText(receipt.customerName);
+  const customerPhone   = sanitizeText(receipt.customerPhone);
+&nbsp;
+  const hasShipping      = receipt.shippingFeeSgd != null &amp;&amp; receipt.shippingFeeSgd &gt; 0;
+  const hasProcessingFee = receipt.processingFeeSgd != null &amp;&amp; receipt.processingFeeSgd &gt; 0;
+  const hasPromoDiscount    = (receipt.promoDiscountSgd ?? 0) &gt; 0;
+  const hasReferralDiscount = (receipt.referralDiscountSgd ?? 0) &gt; 0;
+  const hasAnyDiscount      = hasPromoDiscount || hasReferralDiscount;
+&nbsp;
+  // IPM vs taxable split (computed from items — no reliance on stored subtotals)
+  const subtotalIpm     = receipt.items.filter((i) =&gt; i.gstTreatment === "ipm_exempt")
+    .reduce((s, i) =&gt; s + i.price_sgd * i.quantity, 0);
+  const subtotalTaxable = receipt.items.filter((i) =&gt; i.gstTreatment === "standard_rated")
+    .reduce((s, i) =&gt; s + i.price_sgd * i.quantity, 0);
+  const hasMixed        = subtotalIpm &gt; 0 &amp;&amp; subtotalTaxable &gt; 0;
+&nbsp;
+  const grandTotal = (receipt.grandTotalSgd ?? (<span class="branch-1 cbranch-no" title="branch not covered" >receipt.totalSgd + (receipt.shippingFeeSgd ?? 0)))</span>
+                     + (receipt.processingFeeSgd ?? 0);
+&nbsp;
+  // A marketplace order is buyer-paid BY CONSTRUCTION: it is only ever created
+  // because the platform already collected the money (see build-order.ts —
+  // "Externals are PRE-PAID"). orders.payment_status tracks OUR payout instead,
+  // so keying the badge on it alone printed "unpaid" on a receipt for money the
+  // customer had already handed over. Decided with Mukesh 2026-07-21; the payout
+  // side is unchanged and still drives External Payouts + receivables.
+  // Split pages never show the PAID badge — payment is stated once on the master.
+  const isPaid = !split &amp;&amp; (receipt.paymentStatus === "paid" || receipt.paymentMethod === "external");
+&nbsp;
+  const deliveryLine = receipt.deliveryAddress
+    ? [receipt.deliveryAddress.line1, receipt.deliveryAddress.line2, receipt.deliveryAddress.postal_code ? `Singapore ${receipt.deliveryAddress.postal_code}` : <span class="branch-1 cbranch-no" title="branch not covered" >null]</span>
+        .filter(Boolean).join(", ")
+    : null;
+&nbsp;
+  return (
+      &lt;Page size="A4" style={s.page}&gt;
+&nbsp;
+        {/* ── Dark header ──────────────────────────────────────────────── */}
+        &lt;View style={s.header}&gt;
+          &lt;View style={{ alignItems: "center" }}&gt;
+            &lt;Text style={s.logoNumeral}&gt;
+              1&lt;Text style={s.logoPlus}&gt;+&lt;/Text&gt;1
+            &lt;/Text&gt;
+            &lt;Text style={s.logoGold}&gt;GOLD&lt;/Text&gt;
+          &lt;/View&gt;
+          &lt;View style={{ alignItems: "flex-end" }}&gt;
+            &lt;Text style={s.receiptLbl}&gt;{split ? "TAX INVOICE" : "RECEIPT"}&lt;/Text&gt;
+            {split &amp;&amp; (
+              &lt;Text style={[s.paidDate, { color: goldWordmark }]}&gt;Split {split.index} of {split.total}&lt;/Text&gt;
+            )}
+            {/* No leading glyph: Montserrat (the only embedded PDF font) has no
+                U+2713 checkmark, so react-pdf renders a .notdef that surfaces as
+                "&amp;" in viewers ("&amp;Paid"). Plain PAID is unambiguous. */}
+            {isPaid &amp;&amp; &lt;Text style={s.paidBadge}&gt;PAID&lt;/Text&gt;}
+            {isPaid &amp;&amp; receipt.paidAt &amp;&amp; (
+              &lt;Text style={s.paidDate}&gt;Payment received {fmtDateTimeSGT(receipt.paidAt)}&lt;/Text&gt;
+            )}
+          &lt;/View&gt;
+        &lt;/View&gt;
+&nbsp;
+        &lt;View style={s.goldRule} /&gt;
+&nbsp;
+        {/* ── Cream body ───────────────────────────────────────────────── */}
+        &lt;View style={s.body}&gt;
+          &lt;Text style={{ fontSize: 7, color: muted, fontFamily: "Montserrat", fontWeight: 400,
+                          marginBottom: 14, letterSpacing: 0.3 }}&gt;
+            All amounts in SGD (Singapore Dollar) — the currency billed at time of order.
+          &lt;/Text&gt;
+          &lt;View style={s.metaRow}&gt;
+            &lt;View&gt;
+              &lt;Text style={s.metaLbl}&gt;Reference&lt;/Text&gt;
+              &lt;Text style={s.metaVal}&gt;{ref}&lt;/Text&gt;
+            &lt;/View&gt;
+            &lt;View&gt;
+              &lt;Text style={s.metaLbl}&gt;Date &amp; Time&lt;/Text&gt;
+              &lt;Text style={s.metaVal}&gt;{fmtDateTimeSGT(receipt.createdAt)}&lt;/Text&gt;
+            &lt;/View&gt;
+            {customerName &amp;&amp; (
+              &lt;View&gt;
+                &lt;Text style={s.metaLbl}&gt;Customer&lt;/Text&gt;
+                &lt;Text style={s.metaVal}&gt;{customerName}&lt;/Text&gt;
+              &lt;/View&gt;
+            )}
+          &lt;/View&gt;
+&nbsp;
+          {(deliveryLine || receipt.deliveryAddress?.full_name || receipt.serviceType) &amp;&amp; (
+            &lt;View style={{ marginBottom: 16, paddingBottom: 12, borderBottomWidth: 1, borderBottomColor: rule }}&gt;
+              &lt;Text style={[s.metaLbl, { marginBottom: 5 }]}&gt;Fulfilment&lt;/Text&gt;
+              &lt;View style={{ flexDirection: "row", gap: 36 }}&gt;
+                {receipt.deliveryAddress?.full_name &amp;&amp; (
+                  &lt;View&gt;
+                    &lt;Text style={[s.metaLbl, { fontSize: 6 }]}&gt;Recipient&lt;/Text&gt;
+                    &lt;Text style={[s.metaVal, { fontSize: 9 }]}&gt;{sanitizeText(receipt.deliveryAddress.full_name)}&lt;/Text&gt;
+                  &lt;/View&gt;
+                )}
+                {deliveryLine &amp;&amp; (
+                  &lt;View style={{ flex: 1 }}&gt;
+                    &lt;Text style={[s.metaLbl, { fontSize: 6 }]}&gt;Address&lt;/Text&gt;
+                    &lt;Text style={[s.metaVal, { fontSize: 9 }]}&gt;{deliveryLine}&lt;/Text&gt;
+                  &lt;/View&gt;
+                )}
+                {receipt.serviceType &amp;&amp; (
+<span class="branch-1 cbranch-no" title="branch not covered" >                  &lt;View&gt;</span>
+                    &lt;Text style={[s.metaLbl, { fontSize: 6 }]}&gt;Delivery&lt;/Text&gt;
+                    &lt;Text style={[s.metaVal, { fontSize: 9 }]}&gt;{formatServiceType(receipt.serviceType) ?? sanitizeText(receipt.serviceType)}&lt;/Text&gt;
+                    {sanitizeText(receipt.carrierNote) &amp;&amp; (
+                      &lt;Text style={[s.metaVal, { fontSize: 8, color: muted, marginTop: 1 }]}&gt;{sanitizeText(receipt.carrierNote)}&lt;/Text&gt;
+                    )}
+                  &lt;/View&gt;
+                )}
+              &lt;/View&gt;
+            &lt;/View&gt;
+          )}
+&nbsp;
+          {/* Items table */}
+          &lt;View style={s.tableHead}&gt;
+            &lt;Text style={[s.colItem,  s.colHead]}&gt;Item&lt;/Text&gt;
+            &lt;Text style={[s.colQty,   s.colHead]}&gt;Qty&lt;/Text&gt;
+            &lt;Text style={[s.colGrams, s.colHead]}&gt;Weight&lt;/Text&gt;
+            &lt;Text style={[s.colPrice, s.colHead]}&gt;Amount (SGD)&lt;/Text&gt;
+          &lt;/View&gt;
+&nbsp;
+          {receipt.items.map((item, i) =&gt; (
+            &lt;View key={i} style={s.tableRow}&gt;
+              &lt;View style={[s.colItem, { flexDirection: "column" }]}&gt;
+                &lt;Text style={{ fontSize: 10, color: dark }}&gt;{item.label}&lt;/Text&gt;
+                &lt;Text style={item.gstTreatment === "ipm_exempt" ? s.ipmBadge : s.taxBadge}&gt;
+                  {item.gstTreatment === "ipm_exempt" ? "IPM-Exempt" : "Standard Rated"}
+                &lt;/Text&gt;
+              &lt;/View&gt;
+              &lt;Text style={s.colQty}&gt;{item.quantity}&lt;/Text&gt;
+              &lt;Text style={s.colGrams}&gt;{item.grams === 0 ? "—" : `${(item.grams * item.quantity).toFixed(1)}g`}&lt;/Text&gt;
+              &lt;View style={[s.colPrice, { flexDirection: "column", alignItems: "flex-end" }]}&gt;
+                &lt;Text&gt;{item.price_sgd * item.quantity === 0 ? <span class="branch-0 cbranch-no" title="branch not covered" >"Free" : f</span>mtSgd(item.price_sgd * item.quantity)}&lt;/Text&gt;
+                {item.premium_applied_pct != null &amp;&amp; (
+                  &lt;Text style={{ fontSize: 7, color: muted, fontFamily: "Montserrat", fontWeight: 400, marginTop: 1 }}&gt;
+                    Spot +{Number(item.premium_applied_pct).toFixed(2)}%
+                  &lt;/Text&gt;
+                )}
+              &lt;/View&gt;
+            &lt;/View&gt;
+          ))}
+&nbsp;
+          {/* IPM compliance note */}
+          &lt;Text style={{ fontSize: 6.5, color: muted, fontFamily: "Montserrat", fontWeight: 400,
+                          marginTop: 6, marginBottom: 4, letterSpacing: 0.2 }}&gt;
+            IPM-Exempt items qualify as Investment Precious Metals (IPM) and are GST-exempt under IRAS regulations.
+          &lt;/Text&gt;
+&nbsp;
+          {/* Split-invoice footnote: points every split page back to the master. */}
+          {split &amp;&amp; (
+            &lt;Text style={{ fontSize: 6.5, color: muted, fontFamily: "Montserrat", fontWeight: 400,
+                            marginBottom: 4, letterSpacing: 0.2 }}&gt;
+              {split.mode === "proportional"
+                ? <span class="branch-0 cbranch-no" title="branch not covered" >`Split invoice ${split.index} of ${split.total} for order ${baseRef} — includes a proportional share of the order's delivery, fees and discounts. The full order is shown on the master invoice (page 1).`</span>
+                : `Split invoice ${split.index} of ${split.total} for order ${baseRef} — order-level delivery, fees, discounts and payment are shown on the master invoice (page 1).`}
+            &lt;/Text&gt;
+          )}
+&nbsp;
+          {/* Totals */}
+          &lt;View style={s.totalsBox}&gt;
+            &lt;View style={s.totalRow}&gt;
+              &lt;Text style={s.totalLbl}&gt;Total Gold Weight&lt;/Text&gt;
+              &lt;Text style={s.totalVal}&gt;{receipt.totalGrams.toFixed(1)}g&lt;/Text&gt;
+            &lt;/View&gt;
+&nbsp;
+            {/* Show subtotal split when there are mixed items OR discounts */}
+            {(hasMixed || hasAnyDiscount || hasShipping || hasProcessingFee) &amp;&amp; (
+              &lt;&gt;
+                {subtotalIpm &gt; 0 &amp;&amp; (
+                  &lt;View style={s.totalRow}&gt;
+                    &lt;Text style={s.totalLbl}&gt;IPM Subtotal (GST-Exempt)&lt;/Text&gt;
+                    &lt;Text style={s.totalVal}&gt;{fmtSgd(subtotalIpm)}&lt;/Text&gt;
+                  &lt;/View&gt;
+                )}
+                {subtotalTaxable &gt; 0 &amp;&amp; (
+                  &lt;View style={s.totalRow}&gt;
+                    &lt;Text style={s.totalLbl}&gt;Accessories Subtotal&lt;/Text&gt;
+                    &lt;Text style={s.totalVal}&gt;{fmtSgd(subtotalTaxable)}&lt;/Text&gt;
+                  &lt;/View&gt;
+                )}
+                {hasPromoDiscount &amp;&amp; (
+                  &lt;View style={s.totalRow}&gt;
+                    &lt;Text style={s.discLbl}&gt;Promo Discount&lt;/Text&gt;
+                    &lt;Text style={s.discVal}&gt;-{fmtSgd(receipt.promoDiscountSgd!)}&lt;/Text&gt;
+                  &lt;/View&gt;
+                )}
+                {hasReferralDiscount &amp;&amp; (
+<span class="branch-1 cbranch-no" title="branch not covered" >                  &lt;View style={s.totalRow}&gt;</span>
+                    &lt;Text style={s.discLbl}&gt;Referral Discount&lt;/Text&gt;
+                    &lt;Text style={s.discVal}&gt;-{fmtSgd(receipt.referralDiscountSgd!)}&lt;/Text&gt;
+                  &lt;/View&gt;
+                )}
+                {hasShipping &amp;&amp; (
+                  &lt;View style={s.totalRow}&gt;
+                    &lt;Text style={s.totalLbl}&gt;Delivery Fee&lt;/Text&gt;
+                    &lt;Text style={s.totalVal}&gt;{fmtSgd(receipt.shippingFeeSgd!)}&lt;/Text&gt;
+                  &lt;/View&gt;
+                )}
+                {hasProcessingFee &amp;&amp; (
+                  &lt;View style={s.totalRow}&gt;
+                    &lt;Text style={s.totalLbl}&gt;Payment Processing Fee&lt;/Text&gt;
+                    &lt;Text style={s.totalVal}&gt;{fmtSgd(receipt.processingFeeSgd!)}&lt;/Text&gt;
+                  &lt;/View&gt;
+                )}
+              &lt;/&gt;
+            )}
+&nbsp;
+            {/* Grand total */}
+            &lt;View style={{ flexDirection: "row", gap: 24, marginTop: 8, paddingTop: 8, borderTopWidth: 1, borderTopColor: rule }}&gt;
+              &lt;Text style={s.grandLbl}&gt;Total (SGD)&lt;/Text&gt;
+              &lt;Text style={s.grandVal}&gt;{fmtSgd(grandTotal)}&lt;/Text&gt;
+            &lt;/View&gt;
+          &lt;/View&gt;
+        &lt;/View&gt;
+&nbsp;
+        {/* Spacer: pushes footer to bottom without stretching body (which caused blank page 2) */}
+        &lt;View style={{ flex: 1, backgroundColor: cream }} /&gt;
+&nbsp;
+        &lt;View style={s.goldRule} /&gt;
+&nbsp;
+        {/* ── Dark footer ──────────────────────────────────────────────── */}
+        &lt;View style={s.footer}&gt;
+          &lt;Text style={s.footerGold}&gt;{split ? "ELECTRONIC TAX INVOICE" : "ELECTRONIC RECEIPT"} · NO SIGNATURE REQUIRED&lt;/Text&gt;
+          &lt;Text style={s.footerText}&gt;
+            Issued on {fmtDateTimeSGT(receipt.createdAt)}{customerPhone ? ` to ${customerPhone}` : ""}.
+          &lt;/Text&gt;
+          {customerName &amp;&amp; (
+            &lt;Text style={s.footerText}&gt;
+              Intended recipient: {customerName}. If received in error, do not share and contact us immediately.
+            &lt;/Text&gt;
+          )}
+          &lt;Text style={s.footerText}&gt;
+            1Plus1Gold sends receipts and account notices via WhatsApp and email only. We will never contact you by SMS or any other channel.
+          &lt;/Text&gt;
+          {paymentFooterLine(receipt.paymentMethod, isPaid) &amp;&amp; (
+            &lt;Text style={s.footerText}&gt;
+              {paymentFooterLine(receipt.paymentMethod, isPaid)}
+            &lt;/Text&gt;
+          )}
+          &lt;Text style={[s.footerText, { marginBottom: 4 }]}&gt;
+            {BUSINESS_CONFIG.gst.isRegistered
+              ? <span class="branch-0 cbranch-no" title="branch not covered" >`GST ${(BUSINESS_CONFIG.gst.rate * 100).toFixed(0)}% Registration No. ${BUSINESS_CONFIG.gst.regNumber}`</span>
+              : "GST: Not applicable — dealer not currently required to register for GST."}
+          &lt;/Text&gt;
+          &lt;Text style={[s.footerText, { marginBottom: 4 }]}&gt;
+            Refunds &amp;amp; returns subject to our Policy: 1plus1gold.com/refund-policy
+          &lt;/Text&gt;
+          &lt;Text style={s.footerContact}&gt;For support, visit {BUSINESS_CONFIG.contactUrl}&lt;/Text&gt;
+          &lt;Text style={s.footerReg}&gt;
+            {BUSINESS_CONFIG.name} · UEN {BUSINESS_CONFIG.uen} · {regulatoryShortLine()}
+          &lt;/Text&gt;
+          &lt;Text style={s.footerCopy}&gt;© 2026 1Plus1Gold. All rights reserved.&lt;/Text&gt;
+        &lt;/View&gt;
+&nbsp;
+      &lt;/Page&gt;
+  );
+}
+&nbsp;
+export async function generateReceiptPdf(receipt: ReceiptData): Promise&lt;Buffer&gt; {
+  const ref = receipt.orderId.slice(0, 8).toUpperCase();
+  return await renderToBuffer(
+    &lt;Document title={`1Plus1Gold Receipt — ${ref}`}&gt;
+      &lt;ReceiptPage receipt={receipt} /&gt;
+    &lt;/Document&gt;,
+  );
+}
+&nbsp;
+/**
+ * Split-invoice document: page 1 is the ORIGINAL invoice (byte-identical to
+ * generateReceiptPdf — same master ReceiptData, no `split` prop), followed by
+ * one page per distributed invoice. Admin-only, render-only (see
+ * src/lib/receipt/split-invoice.ts for how the split ReceiptData set is built).
+ */
+export async function generateSplitInvoicePdf(
+  master: ReceiptData,
+  splits: { data: ReceiptData; index: number; total: number; mode: SplitPageMeta["mode"] }[],
+): Promise&lt;Buffer&gt; {
+  const ref = master.orderId.slice(0, 8).toUpperCase();
+  return await renderToBuffer(
+    &lt;Document title={`1Plus1Gold Invoice (split) — ${ref}`}&gt;
+      &lt;ReceiptPage receipt={master} /&gt;
+      {splits.map((sp) =&gt; (
+        &lt;ReceiptPage key={sp.index} receipt={sp.data} split={{ index: sp.index, total: sp.total, mode: sp.mode }} /&gt;
+      ))}
+    &lt;/Document&gt;,
+  );
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-09-06T03:51:53.260Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

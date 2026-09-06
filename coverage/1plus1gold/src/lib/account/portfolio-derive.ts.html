@@ -1,0 +1,550 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/account/portfolio-derive.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/account</a> portfolio-derive.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">97.26% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>71/73</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">71.79% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>28/39</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">96% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>24/25</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">98.14% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>53/54</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Portfolio derivation — the dashboard-specific math that sits on top of the
+ * already-shared aggregators (`aggregateOrders` from order-aggregations,
+ * `nextPurchaseRate` from gold). EXTRACTED (moved, not copied) from the inline
+ * computation in src/app/account/page.tsx 2026-06-01 so the PWA dashboard page
+ * AND the new /api/account/dashboard aggregator consume ONE implementation —
+ * no drift (the SDUI-default rule's "expose, don't duplicate" discipline).
+ *
+ * Pure function: same raw inputs → same numbers. Data FETCHING stays with each
+ * caller (the PWA fetches via the browser supabase client; the API via
+ * service-role). Only the math lives here.
+ */
+&nbsp;
+import { aggregateOrders, PAID_STATUSES, type OrderAgg } from "@/lib/order-aggregations";
+import { nextPurchaseRate } from "@/lib/gold";
+&nbsp;
+export const CURVE_MILESTONE = 50;
+&nbsp;
+/** Minimal order shape the derivation needs (superset of OrderAgg). */
+export interface DeriveOrder extends OrderAgg {
+  shipping_fee_sgd?:   number | string | null;
+  processing_fee_sgd?: number | string | null;
+}
+&nbsp;
+export interface DeriveBuyback {
+  status:             string;
+  paid_at?:           string | null;
+  total_payout_sgd?:  number | string | null;
+  shipping_fee_sgd?:  number | string | null;
+  buyback_request_lines: { grams: number | string }[];
+}
+&nbsp;
+export interface DeriveConversion {
+  status:               string;
+  total_target_grams?:  number | string | null;
+  target_100g_count?:   number | string | null;
+  target_50g_count?:    number | string | null;
+  total_charged_sgd?:   number | string | null;
+  conversion_fee_sgd?:  number | string | null;
+}
+&nbsp;
+export interface DeriveInput {
+  orders:              DeriveOrder[];
+  /** Lifetime curve-only grams (customer_gold_holdings.curve_grams_purchased). */
+  purchasedCurveGrams: number;
+  /** customer_gold_holdings.yielded_grams (for the composition donut). */
+  yieldedGrams:        number;
+  buybacks:            DeriveBuyback[];
+  conversions:         DeriveConversion[];
+  /** position → premium% map for the next-purchase rate (optional). */
+  premiumMap?:         Map&lt;number, number&gt;;
+}
+&nbsp;
+const num = (v: unknown): number =&gt; (v == null ? 0 : Number(v));
+&nbsp;
+export function derivePortfolio(input: DeriveInput) {
+  const { orders, purchasedCurveGrams, yieldedGrams, buybacks, conversions, premiumMap } = input;
+&nbsp;
+  const completedOrders = orders.filter((o) =&gt; PAID_STATUSES.includes(o.status));
+  const totalSgd            = completedOrders.reduce((s, o) =&gt; s + num(o.total_sgd), 0);
+  const totalShippingFees   = completedOrders.reduce((s, o) =&gt; s + num(o.shipping_fee_sgd), 0);
+  const totalProcessingFees = completedOrders.reduce((s, o) =&gt; s + num(o.processing_fee_sgd), 0);
+&nbsp;
+  // ── Sell-to-Us ──────────────────────────────────────────────────────────
+  const paidBuybacks = buybacks.filter((bb) =&gt; bb.status === "completed" || <span class="branch-1 cbranch-no" title="branch not covered" >bb.status === "paid" || <span class="branch-2 cbranch-no" title="branch not covered" >!</span>!bb.paid_at)</span>;
+  const pendingBuybackCount = buybacks.filter((bb) =&gt; ["submitted", "received", "approved"].includes(bb.status)).length;
+  const buybackTotalGrams = paidBuybacks.reduce((s, bb) =&gt; s + bb.buyback_request_lines.reduce((g, l) =&gt; g + num(l.grams), 0), 0);
+  const buybackTotalPayout = paidBuybacks.reduce((s, bb) =&gt; s + Math.max(0, num(bb.total_payout_sgd) - num(bb.shipping_fee_sgd)), 0);
+  const buybackPickupFees = paidBuybacks.reduce((s, bb) =&gt; s + num(bb.shipping_fee_sgd), 0);
+  const buybackAvgPerGram = buybackTotalGrams &gt; 0 &amp;&amp; buybackTotalPayout &gt; 0 ? buybackTotalPayout / buybackTotalGrams : null;
+&nbsp;
+  // ── Conversions ─────────────────────────────────────────────────────────
+  const completedConversions = conversions.filter((c) =&gt; c.status === "completed" || <span class="branch-1 cbranch-no" title="branch not covered" >c.status === "delivered")</span>;
+  const pendingConversionCount = conversions.filter((c) =&gt; !["completed", "delivered", "rejected", "cancelled"].includes(c.status)).length;
+  const convertedGrams = completedConversions.reduce((s, c) =&gt; s + num(c.total_target_grams), 0);
+  const completed100gCount = completedConversions.reduce((s, c) =&gt; s + num(c.target_100g_count), 0);
+  const completed50gCount  = completedConversions.reduce((s, c) =&gt; s + num(c.target_50g_count), 0);
+  // "2 × 100g + 1 × 50g" — only non-zero parts, "—" when none. Derived here so
+  // the PWA tile and the SDUI dashboard render one label (bindings can't do
+  // the conditional join).
+  const combibarsReceivedText = (() =&gt; {
+    const parts: string[] = [];
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (completed100gCount &gt; 0) <span class="cstat-no" title="statement not covered" >parts.push(`${completed100gCount} × 100g`);</span>
+    if (completed50gCount  &gt; 0) parts.push(`${completed50gCount} × 50g`);
+    return parts.length ? parts.join(" + ") : "—";
+  })();
+  const conversionFeesPaid = conversions
+    .filter((c) =&gt; !["rejected", "cancelled"].includes(c.status))
+    .reduce((s, c) =&gt; s + (c.total_charged_sgd != null ? num(c.total_charged_sgd) : <span class="branch-1 cbranch-no" title="branch not covered" >num(c.conversion_fee_sgd)), 0</span>);
+&nbsp;
+  // ── Curve / Standard / Accessory (shared aggregator) ──────────────────────
+  const aggregated = aggregateOrders(completedOrders);
+  const completedItems = completedOrders.flatMap((o) =&gt; o.items);
+&nbsp;
+  const standardGrams   = aggregated.byType.standard.grams;
+  const standardSgd     = aggregated.byType.standard.revenue;
+  const standardAvgCost = aggregated.byType.standard.avgCostPerGram;
+  const standardAvgPrem = aggregated.byType.standard.avgPremium;
+&nbsp;
+  const curveGrams   = purchasedCurveGrams;
+  const curveSgd     = aggregated.byType.curve.revenue;
+  const curveAvgCost = curveGrams &gt; 0 &amp;&amp; curveSgd &gt; 0 ? curveSgd / curveGrams : null;
+  const curveAvgPrem = aggregated.byType.curve.avgPremium;
+&nbsp;
+  const accessoryRevenue = aggregated.byType.accessory.revenue;
+  const accessoryItems   = aggregated.byType.accessory.itemCount;
+  const accessoryOrders  = aggregated.byType.accessory.orderCount;
+&nbsp;
+  const portfolioGrams = curveGrams + standardGrams;
+  // Overall avg cost/gram (Overall Portfolio §3 tile). Derived here so the PWA
+  // JSX and the SDUI dashboard read one value — no inline-arithmetic drift.
+  const overallAvgCost = portfolioGrams &gt; 0 &amp;&amp; totalSgd &gt; 0 ? totalSgd / portfolioGrams : null;
+&nbsp;
+  // ── 50g cycle (lifetime — GY must not roll back loyalty) ──────────────────
+  const curveCyclesCompleted = Math.floor(purchasedCurveGrams / CURVE_MILESTONE);
+  const curvePositionInCycle = purchasedCurveGrams % CURVE_MILESTONE;
+&nbsp;
+  // ── Combibar composition (splits vs already-sealed) ───────────────────────
+  const already50Count = completedItems
+    .filter((i) =&gt; num(i.grams_each) === 50 &amp;&amp; (i.product_type ?? <span class="branch-1 cbranch-no" title="branch not covered" >"curve") === "</span>curve")
+    .reduce((s, i) =&gt; s + num(i.quantity), 0);
+  const already100Count = completedItems
+    .filter((i) =&gt; num(i.grams_each) === <span class="branch-1 cbranch-no" title="branch not covered" >100 &amp;&amp; (i.product_type ?? "curve") === "curve")</span>
+    .<span class="fstat-no" title="function not covered" >reduce((s</span>, i) =&gt; <span class="cstat-no" title="statement not covered" >s + num(i.quantity), 0</span>);
+  const physicalGrams = already50Count * 50 + already100Count * 100;
+  const splitGrams = Math.max(purchasedCurveGrams - physicalGrams, 0);
+&nbsp;
+  const blendedPremium = curveAvgPrem;
+&nbsp;
+  const currentCurveRate = premiumMap &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >premiumMap.<span class="branch-0 cbranch-no" title="branch not covered" >size</span></span>
+    ? nextPurchaseRate(curvePositionInCycle, premiumMap) * 100
+    : null;
+&nbsp;
+  return {
+    // Hero / composition (chart-panel props + Overall)
+    totalSgd, totalShippingFees, totalProcessingFees, portfolioGrams, yieldedGrams,
+    // Curve journey
+    curveGrams, curveSgd, curveAvgCost, curveAvgPrem, blendedPremium,
+    curveCyclesCompleted, curvePositionInCycle, currentCurveRate,
+    physicalGrams, splitGrams, already50Count, already100Count,
+    overallAvgCost,
+    // Standard
+    standardGrams, standardSgd, standardAvgCost, standardAvgPrem,
+    // Accessories
+    accessoryRevenue, accessoryItems, accessoryOrders,
+    // Sell-to-Us
+    paidBuybackCount: paidBuybacks.length, pendingBuybackCount,
+    buybackTotalGrams, buybackTotalPayout, buybackPickupFees, buybackAvgPerGram,
+    // Conversions
+    completedConversionCount: completedConversions.length, pendingConversionCount,
+    convertedGrams, completed100gCount, completed50gCount, combibarsReceivedText, conversionFeesPaid,
+  };
+}
+&nbsp;
+export type DerivedPortfolio = ReturnType&lt;typeof derivePortfolio&gt;;
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-09-06T03:51:53.260Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

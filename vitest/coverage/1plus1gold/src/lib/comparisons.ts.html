@@ -1,0 +1,547 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/comparisons.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib</a> comparisons.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">45.45% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>5/11</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">33.33% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>4/12</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">50% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>2/4</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">57.14% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>4/7</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">53x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export interface Comparison {
+  spend:     string
+  punchline: string
+}
+&nbsp;
+const TIERS: { min: number; max: number; options: Comparison[] }[] = [
+  {
+    min: 180, max: 280,
+    options: [
+      { spend: "about the price of filling your tank this week",             punchline: "This lasts considerably longer."            },
+      { spend: "roughly what a month of morning kopi adds up to",            punchline: "Except this one appreciates."               },
+      { spend: "around the cost of a nice bottle of whisky",                 punchline: "This one matures better."                   },
+      { spend: "about the same as a new pair of running shoes",              punchline: "This one doesn't wear out."                 },
+      { spend: "around the cost of a weekend's grab rides",                  punchline: "This one compounds instead."                },
+      { spend: "about what a decent massage at a day spa costs",             punchline: "This feeling lasts longer."                 },
+      { spend: "roughly what a month of gym supplements costs",              punchline: "This builds something different."           },
+      { spend: "around the price of a new pair of jeans from Orchard Road",  punchline: "This one never goes out of style."          },
+      { spend: "about what a month of takeaway coffee habit adds up to",     punchline: "This one doesn't need a refill."            },
+      { spend: "roughly a month at a premium fitness chain like Fitness First", punchline: "This one keeps its shape."              },
+    ],
+  },
+  {
+    min: 281, max: 400,
+    options: [
+      { spend: "roughly what a nice dinner for two costs in Singapore",      punchline: "Except this one stays on the table."        },
+      { spend: "around what a decent hair treatment and cut runs",           punchline: "This one doesn't need a trim."              },
+      { spend: "roughly what a new office chair from IKEA costs",            punchline: "This one holds its value better."           },
+      { spend: "about a couple of concert tickets in the standing pen",      punchline: "This performance runs indefinitely."        },
+      { spend: "around what a mid-range skincare routine sets you back",     punchline: "This one ages better."                      },
+      { spend: "roughly the cost of a birthday dinner for four",             punchline: "This gift keeps going."                     },
+      { spend: "about what a month of after-work drinks adds up to",         punchline: "This one compounds instead."                },
+      { spend: "around the price of a smartwatch strap and service",         punchline: "This one doesn't need charging."            },
+      { spend: "roughly what a new cookbook collection and kitchen gadget costs", punchline: "This recipe is simpler."              },
+      { spend: "about what a comprehensive health screening at a private clinic runs", punchline: "This is a different kind of health." },
+    ],
+  },
+  {
+    min: 401, max: 600,
+    options: [
+      { spend: "around the cost of a night out at Clarke Quay",              punchline: "Except this one compounds."                },
+      { spend: "about what a short staycation at a boutique hotel costs",    punchline: "This one checks out better."               },
+      { spend: "roughly the price of a new pair of wireless earbuds",        punchline: "This one never needs an update."            },
+      { spend: "around what a month of co-working space membership runs",    punchline: "This works harder."                        },
+      { spend: "about the cost of a weekend trip to KL for two",             punchline: "This one travels further."                 },
+      { spend: "roughly what a decent leather bag costs",                    punchline: "This one carries more weight."              },
+      { spend: "around what a month of personal training sessions costs",    punchline: "This builds wealth instead."               },
+      { spend: "roughly the price of a good carry-on luggage piece",         punchline: "This one goes further."                    },
+      { spend: "around what a mid-range chef's knife set costs",             punchline: "This one stays sharp."                     },
+      { spend: "about what a decent suit from a local Orchard Road tailor runs", punchline: "This one fits forever."               },
+    ],
+  },
+  {
+    min: 601, max: 900,
+    options: [
+      { spend: "about what a weekend staycation runs these days",            punchline: "This one you keep."                        },
+      { spend: "roughly the price of a short golf weekend with the group",   punchline: "This one has a better handicap."           },
+      { spend: "around the cost of a month of private tuition sessions",     punchline: "This lesson pays forward."                 },
+      { spend: "about what a new kitchen appliance from Harvey Norman costs", punchline: "This one doesn't need a warranty."        },
+      { spend: "roughly a business class upgrade on a regional flight",      punchline: "This flies further."                       },
+      { spend: "around what a mid-range smartwatch costs",                   punchline: "This one keeps better time."               },
+      { spend: "roughly what a weekend diving trip to Tioman costs",         punchline: "This one goes deeper."                     },
+      { spend: "around the price of a quality road bike service and parts",  punchline: "This one doesn't depreciate."              },
+      { spend: "about what a month of premium meal kit deliveries adds up to", punchline: "This ingredient is permanent."          },
+      { spend: "around what a family day out at Universal Studios with meals costs", punchline: "This ride doesn't end."           },
+    ],
+  },
+  {
+    min: 901, max: 1500,
+    options: [
+      { spend: "around the price of a weekend trip to Bintan for two",      punchline: "This accumulates instead."                 },
+      { spend: "roughly what a month of car loan repayments costs",          punchline: "This one owns itself."                     },
+      { spend: "about the price of a new iPad Pro",                          punchline: "This one doesn't need updates."            },
+      { spend: "roughly the price of a short business class hop to Bangkok", punchline: "This one pays back."                      },
+      { spend: "roughly what a month of premium childcare top-ups adds up to", punchline: "This compounds differently."            },
+      { spend: "about the cost of a new bicycle from a decent local brand",  punchline: "This one keeps its value."                },
+      { spend: "around what a home water filtration system costs",           punchline: "This one runs cleaner."                   },
+      { spend: "about the cost of a weekend diving trip to Tioman, all in",  punchline: "This one surfaces better."               },
+      { spend: "around the price of a premium espresso machine and grinder setup", punchline: "This one never runs cold."         },
+      { spend: "about what a weekend in Hong Kong for two costs, flights included", punchline: "This one stays in the portfolio." },
+    ],
+  },
+  {
+    min: 1501, max: 3000,
+    options: [
+      { spend: "around the price of a return flight to Bali for two",       punchline: "This trip pays forward."                   },
+      { spend: "about what a weekend in Tokyo costs, flights included",      punchline: "This one stays home and grows."            },
+      { spend: "roughly the price of a new mid-range laptop",                punchline: "This one never crashes."                   },
+      { spend: "around what two months of a car lease costs",                punchline: "This one appreciates."                     },
+      { spend: "about the cost of a complete home aircon overhaul",          punchline: "This one runs indefinitely."               },
+      { spend: "roughly what a decent sofa from a furniture store costs",    punchline: "This one holds more weight."               },
+      { spend: "about what a couple's retreat weekend at Sentosa costs",     punchline: "This feeling compounds."                   },
+      { spend: "around the price of a month at an international school",     punchline: "This education never stops."               },
+      { spend: "roughly the price of a high-end road bicycle",               punchline: "This one goes the distance."               },
+      { spend: "around what a weekend in Phuket for a family of four costs", punchline: "This one travels further."                },
+    ],
+  },
+  {
+    min: 3001, max: 6000,
+    options: [
+      { spend: "about what a new mid-range smartphone costs",                punchline: "This one doesn't depreciate."              },
+      { spend: "roughly the price of a family trip to Japan, flights and hotel", punchline: "This stays in your portfolio."         },
+      { spend: "around what a laser vision correction procedure runs",       punchline: "This one sharpens differently."            },
+      { spend: "about the cost of a quality diamond solitaire necklace",     punchline: "This one appreciates more reliably."       },
+      { spend: "roughly the price of a professional camera body and lens",   punchline: "This one captures more."                   },
+      { spend: "around what a year of private enrichment classes costs",     punchline: "This enriches differently."               },
+      { spend: "about the cost of a business class ticket to Perth",         punchline: "Except this stays."                        },
+      { spend: "around the price of a well-specced road bike",               punchline: "This one goes further."                    },
+      { spend: "about what six months of a car park season pass costs",      punchline: "This one moves."                           },
+      { spend: "around the cost of a full Invisalign treatment",             punchline: "This alignment lasts longer."              },
+    ],
+  },
+  {
+    min: 6001, max: 10000,
+    options: [
+      { spend: "roughly a return business class ticket to London",           punchline: "Except this stays in your family."         },
+      { spend: "about a term of a child's international school fees",        punchline: "This education compounds."                 },
+      { spend: "around the price of a quality Swiss watch",                  punchline: "This one tells a different story."         },
+      { spend: "roughly what a full bathroom renovation runs",               punchline: "This one holds its value."                 },
+      { spend: "about the cost of a long weekend at a Maldives overwater villa", punchline: "This one doesn't check out."          },
+      { spend: "around what a pre-owned luxury handbag costs at resale",     punchline: "This one appreciates more predictably."    },
+      { spend: "roughly the cost of a premium electric folding bike",        punchline: "This one folds into your legacy."          },
+      { spend: "about what a laser skin treatment package runs",             punchline: "This treatment never fades."               },
+      { spend: "around what fitting a home with smart lighting costs",       punchline: "This one shines longer."                   },
+      { spend: "roughly six months of a mortgage top-up",                    punchline: "This builds differently."                  },
+    ],
+  },
+  {
+    min: 10001, max: Infinity,
+    options: [
+      { spend: "a significant moment of financial intention",                punchline: "This is what wealth building looks like."  },
+      { spend: "the kind of decision that marks a chapter",                  punchline: "This one gets written into the family story." },
+      { spend: "more than most people save in a quarter",                    punchline: "This is what the other side of that choice looks like." },
+      { spend: "the weight of a serious decision, made quietly",             punchline: "This is how generational wealth begins."   },
+      { spend: "a commitment that most consider but few make",               punchline: "This is the difference between thinking and doing." },
+      { spend: "not an impulse — a position",                                punchline: "This is what it means to own something real." },
+      { spend: "a purchase that outlives the week, the month, the year",     punchline: "This is permanence."                       },
+      { spend: "the sort of move a financial advisor would nod at slowly",   punchline: "This one nods back."                      },
+      { spend: "more gold than most families will ever hold at once",        punchline: "This is what that looks like."             },
+      { spend: "a number that changes how you see your balance sheet",       punchline: "This one changes the line."                },
+    ],
+  },
+];
+&nbsp;
+export function getComparisons(budgetSgd: number): Comparison[] | null {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (budgetSgd &lt; 180) <span class="cstat-no" title="statement not covered" >return null;</span>
+  const tier = TIERS.find((t) =&gt; budgetSgd &gt;= t.min &amp;&amp; budgetSgd &lt;= t.max);
+  return tier?.options ?? <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+}
+&nbsp;
+export function <span class="fstat-no" title="function not covered" >getTierKey(b</span>udgetSgd: number): string {
+<span class="cstat-no" title="statement not covered" >  if (budgetSgd &lt; 180) <span class="cstat-no" title="statement not covered" >return "none";</span></span>
+  const tier = <span class="cstat-no" title="statement not covered" >TIERS.<span class="fstat-no" title="function not covered" >find((t</span>) =&gt; <span class="cstat-no" title="statement not covered" >budgetSgd &gt;= t.min &amp;&amp; budgetSgd &lt;= t.max)</span>;</span>
+<span class="cstat-no" title="statement not covered" >  return tier ? `${tier.min}-${tier.max}` : "none";</span>
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-09-06T03:51:53.260Z
+            </div>
+        <script src="../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
+    </body>
+</html>
+    

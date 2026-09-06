@@ -1,0 +1,2599 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/cart-core.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib</a> cart-core.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">94.53% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>242/256</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">85.31% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>337/395</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">96.34% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>79/82</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">96.35% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>185/192</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a>
+<a name='L341'></a><a href='#L341'>341</a>
+<a name='L342'></a><a href='#L342'>342</a>
+<a name='L343'></a><a href='#L343'>343</a>
+<a name='L344'></a><a href='#L344'>344</a>
+<a name='L345'></a><a href='#L345'>345</a>
+<a name='L346'></a><a href='#L346'>346</a>
+<a name='L347'></a><a href='#L347'>347</a>
+<a name='L348'></a><a href='#L348'>348</a>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a>
+<a name='L358'></a><a href='#L358'>358</a>
+<a name='L359'></a><a href='#L359'>359</a>
+<a name='L360'></a><a href='#L360'>360</a>
+<a name='L361'></a><a href='#L361'>361</a>
+<a name='L362'></a><a href='#L362'>362</a>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a>
+<a name='L367'></a><a href='#L367'>367</a>
+<a name='L368'></a><a href='#L368'>368</a>
+<a name='L369'></a><a href='#L369'>369</a>
+<a name='L370'></a><a href='#L370'>370</a>
+<a name='L371'></a><a href='#L371'>371</a>
+<a name='L372'></a><a href='#L372'>372</a>
+<a name='L373'></a><a href='#L373'>373</a>
+<a name='L374'></a><a href='#L374'>374</a>
+<a name='L375'></a><a href='#L375'>375</a>
+<a name='L376'></a><a href='#L376'>376</a>
+<a name='L377'></a><a href='#L377'>377</a>
+<a name='L378'></a><a href='#L378'>378</a>
+<a name='L379'></a><a href='#L379'>379</a>
+<a name='L380'></a><a href='#L380'>380</a>
+<a name='L381'></a><a href='#L381'>381</a>
+<a name='L382'></a><a href='#L382'>382</a>
+<a name='L383'></a><a href='#L383'>383</a>
+<a name='L384'></a><a href='#L384'>384</a>
+<a name='L385'></a><a href='#L385'>385</a>
+<a name='L386'></a><a href='#L386'>386</a>
+<a name='L387'></a><a href='#L387'>387</a>
+<a name='L388'></a><a href='#L388'>388</a>
+<a name='L389'></a><a href='#L389'>389</a>
+<a name='L390'></a><a href='#L390'>390</a>
+<a name='L391'></a><a href='#L391'>391</a>
+<a name='L392'></a><a href='#L392'>392</a>
+<a name='L393'></a><a href='#L393'>393</a>
+<a name='L394'></a><a href='#L394'>394</a>
+<a name='L395'></a><a href='#L395'>395</a>
+<a name='L396'></a><a href='#L396'>396</a>
+<a name='L397'></a><a href='#L397'>397</a>
+<a name='L398'></a><a href='#L398'>398</a>
+<a name='L399'></a><a href='#L399'>399</a>
+<a name='L400'></a><a href='#L400'>400</a>
+<a name='L401'></a><a href='#L401'>401</a>
+<a name='L402'></a><a href='#L402'>402</a>
+<a name='L403'></a><a href='#L403'>403</a>
+<a name='L404'></a><a href='#L404'>404</a>
+<a name='L405'></a><a href='#L405'>405</a>
+<a name='L406'></a><a href='#L406'>406</a>
+<a name='L407'></a><a href='#L407'>407</a>
+<a name='L408'></a><a href='#L408'>408</a>
+<a name='L409'></a><a href='#L409'>409</a>
+<a name='L410'></a><a href='#L410'>410</a>
+<a name='L411'></a><a href='#L411'>411</a>
+<a name='L412'></a><a href='#L412'>412</a>
+<a name='L413'></a><a href='#L413'>413</a>
+<a name='L414'></a><a href='#L414'>414</a>
+<a name='L415'></a><a href='#L415'>415</a>
+<a name='L416'></a><a href='#L416'>416</a>
+<a name='L417'></a><a href='#L417'>417</a>
+<a name='L418'></a><a href='#L418'>418</a>
+<a name='L419'></a><a href='#L419'>419</a>
+<a name='L420'></a><a href='#L420'>420</a>
+<a name='L421'></a><a href='#L421'>421</a>
+<a name='L422'></a><a href='#L422'>422</a>
+<a name='L423'></a><a href='#L423'>423</a>
+<a name='L424'></a><a href='#L424'>424</a>
+<a name='L425'></a><a href='#L425'>425</a>
+<a name='L426'></a><a href='#L426'>426</a>
+<a name='L427'></a><a href='#L427'>427</a>
+<a name='L428'></a><a href='#L428'>428</a>
+<a name='L429'></a><a href='#L429'>429</a>
+<a name='L430'></a><a href='#L430'>430</a>
+<a name='L431'></a><a href='#L431'>431</a>
+<a name='L432'></a><a href='#L432'>432</a>
+<a name='L433'></a><a href='#L433'>433</a>
+<a name='L434'></a><a href='#L434'>434</a>
+<a name='L435'></a><a href='#L435'>435</a>
+<a name='L436'></a><a href='#L436'>436</a>
+<a name='L437'></a><a href='#L437'>437</a>
+<a name='L438'></a><a href='#L438'>438</a>
+<a name='L439'></a><a href='#L439'>439</a>
+<a name='L440'></a><a href='#L440'>440</a>
+<a name='L441'></a><a href='#L441'>441</a>
+<a name='L442'></a><a href='#L442'>442</a>
+<a name='L443'></a><a href='#L443'>443</a>
+<a name='L444'></a><a href='#L444'>444</a>
+<a name='L445'></a><a href='#L445'>445</a>
+<a name='L446'></a><a href='#L446'>446</a>
+<a name='L447'></a><a href='#L447'>447</a>
+<a name='L448'></a><a href='#L448'>448</a>
+<a name='L449'></a><a href='#L449'>449</a>
+<a name='L450'></a><a href='#L450'>450</a>
+<a name='L451'></a><a href='#L451'>451</a>
+<a name='L452'></a><a href='#L452'>452</a>
+<a name='L453'></a><a href='#L453'>453</a>
+<a name='L454'></a><a href='#L454'>454</a>
+<a name='L455'></a><a href='#L455'>455</a>
+<a name='L456'></a><a href='#L456'>456</a>
+<a name='L457'></a><a href='#L457'>457</a>
+<a name='L458'></a><a href='#L458'>458</a>
+<a name='L459'></a><a href='#L459'>459</a>
+<a name='L460'></a><a href='#L460'>460</a>
+<a name='L461'></a><a href='#L461'>461</a>
+<a name='L462'></a><a href='#L462'>462</a>
+<a name='L463'></a><a href='#L463'>463</a>
+<a name='L464'></a><a href='#L464'>464</a>
+<a name='L465'></a><a href='#L465'>465</a>
+<a name='L466'></a><a href='#L466'>466</a>
+<a name='L467'></a><a href='#L467'>467</a>
+<a name='L468'></a><a href='#L468'>468</a>
+<a name='L469'></a><a href='#L469'>469</a>
+<a name='L470'></a><a href='#L470'>470</a>
+<a name='L471'></a><a href='#L471'>471</a>
+<a name='L472'></a><a href='#L472'>472</a>
+<a name='L473'></a><a href='#L473'>473</a>
+<a name='L474'></a><a href='#L474'>474</a>
+<a name='L475'></a><a href='#L475'>475</a>
+<a name='L476'></a><a href='#L476'>476</a>
+<a name='L477'></a><a href='#L477'>477</a>
+<a name='L478'></a><a href='#L478'>478</a>
+<a name='L479'></a><a href='#L479'>479</a>
+<a name='L480'></a><a href='#L480'>480</a>
+<a name='L481'></a><a href='#L481'>481</a>
+<a name='L482'></a><a href='#L482'>482</a>
+<a name='L483'></a><a href='#L483'>483</a>
+<a name='L484'></a><a href='#L484'>484</a>
+<a name='L485'></a><a href='#L485'>485</a>
+<a name='L486'></a><a href='#L486'>486</a>
+<a name='L487'></a><a href='#L487'>487</a>
+<a name='L488'></a><a href='#L488'>488</a>
+<a name='L489'></a><a href='#L489'>489</a>
+<a name='L490'></a><a href='#L490'>490</a>
+<a name='L491'></a><a href='#L491'>491</a>
+<a name='L492'></a><a href='#L492'>492</a>
+<a name='L493'></a><a href='#L493'>493</a>
+<a name='L494'></a><a href='#L494'>494</a>
+<a name='L495'></a><a href='#L495'>495</a>
+<a name='L496'></a><a href='#L496'>496</a>
+<a name='L497'></a><a href='#L497'>497</a>
+<a name='L498'></a><a href='#L498'>498</a>
+<a name='L499'></a><a href='#L499'>499</a>
+<a name='L500'></a><a href='#L500'>500</a>
+<a name='L501'></a><a href='#L501'>501</a>
+<a name='L502'></a><a href='#L502'>502</a>
+<a name='L503'></a><a href='#L503'>503</a>
+<a name='L504'></a><a href='#L504'>504</a>
+<a name='L505'></a><a href='#L505'>505</a>
+<a name='L506'></a><a href='#L506'>506</a>
+<a name='L507'></a><a href='#L507'>507</a>
+<a name='L508'></a><a href='#L508'>508</a>
+<a name='L509'></a><a href='#L509'>509</a>
+<a name='L510'></a><a href='#L510'>510</a>
+<a name='L511'></a><a href='#L511'>511</a>
+<a name='L512'></a><a href='#L512'>512</a>
+<a name='L513'></a><a href='#L513'>513</a>
+<a name='L514'></a><a href='#L514'>514</a>
+<a name='L515'></a><a href='#L515'>515</a>
+<a name='L516'></a><a href='#L516'>516</a>
+<a name='L517'></a><a href='#L517'>517</a>
+<a name='L518'></a><a href='#L518'>518</a>
+<a name='L519'></a><a href='#L519'>519</a>
+<a name='L520'></a><a href='#L520'>520</a>
+<a name='L521'></a><a href='#L521'>521</a>
+<a name='L522'></a><a href='#L522'>522</a>
+<a name='L523'></a><a href='#L523'>523</a>
+<a name='L524'></a><a href='#L524'>524</a>
+<a name='L525'></a><a href='#L525'>525</a>
+<a name='L526'></a><a href='#L526'>526</a>
+<a name='L527'></a><a href='#L527'>527</a>
+<a name='L528'></a><a href='#L528'>528</a>
+<a name='L529'></a><a href='#L529'>529</a>
+<a name='L530'></a><a href='#L530'>530</a>
+<a name='L531'></a><a href='#L531'>531</a>
+<a name='L532'></a><a href='#L532'>532</a>
+<a name='L533'></a><a href='#L533'>533</a>
+<a name='L534'></a><a href='#L534'>534</a>
+<a name='L535'></a><a href='#L535'>535</a>
+<a name='L536'></a><a href='#L536'>536</a>
+<a name='L537'></a><a href='#L537'>537</a>
+<a name='L538'></a><a href='#L538'>538</a>
+<a name='L539'></a><a href='#L539'>539</a>
+<a name='L540'></a><a href='#L540'>540</a>
+<a name='L541'></a><a href='#L541'>541</a>
+<a name='L542'></a><a href='#L542'>542</a>
+<a name='L543'></a><a href='#L543'>543</a>
+<a name='L544'></a><a href='#L544'>544</a>
+<a name='L545'></a><a href='#L545'>545</a>
+<a name='L546'></a><a href='#L546'>546</a>
+<a name='L547'></a><a href='#L547'>547</a>
+<a name='L548'></a><a href='#L548'>548</a>
+<a name='L549'></a><a href='#L549'>549</a>
+<a name='L550'></a><a href='#L550'>550</a>
+<a name='L551'></a><a href='#L551'>551</a>
+<a name='L552'></a><a href='#L552'>552</a>
+<a name='L553'></a><a href='#L553'>553</a>
+<a name='L554'></a><a href='#L554'>554</a>
+<a name='L555'></a><a href='#L555'>555</a>
+<a name='L556'></a><a href='#L556'>556</a>
+<a name='L557'></a><a href='#L557'>557</a>
+<a name='L558'></a><a href='#L558'>558</a>
+<a name='L559'></a><a href='#L559'>559</a>
+<a name='L560'></a><a href='#L560'>560</a>
+<a name='L561'></a><a href='#L561'>561</a>
+<a name='L562'></a><a href='#L562'>562</a>
+<a name='L563'></a><a href='#L563'>563</a>
+<a name='L564'></a><a href='#L564'>564</a>
+<a name='L565'></a><a href='#L565'>565</a>
+<a name='L566'></a><a href='#L566'>566</a>
+<a name='L567'></a><a href='#L567'>567</a>
+<a name='L568'></a><a href='#L568'>568</a>
+<a name='L569'></a><a href='#L569'>569</a>
+<a name='L570'></a><a href='#L570'>570</a>
+<a name='L571'></a><a href='#L571'>571</a>
+<a name='L572'></a><a href='#L572'>572</a>
+<a name='L573'></a><a href='#L573'>573</a>
+<a name='L574'></a><a href='#L574'>574</a>
+<a name='L575'></a><a href='#L575'>575</a>
+<a name='L576'></a><a href='#L576'>576</a>
+<a name='L577'></a><a href='#L577'>577</a>
+<a name='L578'></a><a href='#L578'>578</a>
+<a name='L579'></a><a href='#L579'>579</a>
+<a name='L580'></a><a href='#L580'>580</a>
+<a name='L581'></a><a href='#L581'>581</a>
+<a name='L582'></a><a href='#L582'>582</a>
+<a name='L583'></a><a href='#L583'>583</a>
+<a name='L584'></a><a href='#L584'>584</a>
+<a name='L585'></a><a href='#L585'>585</a>
+<a name='L586'></a><a href='#L586'>586</a>
+<a name='L587'></a><a href='#L587'>587</a>
+<a name='L588'></a><a href='#L588'>588</a>
+<a name='L589'></a><a href='#L589'>589</a>
+<a name='L590'></a><a href='#L590'>590</a>
+<a name='L591'></a><a href='#L591'>591</a>
+<a name='L592'></a><a href='#L592'>592</a>
+<a name='L593'></a><a href='#L593'>593</a>
+<a name='L594'></a><a href='#L594'>594</a>
+<a name='L595'></a><a href='#L595'>595</a>
+<a name='L596'></a><a href='#L596'>596</a>
+<a name='L597'></a><a href='#L597'>597</a>
+<a name='L598'></a><a href='#L598'>598</a>
+<a name='L599'></a><a href='#L599'>599</a>
+<a name='L600'></a><a href='#L600'>600</a>
+<a name='L601'></a><a href='#L601'>601</a>
+<a name='L602'></a><a href='#L602'>602</a>
+<a name='L603'></a><a href='#L603'>603</a>
+<a name='L604'></a><a href='#L604'>604</a>
+<a name='L605'></a><a href='#L605'>605</a>
+<a name='L606'></a><a href='#L606'>606</a>
+<a name='L607'></a><a href='#L607'>607</a>
+<a name='L608'></a><a href='#L608'>608</a>
+<a name='L609'></a><a href='#L609'>609</a>
+<a name='L610'></a><a href='#L610'>610</a>
+<a name='L611'></a><a href='#L611'>611</a>
+<a name='L612'></a><a href='#L612'>612</a>
+<a name='L613'></a><a href='#L613'>613</a>
+<a name='L614'></a><a href='#L614'>614</a>
+<a name='L615'></a><a href='#L615'>615</a>
+<a name='L616'></a><a href='#L616'>616</a>
+<a name='L617'></a><a href='#L617'>617</a>
+<a name='L618'></a><a href='#L618'>618</a>
+<a name='L619'></a><a href='#L619'>619</a>
+<a name='L620'></a><a href='#L620'>620</a>
+<a name='L621'></a><a href='#L621'>621</a>
+<a name='L622'></a><a href='#L622'>622</a>
+<a name='L623'></a><a href='#L623'>623</a>
+<a name='L624'></a><a href='#L624'>624</a>
+<a name='L625'></a><a href='#L625'>625</a>
+<a name='L626'></a><a href='#L626'>626</a>
+<a name='L627'></a><a href='#L627'>627</a>
+<a name='L628'></a><a href='#L628'>628</a>
+<a name='L629'></a><a href='#L629'>629</a>
+<a name='L630'></a><a href='#L630'>630</a>
+<a name='L631'></a><a href='#L631'>631</a>
+<a name='L632'></a><a href='#L632'>632</a>
+<a name='L633'></a><a href='#L633'>633</a>
+<a name='L634'></a><a href='#L634'>634</a>
+<a name='L635'></a><a href='#L635'>635</a>
+<a name='L636'></a><a href='#L636'>636</a>
+<a name='L637'></a><a href='#L637'>637</a>
+<a name='L638'></a><a href='#L638'>638</a>
+<a name='L639'></a><a href='#L639'>639</a>
+<a name='L640'></a><a href='#L640'>640</a>
+<a name='L641'></a><a href='#L641'>641</a>
+<a name='L642'></a><a href='#L642'>642</a>
+<a name='L643'></a><a href='#L643'>643</a>
+<a name='L644'></a><a href='#L644'>644</a>
+<a name='L645'></a><a href='#L645'>645</a>
+<a name='L646'></a><a href='#L646'>646</a>
+<a name='L647'></a><a href='#L647'>647</a>
+<a name='L648'></a><a href='#L648'>648</a>
+<a name='L649'></a><a href='#L649'>649</a>
+<a name='L650'></a><a href='#L650'>650</a>
+<a name='L651'></a><a href='#L651'>651</a>
+<a name='L652'></a><a href='#L652'>652</a>
+<a name='L653'></a><a href='#L653'>653</a>
+<a name='L654'></a><a href='#L654'>654</a>
+<a name='L655'></a><a href='#L655'>655</a>
+<a name='L656'></a><a href='#L656'>656</a>
+<a name='L657'></a><a href='#L657'>657</a>
+<a name='L658'></a><a href='#L658'>658</a>
+<a name='L659'></a><a href='#L659'>659</a>
+<a name='L660'></a><a href='#L660'>660</a>
+<a name='L661'></a><a href='#L661'>661</a>
+<a name='L662'></a><a href='#L662'>662</a>
+<a name='L663'></a><a href='#L663'>663</a>
+<a name='L664'></a><a href='#L664'>664</a>
+<a name='L665'></a><a href='#L665'>665</a>
+<a name='L666'></a><a href='#L666'>666</a>
+<a name='L667'></a><a href='#L667'>667</a>
+<a name='L668'></a><a href='#L668'>668</a>
+<a name='L669'></a><a href='#L669'>669</a>
+<a name='L670'></a><a href='#L670'>670</a>
+<a name='L671'></a><a href='#L671'>671</a>
+<a name='L672'></a><a href='#L672'>672</a>
+<a name='L673'></a><a href='#L673'>673</a>
+<a name='L674'></a><a href='#L674'>674</a>
+<a name='L675'></a><a href='#L675'>675</a>
+<a name='L676'></a><a href='#L676'>676</a>
+<a name='L677'></a><a href='#L677'>677</a>
+<a name='L678'></a><a href='#L678'>678</a>
+<a name='L679'></a><a href='#L679'>679</a>
+<a name='L680'></a><a href='#L680'>680</a>
+<a name='L681'></a><a href='#L681'>681</a>
+<a name='L682'></a><a href='#L682'>682</a>
+<a name='L683'></a><a href='#L683'>683</a>
+<a name='L684'></a><a href='#L684'>684</a>
+<a name='L685'></a><a href='#L685'>685</a>
+<a name='L686'></a><a href='#L686'>686</a>
+<a name='L687'></a><a href='#L687'>687</a>
+<a name='L688'></a><a href='#L688'>688</a>
+<a name='L689'></a><a href='#L689'>689</a>
+<a name='L690'></a><a href='#L690'>690</a>
+<a name='L691'></a><a href='#L691'>691</a>
+<a name='L692'></a><a href='#L692'>692</a>
+<a name='L693'></a><a href='#L693'>693</a>
+<a name='L694'></a><a href='#L694'>694</a>
+<a name='L695'></a><a href='#L695'>695</a>
+<a name='L696'></a><a href='#L696'>696</a>
+<a name='L697'></a><a href='#L697'>697</a>
+<a name='L698'></a><a href='#L698'>698</a>
+<a name='L699'></a><a href='#L699'>699</a>
+<a name='L700'></a><a href='#L700'>700</a>
+<a name='L701'></a><a href='#L701'>701</a>
+<a name='L702'></a><a href='#L702'>702</a>
+<a name='L703'></a><a href='#L703'>703</a>
+<a name='L704'></a><a href='#L704'>704</a>
+<a name='L705'></a><a href='#L705'>705</a>
+<a name='L706'></a><a href='#L706'>706</a>
+<a name='L707'></a><a href='#L707'>707</a>
+<a name='L708'></a><a href='#L708'>708</a>
+<a name='L709'></a><a href='#L709'>709</a>
+<a name='L710'></a><a href='#L710'>710</a>
+<a name='L711'></a><a href='#L711'>711</a>
+<a name='L712'></a><a href='#L712'>712</a>
+<a name='L713'></a><a href='#L713'>713</a>
+<a name='L714'></a><a href='#L714'>714</a>
+<a name='L715'></a><a href='#L715'>715</a>
+<a name='L716'></a><a href='#L716'>716</a>
+<a name='L717'></a><a href='#L717'>717</a>
+<a name='L718'></a><a href='#L718'>718</a>
+<a name='L719'></a><a href='#L719'>719</a>
+<a name='L720'></a><a href='#L720'>720</a>
+<a name='L721'></a><a href='#L721'>721</a>
+<a name='L722'></a><a href='#L722'>722</a>
+<a name='L723'></a><a href='#L723'>723</a>
+<a name='L724'></a><a href='#L724'>724</a>
+<a name='L725'></a><a href='#L725'>725</a>
+<a name='L726'></a><a href='#L726'>726</a>
+<a name='L727'></a><a href='#L727'>727</a>
+<a name='L728'></a><a href='#L728'>728</a>
+<a name='L729'></a><a href='#L729'>729</a>
+<a name='L730'></a><a href='#L730'>730</a>
+<a name='L731'></a><a href='#L731'>731</a>
+<a name='L732'></a><a href='#L732'>732</a>
+<a name='L733'></a><a href='#L733'>733</a>
+<a name='L734'></a><a href='#L734'>734</a>
+<a name='L735'></a><a href='#L735'>735</a>
+<a name='L736'></a><a href='#L736'>736</a>
+<a name='L737'></a><a href='#L737'>737</a>
+<a name='L738'></a><a href='#L738'>738</a>
+<a name='L739'></a><a href='#L739'>739</a>
+<a name='L740'></a><a href='#L740'>740</a>
+<a name='L741'></a><a href='#L741'>741</a>
+<a name='L742'></a><a href='#L742'>742</a>
+<a name='L743'></a><a href='#L743'>743</a>
+<a name='L744'></a><a href='#L744'>744</a>
+<a name='L745'></a><a href='#L745'>745</a>
+<a name='L746'></a><a href='#L746'>746</a>
+<a name='L747'></a><a href='#L747'>747</a>
+<a name='L748'></a><a href='#L748'>748</a>
+<a name='L749'></a><a href='#L749'>749</a>
+<a name='L750'></a><a href='#L750'>750</a>
+<a name='L751'></a><a href='#L751'>751</a>
+<a name='L752'></a><a href='#L752'>752</a>
+<a name='L753'></a><a href='#L753'>753</a>
+<a name='L754'></a><a href='#L754'>754</a>
+<a name='L755'></a><a href='#L755'>755</a>
+<a name='L756'></a><a href='#L756'>756</a>
+<a name='L757'></a><a href='#L757'>757</a>
+<a name='L758'></a><a href='#L758'>758</a>
+<a name='L759'></a><a href='#L759'>759</a>
+<a name='L760'></a><a href='#L760'>760</a>
+<a name='L761'></a><a href='#L761'>761</a>
+<a name='L762'></a><a href='#L762'>762</a>
+<a name='L763'></a><a href='#L763'>763</a>
+<a name='L764'></a><a href='#L764'>764</a>
+<a name='L765'></a><a href='#L765'>765</a>
+<a name='L766'></a><a href='#L766'>766</a>
+<a name='L767'></a><a href='#L767'>767</a>
+<a name='L768'></a><a href='#L768'>768</a>
+<a name='L769'></a><a href='#L769'>769</a>
+<a name='L770'></a><a href='#L770'>770</a>
+<a name='L771'></a><a href='#L771'>771</a>
+<a name='L772'></a><a href='#L772'>772</a>
+<a name='L773'></a><a href='#L773'>773</a>
+<a name='L774'></a><a href='#L774'>774</a>
+<a name='L775'></a><a href='#L775'>775</a>
+<a name='L776'></a><a href='#L776'>776</a>
+<a name='L777'></a><a href='#L777'>777</a>
+<a name='L778'></a><a href='#L778'>778</a>
+<a name='L779'></a><a href='#L779'>779</a>
+<a name='L780'></a><a href='#L780'>780</a>
+<a name='L781'></a><a href='#L781'>781</a>
+<a name='L782'></a><a href='#L782'>782</a>
+<a name='L783'></a><a href='#L783'>783</a>
+<a name='L784'></a><a href='#L784'>784</a>
+<a name='L785'></a><a href='#L785'>785</a>
+<a name='L786'></a><a href='#L786'>786</a>
+<a name='L787'></a><a href='#L787'>787</a>
+<a name='L788'></a><a href='#L788'>788</a>
+<a name='L789'></a><a href='#L789'>789</a>
+<a name='L790'></a><a href='#L790'>790</a>
+<a name='L791'></a><a href='#L791'>791</a>
+<a name='L792'></a><a href='#L792'>792</a>
+<a name='L793'></a><a href='#L793'>793</a>
+<a name='L794'></a><a href='#L794'>794</a>
+<a name='L795'></a><a href='#L795'>795</a>
+<a name='L796'></a><a href='#L796'>796</a>
+<a name='L797'></a><a href='#L797'>797</a>
+<a name='L798'></a><a href='#L798'>798</a>
+<a name='L799'></a><a href='#L799'>799</a>
+<a name='L800'></a><a href='#L800'>800</a>
+<a name='L801'></a><a href='#L801'>801</a>
+<a name='L802'></a><a href='#L802'>802</a>
+<a name='L803'></a><a href='#L803'>803</a>
+<a name='L804'></a><a href='#L804'>804</a>
+<a name='L805'></a><a href='#L805'>805</a>
+<a name='L806'></a><a href='#L806'>806</a>
+<a name='L807'></a><a href='#L807'>807</a>
+<a name='L808'></a><a href='#L808'>808</a>
+<a name='L809'></a><a href='#L809'>809</a>
+<a name='L810'></a><a href='#L810'>810</a>
+<a name='L811'></a><a href='#L811'>811</a>
+<a name='L812'></a><a href='#L812'>812</a>
+<a name='L813'></a><a href='#L813'>813</a>
+<a name='L814'></a><a href='#L814'>814</a>
+<a name='L815'></a><a href='#L815'>815</a>
+<a name='L816'></a><a href='#L816'>816</a>
+<a name='L817'></a><a href='#L817'>817</a>
+<a name='L818'></a><a href='#L818'>818</a>
+<a name='L819'></a><a href='#L819'>819</a>
+<a name='L820'></a><a href='#L820'>820</a>
+<a name='L821'></a><a href='#L821'>821</a>
+<a name='L822'></a><a href='#L822'>822</a>
+<a name='L823'></a><a href='#L823'>823</a>
+<a name='L824'></a><a href='#L824'>824</a>
+<a name='L825'></a><a href='#L825'>825</a>
+<a name='L826'></a><a href='#L826'>826</a>
+<a name='L827'></a><a href='#L827'>827</a>
+<a name='L828'></a><a href='#L828'>828</a>
+<a name='L829'></a><a href='#L829'>829</a>
+<a name='L830'></a><a href='#L830'>830</a>
+<a name='L831'></a><a href='#L831'>831</a>
+<a name='L832'></a><a href='#L832'>832</a>
+<a name='L833'></a><a href='#L833'>833</a>
+<a name='L834'></a><a href='#L834'>834</a>
+<a name='L835'></a><a href='#L835'>835</a>
+<a name='L836'></a><a href='#L836'>836</a>
+<a name='L837'></a><a href='#L837'>837</a>
+<a name='L838'></a><a href='#L838'>838</a>
+<a name='L839'></a><a href='#L839'>839</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">142x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">128x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130x</span>
+<span class="cline-any cline-yes">128x</span>
+<span class="cline-any cline-yes">130x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">354x</span>
+<span class="cline-any cline-yes">345x</span>
+<span class="cline-any cline-yes">354x</span>
+<span class="cline-any cline-yes">354x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">71x</span>
+<span class="cline-any cline-yes">66x</span>
+<span class="cline-any cline-yes">71x</span>
+<span class="cline-any cline-yes">71x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130x</span>
+<span class="cline-any cline-yes">121x</span>
+<span class="cline-any cline-yes">130x</span>
+<span class="cline-any cline-yes">130x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">51x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">117x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">124x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">139x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">51x</span>
+<span class="cline-any cline-yes">51x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">51x</span>
+<span class="cline-any cline-yes">51x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">51x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">51x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">128x</span>
+<span class="cline-any cline-yes">128x</span>
+<span class="cline-any cline-yes">134x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">134x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">134x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">128x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * cart-core.ts — the SINGLE source for Cart (+ Checkout) display derivation.
+ *
+ * Pure (no I/O, relative imports only so esbuild bundles it into the iOS
+ * on-device engine — same constraint as shop-pricing.ts). Given the cart lines
+ * + the live spot/premiums + the customer's curve position, it derives EVERY
+ * value the cart UI shows (per-line price/line/premium/accessory-breakdown,
+ * summary, curve position, milestone gate, fulfilment, free-accessory unlocks,
+ * progress, KYC nudge) AND the pure cart transforms (refresh prices, milestone
+ * conversion, gift-box reconcile, standard-tier hydrate).
+ *
+ * Consumed by BOTH the web cart/checkout pages AND the iOS kernel (engine.js
+ * `cartView`/`applyMilestone`/`reconcileGiftBox`/`refreshCartPrices`) — one
+ * implementation, no drift (the no-parallel-implementations rule). The CHARGE
+ * stays server-authoritative (`/api/orders/create` recomputes + rejects a
+ * mismatch &gt; 1¢); this is DISPLAY only. Contract §25.
+ */
+&nbsp;
+import {
+  computeOrderTotal, computeStandardLineTotal, computeAccessoryLineTotal,
+  getTierPremium, type StandardPremiumTier, type AccessoryDiscountRule,
+} from "./gold";
+import { formatPremium } from "./format-pure";
+import type { PremiumAnchor } from "./shop-pricing";
+import { KYC_THRESHOLD_SGD } from "./kyc/constants";
+&nbsp;
+/** Auto-added when "Is this a gift?" is ticked on any 1g curve line — the
+ *  Gift Box + Paper Bag accessory (free-rule against gold subtotal). Marked
+ *  `addedByGift` so the reconcile only touches lines IT added. */
+export const GIFT_BOX_PRODUCT_ID = "1472db9a-90d7-4186-8923-07a8dee75e6e";
+&nbsp;
+const GIFT_MESSAGE_MAX = 240;
+const MILESTONE = 50;
+&nbsp;
+export type KycStatusLite =
+  | "approved" | "pending" | "rejected" | "expired" | "not_required" | "submitted" | "review";
+&nbsp;
+/** A cart line — structurally identical to the store's `CartItem` (the store
+ *  re-exports this as `CartItem`). Defined here so cart-core stays dependency-free. */
+export interface CartLine {
+  productType: "curve" | "standard" | "accessory";
+  productId: string | null;
+  label: string;
+  g: number;
+  isAssay: boolean;
+  count: number;
+  priceEach: number;
+  imageUrl: string | null;
+  tiers?: StandardPremiumTier[];
+  fixedPriceSgd?: number;
+  discountRule?: AccessoryDiscountRule[] | null;
+  giftMessage?: string;
+  giftMessages?: string[];
+  addedByGift?: boolean;
+}
+&nbsp;
+/**
+ * Build the cart line for a paid accessory from its catalog row. THE single
+ * source for adding an accessory to the cart from the shop — both shop
+ * add-buttons (grid card + list row) go through this. An accessory has g=0, so
+ * its price never comes from grams: the line MUST carry `fixedPriceSgd` (the
+ * list price) and `discountRule` (free-over-threshold rules), which is what
+ * deriveCart prices it from. Omitting `fixedPriceSgd` was a real bug — a $5
+ * accessory added at $0 — so it lives here once, tested, not duplicated inline.
+ */
+export function accessoryCartLine(
+  p: { id: string; label: string; price_sgd: number; discount_rules: AccessoryDiscountRule[] | null },
+  count: number,
+  imageUrl: string | null,
+): CartLine {
+  return {
+    productType:   "accessory",
+    productId:     p.id,
+    label:         p.label,
+    g:             0,
+    isAssay:       false,
+    count,
+    priceEach:     p.price_sgd,
+    imageUrl,
+    fixedPriceSgd: p.price_sgd,
+    discountRule:  p.discount_rules,
+  };
+}
+&nbsp;
+/** Catalog row cart-core needs: presale detection, accessory unlocks, gift-box
+ *  + milestone-combibar product lookup, standard-tier hydrate. The web
+ *  `CatalogProduct` and the `/api/cart/context` payload both satisfy it. */
+export interface CartCatalogProduct {
+  id: string;
+  label: string;
+  grams: number;
+  product_type: "curve" | "standard" | "accessory";
+  status: "active" | "presale" | "sold_out";
+  /** products.stock_qty — derived available-to-sell count. null = untracked /
+   *  made-to-order (no cap). Drives the cart's +-stepper stock cap (atStockCap),
+   *  parity with the shop card's clampOrderQty. */
+  stock_qty?: number | null;
+  price_sgd: number | null;
+  discount_rules: AccessoryDiscountRule[] | null;
+  image_url: string | null;
+  product_media?: { url: string }[] | null;
+  standard_premium_tiers?: StandardPremiumTier[] | null;
+  /** DB wholesale_premium_tiers — present on wholesale-eligible products. The
+   *  cart applies these as the better-of (vs standard) ONLY when the customer is
+   *  wholesale-enabled, mirroring the server's priceOrder. */
+  wholesale_premium_tiers?: StandardPremiumTier[] | null;
+  premium_pct?: number | null;
+  /** products.gy_eligible — Gold Yield enrollable (the 50/100g combibars).
+   *  Single source for GY cart eligibility (replaces the old grams 50||100
+   *  inference). #2 2026-06-12. */
+  gy_eligible?: boolean;
+  /** products.vault_eligible — can be placed into Vault custody at checkout.
+   *  Single source for the "Store in Vault" checkout option. 2026-06-25. */
+  vault_eligible?: boolean;
+}
+&nbsp;
+export interface CartContext {
+  spotSgd: number | null;
+  premiums: PremiumAnchor[];
+  accumulatedCurveGrams: number;
+  accumulatedCurveGramsLoaded: boolean;
+  ownedGrams: number;
+  catalog: CartCatalogProduct[];
+  /** Customer wholesale eligibility — gates whether wholesale tiers may win the
+   *  better-of for standard lines (same gate as the server's priceOrder). */
+  wholesaleEnabled?: boolean;
+  kycStatus?: string;   // KycStatusLite values; widened so any DB status string is accepted
+  selfLimit?: boolean;
+  xauStale?: boolean;
+  fxStale?: boolean;
+  giftBoxProductId?: string;
+}
+&nbsp;
+// ── Derived output types ─────────────────────────────────────────────────────
+&nbsp;
+export interface PricedLine {
+  itemKey: string;
+  productType: CartLine["productType"];
+  productId: string | null;
+  label: string;
+  g: number;
+  count: number;
+  imageUrl: string | null;
+  visibleThumbs: number;        // min(count, 4)
+  extraThumbs: number;          // count - visible
+  thumbs: { url: string }[];    // imageUrl repeated visibleThumbs× ([] when no image) — for the PWA's multi-thumb cluster (objects so an SDUI repeater iterates them)
+  isPresale: boolean;
+  isGiftable: boolean;          // curve &amp;&amp; g === 1
+  priceEach: number | null;     // null until pricesReady
+  lineSgd: number | null;
+  perGramSgd: number | null;    // g&gt;1 → price/g, else null
+  totalLineGrams: number;       // count * g
+  totalLineGramsLabel: string;  // "{count*g}g" — preformatted (kernel owns formatting)
+  premiumLabel: string | null;  // "Spot +X.XX%"
+  isStandardPremium: boolean;   // drives the blue vs gold premium-badge colour
+  splitCapHit: boolean;         // 1g split &amp;&amp; count &gt;= 50 → "+" disabled
+  stockLeft: number | null;     // available-to-sell count; null = untracked (no cap)
+  atStockCap: boolean;          // count &gt;= stockLeft → "+" disabled (stock cap)
+  // Accessory display (null for non-accessory)
+  accessory: {
+    freeQty: number;
+    paidQty: number;
+    paidPriceEach: number;
+    fixedPriceSgd: number;
+    discountPct: number;        // round((1 - paid/fixed) * 100); 0 when none
+    hasFree: boolean;
+    isDiscounted: boolean;      // paid &lt; fixed (and not free) → "X% off" badge
+  } | null;
+  // Gift state (giftable lines only) — mirrors the store fields verbatim
+  giftMessage?: string;
+  giftMessages?: string[];
+}
+&nbsp;
+export interface CurvePosition {
+  positionInCycle: number;
+  effectiveAfter: number;
+  atMilestone: boolean;
+  remaining: number;
+  positionLabel: string;   // "{pos.toFixed(1)}g"
+  effectiveLabel: string;  // "{after.toFixed(1)}g"
+  tailLabel: string;       // " after this order — cycle complete…" / " after this order (Xg to next cycle)"
+}
+&nbsp;
+export interface AccessoryUnlock {
+  id: string;
+  label: string;
+  thresholdSgd: number | null;
+  freeQty: number;
+  alreadyClaimed: number;
+  remaining: number;
+  paidPriceEach: number;
+  imageUrl: string | null;
+  priceSgd: number;                          // fixed list price — for the claimed line
+  discountRule: AccessoryDiscountRule[] | null;
+  descLabel: string;                         // "Complimentary with your gold order over S$X. Up to N free."
+  claimLabel: string;                        // "Claim free gift" / "Claim N more"
+}
+&nbsp;
+export interface CartSummary {
+  pricesReady: boolean;
+  totalGrams: number;
+  curveGrams: number;
+  blendedPremiumRate: number;
+  blendedPremiumLabel: string;     // formatPremium(curveRate)
+  /** GY eligible: ≥1 gold line, every gold line is a gy_eligible product at
+   *  qty 1 (the 50/100g combibars). Single source for the GY checkout shortcut
+   *  + the server enrolment validation. #2 2026-06-12. */
+  gyEligible: boolean;
+  /** Vault eligible: ≥1 line, EVERY line is a vault_eligible product. Unlike GY
+   *  there is NO qty-1 constraint — a line of qty N becomes N custody holdings
+   *  (one per physical bar). Single source for the "Store in Vault" checkout
+   *  option + the server custody guard. 2026-06-25. */
+  vaultEligible: boolean;
+  /** True when the cart is being bought as a GIFT — any giftable line carries a
+   *  gift message (the same signal that auto-adds the Gift Box). Vault is for the
+   *  buyer's OWN gold and cannot be gifted out coherently (a vault withdrawal
+   *  ships to the buyer, not a recipient), so the checkout "Store in Vault"
+   *  shortcut is suppressed for gift carts. Single source → iOS SDUI inherits it.
+   *  2026-07-07. */
+  hasGift: boolean;
+  goldSubtotalSgd: number;
+  accessorySgd: number;
+  accessoryFree: boolean;          // accessorySgd === 0 &amp;&amp; accessories present
+  hasAccessories: boolean;
+  totalSgd: number;
+  effectivePerGramSgd: number | null;  // shown when totalGrams&gt;0 &amp;&amp; goldSubtotal&gt;0
+  curvePosition: CurvePosition | null; // shown when curveGrams&gt;0 &amp;&amp; accumulated&gt;0
+  totalGramsLabel: string;             // "{totalGrams.toFixed(2)}g"
+  // The spot (SGD/g) this view was priced at. Echoed so a price LOCK captures a
+  // CONSISTENT (subtotal, spot) pair from ONE source — the server re-derives the
+  // charge at the locked spot, so locking a different spot than the subtotal was
+  // priced at would 422 (the iOS lock bug, 2026-06-06). PWA already pairs them.
+  spotSgd: number;
+}
+&nbsp;
+export type MilestoneMode = "force50" | "choose100" | null;
+export type MilestoneVariant = "force50" | "pair_100g" | "keep_2x_50g";
+&nbsp;
+export interface CartView {
+  lines: PricedLine[];
+  summary: CartSummary;
+  milestoneGate: { mode: MilestoneMode; splits1gCount: number; cart50gCount: number };
+  fulfillment: { type: "immediate" | "split" | "presale"; hasPresale: boolean; allPresale: boolean };
+  accessoryUnlocks: AccessoryUnlock[];
+  progress: { current: number; target: number; ownedGrams: number; orderGrams: number; ownedLabel: string; orderLabel: string; showAccumulated: boolean };
+  kycNudge: { show: boolean; pending: boolean; showStartLink: boolean };
+  priceBlocked: boolean;
+  checkout: { allowed: boolean; reason: "price_blocked" | "gate" | null; gateMode: MilestoneMode };
+}
+&nbsp;
+// ── Helpers ──────────────────────────────────────────────────────────────────
+&nbsp;
+function premiumMapOf(premiums: PremiumAnchor[]): Map&lt;number, number&gt; {
+  return new Map(premiums.map((p) =&gt; [p.g, p.premium_pct / 100]));
+}
+&nbsp;
+function keyOf(i: Pick&lt;CartLine, "productId" | "productType" | "g"&gt;): string {
+  return i.productId ?? `${i.productType}_${i.g}`;
+}
+&nbsp;
+function catalogImg(p: CartCatalogProduct | null | undefined): string | null {
+  return p?.product_media?.[0]?.url ?? p?.image_url ?? null;
+}
+&nbsp;
+/**
+ * The image to show for a cart line: the line's OWN image, else the exact
+ * product's OWN image (matched by productId) — NEVER a borrowed same-grams
+ * picture. There is no same-grams or generic-art fallback: multiple grams=1
+ * products coexist (curve 1g splits + standard 1g bars), and a bare grams
+ * match is order-dependent + cross-type — an image-less QA curve 1g inherited
+ * the standard Nadir bar's image on iOS and the Valcambi split on web (both
+ * wrong-by-luck). An image-less product renders no image (placeholder), not
+ * someone else's. 2026-06-18 (Mukesh: "No fallback").
+ *
+ * Exported so the web cart PAGE renders the SAME rule deriveCart uses — the
+ * page's own render path previously borrowed a same-grams catalog image
+ * (cart/page.tsx, the iOS-kernel fix in 6936bc37 never reached it).
+ */
+export function resolveCartLineImage(
+  item: Pick&lt;CartLine, "imageUrl" | "productId"&gt;,
+  catalog: CartCatalogProduct[],
+): string | null {
+  if (item.imageUrl) return item.imageUrl;
+  const byId = item.productId ? catalog.find((p) =&gt; p.id === item.productId) : null;
+  return catalogImg(byId);
+}
+&nbsp;
+function isPresaleItem(item: CartLine, catalog: CartCatalogProduct[]): boolean {
+  if (item.g &lt;= 0) return false;
+  const byId = item.productId ? catalog.find((p) =&gt; p.id === item.productId) : null;
+  const p = byId ?? catalog.find((q) =&gt; q.grams === item.g);
+  return p?.status === "presale";
+}
+&nbsp;
+/** Available-to-sell cap for a cart line — same product resolution as
+ *  isPresaleItem (productId first, then grams). null = untracked / made-to-order
+ *  / presale / product-not-found → no cap. Mirrors web stockLeftOf
+ *  (stock-display.ts). */
+function stockLeftForItem(item: CartLine, catalog: CartCatalogProduct[]): number | null {
+  const byId = item.productId ? catalog.find((p) =&gt; p.id === item.productId) : null;
+  const p = byId ?? catalog.find((q) =&gt; q.grams === item.g);
+  if (!p || p.status === "presale" || p.stock_qty === null || p.stock_qty === undefined) return null;
+  return Math.max(0, p.stock_qty);
+}
+&nbsp;
+/** Whether a cart line is a GY-eligible product (by the catalog gy_eligible
+ *  flag). Resolves by productId, falling back to a grams match for legacy
+ *  lines that predate productId. Exported so the web checkout can derive the
+ *  "eligible products but qty&gt;1" qty-note off the same definition. #2 2026-06-12. */
+export function isGyEligibleLine(item: CartLine, catalog: CartCatalogProduct[]): boolean {
+  if (item.productType === "accessory") return false;
+  const byId = item.productId ? catalog.find((p) =&gt; p.id === item.productId) : null;
+  const p = byId ?? (item.g &gt; 0 ? catalog.find((q) =&gt; q.grams === item.g &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >q.product_type !== "accessory")</span> : <span class="branch-1 cbranch-no" title="branch not covered" >null);</span>
+  return p?.gy_eligible === true;
+}
+&nbsp;
+/** Whether a cart line is a Vault-eligible product (by the catalog
+ *  vault_eligible flag). Resolves by productId, falling back to a grams match
+ *  for legacy lines. Exported so the web checkout derives the "Store in Vault"
+ *  availability off the same definition. 2026-06-25. */
+export function isVaultEligibleLine(item: CartLine, catalog: CartCatalogProduct[]): boolean {
+  if (item.productType === "accessory") return false;
+  const byId = item.productId ? catalog.find((p) =&gt; p.id === item.productId) : null;
+  const p = byId ?? (item.g &gt; 0 ? catalog.find((q) =&gt; q.grams === item.g &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >q.product_type !== "accessory")</span> : <span class="branch-1 cbranch-no" title="branch not covered" >null);</span>
+  return p?.vault_eligible === true;
+}
+&nbsp;
+/** Best (highest threshold met) free rule — mirrors computeAccessoryLineTotal's
+ *  sort so the unlock banner and the line price always agree. */
+function getBestFreeRule(rules: AccessoryDiscountRule[], gold: number): AccessoryDiscountRule | null {
+  return rules
+    .filter((r) =&gt; r.type === "free" &amp;&amp; (r.threshold_sgd === undefined || gold &gt;= r.threshold_sgd))
+    .<span class="fstat-no" title="function not covered" >sort((a</span>, <span class="cstat-no" title="statement not covered" >b) =&gt; (b.threshold_sgd ?? 0) - (a.threshold_sgd ?? 0))</span>[0] ?? null;
+}
+&nbsp;
+// ── deriveCart — the full read model ─────────────────────────────────────────
+&nbsp;
+export function deriveCart(lines: CartLine[], ctx: CartContext): CartView {
+  // Hydrate `tiers` on standard lines that lack it (calculator/Shop adds + older
+  // carts store standard items without tiers → premium read 0% AND standardSgd
+  // contributed 0 to the subtotal). Fill from the catalog so the premium badge
+  // + the subtotal are correct. Pure (returns a copy); idempotent.
+  lines = hydrateStandardTiers(lines, ctx.catalog, ctx.wholesaleEnabled ?? false).lines;
+  const spot = ctx.spotSgd;
+  const premiumMap = premiumMapOf(ctx.premiums);
+  const pricesReady = !!spot &amp;&amp; premiumMap.size &gt; 0 &amp;&amp; ctx.accumulatedCurveGramsLoaded;
+&nbsp;
+  const curveItems = lines.filter((i) =&gt; i.productType === "curve");
+  const standardItems = lines.filter((i) =&gt; i.productType === "standard");
+  const accessoryItems = lines.filter((i) =&gt; i.productType === "accessory");
+  const curveGrams = curveItems.reduce((s, i) =&gt; s + i.g * i.count, 0);
+  const totalGrams = lines.reduce((s, i) =&gt; s + i.count * i.g, 0);
+&nbsp;
+  const { totalSgd: curveSgd, curveRate } = pricesReady &amp;&amp; curveGrams &gt; 0
+    ? computeOrderTotal(curveGrams, spot!, premiumMap, ctx.accumulatedCurveGrams)
+    : { totalSgd: 0, curveRate: 0 };
+&nbsp;
+  const standardSgd = pricesReady
+    ? standardItems.reduce((s, i) =&gt; s + (i.tiers ? computeStandardLineTotal(i.count, i.g, spot!, i.tiers).lineSgd : <span class="branch-1 cbranch-no" title="branch not covered" >0), 0</span>)
+    : 0;
+&nbsp;
+  const goldSubtotalSgd = curveSgd + standardSgd;
+&nbsp;
+  // Blended premium across ALL gold lines (curve + standard + wholesale), not
+  // just curve (#2, 2026-06-12). The premium "included in the total" is the
+  // dollars charged above raw spot for all gold, expressed as a fraction of the
+  // spot value: (goldSubtotal − spot×goldGrams) / (spot×goldGrams). standardSgd
+  // already reflects standard/wholesale better-of pricing, so this is the true
+  // effective premium. Falls back to 0 when prices aren't ready or no gold.
+  const standardGrams  = standardItems.reduce((s, i) =&gt; s + i.g * i.count, 0);
+  const goldGrams      = curveGrams + standardGrams;
+  const spotGoldValue  = pricesReady &amp;&amp; spot ? spot * goldGrams : 0;
+  const blendedPremiumRate = spotGoldValue &gt; 0
+    ? (goldSubtotalSgd - spotGoldValue) / spotGoldValue
+    : 0;
+&nbsp;
+  // GY eligible: ≥1 line, EVERY line a gy_eligible product at qty 1 (the
+  // 50/100g combibars). Flag-keyed via the catalog (single source) — replaces
+  // the old `items.every(g===50||g===100) &amp;&amp; every qty 1` inference. Over ALL
+  // lines (not just gold) so an accessory in the cart blocks GY, exactly as
+  // before (an accessory's g=0 failed the old 50||100 check). #2 2026-06-12.
+  const gyEligible = lines.length &gt; 0
+    &amp;&amp; lines.every((i) =&gt; i.count === 1 &amp;&amp; isGyEligibleLine(i, ctx.catalog));
+&nbsp;
+  // Vault eligible: ≥1 vault_eligible gold line, and every OTHER line is either
+  // vault_eligible gold or a FREE ($0) bonus item (e.g. the auto-added gift box).
+  // No qty-1 constraint (a qty-N line → N custody holdings). A free bonus item no
+  // longer silently hides the Vault option; a PAID accessory still blocks it
+  // (it needs delivery, which a no-address vault order can't do). 2026-06-29.
+  const isFreeBonusLine = (i: CartLine): boolean =&gt;
+    i.productType === "accessory"
+    &amp;&amp; computeAccessoryLineTotal(i.count, i.fixedPriceSgd ?? <span class="branch-1 cbranch-no" title="branch not covered" >0, i</span>.discountRule ?? null, goldSubtotalSgd).lineSgd === 0;
+  const vaultEligible =
+    lines.some((i) =&gt; isVaultEligibleLine(i, ctx.catalog))
+    &amp;&amp; lines.every((i) =&gt; isVaultEligibleLine(i, ctx.catalog) || isFreeBonusLine(i));
+&nbsp;
+  // Gift cart: any giftable line carries a non-empty gift message (same signal
+  // reconcileGiftBox keys off). Used to suppress the Vault shortcut — see hasGift
+  // doc on CartSummary.
+  const hasGift = lines.some(
+    (i) =&gt;
+      (typeof i.giftMessage === "string" &amp;&amp; i.giftMessage.trim().length &gt; 0) ||
+      (Array.isArray(i.giftMessages) &amp;&amp; i.giftMessages.some((m) =&gt; m.trim().length &gt; 0)),
+  );
+&nbsp;
+  const accessorySgd = accessoryItems.reduce(
+    (s, i) =&gt; s + computeAccessoryLineTotal(i.count, i.fixedPriceSgd ?? <span class="branch-1 cbranch-no" title="branch not covered" >0, i</span>.discountRule ?? null, goldSubtotalSgd).lineSgd,
+    0,
+  );
+  const totalSgd = goldSubtotalSgd + accessorySgd;
+&nbsp;
+  // ── Per-line ──
+  const pricedLines: PricedLine[] = lines.map((item) =&gt; {
+    const visible = Math.min(item.count, 4);
+    const breakdown = item.productType === "accessory" &amp;&amp; pricesReady
+      ? computeAccessoryLineTotal(item.count, item.fixedPriceSgd ?? <span class="branch-1 cbranch-no" title="branch not covered" >0, i</span>tem.discountRule ?? null, goldSubtotalSgd)
+      : null;
+    // Standard lines price from their TIERS at the current qty (same primitive
+    // the subtotal uses) so per-line == subtotal — never a stale stored
+    // priceEach. Curve = spot×g×(1+curveRate); accessory = breakdown.
+    const stdLine = item.productType === "standard" &amp;&amp; pricesReady &amp;&amp; item.tiers &amp;&amp; item.tiers.length &gt; 0
+      ? computeStandardLineTotal(item.count, item.g, spot!, item.tiers)
+      : null;
+    const priceEach: number | null = !pricesReady
+      ? null
+      : item.productType === "curve" ? spot! * item.g * (1 + curveRate)
+      : stdLine ? stdLine.priceEach
+      : item.priceEach;
+    const lineSgd: number | null = !pricesReady
+      ? null
+      : item.productType === "curve"
+        ? item.count * spot! * item.g * (1 + curveRate)
+        : breakdown ? breakdown.lineSgd
+        : stdLine ? stdLine.lineSgd
+        : <span class="branch-1 cbranch-no" title="branch not covered" >item.count * item.priceEach;</span>
+    const premiumLabel = item.productType === "curve"
+      ? `Spot +${formatPremium(curveRate)}`
+      : item.productType === "standard"
+        ? `Spot +${formatPremium(item.tiers ? getTierPremium(item.count, item.tiers) : <span class="branch-1 cbranch-no" title="branch not covered" >0)</span>}`
+        : null;
+    const fixed = item.fixedPriceSgd ?? 0;
+    const isSplit1g = item.productType === "curve" &amp;&amp; item.g === 1;
+    const img = resolveCartLineImage(item, ctx.catalog);
+    const stockLeft = stockLeftForItem(item, ctx.catalog);
+    const atStockCap = stockLeft !== null &amp;&amp; item.count &gt;= stockLeft;
+&nbsp;
+    return {
+      itemKey: keyOf(item),
+      productType: item.productType,
+      productId: item.productId,
+      label: item.label,
+      g: item.g,
+      count: item.count,
+      imageUrl: img,
+      visibleThumbs: visible,
+      extraThumbs: item.count - visible,
+      thumbs: img ? Array.from({ length: visible }, () =&gt; ({ url: img })) : [],
+      isPresale: isPresaleItem(item, ctx.catalog),
+      isGiftable: isSplit1g,
+      priceEach,
+      lineSgd,
+      perGramSgd: item.g &gt; 1 &amp;&amp; priceEach !== null ? priceEach / item.g : null,
+      totalLineGrams: item.count * item.g,
+      totalLineGramsLabel: `${item.count * item.g}g`,
+      premiumLabel,
+      isStandardPremium: item.productType === "standard",
+      splitCapHit: isSplit1g &amp;&amp; item.count &gt;= 50,
+      stockLeft,
+      atStockCap,
+      accessory: breakdown
+        ? {
+            freeQty: breakdown.freeQty,
+            paidQty: breakdown.paidQty,
+            paidPriceEach: breakdown.paidPriceEach,
+            fixedPriceSgd: fixed,
+            discountPct: fixed &gt; 0 ? Math.round((1 - breakdown.paidPriceEach / fixed) * 100) : <span class="branch-1 cbranch-no" title="branch not covered" >0,</span>
+            hasFree: breakdown.freeQty &gt; 0,
+            isDiscounted: breakdown.freeQty === 0 &amp;&amp; breakdown.paidPriceEach &lt; fixed,
+          }
+        : null,
+      giftMessage: item.giftMessage,
+      giftMessages: item.giftMessages,
+    };
+  });
+&nbsp;
+  // ── Curve position ──
+  let curvePosition: CurvePosition | null = null;
+  if (curveGrams &gt; 0 &amp;&amp; ctx.accumulatedCurveGramsLoaded &amp;&amp; ctx.accumulatedCurveGrams &gt; 0) {
+    const positionInCycle = ctx.accumulatedCurveGrams % MILESTONE;
+    const effectiveAfter = Math.min(positionInCycle + curveGrams, MILESTONE);
+    const atMilestone = effectiveAfter &gt;= MILESTONE;
+    curvePosition = {
+      positionInCycle,
+      effectiveAfter,
+      atMilestone,
+      remaining: MILESTONE - effectiveAfter,
+      positionLabel: `${positionInCycle.toFixed(1)}g`,
+      effectiveLabel: `${effectiveAfter.toFixed(1)}g`,
+      tailLabel: atMilestone
+        ? " after this order — cycle complete, resets next order"
+        : ` after this order (${(MILESTONE - effectiveAfter).toFixed(1)}g to next cycle)`,
+    };
+  }
+&nbsp;
+  // ── Milestone gate ──
+  const splits1gItem = lines.find((i) =&gt; i.productType === "curve" &amp;&amp; i.g === 1);
+  const splits1gCount = splits1gItem?.count ?? 0;
+  const cart50gCount = lines.find((i) =&gt; i.productType === "curve" &amp;&amp; i.g === 50)?.count ?? 0;
+  const gateMode: MilestoneMode = splits1gCount &gt;= 50 ? (cart50gCount &gt;= 1 ? "choose100" : "force50") : null;
+&nbsp;
+  // ── Fulfilment ──
+  const goldItems = lines.filter((i) =&gt; i.productType !== "accessory");
+  const hasPresale = goldItems.some((i) =&gt; isPresaleItem(i, ctx.catalog));
+  const allPresale = goldItems.length &gt; 0 &amp;&amp; goldItems.every((i) =&gt; isPresaleItem(i, ctx.catalog));
+  const fulfillmentType = hasPresale ? (allPresale ? "presale" : <span class="branch-1 cbranch-no" title="branch not covered" >"split") : "</span>immediate";
+&nbsp;
+  // ── Accessory unlock banners ──
+  const accessoryUnlocks: AccessoryUnlock[] = ctx.catalog
+    .filter((p) =&gt; p.product_type === "accessory")
+    .map((acc) =&gt; {
+      const best = getBestFreeRule(acc.discount_rules ?? [], goldSubtotalSgd);
+      if (!best) return null;
+      const inCart = accessoryItems.find((i) =&gt; i.productId === acc.id);
+      const freeQty = best.free_qty ?? 1;
+      const alreadyClaimed = inCart?.count ?? 0;
+      if (inCart &amp;&amp; inCart.count &gt;= freeQty) return null;
+      const remaining = freeQty - alreadyClaimed;
+      const { paidPriceEach } = computeAccessoryLineTotal(remaining, acc.price_sgd ?? <span class="branch-1 cbranch-no" title="branch not covered" >0, a</span>cc.discount_rules ?? <span class="branch-1 cbranch-no" title="branch not covered" >null, g</span>oldSubtotalSgd);
+      return {
+        id: acc.id,
+        label: acc.label,
+        thresholdSgd: best.threshold_sgd ?? <span class="branch-1 cbranch-no" title="branch not covered" >null,</span>
+        freeQty,
+        alreadyClaimed,
+        remaining,
+        paidPriceEach,
+        imageUrl: acc.product_media?.[0]?.url ?? acc.image_url ?? <span class="branch-2 cbranch-no" title="branch not covered" >null,</span>
+        priceSgd: acc.price_sgd ?? <span class="branch-1 cbranch-no" title="branch not covered" >0,</span>
+        discountRule: acc.discount_rules ?? <span class="branch-1 cbranch-no" title="branch not covered" >null,</span>
+        descLabel:
+          (best.threshold_sgd
+            ? `Complimentary with your gold order over S$${best.threshold_sgd.toLocaleString()}.`
+            : <span class="branch-1 cbranch-no" title="branch not covered" >"Complimentary with your order.") + (f</span>reeQty &gt; 1 ? <span class="branch-0 cbranch-no" title="branch not covered" >` Up to ${freeQty} free.` : "</span>"),
+        claimLabel: alreadyClaimed &gt; 0 ? <span class="branch-0 cbranch-no" title="branch not covered" >`Claim ${remaining} more` : "</span>Claim free gift",
+      } satisfies AccessoryUnlock;
+    })
+    .filter((x): x is AccessoryUnlock =&gt; x !== null);
+&nbsp;
+  // ── KYC nudge ──
+  const kyc = ctx.kycStatus ?? "not_required";
+  const kycShow = totalSgd &gt;= KYC_THRESHOLD_SGD &amp;&amp; !ctx.selfLimit &amp;&amp; kyc !== "approved";
+&nbsp;
+  // A stale gold/FX feed blocks checkout because we can't price GOLD without a
+  // spot. An accessory-only cart needs no spot — accessories price from
+  // fixedPriceSgd (the DB list price) — so the feed must not strand it.
+  //
+  // DELIBERATELY the narrowest possible predicate: "non-empty AND every line is
+  // an accessory". A gold cart, a MIXED cart, and an EMPTY cart therefore keep
+  // today's behaviour byte-for-byte; only the no-gold case diverges. Widening
+  // this (e.g. to `!hasGold`) would also change the empty-cart case — don't.
+  const isAccessoryOnlyCart = lines.length &gt; 0 &amp;&amp; accessoryItems.length === lines.length;
+  const priceBlocked = !!(ctx.xauStale || ctx.fxStale) &amp;&amp; !isAccessoryOnlyCart;
+&nbsp;
+  return {
+    lines: pricedLines,
+    summary: {
+      pricesReady,
+      totalGrams,
+      curveGrams,
+      blendedPremiumRate,
+      blendedPremiumLabel: formatPremium(blendedPremiumRate),
+      gyEligible,
+      vaultEligible,
+      hasGift,
+      goldSubtotalSgd,
+      accessorySgd,
+      accessoryFree: accessoryItems.length &gt; 0 &amp;&amp; accessorySgd === 0,
+      hasAccessories: accessoryItems.length &gt; 0,
+      totalSgd,
+      effectivePerGramSgd: totalGrams &gt; 0 &amp;&amp; pricesReady &amp;&amp; goldSubtotalSgd &gt; 0 ? goldSubtotalSgd / totalGrams : null,
+      curvePosition,
+      totalGramsLabel: `${totalGrams.toFixed(2)}g`,
+      spotSgd: spot ?? 0,
+    },
+    milestoneGate: { mode: gateMode, splits1gCount, cart50gCount },
+    fulfillment: { type: fulfillmentType, hasPresale, allPresale },
+    accessoryUnlocks,
+    progress: {
+      current: ctx.ownedGrams + totalGrams, target: MILESTONE, ownedGrams: ctx.ownedGrams, orderGrams: totalGrams,
+      ownedLabel: `${ctx.ownedGrams.toFixed(2)}g`, orderLabel: `${totalGrams.toFixed(2)}g`, showAccumulated: ctx.ownedGrams &gt; 0,
+    },
+    kycNudge: { show: kycShow, pending: kyc === "pending", showStartLink: kyc === "not_required" || <span class="branch-1 cbranch-no" title="branch not covered" >kyc === "expired" }</span>,
+    priceBlocked,
+    checkout: {
+      allowed: !priceBlocked &amp;&amp; !gateMode,
+      reason: priceBlocked ? "price_blocked" : gateMode ? "gate" : null,
+      gateMode,
+    },
+  };
+}
+&nbsp;
+// ── Pure cart transforms ─────────────────────────────────────────────────────
+&nbsp;
+/** Re-stamp `priceEach` on every line from the current spot/premiums. Mirrors
+ *  the web cart's `refreshPrices`. Returns the lines unchanged when not ready. */
+export function refreshCartPrices(lines: CartLine[], ctx: CartContext): CartLine[] {
+  const spot = ctx.spotSgd;
+  const premiumMap = premiumMapOf(ctx.premiums);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!spot || premiumMap.size === 0) <span class="cstat-no" title="statement not covered" >return lines;</span>
+  // Fill any standard line that arrived with []/missing tiers BEFORE re-stamping
+  // priceEach, else it stamps bare spot (the "Spot +0%" bug) into the store.
+  lines = hydrateStandardTiers(lines, ctx.catalog, ctx.wholesaleEnabled ?? false).lines;
+&nbsp;
+  const curveGrams = lines.filter((i) =&gt; i.productType === "curve").reduce((s, i) =&gt; s + i.g * i.count, 0);
+  const { totalSgd: curveSgd, curveRate } = curveGrams &gt; 0
+    ? computeOrderTotal(curveGrams, spot, premiumMap, ctx.accumulatedCurveGrams)
+    : { totalSgd: 0, curveRate: 0 };
+  const standardSgd = lines
+    .filter((i) =&gt; i.productType === "standard" &amp;&amp; i.tiers)
+    .reduce((s, i) =&gt; s + computeStandardLineTotal(i.count, i.g, spot, i.tiers!).lineSgd, 0);
+  const goldSubtotal = curveSgd + standardSgd;
+&nbsp;
+  return lines.map((i) =&gt; {
+    if (i.productType === "curve") return { ...i, priceEach: spot * i.g * (1 + curveRate) };
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (i.productType === "standard" &amp;&amp; i.tiers) return { ...i, priceEach: computeStandardLineTotal(i.count, i.g, spot, i.tiers).priceEach };
+<span class="cstat-no" title="statement not covered" >    if (i.productType === "accessory") {</span>
+      const { <span class="cstat-no" title="statement not covered" >paidPriceEach } = computeAccessoryLineTotal(i.count, i.fixedPriceSgd ?? 0, i.discountRule ?? null, goldSubtotal);</span>
+<span class="cstat-no" title="statement not covered" >      return { ...i, priceEach: paidPriceEach };</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return i;</span>
+  });
+}
+&nbsp;
+/** Milestone conversion (1g splits → combibar). Pure. Mirrors the web
+ *  `handleMilestoneAction`; uses the catalog for the combibar product id. */
+export function applyMilestone(lines: CartLine[], variant: MilestoneVariant, ctx: CartContext): CartLine[] {
+  const splits1gItem = lines.find((i) =&gt; i.productType === "curve" &amp;&amp; i.g === 1);
+  if (!splits1gItem || splits1gItem.count &lt; 50) return lines;
+&nbsp;
+  // The combibar lines (50g / 100g) are matched by GRAM weight, NOT by
+  // product_type — combibars are STANDARD products going forward (#3,
+  // 2026-06-12), and older data may still be 'curve'. Matching on
+  // `productType === "curve"` (the old code) silently failed to find a
+  // standard combibar line → a duplicate curve line was pushed and priced at
+  // the curve rate instead of the combibar's standard premium.
+  const isCombibarLine = (i: CartLine, g: number) =&gt; i.g === g &amp;&amp; i.productType !== "accessory";
+&nbsp;
+  let updated: CartLine[] = lines.map((i) =&gt; {
+    if (i.productType === "curve" &amp;&amp; i.g === 1) return { ...i, count: i.count - 50 };
+    if (variant === "pair_100g" &amp;&amp; isCombibarLine(i, 50)) return { ...i, count: i.count - 1 };
+    return i;
+  });
+&nbsp;
+  // Look the combibar up regardless of product_type and create the converted
+  // line with the catalog product's ACTUAL type + id. deriveCart /
+  // refreshCartPrices → hydrateStandardTiers then prices a standard combibar at
+  // its own standard (or wholesale better-of) tiers, not the curve rate.
+  const makeCombibarLine = (g: number, label: string, fallbackImg: string): CartLine =&gt; {
+    const p = ctx.catalog.find((c) =&gt; c.grams === g &amp;&amp; c.product_type !== "accessory");
+    return {
+      productType: (p?.product_type as CartLine["productType"]) ?? <span class="branch-1 cbranch-no" title="branch not covered" >"standard",</span>
+      productId:   p?.id ?? <span class="branch-1 cbranch-no" title="branch not covered" >null,</span>
+      label,
+      g,
+      isAssay:     true,
+      count:       1,
+      priceEach:   0,
+      imageUrl:    p?.image_url ?? <span class="branch-1 cbranch-no" title="branch not covered" >fallbackImg,</span>
+    };
+  };
+&nbsp;
+  if (variant === "force50" || variant === "keep_2x_50g") {
+    const has50g = updated.some((i) =&gt; isCombibarLine(i, 50) &amp;&amp; i.count &gt; 0);
+    if (has50g) {
+      updated = updated.map((i) =&gt; (isCombibarLine(i, 50) ? { ...i, count: i.count + 1 } : i));
+    } else {
+      updated.push(makeCombibarLine(50, "50g Combibar", "/images/50g.webp"));
+    }
+  } else <span class="missing-if-branch" title="else path not taken" >E</span>if (variant === "pair_100g") {
+    const has100g = updated.some((i) =&gt; isCombibarLine(i, 100) &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >i.count &gt; 0)</span>;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (has100g) {
+<span class="cstat-no" title="statement not covered" >      updated = updated.<span class="fstat-no" title="function not covered" >map((i</span>) =&gt; (<span class="cstat-no" title="statement not covered" >isCombibarLine(i, 100) ? { ...i, count: i.count + 1 } : i))</span>;</span>
+    } else {
+      updated.push(makeCombibarLine(100, "100g Combibar", "/images/100g.webp"));
+    }
+  }
+&nbsp;
+  updated = updated.filter((i) =&gt; i.count &gt; 0);
+  return refreshCartPrices(updated, ctx);
+}
+&nbsp;
+/** Reconcile the auto gift-box line to the gifted-card count. Pure version of
+ *  the web gift-accessory-sync effect. Returns `{ lines, changed }`. */
+export function reconcileGiftBox(lines: CartLine[], ctx: CartContext): { lines: CartLine[]; changed: boolean } {
+  const giftBoxId = ctx.giftBoxProductId ?? GIFT_BOX_PRODUCT_ID;
+  const giftProduct = ctx.catalog.find((p) =&gt; p.id === giftBoxId);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!giftProduct) <span class="cstat-no" title="statement not covered" >return { lines, changed: false };</span>
+&nbsp;
+  const isGiftLine = (i: CartLine) =&gt;
+    i.productType === "curve" &amp;&amp; i.g === 1 &amp;&amp; (
+      (typeof i.giftMessage === "string" &amp;&amp; i.giftMessage.trim().length &gt; 0) ||
+      (Array.isArray(i.giftMessages) &amp;&amp; <span class="branch-5 cbranch-no" title="branch not covered" >i.giftMessages.some((m) =&gt; m.trim().length &gt; 0))</span>
+    );
+  const giftedCardsCount = lines.filter(isGiftLine).reduce((s, i) =&gt; s + i.count, 0);
+  const existingAutoIdx = lines.findIndex((i) =&gt; i.productId === giftBoxId &amp;&amp; i.addedByGift === true);
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (giftedCardsCount === 0 &amp;&amp; existingAutoIdx === -1) <span class="cstat-no" title="statement not covered" >return { lines, changed: false };</span>
+  if (giftedCardsCount &gt; 0 &amp;&amp; existingAutoIdx !== -1 &amp;&amp; lines[existingAutoIdx].count === giftedCardsCount) return { lines, changed: false };
+&nbsp;
+  const goldSubtotal = lines
+    .filter((i) =&gt; i.productType === "curve" || i.productType === "standard")
+    .reduce((s, i) =&gt; s + i.count * i.priceEach, 0);
+  const { paidPriceEach } = computeAccessoryLineTotal(giftedCardsCount || 1, giftProduct.price_sgd ?? <span class="branch-1 cbranch-no" title="branch not covered" >0, g</span>iftProduct.discount_rules ?? <span class="branch-1 cbranch-no" title="branch not covered" >null, g</span>oldSubtotal);
+&nbsp;
+  let next: CartLine[];
+  if (giftedCardsCount === 0) {
+    next = lines.filter((_, idx) =&gt; idx !== existingAutoIdx);
+  } else if (existingAutoIdx === -1) {
+    next = [
+      ...lines,
+      {
+        productType: "accessory", productId: giftBoxId, label: giftProduct.label, g: 0, isAssay: false,
+        count: giftedCardsCount, priceEach: paidPriceEach, imageUrl: giftProduct.image_url ?? <span class="branch-1 cbranch-no" title="branch not covered" >null,</span>
+        fixedPriceSgd: giftProduct.price_sgd ?? <span class="branch-1 cbranch-no" title="branch not covered" >0, d</span>iscountRule: giftProduct.discount_rules ?? <span class="branch-1 cbranch-no" title="branch not covered" >null, a</span>ddedByGift: true,
+      },
+    ];
+  } else <span class="missing-if-branch" title="else path not taken" >E</span>{
+<span class="cstat-no" title="statement not covered" >    next = lines.<span class="fstat-no" title="function not covered" >map((i</span>, idx) =&gt; (<span class="cstat-no" title="statement not covered" >idx === existingAutoIdx ? { ...i, count: giftedCardsCount, priceEach: paidPriceEach } : i))</span>;</span>
+  }
+  return { lines: next, changed: true };
+}
+&nbsp;
+/** Fill `tiers` on standard lines that lack it (older carts / calculator adds
+ *  stored standard items without tiers → rendered "Spot +0%"). Pure. */
+export function hydrateStandardTiers(
+  lines: CartLine[],
+  catalog: CartCatalogProduct[],
+  wholesaleEnabled = false,
+): { lines: CartLine[]; changed: boolean } {
+  let changed = false;
+  const hydrated = lines.map((i) =&gt; {
+    if (i.productType !== "standard") return i;
+    const std = catalog.find((p) =&gt; (i.productId &amp;&amp; p.id === i.productId) || (p.product_type === "standard" &amp;&amp; <span class="branch-3 cbranch-no" title="branch not covered" >p.grams === i.g))</span>;
+    if (!std) {
+      // Not in the catalog (server path passes catalog:[]; or a wholesale-only
+      // product). Keep whatever the line carries — the server pre-set its
+      // authoritative better-of tiers, and a missing/[] array is handled by the
+      // pricing fallback below in deriveCart.
+      return i;
+    }
+    const stdTiers = std.standard_premium_tiers &amp;&amp; std.standard_premium_tiers.length &gt; 0
+      ? std.standard_premium_tiers
+      : [{ min_qty: 1, max_qty: null, premium_pct: std.premium_pct ?? 0 }];
+    const catalogWholesale = std.wholesale_premium_tiers &amp;&amp; std.wholesale_premium_tiers.length &gt; 0
+      ? std.wholesale_premium_tiers
+      : null;
+    if (catalogWholesale) {
+      // AUTHORITATIVE path — the catalog KNOWS this product's wholesale tiers, so
+      // resolve EXACTLY like the server's priceOrder: better-of(standard, wholesale)
+      // when the customer is wholesale-enabled AND the qty meets the wholesale
+      // minimum (wholesaleTiersIfEligible), else standard. This OVERRIDES whatever
+      // tiers the line arrived with — the single-source fix for the "cart total
+      // mismatch" 422 (the wholesale surface embeds wholesale tiers in the line, a
+      // SECOND pricing path that drifted from the server). iOS feeds the catalog
+      // wholesale tiers + the gate via /api/cart|checkout/context.
+      const eligibleWhl = wholesaleEnabled ? wholesaleTiersIfEligible(catalogWholesale, i.count) : undefined;
+      changed = true;
+      return { ...i, tiers: eligibleWhl ? pickBetterTiers(stdTiers, eligibleWhl, i.count) : stdTiers };
+    }
+    // The catalog has NO wholesale tiers for this product → it can't speak to
+    // wholesale pricing, so never DISCARD the line's own usable tiers: a caller
+    // whose catalog omits wholesale tiers (e.g. the web cart's /api/products) embeds
+    // them in the line itself; overriding with bare standard would REGRESS it. Only
+    // fill a missing/[] array (the "Spot +0%" bug) from the standard tiers.
+    if (i.tiers &amp;&amp; i.tiers.length &gt; 0) return i;
+    changed = true;
+    return { ...i, tiers: stdTiers };
+  });
+  return { lines: hydrated, changed };
+}
+&nbsp;
+/** Wholesale tiers apply ONLY when the qty meets the wholesale MINIMUM — the
+ *  lowest wholesale breakpoint (`min(min_qty)`). Below it the customer gets
+ *  STANDARD pricing: the wholesale `min_qty` is an eligibility GATE, not just a
+ *  clamp-up breakpoint (Mukesh 2026-06-07; `getTierPremium` otherwise clamps a
+ *  below-min qty UP to the lowest tier, which would hand out wholesale pricing on
+ *  sub-minimum Shop orders). Returns the wholesale tiers when eligible, else
+ *  undefined → caller falls back to standard. Used by BOTH the cart kernel
+ *  (hydrateStandardTiers) and the server (priceOrder) so they stay identical. */
+export function wholesaleTiersIfEligible(
+  whlTiers: StandardPremiumTier[] | null | undefined,
+  count: number,
+): StandardPremiumTier[] | undefined {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!whlTiers || whlTiers.length === 0) <span class="cstat-no" title="statement not covered" >return undefined;</span>
+  const lowestMin = Math.min(...whlTiers.map((t) =&gt; t.min_qty));
+  return count &gt;= lowestMin ? whlTiers : undefined;
+}
+&nbsp;
+/** Of two tier sets, the one with the LOWER premium at `count` wins (cheaper
+ *  for the customer); the existing set wins ties. A null/empty set loses to a
+ *  real one. Used by the "better premium wins" wholesale merge. */
+export function pickBetterTiers(
+  a: StandardPremiumTier[] | undefined,
+  b: StandardPremiumTier[] | undefined,
+  count: number,
+): StandardPremiumTier[] | undefined {
+  if (!a || a.length === 0) return b;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!b || b.length === 0) <span class="cstat-no" title="statement not covered" >return a;</span>
+  return getTierPremium(count, b) &lt; getTierPremium(count, a) ? b : a;
+}
+&nbsp;
+/** Add `incoming` to `lines`, merging by itemKey (productId ?? type_g).
+ *
+ *  - Normal add: keep the existing line's tiers/price (first-wins), bump count.
+ *  - Wholesale add (`fromWholesale`): when the SAME item is already in the cart
+ *    (e.g. added earlier from the standard Shop), the BETTER (lower) premium for
+ *    the merged quantity wins — so adding from Wholesale upgrades the line to
+ *    wholesale pricing, but never downgrades a line that's already cheaper. When
+ *    the incoming (wholesale) tiers win, adopt their unit priceEach too.
+ *
+ *  Shared by the web cart store + the iOS engine (no parallel implementation). */
+export function mergeAdd(lines: CartLine[], incoming: CartLine, fromWholesale: boolean): CartLine[] {
+  const key = keyOf(incoming);
+  const idx = lines.findIndex((l) =&gt; keyOf(l) === key);
+  if (idx &lt; 0) return [...lines, incoming];
+&nbsp;
+  const existing = lines[idx];
+  const count = existing.count + incoming.count;
+  const tiers = fromWholesale
+    ? pickBetterTiers(existing.tiers, incoming.tiers, count)
+    : (existing.tiers ?? <span class="branch-1 cbranch-no" title="branch not covered" >incoming.tiers);</span>
+  // When the wholesale tiers won, the displayed unit price should follow them.
+  const priceEach = fromWholesale &amp;&amp; tiers === incoming.tiers ? incoming.priceEach : existing.priceEach;
+  const merged: CartLine = { ...existing, count, tiers, priceEach };
+  return lines.map((l, i) =&gt; (i === idx ? merged : <span class="branch-1 cbranch-no" title="branch not covered" >l))</span>;
+}
+&nbsp;
+export const GIFT_MESSAGE_MAX_LEN = GIFT_MESSAGE_MAX;
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-09-06T03:51:53.260Z
+            </div>
+        <script src="../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
+    </body>
+</html>
+    

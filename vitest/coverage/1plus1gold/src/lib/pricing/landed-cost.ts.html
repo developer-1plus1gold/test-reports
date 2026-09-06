@@ -1,0 +1,1624 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/pricing/landed-cost.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/pricing</a> landed-cost.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">97.24% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>106/109</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">95.37% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>103/108</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>15/15</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">98.93% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>93/94</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a>
+<a name='L341'></a><a href='#L341'>341</a>
+<a name='L342'></a><a href='#L342'>342</a>
+<a name='L343'></a><a href='#L343'>343</a>
+<a name='L344'></a><a href='#L344'>344</a>
+<a name='L345'></a><a href='#L345'>345</a>
+<a name='L346'></a><a href='#L346'>346</a>
+<a name='L347'></a><a href='#L347'>347</a>
+<a name='L348'></a><a href='#L348'>348</a>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a>
+<a name='L358'></a><a href='#L358'>358</a>
+<a name='L359'></a><a href='#L359'>359</a>
+<a name='L360'></a><a href='#L360'>360</a>
+<a name='L361'></a><a href='#L361'>361</a>
+<a name='L362'></a><a href='#L362'>362</a>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a>
+<a name='L367'></a><a href='#L367'>367</a>
+<a name='L368'></a><a href='#L368'>368</a>
+<a name='L369'></a><a href='#L369'>369</a>
+<a name='L370'></a><a href='#L370'>370</a>
+<a name='L371'></a><a href='#L371'>371</a>
+<a name='L372'></a><a href='#L372'>372</a>
+<a name='L373'></a><a href='#L373'>373</a>
+<a name='L374'></a><a href='#L374'>374</a>
+<a name='L375'></a><a href='#L375'>375</a>
+<a name='L376'></a><a href='#L376'>376</a>
+<a name='L377'></a><a href='#L377'>377</a>
+<a name='L378'></a><a href='#L378'>378</a>
+<a name='L379'></a><a href='#L379'>379</a>
+<a name='L380'></a><a href='#L380'>380</a>
+<a name='L381'></a><a href='#L381'>381</a>
+<a name='L382'></a><a href='#L382'>382</a>
+<a name='L383'></a><a href='#L383'>383</a>
+<a name='L384'></a><a href='#L384'>384</a>
+<a name='L385'></a><a href='#L385'>385</a>
+<a name='L386'></a><a href='#L386'>386</a>
+<a name='L387'></a><a href='#L387'>387</a>
+<a name='L388'></a><a href='#L388'>388</a>
+<a name='L389'></a><a href='#L389'>389</a>
+<a name='L390'></a><a href='#L390'>390</a>
+<a name='L391'></a><a href='#L391'>391</a>
+<a name='L392'></a><a href='#L392'>392</a>
+<a name='L393'></a><a href='#L393'>393</a>
+<a name='L394'></a><a href='#L394'>394</a>
+<a name='L395'></a><a href='#L395'>395</a>
+<a name='L396'></a><a href='#L396'>396</a>
+<a name='L397'></a><a href='#L397'>397</a>
+<a name='L398'></a><a href='#L398'>398</a>
+<a name='L399'></a><a href='#L399'>399</a>
+<a name='L400'></a><a href='#L400'>400</a>
+<a name='L401'></a><a href='#L401'>401</a>
+<a name='L402'></a><a href='#L402'>402</a>
+<a name='L403'></a><a href='#L403'>403</a>
+<a name='L404'></a><a href='#L404'>404</a>
+<a name='L405'></a><a href='#L405'>405</a>
+<a name='L406'></a><a href='#L406'>406</a>
+<a name='L407'></a><a href='#L407'>407</a>
+<a name='L408'></a><a href='#L408'>408</a>
+<a name='L409'></a><a href='#L409'>409</a>
+<a name='L410'></a><a href='#L410'>410</a>
+<a name='L411'></a><a href='#L411'>411</a>
+<a name='L412'></a><a href='#L412'>412</a>
+<a name='L413'></a><a href='#L413'>413</a>
+<a name='L414'></a><a href='#L414'>414</a>
+<a name='L415'></a><a href='#L415'>415</a>
+<a name='L416'></a><a href='#L416'>416</a>
+<a name='L417'></a><a href='#L417'>417</a>
+<a name='L418'></a><a href='#L418'>418</a>
+<a name='L419'></a><a href='#L419'>419</a>
+<a name='L420'></a><a href='#L420'>420</a>
+<a name='L421'></a><a href='#L421'>421</a>
+<a name='L422'></a><a href='#L422'>422</a>
+<a name='L423'></a><a href='#L423'>423</a>
+<a name='L424'></a><a href='#L424'>424</a>
+<a name='L425'></a><a href='#L425'>425</a>
+<a name='L426'></a><a href='#L426'>426</a>
+<a name='L427'></a><a href='#L427'>427</a>
+<a name='L428'></a><a href='#L428'>428</a>
+<a name='L429'></a><a href='#L429'>429</a>
+<a name='L430'></a><a href='#L430'>430</a>
+<a name='L431'></a><a href='#L431'>431</a>
+<a name='L432'></a><a href='#L432'>432</a>
+<a name='L433'></a><a href='#L433'>433</a>
+<a name='L434'></a><a href='#L434'>434</a>
+<a name='L435'></a><a href='#L435'>435</a>
+<a name='L436'></a><a href='#L436'>436</a>
+<a name='L437'></a><a href='#L437'>437</a>
+<a name='L438'></a><a href='#L438'>438</a>
+<a name='L439'></a><a href='#L439'>439</a>
+<a name='L440'></a><a href='#L440'>440</a>
+<a name='L441'></a><a href='#L441'>441</a>
+<a name='L442'></a><a href='#L442'>442</a>
+<a name='L443'></a><a href='#L443'>443</a>
+<a name='L444'></a><a href='#L444'>444</a>
+<a name='L445'></a><a href='#L445'>445</a>
+<a name='L446'></a><a href='#L446'>446</a>
+<a name='L447'></a><a href='#L447'>447</a>
+<a name='L448'></a><a href='#L448'>448</a>
+<a name='L449'></a><a href='#L449'>449</a>
+<a name='L450'></a><a href='#L450'>450</a>
+<a name='L451'></a><a href='#L451'>451</a>
+<a name='L452'></a><a href='#L452'>452</a>
+<a name='L453'></a><a href='#L453'>453</a>
+<a name='L454'></a><a href='#L454'>454</a>
+<a name='L455'></a><a href='#L455'>455</a>
+<a name='L456'></a><a href='#L456'>456</a>
+<a name='L457'></a><a href='#L457'>457</a>
+<a name='L458'></a><a href='#L458'>458</a>
+<a name='L459'></a><a href='#L459'>459</a>
+<a name='L460'></a><a href='#L460'>460</a>
+<a name='L461'></a><a href='#L461'>461</a>
+<a name='L462'></a><a href='#L462'>462</a>
+<a name='L463'></a><a href='#L463'>463</a>
+<a name='L464'></a><a href='#L464'>464</a>
+<a name='L465'></a><a href='#L465'>465</a>
+<a name='L466'></a><a href='#L466'>466</a>
+<a name='L467'></a><a href='#L467'>467</a>
+<a name='L468'></a><a href='#L468'>468</a>
+<a name='L469'></a><a href='#L469'>469</a>
+<a name='L470'></a><a href='#L470'>470</a>
+<a name='L471'></a><a href='#L471'>471</a>
+<a name='L472'></a><a href='#L472'>472</a>
+<a name='L473'></a><a href='#L473'>473</a>
+<a name='L474'></a><a href='#L474'>474</a>
+<a name='L475'></a><a href='#L475'>475</a>
+<a name='L476'></a><a href='#L476'>476</a>
+<a name='L477'></a><a href='#L477'>477</a>
+<a name='L478'></a><a href='#L478'>478</a>
+<a name='L479'></a><a href='#L479'>479</a>
+<a name='L480'></a><a href='#L480'>480</a>
+<a name='L481'></a><a href='#L481'>481</a>
+<a name='L482'></a><a href='#L482'>482</a>
+<a name='L483'></a><a href='#L483'>483</a>
+<a name='L484'></a><a href='#L484'>484</a>
+<a name='L485'></a><a href='#L485'>485</a>
+<a name='L486'></a><a href='#L486'>486</a>
+<a name='L487'></a><a href='#L487'>487</a>
+<a name='L488'></a><a href='#L488'>488</a>
+<a name='L489'></a><a href='#L489'>489</a>
+<a name='L490'></a><a href='#L490'>490</a>
+<a name='L491'></a><a href='#L491'>491</a>
+<a name='L492'></a><a href='#L492'>492</a>
+<a name='L493'></a><a href='#L493'>493</a>
+<a name='L494'></a><a href='#L494'>494</a>
+<a name='L495'></a><a href='#L495'>495</a>
+<a name='L496'></a><a href='#L496'>496</a>
+<a name='L497'></a><a href='#L497'>497</a>
+<a name='L498'></a><a href='#L498'>498</a>
+<a name='L499'></a><a href='#L499'>499</a>
+<a name='L500'></a><a href='#L500'>500</a>
+<a name='L501'></a><a href='#L501'>501</a>
+<a name='L502'></a><a href='#L502'>502</a>
+<a name='L503'></a><a href='#L503'>503</a>
+<a name='L504'></a><a href='#L504'>504</a>
+<a name='L505'></a><a href='#L505'>505</a>
+<a name='L506'></a><a href='#L506'>506</a>
+<a name='L507'></a><a href='#L507'>507</a>
+<a name='L508'></a><a href='#L508'>508</a>
+<a name='L509'></a><a href='#L509'>509</a>
+<a name='L510'></a><a href='#L510'>510</a>
+<a name='L511'></a><a href='#L511'>511</a>
+<a name='L512'></a><a href='#L512'>512</a>
+<a name='L513'></a><a href='#L513'>513</a>
+<a name='L514'></a><a href='#L514'>514</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">69x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">66x</span>
+<span class="cline-any cline-yes">66x</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">78x</span>
+<span class="cline-any cline-yes">78x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Pricing-strategy kernel — DETERMINISTIC money math for the supplier-pricing
+ * module. The LLM parser only EXTRACTS + CLASSIFIES each supplier line (grams,
+ * unitKind, askKind, askValue); all cost/margin arithmetic lives here so it is
+ * testable and never hallucinated (mirrors the order-pricing kernel split).
+ *
+ * Units: spot is XAU. 1 troy oz = 31.1035 g (TROY_OZ). Supplier asks are USD;
+ * we convert to SGD with the live USD→SGD rate. Landed cost adds configurable
+ * shipping (flat fee + per-gram rate).
+ *
+ * The brief's CRITICAL caveat — how to read the supplier "ask":
+ *   unitKind 'per_piece' ($ per bar/piece, gram bars + multigram):
+ *       itemCostUsd = spotUsdPerG × grams + askDollar
+ *       e.g. 1g $13 → spot/g + 13 ;  10g $21 → spot/g×10 + 21 ;  12×1g $100 → spot/g×12 + 100
+ *   unitKind 'per_oz' ($ premium per troy oz, oz bars):
+ *       itemCostUsd = (spotUsdPerOz + askDollar) × ozCount      (ozCount = grams/TROY_OZ)
+ *       e.g. 1oz $45 → (spot/oz + 45)×1
+ *   unitKind 'percent' (% of spot per oz, coins quoted like 103.15%):
+ *       itemCostUsd = spotUsdPerG × grams × (askPercent/100)    (the % already INCLUDES spot)
+ *       e.g. 1oz coin 103.15% → spot/oz × 1.0315
+ */
+&nbsp;
+import { TROY_OZ } from "@/lib/utils";
+&nbsp;
+export type UnitKind = "per_piece" | "per_oz" | "percent";
+export type AskKind = "dollar" | "percent" | "none";
+export type MarginStatus = "green" | "amber" | "red";
+&nbsp;
+export interface ShippingConfig {
+  flatFeeUsd: number;     // per-shipment shipping flat fee (USD)
+  perGramFeeUsd: number;  // per-gram shipping/handling (USD)
+  wireFeeUsd?: number;    // per-shipment wire-transfer flat fee (USD) — spread like the flat fee
+  // Bank FX spread: SGD charged ABOVE the live mid-market rate per USD wired (e.g.
+  // bank 1.2862 − live 1.2840 = 0.0022). Applied to the whole landed USD on convert.
+  fxMarkupSgdPerUsd?: number;
+}
+&nbsp;
+export interface SpotContext {
+  spotUsdPerOz: number;   // XAU/USD per troy oz
+  usdToSgd: number;       // 1 USD = X SGD
+}
+&nbsp;
+export interface SupplierLineInput {
+  grams: number;          // canonical grams of metal content
+  unitKind: UnitKind;
+  askKind: AskKind;
+  askValue: number | null; // USD amount, or percent (e.g. 103.15), null if no ask
+}
+&nbsp;
+export interface LandedCost {
+  itemCostUsd: number;        // supplier cost for the whole PIECE (before shipping)
+  shippingPerGramUsd: number; // per-gram fee + the flat fee's per-gram share
+  landedPerGramUsd: number;
+  landedPerGramSgd: number;
+  landedPerPieceSgd: number;  // landedPerGramSgd × the piece's grams
+  // ── Per-PIECE breakdown for the Supplier-Sheet table (USD + SGD sides) ──
+  // The columns split landed into "supplier price" + "shipping &amp; currency charges".
+  // On the SGD side, the currency-charges bucket ALSO absorbs the FX markup, so the
+  // three columns stay internally consistent: supplierSgd + shipping&amp;fxSgd = landedSgd.
+  shippingPerPieceUsd: number;        // shippingPerGramUsd × grams
+  landedPerPieceUsd: number;          // landedPerGramUsd × grams
+  itemCostSgd: number;                // itemCostUsd × the live mid rate (no FX markup)
+  shippingPlusFxPerPieceSgd: number;  // landedPerPieceSgd − itemCostSgd (shipping + FX markup)
+  // ── Quote-builder decomposition (2026-08-01) ──────────────────────────────
+  // The Quote Builder absorbs the flat shipping + wire fee and spreads it BY QTY
+  // (per piece) over the ACTUAL quote — not a fixed order size — because that's
+  // the only allocation that doesn't distort a thin-premium large bar (a fixed
+  // fee spread by weight/value scales WITH value and doubles a 1%-premium 100g
+  // bar; by piece it's inverse to value, so cheap small bars — already
+  // wide-premium — absorb it and big low-premium bars stay near spot). These two
+  // fields let the quote re-amortise: cost EX the flat freight (composition-
+  // independent, includes per-gram fee + FX markup), and the flat freight for
+  // ONE shipment in SGD (flat + wire, converted at the FX-marked rate).
+  costExFlatFreightPerPieceSgd: number;  // (item + per-gram fee) × grams × (rate + fx markup)
+  flatFreightPerShipmentSgd: number;     // (flat fee + wire fee) × (rate + fx markup)
+}
+&nbsp;
+export const spotUsdPerGram = (spotUsdPerOz: number): number =&gt; spotUsdPerOz / TROY_OZ;
+&nbsp;
+/**
+ * Supplier cost for the whole item (USD), BEFORE shipping, per the caveat table.
+ * Returns null when the line has no usable ask (askKind 'none' / null value).
+ */
+export function itemCostUsd(line: SupplierLineInput, spot: SpotContext): number | null {
+  const { grams, unitKind, askKind, askValue } = line;
+  if (askKind === "none" || askValue == null || !Number.isFinite(askValue)) return null;
+  if (!Number.isFinite(grams) || grams &lt;= 0) return null;
+&nbsp;
+  const spotG = spotUsdPerGram(spot.spotUsdPerOz);
+  const ozCount = grams / TROY_OZ;
+&nbsp;
+  switch (unitKind) {
+    case "per_piece":
+      // $ premium for the whole piece, added to the metal value.
+      return spotG * grams + askValue;
+    case "per_oz":
+      // $ premium per troy oz, added to spot/oz, scaled by oz content.
+      return (spot.spotUsdPerOz + askValue) * ozCount;
+    case "percent":
+      // ask is the TOTAL price as a % of spot (includes spot), per oz of content.
+      return spotG * grams * (askValue / 100);
+  }
+}
+&nbsp;
+/**
+ * Landed cost per gram (and per piece), in USD and SGD.
+ *
+ * Shipping/fees have these parts:
+ *  • per-gram fee — a per-gram cost, added to every gram directly.
+ *  • flat fee + wire-transfer fee — PER-SHIPMENT costs. Both are spread over
+ *    `gramsOrdered` (the total order quantity), NOT over a single piece's weight
+ *    — otherwise the $250 flat fee lands entirely on a 1g bar (→ absurd per-gram
+ *    cost). `gramsOrdered` defaults to the piece's own grams when not supplied.
+ *  • FX markup — the bank's spread over the live mid-market USD→SGD rate. The
+ *    whole landed USD is wired and converted at (live + markup), so it applies
+ *    proportionally to item + shipping + wire.
+ */
+export function computeLandedCost(
+  line: SupplierLineInput,
+  spot: SpotContext,
+  shipping: ShippingConfig,
+  gramsOrdered?: number,
+): LandedCost | null {
+  const item = itemCostUsd(line, spot);
+  if (item == null) return null;
+  const orderG = gramsOrdered &amp;&amp; gramsOrdered &gt; 0 ? gramsOrdered : line.grams;
+  // Flat shipping fee + flat wire-transfer fee both spread over the order.
+  const flatTotalUsd = Math.max(0, shipping.flatFeeUsd) + Math.max(0, shipping.wireFeeUsd ?? 0);
+  const flatPerGramUsd = flatTotalUsd / orderG;
+  const shippingPerGramUsd = Math.max(0, shipping.perGramFeeUsd) + flatPerGramUsd;
+  const landedPerGramUsd = item / line.grams + shippingPerGramUsd;
+  const effectiveUsdToSgd = spot.usdToSgd + Math.max(0, shipping.fxMarkupSgdPerUsd ?? 0);
+  const landedPerGramSgd = landedPerGramUsd * effectiveUsdToSgd;
+  const landedPerPieceSgd = landedPerGramSgd * line.grams;
+  const itemCostSgd = item * spot.usdToSgd; // supplier price at the live mid rate (markup lives in the shipping&amp;currency bucket)
+  // Cost EXCLUDING the flat (shipment) freight — item + per-gram fee, at the
+  // FX-marked rate. Composition-independent, so the quote builder can add the
+  // by-qty flat-freight share on top.
+  const exFlatPerGramUsd = item / line.grams + Math.max(0, shipping.perGramFeeUsd);
+  const costExFlatFreightPerPieceSgd = exFlatPerGramUsd * line.grams * effectiveUsdToSgd;
+  return {
+    itemCostUsd: item,
+    shippingPerGramUsd,
+    landedPerGramUsd,
+    landedPerGramSgd,
+    landedPerPieceSgd,
+    shippingPerPieceUsd: shippingPerGramUsd * line.grams,
+    landedPerPieceUsd: landedPerGramUsd * line.grams,
+    itemCostSgd,
+    shippingPlusFxPerPieceSgd: landedPerPieceSgd - itemCostSgd,
+    costExFlatFreightPerPieceSgd,
+    flatFreightPerShipmentSgd: flatTotalUsd * effectiveUsdToSgd,
+  };
+}
+&nbsp;
+/** Premium over spot for a per-gram SGD price, as a percentage. */
+export function premiumOverSpotPct(perGramSgd: number, spotSgdPerGram: number): number {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (spotSgdPerGram &lt;= 0) <span class="cstat-no" title="statement not covered" >return 0;</span>
+  return (perGramSgd / spotSgdPerGram - 1) * 100;
+}
+&nbsp;
+/** Gross margin % = (price − cost) / price. */
+export function grossMarginPct(pricePerGram: number, costPerGram: number): number {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (pricePerGram &lt;= 0) <span class="cstat-no" title="statement not covered" >return 0;</span>
+  return ((pricePerGram - costPerGram) / pricePerGram) * 100;
+}
+&nbsp;
+// ── Retail margin floor (shared policy) ─────────────────────────────────────
+&nbsp;
+/**
+ * Hard floor on the retail gross margin any AUTOMATED premium proposal may
+ * imply. Lives here, in the pricing library, so every producer of premium
+ * proposals shares one definition — there is exactly one today
+ * (`/api/cron/pricing-strategist`), and this is where a second one would find it
+ * rather than re-deriving the rule.
+ *
+ * Why it is code and not prompt prose: on 2026-08-16 the pricing_strategist filed
+ * a 10g proposal implying ~1.5% gross margin while its prompt asked for ≥4% — its
+ * own rationale said "preserving a ~1.5% gross margin". A money rule stated only
+ * in a prompt does not hold. Agent contract §0.2 — math is code.
+ *
+ * NOTE this bounds what an AGENT may PROPOSE. It is deliberately NOT applied to
+ * the operator's own premium edits: 1g CombiBars are a deliberate loss-leader
+ * selling below landed cost (accepted policy, 2026-08-12), and premium writes are
+ * human-gated by design (§0.4). See `docs/pricing-benchmark-redesign.md`.
+ */
+export const MIN_RETAIL_GROSS_MARGIN_PCT = 4;
+&nbsp;
+/** Gross margin on revenue implied by a premium over spot, given landed cost. */
+export function impliedRetailMarginPct(
+  premiumPct: number,
+  spotSgdPerGram: number,
+  costSgdPerGram: number,
+): number | null {
+  const retail = spotSgdPerGram * (1 + premiumPct / 100);
+  if (!Number.isFinite(retail) || retail &lt;= 0) return null;
+  return ((retail - costSgdPerGram) / retail) * 100;
+}
+&nbsp;
+/**
+ * May an automated proposal at this premium be filed?
+ *
+ * **Fails CLOSED** — when the margin cannot be computed (non-positive retail,
+ * missing inputs) the answer is `false`. This is a money rule: "we could not
+ * check" must not read as "it passed". Callers distinguish the two by testing
+ * `impliedMarginPct == null` (unevaluable) vs a number below the floor.
+ */
+export function passesRetailMarginFloor(
+  premiumPct: number,
+  spotSgdPerGram: number,
+  costSgdPerGram: number,
+  floorPct: number = MIN_RETAIL_GROSS_MARGIN_PCT,
+): { ok: boolean; impliedMarginPct: number | null } {
+  const m = impliedRetailMarginPct(premiumPct, spotSgdPerGram, costSgdPerGram);
+  return { ok: m != null &amp;&amp; m &gt;= floorPct, impliedMarginPct: m };
+}
+&nbsp;
+/** Below this, a premium move is churn rather than a decision worth an operator tap. */
+export const MIN_PREMIUM_DELTA_PCT = 0.5;
+&nbsp;
+/** The shape any premium proposal must have to be gated (agent output, validated). */
+export interface GateablePremiumProposal {
+  grams: number;
+  label: string;
+  currentPremiumPct: number;
+  proposedPremiumPct: number;
+  direction: "raise" | "lower" | "hold";
+}
+&nbsp;
+export interface ProposalGateResult&lt;T&gt; {
+  /** Proposals that cleared every gate — the only ones a caller may file. */
+  allowed: T[];
+  /** Dropped for implying a retail gross margin under the floor. */
+  blockedByFloor: Array&lt;{ grams: number; label: string; proposedPremiumPct: number; impliedMarginPct: number }&gt;;
+  /**
+   * Dropped because the floor could NOT be evaluated — no landed cost for that
+   * size, or no spot. Surfaced separately from `blockedByFloor` because it means
+   * "we could not check", not "we checked and it failed"; a non-zero count here
+   * is a data-quality signal (a product with no cost basis) rather than a pricing
+   * one, and the operator should be able to tell the two apart.
+   */
+  blockedNoCostBasis: Array&lt;{ grams: number; label: string; proposedPremiumPct: number }&gt;;
+  /** Dropped as a hold or a sub-threshold move. */
+  droppedAsChurn: number;
+}
+&nbsp;
+/**
+ * THE gate every producer of automated premium proposals must pass its output
+ * through before writing anything. Enforcement lives here, in the pricing library
+ * — not in a route — so a second producer inherits it by construction rather than
+ * by remembering to re-implement it. Pure and synchronous; the caller does the I/O.
+ *
+ * Gates, in order: drop holds → drop sub-`MIN_PREMIUM_DELTA_PCT` churn → drop
+ * anything implying a retail gross margin below `floorPct`.
+ *
+ * `costByGrams` should carry the HIGHEST landed cost among products sharing a
+ * size: proposals are per-size and a per-denomination curve premium covers every
+ * product at that gram, so the dearest one binds.
+ *
+ * **FAILS CLOSED.** A size with no landed cost, or a null spot, cannot be
+ * evaluated — and an unevaluable proposal is withheld, not passed through
+ * (`blockedNoCostBasis`). An earlier cut of this failed OPEN on the reasoning
+ * that "nothing to floor against is not a reason to drop a proposal"; that is the
+ * wrong default for a money rule, because the case where cost is unknown is
+ * exactly the case where we cannot tell whether the price is profitable
+ * (security_agent_pr, 2026-08-16). The cost of failing closed is a withheld
+ * proposal, visible in the counter; the cost of failing open is an unpriceable
+ * product reaching the queue unchecked.
+ *
+ * Why this is code and not prompt prose: on 2026-08-16 pricing_strategist filed a
+ * 10g proposal implying ~1.5% gross margin while its prompt asked for ≥4%, its own
+ * rationale saying "preserving a ~1.5% gross margin". Agent contract §0.2 — math
+ * is code. See `docs/pricing-benchmark-redesign.md`.
+ */
+export function gatePremiumProposals&lt;T extends GateablePremiumProposal&gt;(
+  proposals: T[],
+  ctx: {
+    spotSgdPerGram: number | null;
+    costByGrams: Map&lt;number, number&gt;;
+    floorPct?: number;
+    minDeltaPct?: number;
+  },
+): ProposalGateResult&lt;T&gt; {
+  const floorPct = ctx.floorPct ?? MIN_RETAIL_GROSS_MARGIN_PCT;
+  const minDelta = ctx.minDeltaPct ?? MIN_PREMIUM_DELTA_PCT;
+  const blockedByFloor: ProposalGateResult&lt;T&gt;["blockedByFloor"] = [];
+  const blockedNoCostBasis: ProposalGateResult&lt;T&gt;["blockedNoCostBasis"] = [];
+  let droppedAsChurn = 0;
+&nbsp;
+  const allowed = (proposals ?? []).filter((p) =&gt; {
+    if (p.direction === "hold"
+      || !Number.isFinite(p.proposedPremiumPct)
+      || Math.abs(p.proposedPremiumPct - p.currentPremiumPct) &lt; minDelta) {
+      droppedAsChurn++;
+      return false;
+    }
+    const cost = ctx.costByGrams.get(p.grams);
+    const { ok, impliedMarginPct } = cost != null &amp;&amp; ctx.spotSgdPerGram != null
+      ? passesRetailMarginFloor(p.proposedPremiumPct, ctx.spotSgdPerGram, cost, floorPct)
+      : { ok: false, impliedMarginPct: null };
+    if (ok) return true;
+    if (impliedMarginPct == null) {
+      // Could not evaluate — withhold, and say so distinctly.
+      blockedNoCostBasis.push({ grams: p.grams, label: p.label, proposedPremiumPct: p.proposedPremiumPct });
+      return false;
+    }
+    blockedByFloor.push({
+      grams: p.grams, label: p.label, proposedPremiumPct: p.proposedPremiumPct,
+      impliedMarginPct: Number(impliedMarginPct.toFixed(2)),
+    });
+    return false;
+  });
+&nbsp;
+  return { allowed, blockedByFloor, blockedNoCostBasis, droppedAsChurn };
+}
+&nbsp;
+// ── Three-tier model (all per-gram SGD) ─────────────────────────────────────
+&nbsp;
+export interface TierInputs {
+  tier1CostSgd: number;          // landed cost/g (Tier 1 — Your Cost)
+  spotSgdPerGram: number;        // live spot SGD/g
+  wholesaleMarginPct: number;    // Tier 2 markup over Tier 1
+  currentPremiumPct: number;     // the product's current premium over spot (Tier 3 retail basis)
+  cheapestCompetitorSgd?: number | null; // graded competitor benchmark per-gram SGD for this size (if any)
+  /** Is the benchmark LIKE-FOR-LIKE (E/S/R grade)? Only a comparable benchmark may
+   *  drive the amber `undercut` status — a WEIGHT-grade number is the cheapest
+   *  DIFFERENT product at that weight, so "we are dearer" says nothing about our
+   *  pricing. Defaults true so existing callers keep their behaviour until they
+   *  pass it. See `docs/pricing-benchmark-redesign.md` (2026-08-16). */
+  competitorComparable?: boolean;
+  amberWholesaleFloorPct: number;
+}
+&nbsp;
+export interface TierResult {
+  tier1CostSgd: number;
+  tier2WholesaleSgd: number;
+  tier3RetailSgd: number;          // current retail = spot × (1 + current premium)
+  suggestiveRetailSgd: number;     // landed cost × (1 + current premium) — cost-plus view
+  tier1PremiumPct: number;
+  tier2PremiumPct: number;
+  tier3PremiumPct: number;
+  wholesaleMarginPct: number;
+  retailMarginPct: number;
+  vsBestCompetitorPct: number | null; // our retail vs cheapest competitor (+ = we're dearer)
+  status: MarginStatus;
+}
+&nbsp;
+export function computeTiers(t: TierInputs): TierResult {
+  const tier1 = t.tier1CostSgd;
+  const tier2 = tier1 * (1 + t.wholesaleMarginPct / 100);
+  const tier3 = t.spotSgdPerGram * (1 + t.currentPremiumPct / 100);
+  const suggestive = tier1 * (1 + t.currentPremiumPct / 100);
+&nbsp;
+  const wholesaleMargin = grossMarginPct(tier2, tier1);
+  const retailMargin = grossMarginPct(tier3, tier1);
+&nbsp;
+  const comp = t.cheapestCompetitorSgd ?? null;
+  const vsBest = comp != null &amp;&amp; comp &gt; 0 ? (tier3 / comp - 1) * 100 : null;
+&nbsp;
+  return {
+    tier1CostSgd: tier1,
+    tier2WholesaleSgd: tier2,
+    tier3RetailSgd: tier3,
+    suggestiveRetailSgd: suggestive,
+    tier1PremiumPct: premiumOverSpotPct(tier1, t.spotSgdPerGram),
+    tier2PremiumPct: premiumOverSpotPct(tier2, t.spotSgdPerGram),
+    tier3PremiumPct: premiumOverSpotPct(tier3, t.spotSgdPerGram),
+    wholesaleMarginPct: wholesaleMargin,
+    retailMarginPct: retailMargin,
+    vsBestCompetitorPct: vsBest,
+    status: marginStatus(tier3, tier2, comp, wholesaleMargin, t.amberWholesaleFloorPct, t.competitorComparable ?? true),
+  };
+}
+&nbsp;
+/**
+ * Status per the brief:
+ *  • Red   — retail below wholesale (selling at a loss / near-zero margin).
+ *  • Amber — retail above the cheapest competitor (being undercut), OR wholesale
+ *            margin below the configured floor.
+ *  • Green — retail below cheapest competitor and above wholesale, margin healthy.
+ */
+/**
+ * @param competitorComparable — when false the benchmark is only the cheapest
+ *   DIFFERENT product at this weight (WEIGHT grade), so it must not raise amber.
+ *   Defaults true to preserve existing callers.
+ */
+export function marginStatus(
+  tier3Retail: number,
+  tier2Wholesale: number,
+  cheapestCompetitorSgd: number | null,
+  wholesaleMarginPct: number,
+  amberFloorPct: number,
+  competitorComparable: boolean = true,
+): MarginStatus {
+  if (tier3Retail &lt; tier2Wholesale) return "red";
+  const undercut = competitorComparable &amp;&amp; cheapestCompetitorSgd != null &amp;&amp; cheapestCompetitorSgd &gt; 0 &amp;&amp; tier3Retail &gt; cheapestCompetitorSgd;
+  if (undercut || wholesaleMarginPct &lt; amberFloorPct) return "amber";
+  return "green";
+}
+&nbsp;
+// ── Per-denomination margin CURVE model (Three-Tier Strategy, 2026-06-14) ─────
+// Margin varies by denomination (1g ~23% → 100g ~3.5%), so the control is a curve
+// of anchors by gram, interpolated for in-between sizes (same log-space interp as
+// the shop premium curve). Decision "Both": premium-over-spot DRIVES the price
+// (price = spot × (1+premium)); separate margin-over-cost FLOORS guard (amber).
+&nbsp;
+export interface CurveAnchor { grams: number; value: number }
+&nbsp;
+/**
+ * Log-space linear interpolation across curve anchors, clamped flat beyond the
+ * ends. Mirrors `getPremiumForWeight` so the strategy curve behaves like the shop
+ * premium curve. Returns 0 if there are no usable anchors.
+ */
+export function interpAnchors(grams: number, anchors: CurveAnchor[]): number {
+  const sorted = anchors
+    .filter((a) =&gt; a.grams &gt; 0 &amp;&amp; Number.isFinite(a.value))
+    .sort((a, b) =&gt; a.grams - b.grams);
+  if (sorted.length === 0) return 0;
+  if (grams &lt;= sorted[0].grams) return sorted[0].value;
+  const last = sorted[sorted.length - 1];
+  if (grams &gt;= last.grams) return last.value;
+  for (let i = 0; i &lt; sorted.length - 1; i++) {
+    const a = sorted[i], b = sorted[i + 1];
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (grams &gt;= a.grams &amp;&amp; grams &lt;= b.grams) {
+      const t = (Math.log(grams) - Math.log(a.grams)) / (Math.log(b.grams) - Math.log(a.grams));
+      return a.value + t * (b.value - a.value);
+    }
+  }
+<span class="cstat-no" title="statement not covered" >  return last.value;</span>
+}
+&nbsp;
+export interface CurveTierInputs {
+  costSgdPerGram: number;            // landed cost SGD/g
+  grams: number;
+  spotSgdPerGram: number;
+  retailPremiumPct: number;          // over spot (resolved for this grams) → retail price
+  wholesalePremiumPct: number;       // over spot → wholesale price
+  retailFloorPct: number;            // min gross margin over cost (amber below)
+  wholesaleFloorPct: number;         // min gross margin over cost (amber below)
+  cheapestCompetitorSgd?: number | null;
+  /** Like-for-like (E/S/R) benchmark? Only then may it drive amber — see TierInputs. */
+  competitorComparable?: boolean;
+  currentRetailPremiumPct?: number | null;    // from products (display only)
+  currentWholesalePremiumPct?: number | null; // from products (display only)
+}
+&nbsp;
+export interface CurveTierResult {
+  costPerGramSgd: number;
+  wholesalePerGramSgd: number;
+  retailPerGramSgd: number;
+  costPerPieceSgd: number;
+  wholesalePerPieceSgd: number;
+  retailPerPieceSgd: number;
+  costPremiumPct: number;            // cost over spot (derived)
+  retailPremiumPct: number;          // over spot (echo of the resolved curve)
+  wholesalePremiumPct: number;       // over spot (echo)
+  wholesaleMarginPct: number;        // premium SPREAD = wholesale premium − cost premium (pts over spot)
+  retailMarginPct: number;           // premium SPREAD = retail premium − cost premium (pts over spot)
+  retailFloorPct: number;            // echo of the resolved floor
+  wholesaleFloorPct: number;         // echo
+  currentRetailPremiumPct: number | null;
+  currentWholesalePremiumPct: number | null;
+  vsBestCompetitorPct: number | null;
+  status: MarginStatus;
+}
+&nbsp;
+export function computeCurveTiers(t: CurveTierInputs): CurveTierResult {
+  const spot = t.spotSgdPerGram;
+  const cost = t.costSgdPerGram;
+  const retail = spot * (1 + t.retailPremiumPct / 100);
+  const wholesale = spot * (1 + t.wholesalePremiumPct / 100);
+&nbsp;
+  // "Margin" = premium SPREAD over cost, in points over spot ((price − cost) / spot),
+  // i.e. sell premium − cost premium. This is how gold pricing is reasoned about
+  // (buy at +11.8%, sell at +15% → 3.2 pts) and the floors are set in the same unit.
+  const costPremiumPct = premiumOverSpotPct(cost, spot);
+  const retailMargin = t.retailPremiumPct - costPremiumPct;
+  const wholesaleMargin = t.wholesalePremiumPct - costPremiumPct;
+&nbsp;
+  const comp = t.cheapestCompetitorSgd ?? <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+  const vsBest = comp != null &amp;&amp; comp &gt; 0 ? (retail / comp - 1) * 100 : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+&nbsp;
+  // Red — retail below wholesale (mispriced) OR below cost (true loss). Amber —
+  // undercut by a competitor OR a margin under its per-denomination floor. Else green.
+  let status: MarginStatus;
+  if (retail &lt; wholesale || retail &lt; cost) {
+    status = "red";
+  } else {
+    const undercut = (t.competitorComparable ?? true) &amp;&amp; comp != null &amp;&amp; comp &gt; 0 &amp;&amp; retail &gt; comp;
+    const thin = retailMargin &lt; t.retailFloorPct || wholesaleMargin &lt; t.wholesaleFloorPct;
+    status = undercut || thin ? "amber" : "green";
+  }
+&nbsp;
+  return {
+    costPerGramSgd: cost,
+    wholesalePerGramSgd: wholesale,
+    retailPerGramSgd: retail,
+    costPerPieceSgd: cost * t.grams,
+    wholesalePerPieceSgd: wholesale * t.grams,
+    retailPerPieceSgd: retail * t.grams,
+    costPremiumPct,
+    retailPremiumPct: t.retailPremiumPct,
+    wholesalePremiumPct: t.wholesalePremiumPct,
+    wholesaleMarginPct: wholesaleMargin,
+    retailMarginPct: retailMargin,
+    retailFloorPct: t.retailFloorPct,
+    wholesaleFloorPct: t.wholesaleFloorPct,
+    currentRetailPremiumPct: t.currentRetailPremiumPct ?? null,
+    currentWholesalePremiumPct: t.currentWholesalePremiumPct ?? null,
+    vsBestCompetitorPct: vsBest,
+    status,
+  };
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-09-06T03:51:53.260Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

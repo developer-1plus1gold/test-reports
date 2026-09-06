@@ -1,0 +1,439 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/app/api/cron/vault-audit-reminder/route.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/app/api/cron/vault-audit-reminder</a> route.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">21.62% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>8/37</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">14.28% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>4/28</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">25% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>1/4</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">21.21% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>7/33</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * GET /api/cron/vault-audit-reminder
+ *
+ * Monthly operational reminder for the vault custody audit promise. The v1.1
+ * custody agreement commits us to a month-end reconciliation of every
+ * customer's in-custody holdings (plus on-demand audits). This cron makes sure
+ * that promise is actually kept: on the 1st of each month it finds every
+ * customer holding gold in custody who has NOT had an audit logged in the month
+ * just ended, files a Control Tower `notify` item, and WhatsApps the admin team.
+ * Admin then signs each audit via Admin → Vault → "New audit".
+ *
+ * Admin-reminder only (Mukesh's call 2026-06-27). Customer-facing "your
+ * statement is ready" notification is Phase-2 post-launch.
+ *
+ * Reuses existing infra: vault_holdings (IN_CUSTODY_STATUSES) + vault_audits +
+ * agent_decisions (Control Tower) + sendAdminAlert. Scheduled `0 2 1 * *`
+ * (02:00 UTC on the 1st — day-of-month crons fire reliably, unlike the
+ * day-of-week one that silently stalled; see planner-heartbeat).
+ */
+&nbsp;
+import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
+import { verifyCronAuth } from "@/lib/cron-auth";
+import { isProd } from "@/lib/env";
+import { safeError } from "@/lib/safe-error";
+import { recordCronRun } from "@/lib/cron-runs";
+import { sendAdminAlert } from "@/lib/twilio";
+import { getAdminPhonesCsv } from "@/lib/admin-team";
+import { IN_CUSTODY_STATUSES } from "@/lib/vault/liquidation";
+import { groupInCustodyByCustomer, resolveDueCustomers, auditPeriodStartIso } from "@/lib/vault/audit-reminder";
+&nbsp;
+const supabaseAdmin = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_KEY!,
+);
+&nbsp;
+export async function GET(req: NextRequest) {
+  const denied = verifyCronAuth(req);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (denied) <span class="cstat-no" title="statement not covered" >return denied;</span>
+  // Newsletter + audit crons are PROD-only. The DEV Vercel project also
+  // registers vercel.json crons, which fired these on the 1st and pinged
+  // Mukesh from DEV. Gate to prod so DEV never generates/notifies.
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (!isProd()) return NextResponse.json({ ok: true, skipped: "non-prod" });
+&nbsp;
+  // 1. Every customer currently holding gold in custody, with grams + count.
+  const { data: holdings, error: hErr } = <span class="cstat-no" title="statement not covered" >await supabaseAdmin</span>
+    .from("vault_holdings")
+    .select("customer_id, grams")
+    .in("status", [...IN_CUSTODY_STATUSES]);
+<span class="cstat-no" title="statement not covered" >  if (hErr) {</span>
+    // Don't leak raw Supabase error text (table/column/constraint names) even
+    // behind cron auth — log server-side + return a correlation id.
+<span class="cstat-no" title="statement not covered" >    await recordCronRun(supabaseAdmin, "vault-audit-reminder", "error", "holdings_fetch_failed");</span>
+<span class="cstat-no" title="statement not covered" >    return NextResponse.json({ ok: false, ...safeError(hErr, "cron/vault-audit-reminder", "holdings_fetch_failed") }, { status: 500 });</span>
+  }
+&nbsp;
+  const <span class="cstat-no" title="statement not covered" >byCustomer = groupInCustodyByCustomer(</span>
+    (holdings ?? []) as Array&lt;{ customer_id: string; grams: number | string }&gt;,
+  );
+  const customerIds = [...byCustomer.keys()];
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (customerIds.length === 0) {
+<span class="cstat-no" title="statement not covered" >    await recordCronRun(supabaseAdmin, "vault-audit-reminder", "ok", "no in-custody holdings");</span>
+<span class="cstat-no" title="statement not covered" >    return NextResponse.json({ ok: true, due: 0, reason: "no in-custody holdings" });</span>
+  }
+&nbsp;
+  // 2. Who already has an audit logged in the period (the month just ended →
+  //    we run on the 1st, so "since the start of last month" covers it).
+  const <span class="cstat-no" title="statement not covered" >periodStart = auditPeriodStartIso(Date.now());</span>
+  const { data: audits, error: aErr } = <span class="cstat-no" title="statement not covered" >await supabaseAdmin</span>
+    .from("vault_audits")
+    .select("customer_id")
+    .gte("created_at", periodStart)
+    .in("customer_id", customerIds);
+<span class="cstat-no" title="statement not covered" >  if (aErr) {</span>
+<span class="cstat-no" title="statement not covered" >    await recordCronRun(supabaseAdmin, "vault-audit-reminder", "error", "audits_fetch_failed");</span>
+<span class="cstat-no" title="statement not covered" >    return NextResponse.json({ ok: false, ...safeError(aErr, "cron/vault-audit-reminder", "audits_fetch_failed") }, { status: 500 });</span>
+  }
+  const <span class="cstat-no" title="statement not covered" >due = resolveDueCustomers(byCustomer, (audits ?? []).<span class="fstat-no" title="function not covered" >map((a</span>) =&gt; (<span class="cstat-no" title="statement not covered" >a as { customer_id: string }).customer_id)</span>);</span>
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (due.length === 0) {
+<span class="cstat-no" title="statement not covered" >    await recordCronRun(supabaseAdmin, "vault-audit-reminder", "ok", "all in-custody customers audited");</span>
+<span class="cstat-no" title="statement not covered" >    return NextResponse.json({ ok: true, due: 0, reason: "all in-custody customers audited this period" });</span>
+  }
+&nbsp;
+  const totalGrams = <span class="cstat-no" title="statement not covered" >due.<span class="fstat-no" title="function not covered" >reduce((s</span>, id) =&gt; <span class="cstat-no" title="statement not covered" >s + (byCustomer.get(id)?.grams ?? 0), 0</span>);</span>
+  const gramsStr = <span class="cstat-no" title="statement not covered" >totalGrams.toFixed(2);</span>
+&nbsp;
+  // 3. Control Tower notify item (self-surfacing — written at terminal severity).
+  const { data: decision, error: dErr } = <span class="cstat-no" title="statement not covered" >await supabaseAdmin</span>
+    .from("agent_decisions")
+    .insert({
+      agent_name: "vault_custodian",
+      severity: "notify",
+      status: "proposed",
+      summary: `Month-end vault audit due for ${due.length} customer${due.length === 1 ? "" : "s"} (${gramsStr}g in custody). Sign each via Admin → Vault → New audit.`,
+      action_payload: { reason: "monthly_audit_due", customerIds: due, dueCount: due.length, totalGrams },
+      customer_id: null,
+    })
+    .select("id")
+    .single();
+<span class="cstat-no" title="statement not covered" >  if (dErr) {</span>
+<span class="cstat-no" title="statement not covered" >    console.error("[vault-audit-reminder] decision insert failed:", dErr.message);</span>
+  }
+&nbsp;
+  // 4. WhatsApp the admin team (best-effort — a send failure must not 500 the cron).
+  const <span class="cstat-no" title="statement not covered" >adminPhone = getAdminPhonesCsv();</span>
+<span class="cstat-no" title="statement not covered" >  if (adminPhone) {</span>
+<span class="cstat-no" title="statement not covered" >    await sendAdminAlert(</span>
+      adminPhone,
+      "notify",
+      "Vault month-end audits",
+      `${due.length} vault customer${due.length === 1 ? "" : "s"} due for month-end audit (${gramsStr}g in custody). Open Admin → Vault to sign them.`,
+    ).<span class="fstat-no" title="function not covered" >catch((e</span>rr) =&gt; <span class="cstat-no" title="statement not covered" >console.error("[vault-audit-reminder] admin alert failed:", err))</span>;
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  await recordCronRun(supabaseAdmin, "vault-audit-reminder", "ok", `due=${due.length}, grams=${gramsStr}`);</span>
+<span class="cstat-no" title="statement not covered" >  return NextResponse.json({ ok: true, due: due.length, totalGrams, decisionId: decision?.id ?? null });</span>
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-09-06T03:51:53.260Z
+            </div>
+        <script src="../../../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../../../sorter.js"></script>
+        <script src="../../../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

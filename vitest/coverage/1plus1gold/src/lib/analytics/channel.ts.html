@@ -1,0 +1,730 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/analytics/channel.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/analytics</a> channel.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">72.38% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>97/134</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">67.58% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>123/182</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>15/15</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">81.17% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>69/85</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line medium'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Channel resolution — turns a referrer host + UTM params into one of the
+ * marketing channels the acquisition dashboard groups by. Pure + deterministic
+ * so it's fully unit-tested (channel.test.ts). See spec §07.
+ *
+ * The AI-answer channel (chatgpt / perplexity / gemini …) is the GEO/AEO
+ * signal: referral traffic from generative engines.
+ */
+import type { Channel } from "./events";
+&nbsp;
+// Our own hosts — a referrer matching these is internal navigation, not a
+// new acquisition source (treated as continuation, resolves to `direct`).
+const SELF_HOSTS = [
+  "1plus1gold.com",
+  "1plus1.gold",
+  "vercel.app", // preview/prod *.vercel.app aliases
+];
+&nbsp;
+const AI_HOSTS = [
+  "chatgpt.com", "chat.openai.com", "openai.com",
+  "perplexity.ai",
+  "gemini.google.com", "bard.google.com",
+  "copilot.microsoft.com", "bing.com/chat",
+  "claude.ai",
+  "you.com",
+];
+&nbsp;
+const SEARCH_HOSTS = [
+  "google.", "bing.com", "duckduckgo.com", "search.yahoo.com",
+  "ecosia.org", "baidu.com", "search.brave.com", "yandex.",
+  "startpage.com", "qwant.com",
+];
+&nbsp;
+const SOCIAL_HOSTS = [
+  "instagram.com", "l.instagram.com",
+  "facebook.com", "l.facebook.com", "lm.facebook.com", "m.facebook.com", "fb.com", "fb.me",
+  "t.co", "twitter.com", "x.com",
+  "tiktok.com",
+  "linkedin.com", "lnkd.in",
+  "wa.me", "whatsapp.com", "chat.whatsapp.com",
+  "pinterest.com", "youtube.com", "youtu.be",
+  "reddit.com", "t.me", "telegram.org",
+];
+&nbsp;
+/** Normalise a full referrer URL to its bare host (lowercase, no www/port). */
+export function parseReferrerHost(referrer: string | null | undefined): string | null {
+  if (!referrer) return null;
+  try {
+    const h = new URL(referrer).hostname.toLowerCase();
+    return h.replace(/^www\./, "");
+  } catch {
+    return null;
+  }
+}
+&nbsp;
+function matchesAny(host: string, needles: string[]): boolean {
+  return needles.some((n) =&gt; host === n || host.endsWith("." + n) || host.includes(n));
+}
+&nbsp;
+/** True when the referrer host is one of our own domains. */
+export function isSelfHost(host: string | null | undefined): boolean {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!host) <span class="cstat-no" title="statement not covered" >return false;</span>
+  return SELF_HOSTS.some((s) =&gt; host === s || host.endsWith("." + s));
+}
+&nbsp;
+type Utm = { source?: string; medium?: string; campaign?: string } | null | undefined;
+&nbsp;
+/**
+ * A reliable paid-click platform, derived client-side from an ad-click id on the
+ * landing URL (we store the PLATFORM SLUG, never the raw id — no PII).
+ *
+ * Only ids that mean "this was an ad click" qualify:
+ *   - google_ads    ← gclid / gbraid / wbraid  (Google Ads)
+ *   - microsoft_ads ← msclkid                  (Microsoft/Bing Ads)
+ *   - tiktok_ads    ← ttclid                   (TikTok Ads)
+ *
+ * `fbclid` is deliberately NOT here: Facebook stamps it on ORGANIC shares too,
+ * so it is a Facebook-click marker, not a paid one. Treating it as paid would
+ * misattribute every organic Facebook visit.
+ */
+export type AdPlatform = "google_ads" | "microsoft_ads" | "tiktok_ads";
+&nbsp;
+const PAID_MEDIA = ["cpc", "ppc", "paid", "paidsearch", "paid-search", "paid-social", "paidsocial", "display", "cpm", "banner"];
+&nbsp;
+function hasPaidSignal(utm: Utm, adPlatform?: AdPlatform | null): boolean {
+  if (adPlatform) return true;
+  const m = utm?.medium?.toLowerCase() ?? "";
+  return PAID_MEDIA.includes(m);
+}
+&nbsp;
+// ── Platform lookups: which Social / AI / search engine a host belongs to.
+//    Substring match so subdomains (l.instagram.com, m.facebook.com) collapse
+//    to one platform slug. These reuse the same hosts as the *_HOSTS lists —
+//    one home for host→platform so the channel and its sub-source never drift.
+function socialPlatformOfHost(host: string): string | null {
+  const has = (n: string) =&gt; host === n || host.endsWith("." + n) || host.includes(n);
+  if (has("instagram.com")) return "instagram";
+  if (has("facebook.com") || has("fb.com") || has("fb.me")) return "facebook";
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (has("tiktok.com")) <span class="cstat-no" title="statement not covered" >return "tiktok";</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (has("linkedin.com") || has("lnkd.in")) <span class="cstat-no" title="statement not covered" >return "linkedin";</span>
+  if (has("wa.me") || has("whatsapp.com")) return "whatsapp";
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (has("pinterest.com")) <span class="cstat-no" title="statement not covered" >return "pinterest";</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (has("youtube.com") || has("youtu.be")) <span class="cstat-no" title="statement not covered" >return "youtube";</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (has("reddit.com")) <span class="cstat-no" title="statement not covered" >return "reddit";</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (has("t.me") || has("telegram.org")) <span class="cstat-no" title="statement not covered" >return "telegram";</span>
+  if (has("x.com") || has("twitter.com") || host === "t.co") return "x";
+  return null;
+}
+function aiEngineOfHost(host: string): string | null {
+  const has = (n: string) =&gt; host === n || host.endsWith("." + n) || host.includes(n);
+  if (has("chatgpt.com") || has("chat.openai.com") || has("openai.com")) return "chatgpt";
+  if (has("perplexity.ai")) return "perplexity";
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (has("gemini.google.com") || <span class="branch-1 cbranch-no" title="branch not covered" >has("bard.google.com")) r</span>eturn "gemini";
+<span class="cstat-no" title="statement not covered" >  if (has("copilot.microsoft.com") || has("bing.com/chat")) <span class="cstat-no" title="statement not covered" >return "copilot";</span></span>
+<span class="cstat-no" title="statement not covered" >  if (has("claude.ai")) <span class="cstat-no" title="statement not covered" >return "claude";</span></span>
+<span class="cstat-no" title="statement not covered" >  if (has("you.com")) <span class="cstat-no" title="statement not covered" >return "you";</span></span>
+<span class="cstat-no" title="statement not covered" >  return null;</span>
+}
+function searchEngineOfHost(host: string): string | null {
+  const has = (n: string) =&gt; host === n || host.endsWith("." + n) || host.includes(n);
+  if (has("google.")) return "google";
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (has("bing.com")) return "bing";
+<span class="cstat-no" title="statement not covered" >  if (has("duckduckgo.com")) <span class="cstat-no" title="statement not covered" >return "duckduckgo";</span></span>
+<span class="cstat-no" title="statement not covered" >  if (has("search.yahoo.com") || has("yahoo.")) <span class="cstat-no" title="statement not covered" >return "yahoo";</span></span>
+<span class="cstat-no" title="statement not covered" >  if (has("ecosia.org")) <span class="cstat-no" title="statement not covered" >return "ecosia";</span></span>
+<span class="cstat-no" title="statement not covered" >  if (has("baidu.com")) <span class="cstat-no" title="statement not covered" >return "baidu";</span></span>
+<span class="cstat-no" title="statement not covered" >  if (has("search.brave.com")) <span class="cstat-no" title="statement not covered" >return "brave";</span></span>
+<span class="cstat-no" title="statement not covered" >  if (has("yandex.")) <span class="cstat-no" title="statement not covered" >return "yandex";</span></span>
+<span class="cstat-no" title="statement not covered" >  if (has("startpage.com")) <span class="cstat-no" title="statement not covered" >return "startpage";</span></span>
+<span class="cstat-no" title="statement not covered" >  if (has("qwant.com")) <span class="cstat-no" title="statement not covered" >return "qwant";</span></span>
+<span class="cstat-no" title="statement not covered" >  return null;</span>
+}
+&nbsp;
+// Common utm_source tokens → the same canonical platform slug (campaigns often
+// tag utm_source=ig / instagram with no referrer host — honour that too).
+const SOCIAL_TOKENS = new Set(["instagram", "ig", "facebook", "fb", "meta", "tiktok", "tt", "linkedin", "whatsapp", "wa", "pinterest", "youtube", "yt", "reddit", "telegram", "twitter", "x", "snapchat"]);
+const SEARCH_TOKENS = new Set(["google", "bing", "duckduckgo", "ddg", "yahoo", "ecosia", "baidu", "brave", "yandex"]);
+function tokenPlatform(token: string | null): string | null {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!token) <span class="cstat-no" title="statement not covered" >return null;</span>
+  const t = token.toLowerCase().trim();
+  const map: Record&lt;string, string&gt; = {
+    ig: "instagram", fb: "facebook", meta: "facebook", tt: "tiktok", wa: "whatsapp", yt: "youtube", twitter: "x", ddg: "duckduckgo",
+  };
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (map[t]) return map[t];
+<span class="cstat-no" title="statement not covered" >  if (SOCIAL_TOKENS.has(t) || SEARCH_TOKENS.has(t)) <span class="cstat-no" title="statement not covered" >return t;</span></span>
+<span class="cstat-no" title="statement not covered" >  return null;</span>
+}
+&nbsp;
+/**
+ * Resolve the acquisition channel. Precedence: paid signal (ad-click id or paid
+ * UTM medium) → explicit UTM medium → referrer-host classification → UTM
+ * presence (campaign) → direct.
+ */
+export function resolveChannel(input: { referrerHost: string | null; utm?: Utm; adPlatform?: AdPlatform | null }): Channel {
+  const { utm } = input;
+  const host = input.referrerHost;
+&nbsp;
+  if (hasPaidSignal(utm, input.adPlatform)) return "paid";
+&nbsp;
+  const medium = utm?.medium?.toLowerCase();
+  if (medium === "social")               return "social";
+  if (medium === "email" || medium === "newsletter") return "email";
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (medium === "organic")              <span class="cstat-no" title="statement not covered" >return "organic";</span>
+&nbsp;
+  // Referrer host — only meaningful when it's an EXTERNAL host.
+  if (host &amp;&amp; !isSelfHost(host)) {
+    if (matchesAny(host, AI_HOSTS))     return "ai";
+    if (matchesAny(host, SEARCH_HOSTS)) return "organic";
+    if (matchesAny(host, SOCIAL_HOSTS)) return "social";
+    return "referral";
+  }
+&nbsp;
+  // No usable referrer, but a campaign was tagged → treat as referral.
+  if (utm?.source || utm?.medium || utm?.campaign) return "referral";
+&nbsp;
+  return "direct";
+}
+&nbsp;
+/**
+ * Sub-source: the platform WITHIN a channel — which Social (instagram/tiktok/…),
+ * which search engine, which AI engine, paid_search vs paid_social. Lets the
+ * dashboard divide "Social" (and the rest) into the specific platforms without a
+ * second classifier drifting from resolveChannel. null = no meaningful split
+ * (e.g. Direct). Prefers the referrer host, falls back to utm_source.
+ */
+export function resolveSubSource(
+  channel: Channel,
+  input: { referrerHost?: string | null; utm?: Utm; adPlatform?: AdPlatform | null },
+): string | null {
+  const host = (input.referrerHost ?? "").toLowerCase();
+  const src  = input.utm?.source?.toLowerCase().trim() || null;
+  const ad   = input.adPlatform ?? null;
+&nbsp;
+  switch (channel) {
+    case "paid":
+      if (ad === "google_ads" || ad === "microsoft_ads") return "paid_search";
+      if (ad === "tiktok_ads") return "paid_social";
+      if ((src &amp;&amp; SOCIAL_TOKENS.has(src)) || (host &amp;&amp; <span class="branch-3 cbranch-no" title="branch not covered" >socialPlatformOfHost(host))) r</span>eturn "paid_social";
+      if ((src &amp;&amp; SEARCH_TOKENS.has(src)) || (host &amp;&amp; <span class="branch-3 cbranch-no" title="branch not covered" >searchEngineOfHost(host)))   r</span>eturn "paid_search";
+      return "paid_other";
+    case "social":
+      return socialPlatformOfHost(host) ?? tokenPlatform(src) ?? <span class="branch-2 cbranch-no" title="branch not covered" >src ?? <span class="branch-3 cbranch-no" title="branch not covered" >"</span>other";</span>
+    case "ai":
+      return aiEngineOfHost(host) ?? <span class="branch-1 cbranch-no" title="branch not covered" >tokenPlatform(src) ?? <span class="branch-2 cbranch-no" title="branch not covered" >s</span>rc ?? <span class="branch-3 cbranch-no" title="branch not covered" >"</span>other";</span>
+    case "organic":
+      return searchEngineOfHost(host) ?? <span class="branch-1 cbranch-no" title="branch not covered" >tokenPlatform(src) ?? <span class="branch-2 cbranch-no" title="branch not covered" >s</span>rc ?? <span class="branch-3 cbranch-no" title="branch not covered" >"</span>other";</span>
+    case "referral":
+      return (host || <span class="branch-1 cbranch-no" title="branch not covered" >null) ?? <span class="branch-2 cbranch-no" title="branch not covered" >s</span>rc ?? <span class="branch-3 cbranch-no" title="branch not covered" >"</span>other";</span>
+<span class="branch-5 cbranch-no" title="branch not covered" >    case "email":</span>
+<span class="cstat-no" title="statement not covered" >      return src ?? "email";</span>
+    case "direct":
+    default:
+      return src ?? null;
+  }
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-09-06T03:51:53.260Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    
