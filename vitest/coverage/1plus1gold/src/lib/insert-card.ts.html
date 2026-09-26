@@ -1,0 +1,784 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/insert-card.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib</a> insert-card.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">87.5% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>7/8</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">50% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>1/2</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">87.5% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>7/8</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * The parcel insert card — the printed A6 card that goes in every box.
+ *
+ * ▶ WHAT IT IS AND WHY IT IS A CONSTANT. Four artefacts already travel with a
+ * parcel: the CoA (per serial), the receipt (per order), the packing slip and
+ * the shipping label (both per order). This is the fifth and the only one that
+ * is the SAME for every customer — it carries no order number, no serial, no
+ * name, no amount. That is deliberate, and it is the single most useful fact
+ * about this file: with no dynamic input there is nothing to escape, nothing to
+ * leak and nothing to get wrong per order. ▶ If anyone ever adds an order
+ * detail here, that stops being true and every interpolation needs escaping
+ * (see `escapeHtml` in lib/packing-slip.ts) — the card is rendered into an
+ * `iframe srcdoc`, which is SAME-ORIGIN and therefore a real sink.
+ *
+ * ▶ WHAT IT SAYS, and the operator decisions behind it (Mukesh, 2026-09-16/17):
+ *   - Thank you for the purchase.
+ *   - How to check the gold is real — points at the CoA's QR rather than
+ *     carrying a second one, so there is one verification story, not two.
+ *   - Sell-back, stated as our philosophy: accumulate, and sell when you need
+ *     to, not to trade. ▶ The wording was LIGHTENED on purpose — an earlier
+ *     draft leaned on "we hope that day never comes" twice, which made a
+ *     service we genuinely offer read as something to feel bad about. The
+ *     hinge is "Whenever that day comes", not "if".
+ *   - The sell-back caveat points at /contact, NOT a WhatsApp number: a number
+ *     printed on paper is permanent and unfixable, and the contact page can
+ *     route wherever we want it to later.
+ *   - A review ask, with the QR — and it DISCLOSES that the link leaves our
+ *     site. Trustpilot is independent; pretending otherwise would undercut the
+ *     one thing an independent review is worth.
+ *   - The regulatory line reads the LICENCE FROM BUSINESS_CONFIG rather than
+ *     typing it. A stale licence number on a printed artefact is exactly the
+ *     kind of wrong nobody notices, because it still looks like a licence.
+ *   - "Singapore", never "Republic of Singapore" (operator's call; the long
+ *     form survives only in BUSINESS_CONFIG.jurisdiction, where an accounting
+ *     convention wants it).
+ *   - The SME 500 mark as the SEAL, not a sentence about the award.
+ *   - NO vault mention: the vault is family-and-friends today, not a public
+ *     offer, so the card must not advertise it.
+ *   - SINGLE SIDED. A second side is a second thing to get wrong at the printer
+ *     for no gain.
+ *
+ * ▶ THE SEAL SITS ON A DARK FOOT BAND, and that is a constraint rather than a
+ * flourish. `public/images/seals/sme500.webp` is the REVERSED lockup — white
+ * type with the red lion, 74.2% white / 25.8% red / 0.0% black by pixel. On the
+ * ivory stock it is very nearly invisible. The issuer ships a full-colour
+ * variant for light grounds, but the two are separate artworks and must never
+ * be simulated from each other (a CSS `invert()` turns the lion cyan). The
+ * dark band is the ground this file has, used as the issuer intended.
+ *
+ * ▶ THE LOGO IS THE PRE-RENDERED PNG, and this is NON-NEGOTIABLE per
+ * [[feedback-logo-use-receipt-pdf-spec]]: `public/email-logo.png`, the same
+ * asset the HTML emails use, for the same reason — this is the one surface
+ * where we never let typography fail. It is also the correct artwork, verified
+ * against the official vector rather than assumed: the vector is live TYPE (no
+ * paths at all), "1" and "1" at 16.5pt in #C9A84C with "+" at 12.75pt and
+ * "G O L D" at 5.25pt in #A07830 — so a plus:numeral FONT-SIZE ratio of 0.773
+ * and a word ratio of 0.318. The PNG reproduces both (its + is 0.366 of the
+ * numeral's INK height, which is what a 0.77 font-size ratio draws) and carries
+ * exactly those two colours. Do not rebuild it from type here.
+ *
+ * ▶ FONTS ARE SELF-HOSTED, unlike the packing slip, which still `&lt;link&gt;`s
+ * Google Fonts. A print artefact should not depend on a third-party CDN being
+ * up at the moment the operator presses Print — and we already self-host these
+ * three families (2026-08-12, after gstatic flaked two prod builds in a day).
+ * Same-origin woff2, no network beyond our own.
+ *
+ * ▶ THE FOOT BAND IS 78px, NOT THE 90px THE DESIGN WAS APPROVED AT, and the
+ * 12px is the fix for a defect rather than a restyle. Measured in Chromium at
+ * true A6: with a 90px band the body's four blocks plus its own padding need
+ * 361.2px against 353px of box, so the content eats the body's 8px bottom
+ * padding and the regulatory line's descenders land 0.2px off the dark band —
+ * touching it. Nothing clips and nothing compresses, which is exactly why it
+ * survived approval: at preview scale a fifth of a pixel is invisible, and the
+ * first thing to make it visible would be a printer's font substitution
+ * pushing that line INTO the band. 78px restores real clearance and leaves the
+ * seal at 56px with 11px above and below. ▶ The guard that catches this class
+ * sums `height + marginTop + marginBottom`; an earlier version summed
+ * `getBoundingClientRect().height` alone, reported "fits, 4px slack", and was
+ * blind to margins while a line was cut 15px behind the band.
+ *
+ * ▶ WHY AN HTML STRING AND NOT A PAGE. The house pattern for parcel artefacts
+ * is build-a-string then hand it to &lt;DocumentPreviewModal&gt; via the doc-preview
+ * store — see lib/packing-slip.ts. That modal exists BECAUSE `window.open`
+ * silently does nothing inside iOS WKWebView, which is where the operator's
+ * admin PWA runs. A `?print` page (the CoA's pattern) is right for something a
+ * CUSTOMER can also visit; nobody visits this.
+ */
+import { BUSINESS_CONFIG } from "@/lib/business-config";
+import { qrGeometry, assertPathSafe } from "@/lib/qr";
+import { useDocPreviewStore } from "@/store/docPreviewStore";
+&nbsp;
+/**
+ * Pinned to production for the same reason the CoA's origin is: this is printed
+ * onto paper and put in a customer's box, where it is permanent and unfixable.
+ * A card printed from dev must never carry a preview host.
+ */
+const REVIEW_URL = "https://1plus1gold.com/review";
+/** The human-readable fallback under the QR — scheme stripped, as on the CoA. */
+const REVIEW_URL_DISPLAY = REVIEW_URL.replace(/^https:\/\//, "");
+&nbsp;
+/** A6 at 96 dpi, which is exactly the canvas the design was approved on. */
+const A6 = { w: 397, h: 559, mm: "105mm 148mm" } as const;
+&nbsp;
+/**
+ * Error correction Q (25%) — free here. The payload is short enough that Q and
+ * M both land on version 3 / 29 modules, so we buy the paper-handling
+ * robustness at no cost in density. At 80 px across 37 modules (29 + two
+ * 4-module quiet zones) each module is ~2.2 px ≈ 0.57 mm printed, comfortably
+ * above the 40 px floor measured for the denser CoA code.
+ */
+const QR_PX = 80;
+&nbsp;
+/** The printable card as a standalone HTML document. Pure — no DOM, no I/O. */
+export function buildInsertCardHtml(): string {
+  const qr = qrGeometry(REVIEW_URL, "Q");
+  const path = assertPathSafe(qr.path);
+&nbsp;
+  return `&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"/&gt;
+&lt;title&gt;Parcel insert card&lt;/title&gt;
+&lt;style&gt;
+  /* Self-hosted so pressing Print never waits on a third-party CDN. */
+  @font-face { font-family: "Cinzel"; src: url("/fonts/Cinzel-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: "Cinzel"; src: url("/fonts/Cinzel-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+  @font-face { font-family: "Montserrat"; src: url("/fonts/Montserrat-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: "Montserrat"; src: url("/fonts/Montserrat-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+&nbsp;
+  /* A6 portrait, no printer margin — the card's own 10px sheet padding is the
+     trim allowance, so the frame never sits on the paper's edge. */
+  @page { size: ${A6.mm}; margin: 0; }
+&nbsp;
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+&nbsp;
+  .sheet {
+    width: ${A6.w}px; height: ${A6.h}px; box-sizing: border-box;
+    background: #ffffff; padding: 10px;
+    font-family: Montserrat, system-ui, sans-serif;
+    display: flex; flex-direction: column;
+    margin: 0 auto;
+  }
+  .frame {
+    flex-grow: 1; min-height: 0; box-sizing: border-box;
+    background: #fffdf6; border: 2px solid #c9a84c;
+    box-shadow: inset 0 0 0 1px rgba(201,168,76,0.35);
+    border-radius: 16px;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .head { padding: 13px 26px 10px; text-align: center; border-bottom: 1px solid #e6ddc4; flex-shrink: 0; }
+  .head img { display: block; height: 44px; width: auto; margin: 0 auto; }
+  .thanks { margin: 10px 0 0; font-family: Cinzel, Georgia, serif; font-size: 10px; letter-spacing: 0.34em; text-transform: uppercase; color: #7a6a45; }
+&nbsp;
+  .body { padding: 10px 26px 8px; flex-grow: 1; min-height: 0; display: flex; flex-direction: column; justify-content: space-between; }
+&nbsp;
+  .eyebrow { font-family: Cinzel, Georgia, serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: #9a7a2e; margin: 0; }
+  .copy    { font-size: 11px; line-height: 1.52; color: #2a2114; margin: 6px 0 0; }
+  .fine    { font-size: 9px; line-height: 1.5; color: #7a6a45; margin: 5px 0 0; }
+  .sect    { margin-top: 8px; padding-top: 8px; border-top: 1px solid #e6ddc4; }
+  .ink     { color: #2a2114; }
+&nbsp;
+  .review  { display: flex; align-items: center; gap: 14px; }
+  .plate   { flex-shrink: 0; border-radius: 8px; padding: 5px; background: #ffffff; border: 1px solid #e6ddc4; }
+  .plate svg { display: block; }
+  .rv-note { margin: 5px 0 0; font-size: 9px; line-height: 1.45; color: #7a6a45; }
+  .rv-url  { margin: 5px 0 0; font-family: ui-monospace, Menlo, monospace; font-size: 11px; line-height: 1.3; color: #2a2114; }
+  .rv-ext  { margin: 4px 0 0; font-size: 9px; line-height: 1.4; color: #7a6a45; }
+&nbsp;
+  .reg  { margin: 7px 0 0; padding-top: 6px; border-top: 1px solid #e6ddc4; text-align: center; font-size: 9px; line-height: 1.4; color: #7a6a45; }
+  .foot { flex-shrink: 0; height: 78px; background: #16110A; display: flex; align-items: center; justify-content: center; }
+  .foot img { display: block; height: 56px; width: auto; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="sheet"&gt;
+    &lt;div class="frame"&gt;
+&nbsp;
+      &lt;div class="head"&gt;
+        &lt;img src="/email-logo.png" alt="1+1 GOLD"/&gt;
+        &lt;p class="thanks"&gt;Thank you for your purchase&lt;/p&gt;
+      &lt;/div&gt;
+&nbsp;
+      &lt;div class="body"&gt;
+&nbsp;
+        &lt;div&gt;
+          &lt;p class="eyebrow"&gt;Check it&amp;#39;s real&lt;/p&gt;
+          &lt;p class="copy"&gt;Scan the QR on your Certificate of Authenticity &amp;mdash; it opens our record for that exact serial.&lt;/p&gt;
+        &lt;/div&gt;
+&nbsp;
+        &lt;div class="sect"&gt;
+          &lt;p class="eyebrow"&gt;Selling back to us&lt;/p&gt;
+          &lt;p class="copy"&gt;Gold rewards patience &amp;mdash; trading is what paper gold is for. Ours is meant to sit quietly and grow, then one day become something: jewellery, a gift, or whatever you need it to be. Whenever that day comes, we buy back what we sell.&lt;/p&gt;
+          &lt;p class="fine"&gt;No sell-back option on your item? Tell us at &lt;span class="ink"&gt;1plus1gold.com/contact&lt;/span&gt; &amp;mdash; what we take back moves with our stock position.&lt;/p&gt;
+        &lt;/div&gt;
+&nbsp;
+        &lt;div class="sect review"&gt;
+          &lt;div class="plate"&gt;
+            &lt;svg viewBox="0 0 ${qr.size} ${qr.size}" width="${QR_PX}" height="${QR_PX}" role="img" aria-label="QR code linking to ${REVIEW_URL_DISPLAY}"&gt;&lt;path d="${path}" fill="#1a1510"&gt;&lt;/path&gt;&lt;/svg&gt;
+          &lt;/div&gt;
+          &lt;div style="min-width: 0;"&gt;
+            &lt;p class="eyebrow"&gt;A word from you&lt;/p&gt;
+            &lt;p class="rv-note"&gt;If we did well by you, a couple of lines helps the next person decide.&lt;/p&gt;
+            &lt;p class="rv-url"&gt;${REVIEW_URL_DISPLAY}&lt;/p&gt;
+            &lt;p class="rv-ext"&gt;Opens Trustpilot &amp;mdash; an independent review site, not ours.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+&nbsp;
+        &lt;p class="reg"&gt;${BUSINESS_CONFIG.name} &amp;middot; PSPM Licence ${BUSINESS_CONFIG.pspmLicence} &amp;middot; Singapore&lt;/p&gt;
+&nbsp;
+      &lt;/div&gt;
+&nbsp;
+      &lt;div class="foot"&gt;
+        &lt;img src="/images/seals/sme500.webp" alt="Singapore SME 500 Award 2026"/&gt;
+      &lt;/div&gt;
+&nbsp;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;`;
+}
+&nbsp;
+/**
+ * Show the card in &lt;DocumentPreviewModal&gt;. One paper variant only — the card
+ * is A6 and nothing else, so no size toggle is offered (the modal renders the
+ * 4x6/A4 switch only when `htmlVariants` is supplied).
+ */
+export function <span class="fstat-no" title="function not covered" >openInsertCard(): void {</span>
+<span class="cstat-no" title="statement not covered" >  useDocPreviewStore.getState().show({</span>
+    title: "PARCEL INSERT CARD",
+    html:  buildInsertCardHtml(),
+  });
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-09-26T12:48:41.056Z
+            </div>
+        <script src="../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
+    </body>
+</html>
+    
