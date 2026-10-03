@@ -1,0 +1,1063 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/app/api/admin/pricing/suppliers/sheets/route.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/app/api/admin/pricing/suppliers/sheets</a> route.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">67.1% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>102/152</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">57.14% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>104/182</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">73.68% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>14/19</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">75% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>93/124</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line medium'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">156x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">192x</span>
+<span class="cline-any cline-yes">192x</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">156x</span>
+<span class="cline-any cline-yes">156x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">260x</span>
+<span class="cline-any cline-yes">208x</span>
+<span class="cline-any cline-yes">208x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Supplier price sheets — list + upload-and-parse.
+ *
+ * GET  /api/admin/pricing/suppliers/sheets?supplier=mtb
+ *      → dated sheet history (newest first) for a supplier.
+ *
+ * POST /api/admin/pricing/suppliers/sheets   (multipart: file, supplier?, hint?)
+ *      → stores a dated sheet row, parses it with the supplier's `sheet_format`
+ *        parser (MTB: the price_sheet_parser vision agent; StoneX: the
+ *        deterministic text-layer parser in lib/pricing/stonex-sheet), writes the
+ *        parsed gold lines into supplier_prices, files a notify/approve decision,
+ *        and returns the sheet + a parse summary. Landed cost is NOT stored — it
+ *        recomputes live (GET /prices).
+ *
+ * Admin-only (ADMIN_SECRET cookie / header).
+ */
+&nbsp;
+import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
+import { checkAdminAuth } from "@/lib/admin-auth";
+import { PriceSheetParserAgent, type ParsedSupplierLine } from "@/lib/ai/agents/price-sheet-parser";
+import { extractPdfProductUrls } from "@/lib/pricing/pdf-product-urls";
+import { pickProductUrl } from "@/lib/pricing/supplier-url-match";
+import { parseStonexPdf, type StonexPriceTier } from "@/lib/pricing/stonex-sheet";
+&nbsp;
+/** A parsed line from either parser; only the StoneX catalogue carries a price ladder. */
+type SheetLine = ParsedSupplierLine &amp; { price_tiers?: StonexPriceTier[] | null };
+&nbsp;
+// The vision parse runs `pages` reasoning-tier (Sonnet) vision calls in parallel,
+// each emitting up to 8000 tokens. Two pages can legitimately exceed 60s; a 60s
+// cap killed the function mid-parse → Vercel returned a non-JSON 504 → the client
+// showed a blanket "Upload failed". 300s gives the parse real headroom.
+export const maxDuration = 300;
+&nbsp;
+const supabaseAdmin = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_KEY!,
+);
+&nbsp;
+const ACCEPTED = new Set(["application/pdf", "image/png", "image/jpeg", "image/webp"]);
+const MAX_BYTES = 25 * 1024 * 1024; // 25MB
+&nbsp;
+export async function <span class="fstat-no" title="function not covered" >GET(r</span>eq: NextRequest) {
+  const auth = <span class="cstat-no" title="statement not covered" >await checkAdminAuth(req);</span>
+<span class="cstat-no" title="statement not covered" >  if (!auth.ok) <span class="cstat-no" title="statement not covered" >return NextResponse.json({ error: auth.error }, { status: auth.status });</span></span>
+&nbsp;
+  const slug = <span class="cstat-no" title="statement not covered" >req.nextUrl.searchParams.get("supplier") ?? "mtb";</span>
+  const { data: supplier } = <span class="cstat-no" title="statement not covered" >await supabaseAdmin.from("suppliers").select("id, name, slug").eq("slug", slug).maybeSingle();</span>
+<span class="cstat-no" title="statement not covered" >  if (!supplier) <span class="cstat-no" title="statement not covered" >return NextResponse.json({ error: "Supplier not found" }, { status: 404 });</span></span>
+&nbsp;
+  const { data: sheets, error } = <span class="cstat-no" title="statement not covered" >await supabaseAdmin</span>
+    .from("supplier_price_sheets")
+    .select("id, sheet_date, source, file_name, parse_status, parse_error, line_count, uploaded_by, created_at")
+    .eq("supplier_id", supplier.id)
+    .order("sheet_date", { ascending: false })
+    .order("created_at", { ascending: false })
+    .limit(180);
+<span class="cstat-no" title="statement not covered" >  if (error) <span class="cstat-no" title="statement not covered" >return NextResponse.json({ error: "Failed to load sheets" }, { status: 500 });</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return NextResponse.json({ supplier, sheets: sheets ?? [] });</span>
+}
+&nbsp;
+export async function POST(req: NextRequest) {
+  const auth = await checkAdminAuth(req);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!auth.ok) <span class="cstat-no" title="statement not covered" >return NextResponse.json({ error: auth.error }, { status: auth.status });</span>
+&nbsp;
+  const form = await req.formData().<span class="fstat-no" title="function not covered" >catch(() =&gt; <span class="cstat-no" title="statement not covered" >n</span>ull)</span>;
+  const file = form?.get("file");
+  const slug = (form?.get("supplier") as string) || <span class="branch-1 cbranch-no" title="branch not covered" >"mtb";</span>
+  // Sanitise the operator hint before it enters the LLM prompt (strip control
+  // chars / cap length — prompt-injection defence-in-depth).
+  const rawHint = (form?.get("hint") as string) || "";
+  const hint = rawHint.replace(/[ -]+/g, " ").trim().slice(0, 300) || undefined;
+  const dateOverride = (form?.get("sheet_date") as string) || undefined; // optional yyyy-mm-dd
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!(file instanceof Blob) || file.size === 0) {
+<span class="cstat-no" title="statement not covered" >    return NextResponse.json({ error: "file required" }, { status: 400 });</span>
+  }
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!ACCEPTED.has(file.type)) {
+<span class="cstat-no" title="statement not covered" >    return NextResponse.json({ error: "Unsupported file type (PDF / PNG / JPEG / WebP)" }, { status: 400 });</span>
+  }
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (file.size &gt; MAX_BYTES) {
+<span class="cstat-no" title="statement not covered" >    return NextResponse.json({ error: "File too large (max 25MB)" }, { status: 400 });</span>
+  }
+&nbsp;
+  const { data: supplier } = await supabaseAdmin
+    .from("suppliers").select("id, slug, name, sheet_format").eq("slug", slug).maybeSingle();
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!supplier) <span class="cstat-no" title="statement not covered" >return NextResponse.json({ error: "Supplier not found" }, { status: 404 });</span>
+  const isStonex = (supplier as { sheet_format?: string }).sheet_format === "stonex_catalog";
+  if (isStonex &amp;&amp; file.type !== "application/pdf") {
+    return NextResponse.json({ error: "StoneX sheets must be the catalogue PDF" }, { status: 400 });
+  }
+&nbsp;
+  const fileName = (file as File).name ?? <span class="branch-1 cbranch-no" title="branch not covered" >"sheet.pdf";</span>
+  const buf = Buffer.from(await file.arrayBuffer());
+  // Verify the bytes match the declared type (don't trust the client MIME).
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!magicBytesOk(buf, file.type)) {
+<span class="cstat-no" title="statement not covered" >    return NextResponse.json({ error: "File content does not match its type" }, { status: 400 });</span>
+  }
+  const base64 = buf.toString("base64");
+  const isPdf = file.type === "application/pdf";
+&nbsp;
+  // Capture per-product hyperlinks from the PDF link annotations (#2). The vision
+  // parser reads text only; we match these URLs to parsed lines by product name.
+  const productUrls = isPdf &amp;&amp; !isStonex ? await extractPdfProductUrls(new Uint8Array(buf)) : [];
+  const urlByNorm = productUrls.<span class="fstat-no" title="function not covered" >map((u</span>) =&gt; (<span class="cstat-no" title="statement not covered" >{ norm: normName(u.text), url: u.url }))</span>.<span class="fstat-no" title="function not covered" >filter((u</span>) =&gt; <span class="cstat-no" title="statement not covered" >u.norm)</span>;
+  // The name→URL matcher (urlForName) is defined AFTER the prior-sheet URLs are
+  // loaded, so it can avoid handing a URL already owned by an existing product.
+&nbsp;
+  const lines: SheetLine[] = [];
+  const parserNotes: string[] = [];
+  let parsedDate: string | null = null;
+&nbsp;
+  if (isStonex) {
+    // Deterministic text-layer parse — no LLM, no token cost (lib/pricing/stonex-sheet).
+    try {
+      const parsed = await parseStonexPdf(new Uint8Array(buf));
+      parsedDate = parsed.sheet_date;
+      parserNotes.push(...parsed.notes);
+      lines.push(...parsed.lines);
+    } catch (e) {
+<span class="cstat-no" title="statement not covered" >      console.error("[pricing/sheets] stonex parse failed:", (e as Error).message);</span>
+<span class="cstat-no" title="statement not covered" >      return NextResponse.json({ error: "Couldn't read the StoneX PDF. Is it the catalogue download?" }, { status: 422 });</span>
+    }
+  } else {
+    // Parse via the vision agent (extraction + classification only). A full gold
+    // section overflows the model output cap, so we parse ONE PAGE PER CALL and
+    // merge — `pages` defaults to 2 (MTB gold lives on pages 1-2); operator can
+    // override for a supplier with more gold pages.
+    const pages = isPdf
+      ? Math.min(Math.max(parseInt((form?.get("pages") as string) || "2", 10) || <span class="branch-1 cbranch-no" title="branch not covered" >2, 1</span>), 8)
+      : <span class="branch-1 cbranch-no" title="branch not covered" >1;</span>
+    const agent = new PriceSheetParserAgent();
+    let parsedPages;
+    try {
+      parsedPages = await Promise.all(
+        Array.from({ length: pages }, (_, i) =&gt;
+          agent.parse(base64, file.type, { page: isPdf ? i + 1 : <span class="branch-1 cbranch-no" title="branch not covered" >undefined, h</span>int })),
+      );
+    } catch (e) {
+      // Log the detail server-side only; don't leak parser/LLM internals to the client.
+<span class="cstat-no" title="statement not covered" >      console.error("[pricing/sheets] parse failed:", (e as Error).message);</span>
+<span class="cstat-no" title="statement not covered" >      return NextResponse.json({ error: "Couldn't parse the sheet. Please try again." }, { status: 502 });</span>
+    }
+&nbsp;
+    // Merge pages + dedupe (the model can bleed slightly across the page scope).
+    const seen = new Set&lt;string&gt;();
+    for (const pp of parsedPages) {
+      if (pp.sheet_date &amp;&amp; !parsedDate) parsedDate = pp.sheet_date;
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (Array.isArray(pp.notes)) parserNotes.push(...pp.notes);
+      for (const l of pp.lines ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) {</span>
+        const key = <span class="cstat-no" title="statement not covered" >`${(l.product_name || "").toLowerCase().trim()}|${l.weight_label || ""}|${l.category || ""}`;</span>
+<span class="cstat-no" title="statement not covered" >        if (seen.has(key)) <span class="cstat-no" title="statement not covered" >continue;</span></span>
+<span class="cstat-no" title="statement not covered" >        seen.add(key);</span>
+<span class="cstat-no" title="statement not covered" >        lines.push(l);</span>
+      }
+    }
+  }
+&nbsp;
+  const sheetDate = normaliseDate(dateOverride) ?? normaliseDate(parsedDate) ?? <span class="branch-2 cbranch-no" title="branch not covered" >todayIso();</span>
+  const lowConf = lines.filter((l) =&gt; l.confidence === "low").length;
+&nbsp;
+  // Create the dated sheet row.
+  const { data: sheet, error: sErr } = await supabaseAdmin
+    .from("supplier_price_sheets")
+    .insert({
+      supplier_id: supplier.id,
+      sheet_date: sheetDate,
+      source: "upload",
+      file_name: fileName,
+      parse_status: "parsed",
+      line_count: lines.length,
+      uploaded_by: "admin",
+    })
+    .select("id, sheet_date, line_count, created_at")
+    .single();
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (sErr || !sheet) <span class="cstat-no" title="statement not covered" >return NextResponse.json({ error: "Failed to record sheet" }, { status: 500 });</span>
+&nbsp;
+  // ── Reconciliation: keep per-product identity stable across re-uploads ──────
+  // Product names + URLs don't change week-to-week (only ask price + availability
+  // do), so we key each line by (normalised name | weight | refinery) and carry
+  // forward the prior sheets' source_url. This (a) FIXES "the re-upload drops the
+  // URL" — even if a given week's PDF link extraction misses a row, the URL
+  // persists from an earlier sheet — and (b) leaves the freshly-matched URL as a
+  // fallback only for genuinely-new products. Add-new + update-price/availability
+  // then fall out naturally: the new sheet carries every current product with its
+  // current ask/availability; existing products keep their identity + URL.
+  const lineKey = (name: string, weightLabel: string | null, refinery: string | null) =&gt;
+    `${normName(name)}|${weightLabel ?? <span class="branch-1 cbranch-no" title="branch not covered" >""}|</span>${normName(refinery ?? <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>}`;
+  const priorUrlByKey = new Map&lt;string, string&gt;();
+  {
+    const { data: priorRows } = await supabaseAdmin
+      .from("supplier_prices")
+      .select("product_name, weight_label, refinery, source_url")
+      .eq("supplier_id", supplier.id)
+      .not("source_url", "is", null)
+      .order("created_at", { ascending: false })
+      .limit(4000);
+    for (const r of priorRows ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) {</span>
+      const k = <span class="cstat-no" title="statement not covered" >lineKey(r.product_name as string, r.weight_label as string | null, r.refinery as string | null);</span>
+<span class="cstat-no" title="statement not covered" >      if (k &amp;&amp; r.source_url &amp;&amp; !priorUrlByKey.has(k)) <span class="cstat-no" title="statement not covered" >priorUrlByKey.set(k, r.source_url as string);</span></span>
+    }
+  }
+  // Don't hand a NEW product a URL that an existing product already owns.
+  const usedUrls = new Set&lt;string&gt;(priorUrlByKey.values());
+  // Greedy, unique, strong-overlap match (lib/pricing/supplier-url-match) so two
+  // near-identical SKUs can't collapse onto one URL (the dup-URL bug). Only fires
+  // for products with no carried-forward URL.
+  const urlForName = (name: string): string | null =&gt; pickProductUrl(urlByNorm, normName(name), usedUrls);
+&nbsp;
+  // Persist the parsed lines.
+  if (lines.length &gt; 0) {
+    const rows = lines.map((l) =&gt; {
+      const unit_kind = ["per_piece", "per_oz", "percent"].includes(l.unit_kind) ? l.unit_kind : <span class="branch-1 cbranch-no" title="branch not covered" >"per_piece";</span>
+      const ask_kind = ["dollar", "percent", "none"].includes(l.ask_kind) ? l.ask_kind : <span class="branch-1 cbranch-no" title="branch not covered" >"none";</span>
+      const grams = numOrNull(l.weight_grams);
+      const ask = numOrNull(l.ask_value);
+      // Range-check the LLM numerics — a hallucinated/out-of-range value would
+      // corrupt landed cost. Out of plausible bounds → keep the value but FLAG the
+      // row low-confidence so it surfaces for review rather than silently pricing.
+      const gramsBad = grams != null &amp;&amp; (grams &lt; 0.01 || grams &gt; 50000);
+      const askBad = ask != null &amp;&amp; (
+        (ask_kind === "dollar"  &amp;&amp; (ask &lt; -50000 || ask &gt; 50000)) ||
+        (ask_kind === "percent" &amp;&amp; (<span class="branch-5 cbranch-no" title="branch not covered" >ask &lt; 50 || <span class="branch-6 cbranch-no" title="branch not covered" >a</span>sk &gt; 200))</span>
+      );
+      const suspect = gramsBad || askBad;
+      return {
+        sheet_id: sheet.id,
+        supplier_id: supplier.id,
+        sheet_date: sheetDate,
+        metal: "gold",
+        category: clip(l.category, 200),
+        product_name: clip(l.product_name, 300),
+        refinery: clip(l.refinery, 80),
+        weight_grams: grams,
+        weight_label: clip(l.weight_label, 60),
+        unit_kind,
+        ask_kind,
+        ask_value: ask,
+        bid_value: numOrNull(l.bid_value),
+        availability: ["live", "limited", "out", "na"].includes(l.availability) ? l.availability : <span class="branch-1 cbranch-no" title="branch not covered" >"na",</span>
+        notes: clip(l.notes, 200),
+        confidence: (suspect || l.confidence === "low") ? <span class="branch-0 cbranch-no" title="branch not covered" >"low" : "</span>high",
+        // Prefer the carried-forward URL (stable across re-uploads); fall back to
+        // a fresh PDF-link match only for products with no prior URL.
+        source_url: priorUrlByKey.get(lineKey(l.product_name, l.weight_label, l.refinery)) ?? urlForName(l.product_name),
+        price_tiers: sanitiseTiers(l.price_tiers),
+      };
+    });
+    const { error: pErr } = await supabaseAdmin.from("supplier_prices").insert(rows);
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (pErr) {
+<span class="cstat-no" title="statement not covered" >      await supabaseAdmin.from("supplier_price_sheets").update({ parse_status: "failed", parse_error: "row insert failed" }).eq("id", sheet.id);</span>
+<span class="cstat-no" title="statement not covered" >      return NextResponse.json({ error: "Failed to store parsed lines" }, { status: 500 });</span>
+    }
+  }
+&nbsp;
+  // File a Control Tower decision summarising the parse (approve if noisy).
+  const lowRate = lines.length &gt; 0 ? lowConf / lines.length : 0;
+  const needsReview = lowRate &gt; 0.2 || lines.length === 0;
+  await supabaseAdmin.from("agent_decisions").insert({
+    agent_name: "price_sheet_parser",
+    severity: needsReview ? "approve" : "notify",
+    status: needsReview ? "proposed" : "executed",
+    summary: `${(supplier as { name?: string }).name ?? <span class="branch-1 cbranch-no" title="branch not covered" >supplier.slug} </span>sheet ${sheetDate}: parsed ${lines.length} gold lines${lowConf ? <span class="branch-0 cbranch-no" title="branch not covered" >`, ${lowConf} low-confidence` : "</span>"}.`,
+    action_payload: { sheet_id: sheet.id, sheet_date: sheetDate, line_count: lines.length, low_confidence: lowConf, parser_notes: parserNotes },
+    related_entity_type: "supplier_price_sheet",
+    related_entity_id: sheet.id,
+  });
+&nbsp;
+  return NextResponse.json({
+    sheet,
+    summary: { line_count: lines.length, low_confidence: lowConf, notes: parserNotes },
+  });
+}
+&nbsp;
+// ── helpers ─────────────────────────────────────────────────────────────────
+/** Verify the file's leading bytes match the declared MIME (don't trust the client). */
+function magicBytesOk(buf: Buffer, mime: string): boolean {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (buf.length &lt; 4) <span class="cstat-no" title="statement not covered" >return false;</span>
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (mime === "application/pdf") return buf.subarray(0, 5).toString("latin1") === "%PDF-";
+<span class="cstat-no" title="statement not covered" >  if (mime === "image/png") <span class="cstat-no" title="statement not covered" >return buf[0] === 0x89 &amp;&amp; buf[1] === 0x50 &amp;&amp; buf[2] === 0x4e &amp;&amp; buf[3] === 0x47;</span></span>
+<span class="cstat-no" title="statement not covered" >  if (mime === "image/jpeg") <span class="cstat-no" title="statement not covered" >return buf[0] === 0xff &amp;&amp; buf[1] === 0xd8 &amp;&amp; buf[2] === 0xff;</span></span>
+<span class="cstat-no" title="statement not covered" >  if (mime === "image/webp") <span class="cstat-no" title="statement not covered" >return buf.subarray(0, 4).toString("latin1") === "RIFF" &amp;&amp; buf.subarray(8, 12).toString("latin1") === "WEBP";</span></span>
+<span class="cstat-no" title="statement not covered" >  return false;</span>
+}
+&nbsp;
+/** Normalise a product name for URL↔line matching (lowercase, alnum-only). */
+function normName(s: unknown): string {
+  return String(s ?? <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>.toLowerCase().replace(/[®™]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+}
+&nbsp;
+/** Keep only well-formed, finite tiers (null when the line has no ladder). */
+function sanitiseTiers(t: StonexPriceTier[] | null | undefined): StonexPriceTier[] | null {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!Array.isArray(t) || t.length === 0) <span class="cstat-no" title="statement not covered" >return null;</span>
+  const ok = t.filter((x) =&gt; Number.isInteger(x.min_qty) &amp;&amp; x.min_qty &gt;= 1 &amp;&amp; Number.isFinite(x.ask_value) &amp;&amp; x.ask_value &gt;= 0 &amp;&amp; x.ask_value &lt; 50000)
+    .map((x) =&gt; ({ min_qty: x.min_qty, ask_value: x.ask_value, premium_pct: Number.isFinite(x.premium_pct as number) ? x.premium_pct : <span class="branch-1 cbranch-no" title="branch not covered" >null }</span>));
+  return ok.length ? ok : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+}
+&nbsp;
+function numOrNull(v: unknown): number | null {
+  const n = typeof v === "number" ? v : typeof v === "string" ? <span class="branch-0 cbranch-no" title="branch not covered" >parseFloat(v) : N</span>aN;
+  return Number.isFinite(n) ? n : null;
+}
+function clip(v: unknown, n: number): string | null {
+  if (typeof v !== "string") return null;
+  const t = v.trim();
+  return t ? t.slice(0, n) : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+}
+function normaliseDate(v: string | null | undefined): string | null {
+  if (!v) return null;
+  let iso: string | null = null;
+  const m = v.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (m) iso = `${m[1]}-${m[2]}-${m[3]}`;
+  else <span class="missing-if-branch" title="else path not taken" >E</span>{
+    const us = <span class="cstat-no" title="statement not covered" >v.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/); // tolerate M/D/YYYY</span>
+<span class="cstat-no" title="statement not covered" >    if (us) <span class="cstat-no" title="statement not covered" >iso = `${us[3]}-${us[1].padStart(2, "0")}-${us[2].padStart(2, "0")}`;</span></span>
+  }
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!iso) <span class="cstat-no" title="statement not covered" >return null;</span>
+  // Sanity range — reject an implausible parsed/overridden year.
+  const yr = Number(iso.slice(0, 4));
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (yr &lt; 2020 || yr &gt; 2100) <span class="cstat-no" title="statement not covered" >return null;</span>
+  return iso;
+}
+function <span class="fstat-no" title="function not covered" >todayIso(): string {</span>
+<span class="cstat-no" title="statement not covered" >  return new Date().toISOString().slice(0, 10);</span>
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-10-03T11:18:03.140Z
+            </div>
+        <script src="../../../../../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../../../../../sorter.js"></script>
+        <script src="../../../../../../../../block-navigation.js"></script>
+    </body>
+</html>
+    
