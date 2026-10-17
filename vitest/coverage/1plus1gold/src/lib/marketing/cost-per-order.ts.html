@@ -1,0 +1,754 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/marketing/cost-per-order.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/marketing</a> cost-per-order.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>116/116</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">90.8% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>79/87</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>27/27</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>82/82</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64x</span>
+<span class="cline-any cline-yes">64x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">303x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">613x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">560x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">112x</span>
+<span class="cline-any cline-yes">64x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">200x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">84x</span>
+<span class="cline-any cline-yes">84x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">200x</span>
+<span class="cline-any cline-yes">140x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Cost per order — marketing spend against the orders it is meant to produce
+ * (docs/marketing-scorecard-design.md §1, Mukesh 2026-10-14).
+ *
+ * Pure: the route fetches rows, this decides what they mean. One function, two
+ * consumers (the dashboard tab and the Outreach scorecard), so the two numbers
+ * can never disagree.
+ *
+ * HONEST-NUMBER RULES, each one a way a nicer-looking figure would be wrong:
+ *  1. BLENDED, NOT ATTRIBUTED. Web cost per order = every web-driving channel's
+ *     spend ÷ every real web order. Buyers see an ad and come back directly days
+ *     later (agreed 2026-10-14), so crediting a single ad would invent precision.
+ *  2. SPREAD, NOT LUMPED. Spend goes through the ledger's own amortisation
+ *     `schedule()`, so an annual subscription counts 1/12 a month — the same
+ *     recognition the P&amp;L uses.
+ *  3. A MISSING INVOICE IS SAID, NOT HIDDEN. In the current month a channel that
+ *     had spend last month and none booked yet is flagged `pending`, rather than
+ *     quietly making the month look cheap. Bookings are usually entered after the
+ *     invoice arrives (Mukesh: "the dashboard looks at live data").
+ *  4. NO DIVISION BY ZERO DRESSED AS A NUMBER. Spend with no orders → null, not
+ *     0 or Infinity.
+ */
+import { schedule, type AmortisableEntry } from "@/lib/finance/amortisation";
+&nbsp;
+export type SpendChannel =
+  | "openai" | "meta" | "google" | "linkedin" | "shopee" | "lazada" | "carousell" | "other";
+&nbsp;
+/** Channels whose spend drives the web store (blended against web orders). */
+export const WEB_CHANNELS: SpendChannel[] = ["openai", "meta", "google", "linkedin", "other"];
+/** Marketplace channels, each measured against its own orders. */
+export const MARKETPLACE_CHANNELS: Array&lt;Extract&lt;SpendChannel, "shopee" | "lazada" | "carousell"&gt;&gt; =
+  ["shopee", "lazada", "carousell"];
+&nbsp;
+export const CHANNEL_LABEL: Record&lt;SpendChannel, string&gt; = {
+  openai: "ChatGPT ads (OpenAI)", meta: "Meta", google: "Google Ads", linkedin: "LinkedIn",
+  shopee: "Shopee", lazada: "Lazada", carousell: "Carousell", other: "Other",
+};
+&nbsp;
+/** Map a ledger vendor string to a channel. Case-insensitive, substring-based
+ *  because invoices carry legal names ("LAZADA SINGAPORE PTE. LTD."). */
+export function channelForVendor(vendor: string | null | undefined): SpendChannel {
+  const v = (vendor ?? <span class="branch-1 cbranch-no" title="branch not covered" >"").t</span>oLowerCase();
+  if (/openai|chatgpt/.test(v)) return "openai";
+  if (/meta|facebook|instagram/.test(v)) return "meta";
+  if (/google/.test(v)) return "google";
+  if (/linkedin/.test(v)) return "linkedin";
+  if (/shopee/.test(v)) return "shopee";
+  if (/lazada/.test(v)) return "lazada";
+  if (/carousell/.test(v)) return "carousell";
+  return "other";
+}
+&nbsp;
+export interface SpendRow extends AmortisableEntry { vendor: string | null }
+&nbsp;
+export interface OrderRow {
+  created_at:        string;
+  customer_id:       string | null;
+  source_channel:    string | null;
+  status:            string | null;
+  external_order_id: string | null;
+}
+&nbsp;
+/** Statuses that never became a real sale. */
+const NOT_A_SALE = new Set(["cancelled", "refunded", "failed", "pending"]);
+&nbsp;
+/** A real order: not cancelled/failed, not an internal/demo account, not a stock swap. */
+export function isRealOrder(o: OrderRow, internalIds: ReadonlySet&lt;string&gt;): boolean {
+  if (NOT_A_SALE.has((o.status ?? <span class="branch-1 cbranch-no" title="branch not covered" >"").t</span>oLowerCase())) return false;
+  if (o.customer_id &amp;&amp; internalIds.has(o.customer_id)) return false;
+  // Settle-by-swap invoices to a supplier are booked as in-person orders.
+  if ((o.external_order_id ?? "").toUpperCase().startsWith("SWAP-")) return false;
+  return true;
+}
+&nbsp;
+/** "YYYY-MM" of an instant, in Singapore time. */
+export function sgtMonth(iso: string): string {
+  const ms = Date.parse(iso) + 8 * 3_600_000;
+  return new Date(ms).toISOString().slice(0, 7);
+}
+&nbsp;
+function nextMonth(m: string): string {
+  const [y, mo] = m.split("-").map(Number);
+  return mo === 12 ? <span class="branch-0 cbranch-no" title="branch not covered" >`${y + 1}-01` : `</span>${y}-${String(mo + 1).padStart(2, "0")}`;
+}
+function prevMonth(m: string): string {
+  const [y, mo] = m.split("-").map(Number);
+  return mo === 1 ? <span class="branch-0 cbranch-no" title="branch not covered" >`${y - 1}-12` : `</span>${y}-${String(mo - 1).padStart(2, "0")}`;
+}
+&nbsp;
+const n2 = (v: number) =&gt; Math.round(v * 100) / 100;
+const per = (spend: number, n: number): number | null =&gt; (n &gt; 0 ? n2(spend / n) : null);
+&nbsp;
+export interface CpoRow {
+  key:               "web" | Extract&lt;SpendChannel, "shopee" | "lazada" | "carousell"&gt;;
+  label:             string;
+  spend:             number;
+  orders:            number;
+  /** First-ever real order in the period. Null for marketplaces: their orders are
+   *  booked under a house account, so the buyer is not identifiable. */
+  newCustomers:      number | null;
+  costPerOrder:      number | null;
+  costPerNewCustomer: number | null;
+  /** Channels whose spend for this (current) month is not booked yet. */
+  pending:           SpendChannel[];
+}
+&nbsp;
+export interface CpoPeriod {
+  month:      string;          // "YYYY-MM", or "total"
+  rows:       CpoRow[];
+  /** Web spend split by channel — what made up the blended figure. */
+  webSpend:   Array&lt;{ channel: SpendChannel; label: string; spend: number }&gt;;
+  totalSpend: number;
+}
+&nbsp;
+export interface CostPerOrderReport {
+  firstMonth:  string | null;
+  currentMonth: string;
+  months:      CpoPeriod[];   // newest first
+  total:       CpoPeriod;
+  /** OpenAI's own reported conversions — shown beside, never substituted for, the blended figure. */
+  openai:      { spend: number; conversions: number };
+  /** True when the last complete month has a computable web cost per order. */
+  known:       boolean;
+}
+&nbsp;
+export function buildCostPerOrder(input: {
+  spend:        SpendRow[];
+  orders:       OrderRow[];
+  internalIds:  ReadonlySet&lt;string&gt;;
+  openaiConversions: number;
+  now:          Date;
+}): CostPerOrderReport {
+  const currentMonth = sgtMonth(input.now.toISOString());
+&nbsp;
+  // ── Spend, recognised by month and channel ──────────────────────────────
+  const spendBy = new Map&lt;string, Map&lt;SpendChannel, number&gt;&gt;();
+  for (const row of input.spend) {
+    const ch = channelForVendor(row.vendor);
+    for (const slice of schedule(row)) {
+      if (slice.month &gt; currentMonth) continue;   // future slices of a prepaid
+      const m = spendBy.get(slice.month) ?? new Map&lt;SpendChannel, number&gt;();
+      m.set(ch, (m.get(ch) ?? 0) + slice.amount_sgd);
+      spendBy.set(slice.month, m);
+    }
+  }
+  const firstMonth = [...spendBy.keys()].sort()[0] ?? <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+&nbsp;
+  // ── Orders + first-order month per web customer ─────────────────────────
+  const real = input.orders.filter((o) =&gt; isRealOrder(o, input.internalIds));
+  const firstWebMonth = new Map&lt;string, string&gt;();
+  for (const o of real) {
+    if ((o.source_channel ?? <span class="branch-1 cbranch-no" title="branch not covered" >"web") !== "</span>web" || !o.customer_id) continue;
+    const m = sgtMonth(o.created_at);
+    const prev = firstWebMonth.get(o.customer_id);
+    if (!prev || m &lt; prev) firstWebMonth.set(o.customer_id, m);
+  }
+  const ordersBy = new Map&lt;string, Map&lt;string, number&gt;&gt;();
+  for (const o of real) {
+    const ch = o.source_channel ?? <span class="branch-1 cbranch-no" title="branch not covered" >"web";</span>
+    const m = sgtMonth(o.created_at);
+    const mm = ordersBy.get(m) ?? new Map&lt;string, number&gt;();
+    mm.set(ch, (mm.get(ch) ?? 0) + 1);
+    ordersBy.set(m, mm);
+  }
+  const newBy = new Map&lt;string, number&gt;();
+  for (const m of firstWebMonth.values()) newBy.set(m, (newBy.get(m) ?? 0) + 1);
+&nbsp;
+  const spendOf = (month: string, ch: SpendChannel) =&gt; spendBy.get(month)?.get(ch) ?? 0;
+&nbsp;
+  const buildPeriod = (monthsIn: string[], label: string): CpoPeriod =&gt; {
+    const sum = (f: (m: string) =&gt; number) =&gt; monthsIn.reduce((a, m) =&gt; a + f(m), 0);
+    const isCurrent = monthsIn.length === 1 &amp;&amp; monthsIn[0] === currentMonth;
+    const pendingFor = (chs: SpendChannel[]) =&gt; isCurrent
+      ? chs.filter((c) =&gt; spendOf(prevMonth(currentMonth), c) &gt; 0 &amp;&amp; spendOf(currentMonth, c) === 0)
+      : [];
+&nbsp;
+    const webSpend = n2(sum((m) =&gt; WEB_CHANNELS.reduce((a, c) =&gt; a + spendOf(m, c), 0)));
+    const webOrders = sum((m) =&gt; ordersBy.get(m)?.get("web") ?? 0);
+    const webNew = sum((m) =&gt; newBy.get(m) ?? 0);
+    const rows: CpoRow[] = [{
+      key: "web", label: "Web store", spend: webSpend, orders: webOrders, newCustomers: webNew,
+      costPerOrder: per(webSpend, webOrders), costPerNewCustomer: per(webSpend, webNew),
+      pending: pendingFor(WEB_CHANNELS),
+    }];
+    for (const ch of MARKETPLACE_CHANNELS) {
+      const s = n2(sum((m) =&gt; spendOf(m, ch)));
+      const o = sum((m) =&gt; ordersBy.get(m)?.get(ch) ?? 0);
+      const pending = pendingFor([ch]);
+      if (s === 0 &amp;&amp; o === 0 &amp;&amp; pending.length === 0) continue;
+      rows.push({
+        key: ch, label: CHANNEL_LABEL[ch], spend: s, orders: o, newCustomers: null,
+        // Nothing booked yet for a channel that normally spends: S$0 per order would be a lie.
+        costPerOrder: pending.length &amp;&amp; s === 0 ? null : per(s, o),
+        costPerNewCustomer: null, pending,
+      });
+    }
+    const webBreakdown = WEB_CHANNELS
+      .map((c) =&gt; ({ channel: c, label: CHANNEL_LABEL[c], spend: n2(sum((m) =&gt; spendOf(m, c))) }))
+      .filter((r) =&gt; r.spend &gt; 0);
+    const totalSpend = n2(rows.reduce((a, r) =&gt; a + r.spend, 0));
+    return { month: label, rows, webSpend: webBreakdown, totalSpend };
+  };
+&nbsp;
+  const months: CpoPeriod[] = [];
+  const range: string[] = [];
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (firstMonth) {
+    for (let m = firstMonth; m &lt;= currentMonth; m = nextMonth(m)) range.push(m);
+    for (const m of [...range].reverse()) months.push(buildPeriod([m], m));
+  }
+  const total = buildPeriod(range, "total");
+&nbsp;
+  const lastComplete = months.find((p) =&gt; p.month &lt; currentMonth);
+  const known = !!lastComplete &amp;&amp; lastComplete.rows[0].costPerOrder !== null;
+&nbsp;
+  return {
+    firstMonth, currentMonth, months, total,
+    openai: {
+      spend: n2(range.reduce((a, m) =&gt; a + spendOf(m, "openai"), 0)),
+      conversions: input.openaiConversions,
+    },
+    known,
+  };
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-10-17T09:39:22.313Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    
