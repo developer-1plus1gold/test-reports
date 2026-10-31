@@ -1,0 +1,397 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/app/api/payments/razorpay/status/route.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/app/api/payments/razorpay/status</a> route.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">68.29% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>28/41</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">47.72% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>21/44</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>1/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">72.97% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>27/37</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line medium'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * GET /api/payments/razorpay/status?ref=REFERENCE[&amp;check=1]
+ *
+ * Polled by /payment/confirming after Razorpay redirects back. Same protocol
+ * as /api/payments/hitpay/status: completed | processing | stalled | failed | pending.
+ *
+ * check=1 — sent by the confirming page on each poll tick (like HitPay's
+ *   check_hitpay=1): if the row is still pending, ask Razorpay's API and
+ *   complete the order through the shared atomic claim. The callback query
+ *   string is never trusted on its own.
+ *
+ *   Abandoned (HitPay parity, 2026-10-29): a customer who closes Razorpay's page
+ *   leaves the link `created` with no payment attempt, and Razorpay never marks
+ *   it — so the poll read "pending" until the link expired and the confirming
+ *   screen hung. check=1 is only sent once the customer has RETURNED (web
+ *   confirming page; iOS after the payment sheet closes or redirects back), so an
+ *   attempt-free open link then means they did not pay: report `failed` /
+ *   `abandoned`, exactly as HitPay's requires_payment_method rule does. Like
+ *   HitPay, the row and the link are left open — a payment that lands late still
+ *   completes through the webhook or the reconcile cron.
+ * Ownership is bound by scoping the row to the authenticated user.
+ */
+import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
+import { waitUntil } from "@vercel/functions";
+import { getUserFromRequest } from "@/lib/auth/get-user";
+import { sendReceiptWithRetry } from "@/lib/order-post-payment";
+import { RAZORPAY_PENDING_SELECT, reconcilePendingRazorpayPayment, type ReconcilableRazorpayPayment } from "@/lib/razorpay-reconcile";
+&nbsp;
+export const runtime     = "nodejs";
+export const maxDuration = 60;
+&nbsp;
+const STALL_THRESHOLD_MS = 30_000;
+&nbsp;
+const supabaseAdmin = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_KEY!,
+);
+&nbsp;
+export async function GET(req: NextRequest) {
+  const ref   = req.nextUrl.searchParams.get("ref");
+  const check = req.nextUrl.searchParams.get("check") === "1";
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!ref) <span class="cstat-no" title="statement not covered" >return NextResponse.json({ error: "Missing ref" }, { status: 400 });</span>
+&nbsp;
+  // Bearer (iOS) or cookie (web).
+  const auth = await getUserFromRequest(req);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!auth) <span class="cstat-no" title="statement not covered" >return NextResponse.json({ error: "Unauthorized" }, { status: 401 });</span>
+&nbsp;
+  const { data: pending } = await supabaseAdmin
+    .from("razorpay_pending_payments")
+    .select(`${RAZORPAY_PENDING_SELECT}, processing_claimed_at`)
+    .eq("reference_number", ref)
+    .eq("user_id", auth.user.id)
+    .maybeSingle();
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!pending) <span class="cstat-no" title="statement not covered" >return NextResponse.json({ error: "Not found" }, { status: 404 });</span>
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (pending.status === "completed" || pending.order_id) {
+<span class="cstat-no" title="statement not covered" >    return NextResponse.json({ status: "completed", orderId: pending.order_id ?? null, amountSgd: pending.amount_sgd ?? null });</span>
+  }
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (pending.status === "processing") {
+    const claimedAt = <span class="cstat-no" title="statement not covered" >pending.processing_claimed_at as string | null;</span>
+<span class="cstat-no" title="statement not covered" >    if (claimedAt &amp;&amp; Date.now() - new Date(claimedAt).getTime() &gt;= STALL_THRESHOLD_MS) {</span>
+<span class="cstat-no" title="statement not covered" >      console.error(`[razorpay/status] stalled ref=${ref} — resetting to pending for retry`);</span>
+<span class="cstat-no" title="statement not covered" >      await supabaseAdmin</span>
+        .from("razorpay_pending_payments")
+        .update({ status: "pending", processing_claimed_at: null })
+        .eq("id", pending.id)
+        .eq("status", "processing");
+<span class="cstat-no" title="statement not covered" >      return NextResponse.json({ status: "stalled" });</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return NextResponse.json({ status: "processing" });</span>
+  }
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (pending.status !== "pending") {
+<span class="cstat-no" title="statement not covered" >    return NextResponse.json({ status: "failed", reason: pending.status === "expired" ? "expired" : "declined" });</span>
+  }
+&nbsp;
+  if (check) {
+    const internalBaseUrl = process.env.INTERNAL_BASE_URL ?? "http://localhost:3000";
+    try {
+      const r = await reconcilePendingRazorpayPayment(pending as ReconcilableRazorpayPayment, supabaseAdmin, internalBaseUrl, false);
+      if (r.outcome === "completed") {
+        waitUntil(sendReceiptWithRetry(r.orderId, internalBaseUrl));
+        return NextResponse.json({ status: "completed", orderId: r.orderId, amountSgd: pending.amount_sgd ?? <span class="branch-1 cbranch-no" title="branch not covered" >null }</span>);
+      }
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (r.outcome === "already_completed") {
+<span class="cstat-no" title="statement not covered" >        return r.orderId</span>
+          ? NextResponse.json({ status: "completed", orderId: r.orderId, amountSgd: pending.amount_sgd ?? null })
+          : NextResponse.json({ status: "processing" });
+      }
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (r.outcome === "failed") return NextResponse.json({ status: "failed", reason: r.reason });
+      if (r.outcome === "still_pending" &amp;&amp; r.unattempted) {
+        console.log(`[razorpay/status] abandoned (link open, no payment attempt) ref=${ref}`);
+        return NextResponse.json({ status: "failed", reason: "abandoned" });
+      }
+    } catch (err) {
+      // Razorpay unreachable — non-fatal; the next poll retries.
+<span class="cstat-no" title="statement not covered" >      console.error("[razorpay/status] API check failed (non-fatal):", err);</span>
+    }
+  }
+&nbsp;
+  return NextResponse.json({ status: "pending", orderId: null });
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-10-31T02:28:45.201Z
+            </div>
+        <script src="../../../../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../../../../sorter.js"></script>
+        <script src="../../../../../../../block-navigation.js"></script>
+    </body>
+</html>
+    
