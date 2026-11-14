@@ -1,0 +1,520 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/referrals/attribution.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/referrals</a> attribution.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">95.55% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>43/45</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">77.55% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>38/49</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>7/7</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>38/38</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Referral attribution AFTER sign-up (Mukesh, 2026-11-03).
+ * Table + rules: migration 20261103b_referral_attributions.sql.
+ *
+ *   • attachReferral       — link a customer (no paid order yet) to a referrer:
+ *                            from a captured ?ref= link, "Were you referred?" in
+ *                            My Rewards, or Admin → Referrals.
+ *   • getReferralOffer     — the referral discount the customer can still use
+ *                            (My Rewards card + cart pre-apply), or null.
+ *   • eligibleSubtotalFromLines — the gold value a referrer's reward is computed
+ *                            on when crediting an attributed referral after the
+ *                            referee's first order used a bigger promo instead.
+ *
+ * Sign-up itself is unchanged. Server-only (service-role client).
+ */
+import type { SupabaseClient } from "@supabase/supabase-js";
+import { PAID_STATUSES } from "@/lib/order-aggregations";
+import { MAX_REFERRAL_CAP_GRAMS } from "@/lib/referral-discount";
+&nbsp;
+export type AttachSource = "link" | "self" | "admin";
+&nbsp;
+/** Customer-facing message per refusal from attach_referral(). */
+export const ATTACH_ERROR_MESSAGES: Record&lt;string, string&gt; = {
+  invalid_code:     "That referral code isn't valid.",
+  self_referral:    "You can't use your own referral code.",
+  already_referred: "A referral is already recorded on your account.",
+  already_attached: "A referrer is already linked to your account.",
+  not_first_order:  "Referral discounts are for a customer's first order, and you've already ordered with us.",
+  invalid_source:   "Couldn't link that referral.",
+};
+&nbsp;
+export type AttachResult =
+  | { ok: true; code: string; referrerId: string }
+  | { ok: false; error: string; message: string };
+&nbsp;
+export async function attachReferral(
+  db: SupabaseClient, referredId: string, code: string, source: AttachSource,
+): Promise&lt;AttachResult&gt; {
+  const clean = code.toUpperCase().trim();
+  if (!/^[A-Z0-9]{4,20}$/.test(clean)) {
+    return { ok: false, error: "invalid_code", message: ATTACH_ERROR_MESSAGES.invalid_code };
+  }
+  const { data, error } = await db.rpc("attach_referral", { p_referred_id: referredId, p_code: clean, p_source: source });
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (error) <span class="cstat-no" title="statement not covered" >throw new Error(`attach_referral failed: ${error.message}`);</span>
+  const r = data as { ok: boolean; error?: string; code?: string; referrer_id?: string };
+  if (!r?.ok) {
+    const key = r?.error ?? <span class="branch-1 cbranch-no" title="branch not covered" >"invalid_code";</span>
+    return { ok: false, error: key, message: ATTACH_ERROR_MESSAGES[key] ?? <span class="branch-1 cbranch-no" title="branch not covered" >ATTACH_ERROR_MESSAGES.invalid_code }</span>;
+  }
+  return { ok: true, code: r.code as string, referrerId: r.referrer_id as string };
+}
+&nbsp;
+export interface ReferralOffer {
+  code:              string;
+  referrerFirstName: string;
+  discountPct:       number;
+  maxGrams:          number;
+}
+&nbsp;
+/**
+ * The attributed referral the customer can still use on their first order, or
+ * null: no attribution, a referral already recorded, a paid order already
+ * placed, or the code since deactivated.
+ */
+export async function getReferralOffer(db: SupabaseClient, userId: string): Promise&lt;ReferralOffer | null&gt; {
+  const [attr, used, paid] = await Promise.all([
+    db.from("referral_attributions")
+      .select("referral_codes ( code, is_active, referee_discount_pct, eligible_max_grams, customer_id )")
+      .eq("referred_id", userId)
+      .maybeSingle(),
+    db.from("referrals").select("id", { count: "exact", head: true }).eq("referred_id", userId),
+    db.from("orders").select("id", { count: "exact", head: true }).eq("customer_id", userId).in("status", [...PAID_STATUSES]),
+  ]);
+  type Rc = { code: string; is_active: boolean; referee_discount_pct: number | string; eligible_max_grams: number | string; customer_id: string };
+  const rcRaw = (attr.data as { referral_codes: Rc | Rc[] | null } | null)?.referral_codes;
+  const rc = Array.isArray(rcRaw) ? <span class="branch-0 cbranch-no" title="branch not covered" >rcRaw[0] : r</span>cRaw;
+  if (!rc || !rc.is_active || (used.count ?? 0) &gt; 0 || (paid.count ?? <span class="branch-1 cbranch-no" title="branch not covered" >0) &gt; 0</span>) return null;
+&nbsp;
+  const { data: prof } = await db.from("profiles").select("full_name").eq("id", rc.customer_id).maybeSingle();
+  const first = ((prof as { full_name?: string | null } | null)?.full_name ?? <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>.trim().split(/\s+/)[0];
+  return {
+    code:              rc.code,
+    referrerFirstName: first ? first[0].toUpperCase() + first.slice(1).toLowerCase() : <span class="branch-1 cbranch-no" title="branch not covered" >"",</span>
+    discountPct:       Number(rc.referee_discount_pct),
+    maxGrams:          Math.min(Number(rc.eligible_max_grams), MAX_REFERRAL_CAP_GRAMS),
+  };
+}
+&nbsp;
+/**
+ * Whether the customer can still be linked to a referrer ("Were you referred?"
+ * in My Rewards): no link yet, no referral recorded, no paid order. Mirrors the
+ * attach_referral() RPC, which stays the authority.
+ */
+export async function canAttachReferral(db: SupabaseClient, userId: string): Promise&lt;boolean&gt; {
+  const [attr, used, paid] = await Promise.all([
+    db.from("referral_attributions").select("referred_id", { count: "exact", head: true }).eq("referred_id", userId),
+    db.from("referrals").select("id", { count: "exact", head: true }).eq("referred_id", userId),
+    db.from("orders").select("id", { count: "exact", head: true }).eq("customer_id", userId).in("status", [...PAID_STATUSES]),
+  ]);
+  return (attr.count ?? 0) === 0 &amp;&amp; (used.count ?? 0) === 0 &amp;&amp; (paid.count ?? <span class="branch-1 cbranch-no" title="branch not covered" >0) === 0</span>;
+}
+&nbsp;
+export interface RewardLine {
+  productType: string | null;
+  gramsEach:   number;
+  quantity:    number;
+  /** Unit price paid (SGD). */
+  priceSgd:    number;
+}
+&nbsp;
+/**
+ * The eligible gold value of a first order for an ATTRIBUTED referral: gold
+ * pieces no heavier than the code's per-piece limit (MAG and accessories never
+ * count), valued at the price paid, capped at the programme's 5g. Mirrors the
+ * referee-discount rule in lib/referral-discount.ts, but on the order's actual
+ * line prices: the order has already been charged, so this is what was bought.
+ */
+export function eligibleSubtotalFromLines(lines: RewardLine[], eligibleMaxGrams: number): number {
+  const capGrams = Math.min(eligibleMaxGrams, MAX_REFERRAL_CAP_GRAMS);
+  let gramsLeft = capGrams;
+  let subtotal = 0;
+  const eligible = lines
+    .filter((l) =&gt; (l.productType === "curve" || l.productType === "standard")
+      &amp;&amp; l.gramsEach &gt; 0 &amp;&amp; l.gramsEach &lt;= eligibleMaxGrams &amp;&amp; l.quantity &gt; 0)
+    // Lightest pieces first — the same order lib/referral-discount fills the 5g in.
+    .sort((a, b) =&gt; a.gramsEach - b.gramsEach);
+  for (const l of eligible) {
+    for (let i = 0; i &lt; l.quantity &amp;&amp; gramsLeft &gt; 0; i++) {
+      const take = Math.min(l.gramsEach, gramsLeft);
+      subtotal += (l.priceSgd / l.gramsEach) * take;
+      gramsLeft -= take;
+    }
+    if (gramsLeft &lt;= 0) break;
+  }
+  return Math.round(subtotal * 100) / 100;
+}
+&nbsp;
+/** "8830 5868", "+65 8830-5868", "6588305868" → "+6588305868"; null if not a phone. */
+export function normaliseSgPhone(input: string): string | null {
+  const digits = input.replace(/\D/g, "");
+  if (/^[89]\d{7}$/.test(digits) || /^6\d{7}$/.test(digits)) return `+65${digits}`;
+  if (/^65[689]\d{7}$/.test(digits)) return `+${digits}`;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (input.trim().startsWith("+") &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >digits.length &gt;= 8 &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >d</span>igits.length &lt;= 15) <span class="cstat-no" title="statement not covered" >r</span>eturn `+${digits}`;</span>
+  return null;
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-11-14T12:01:58.133Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    
