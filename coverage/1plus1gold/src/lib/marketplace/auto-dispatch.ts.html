@@ -1,0 +1,658 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/marketplace/auto-dispatch.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/marketplace</a> auto-dispatch.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">95.23% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>80/84</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">80.51% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>62/77</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">82.35% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>14/17</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">96.87% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>62/64</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Marketplace auto-dispatch (Mukesh 2026-11-19): as soon as a paid order is imported, arrange
+ * its shipment on the marketplace — the buyer then meets an arranged shipment rather than an
+ * open order, and the drop-off deadline starts at once. Physical packing comes after: the
+ * operator packs the bars, prints the label from the Dispatch tile and drops the parcel off.
+ *
+ *   TikTok Shop: Ship Package. TikTok picks the carrier AND the handover itself — for SG
+ *     local sellers the collection method is the shop's Seller Center setting (ours: pickup),
+ *     and `handover_method` is ignored (lib/tiktok-shop/fulfil). So TikTok's only mode is "on",
+ *     stored as `pickup`. Only once TikTok has released the order (AWAITING_SHIPMENT) —
+ *     during ON_HOLD the buyer may still cancel freely and TikTok will not ship it.
+ *   Lazada: Pack, then Ready to ship (Mukesh: "consider it as packed — that is just a Lazada
+ *     step"). Drop-off is how the store is set up on Lazada (delivery_type "dropship").
+ *
+ * The SAME fulfil functions as the tile's buttons do the work (lib/lazada/fulfil,
+ * lib/tiktok-shop/fulfil), so a manual and an automatic arrangement are one code path.
+ *
+ * Grace (Mukesh 2026-11-20): an order is arranged only once it has been ours for
+ * GRACE_MINUTES. Lazada 176203723521250 was packed + ready-to-ship 9 s after payment and the
+ * buyer asked to cancel 22 s later; a short wait lets most change-of-mind cancels land before
+ * a parcel is arranged. Each run checks again, so it is arranged on the first run after that.
+ *
+ * Safety: per channel and OFF by default (marketplace_connections.auto_dispatch). Each order
+ * gets at most MAX_ATTEMPTS tries, RETRY_MINUTES apart; the attempt is counted BEFORE the
+ * call, so a crash can never loop. After the last failed try: one Control Tower card + one
+ * WhatsApp, and the order waits for a person (the tile's buttons still work).
+ */
+import type { SupabaseClient } from "@supabase/supabase-js";
+import { packLazadaOrder, rtsLazadaOrder } from "@/lib/lazada/fulfil";
+import { arrangeTikTokShipment } from "@/lib/tiktok-shop/fulfil";
+import { sendAdminAlert } from "@/lib/twilio";
+import { getAdminPhonesCsv } from "@/lib/admin-team";
+import { fileEscalation } from "@/lib/control-tower/escalation";
+&nbsp;
+export type AutoDispatchMode = "off" | "drop_off" | "pickup";
+export const AUTO_DISPATCH_MODES: readonly AutoDispatchMode[] = ["off", "drop_off", "pickup"];
+export const MAX_ATTEMPTS = 3;
+export const RETRY_MINUTES = 20;
+/** Minutes after we recorded the paid order before it is arranged automatically. */
+export const GRACE_MINUTES = 15;
+&nbsp;
+/** Pure: has the order been ours long enough to arrange automatically? */
+export function pastDispatchGrace(orderCreatedAt: string | null | undefined, now: Date): boolean {
+  const t = orderCreatedAt ? Date.parse(orderCreatedAt) : NaN;
+  if (!Number.isFinite(t)) return false; // unknown age → wait (fails toward not arranging)
+  return now.getTime() - t &gt;= GRACE_MINUTES * 60_000;
+}
+&nbsp;
+type Http = { fetchImpl?: typeof fetch };
+export type ShipOutcome = { ok: true; how: string; provider: string | null; tracking: string | null } | { ok: false; error: string };
+&nbsp;
+export interface Dispatcher {
+  channel: "lazada" | "tiktok_shop";
+  label: string;
+  /** The modes this channel offers (Lazada has no pickup choice of ours). */
+  modes: readonly AutoDispatchMode[];
+  /** Is the marketplace ready for us to arrange it, from the import ledger's status text? */
+  eligible(marketplaceStatus: string | null): boolean;
+  ship(db: SupabaseClient, orderId: string, ledger: LedgerRow, mode: Exclude&lt;AutoDispatchMode, "off"&gt;, now: Date, http: Http): Promise&lt;ShipOutcome&gt;;
+}
+&nbsp;
+export interface LedgerRow {
+  external_order_id: string; order_id: string; marketplace_status: string | null;
+  package_id: string | null; auto_dispatch_attempts: number; auto_dispatch_at: string | null;
+}
+&nbsp;
+// ── The two channels ─────────────────────────────────────────────────────────
+&nbsp;
+/** Lazada item statuses (the ledger joins them with ","): every live item pending or packed. */
+export function lazadaEligible(status: string | null): boolean {
+  const s = (status ?? "").split(",").map((x) =&gt; x.trim().toLowerCase()).filter(Boolean);
+  return s.length &gt; 0 &amp;&amp; s.every((x) =&gt; x === "pending" || x === "packed");
+}
+&nbsp;
+export const LAZADA_DISPATCH: Dispatcher = {
+  channel: "lazada",
+  label: "Lazada",
+  modes: ["off", "drop_off"],
+  eligible: lazadaEligible,
+  async ship(db, orderId, ledger, _mode, now, http) {
+    let provider: string | null = null;
+    let tracking: string | null = null;
+    if (!ledger.package_id) {
+      const p = await packLazadaOrder(db, orderId, now, http);
+      if (!p.ok) return { ok: false, error: p.error };
+      provider = p.shipmentProvider ?? <span class="branch-1 cbranch-no" title="branch not covered" >null; t</span>racking = p.trackingNumber ?? <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+    }
+    const r = await rtsLazadaOrder(db, orderId, now, http);
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!r.ok) <span class="cstat-no" title="statement not covered" >return { ok: false, error: ledger.package_id ? r.error : `packed, but ${r.error}` };</span>
+    return { ok: true, how: "packed + ready to ship", provider, tracking };
+  },
+};
+&nbsp;
+export const TIKTOK_DISPATCH: Dispatcher = {
+  channel: "tiktok_shop",
+  label: "TikTok Shop",
+  // One choice: on (stored as "pickup", our shop's collection setting) or off. TikTok applies
+  // the Seller Center collection method itself, so there is no handover for us to pick.
+  modes: ["off", "pickup"],
+  eligible: (s) =&gt; (s ?? <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>.toUpperCase() === "AWAITING_SHIPMENT",
+  async ship(db, orderId, _ledger, _mode, now, http) {
+    const r = await arrangeTikTokShipment(db, orderId, now, http);
+    if (!r.ok) return { ok: false, error: r.error };
+    return { ok: true, how: "TikTok collection", provider: r.shipmentProvider ?? <span class="branch-1 cbranch-no" title="branch not covered" >null, t</span>racking: r.trackingNumber ?? <span class="branch-1 cbranch-no" title="branch not covered" >null }</span>;
+  },
+};
+&nbsp;
+// ── The run ──────────────────────────────────────────────────────────────────
+&nbsp;
+export interface AutoDispatchResult {
+  mode: AutoDispatchMode;
+  arranged: Array&lt;{ externalOrderId: string; how: string }&gt;;
+  failed: Array&lt;{ externalOrderId: string; error: string; final: boolean }&gt;;
+}
+&nbsp;
+/** Pure: one line for the cron log ("off", or "drop_off: arranged 1, failed 1 (reason)"). */
+export function dispatchSummary(r: { mode: string; arranged: unknown[]; failed: AutoDispatchResult["failed"] } | undefined): string {
+  if (!r) return "not run";
+  if (r.mode === "off") return "off";
+  const why = r.failed.map((f) =&gt; `${f.externalOrderId}: ${f.error}`).join("; ").slice(0, 300);
+  return `${r.mode}: arranged ${r.arranged.length}, failed ${r.failed.length}${why ? ` (${why})` : <span class="branch-1 cbranch-no" title="branch not covered" >""}`;</span>
+}
+&nbsp;
+/** Pure: may this ledger row be tried now? */
+export function dueForAttempt(row: Pick&lt;LedgerRow, "auto_dispatch_attempts" | "auto_dispatch_at"&gt;, now: Date): boolean {
+  if (row.auto_dispatch_attempts &gt;= MAX_ATTEMPTS) return false;
+  if (!row.auto_dispatch_at) return true;
+  return now.getTime() - new Date(row.auto_dispatch_at).getTime() &gt;= RETRY_MINUTES * 60_000;
+}
+&nbsp;
+export async function runAutoDispatch(db: SupabaseClient, now: Date, d: Dispatcher, http: Http = {}): Promise&lt;AutoDispatchResult&gt; {
+  const { data: conn } = await db.from("marketplace_connections").select("auto_dispatch").eq("channel", d.channel).maybeSingle();
+  const mode = (AUTO_DISPATCH_MODES as readonly string[]).includes(String(conn?.auto_dispatch)) ? conn!.auto_dispatch as AutoDispatchMode : "off";
+  const result: AutoDispatchResult = { mode, arranged: [], failed: [] };
+  if (mode === "off" || !d.modes.includes(mode)) return result;
+&nbsp;
+  const { data } = await db.from("marketplace_order_imports")
+    .select("external_order_id, order_id, marketplace_status, package_id, auto_dispatch_attempts, auto_dispatch_at")
+    .eq("channel", d.channel).not("order_id", "is", null).is("rts_at", null).is("issue", null)
+    .lt("auto_dispatch_attempts", MAX_ATTEMPTS).limit(20);
+  const rows = ((data ?? <span class="branch-1 cbranch-no" title="branch not covered" >[])</span> as LedgerRow[]).filter((r) =&gt; d.eligible(r.marketplace_status) &amp;&amp; dueForAttempt(r, now));
+  if (!rows.length) return result;
+&nbsp;
+  // Our side must agree too: never arrange a parcel for an order we cancelled or already sent.
+  const { data: orders } = await db.from("orders").select("id, status, shipper_status, created_at").in("id", rows.map((r) =&gt; r.order_id));
+  const ours = new Map(((orders ?? <span class="branch-1 cbranch-no" title="branch not covered" >[])</span> as Array&lt;{ id: string; status: string; shipper_status: string | null; created_at: string | null }&gt;).map((o) =&gt; [o.id, o]));
+  const phones = getAdminPhonesCsv();
+&nbsp;
+  for (const row of rows) {
+    const o = ours.get(row.order_id);
+    if (!o || /cancel|refund/.test(o.status) || (o.shipper_status &amp;&amp; !["pending", "booked"].includes(o.shipper_status))) continue;
+    if (!pastDispatchGrace(o.created_at, now)) continue; // not yet — the next run checks again
+    const attempt = row.auto_dispatch_attempts + 1;
+    // Count the attempt FIRST, so a crash mid-call can never turn into a retry loop.
+    await db.from("marketplace_order_imports").update({ auto_dispatch_attempts: attempt, auto_dispatch_at: now.toISOString() })
+      .eq("channel", d.channel).eq("external_order_id", row.external_order_id);
+&nbsp;
+    const r = await d.ship(db, row.order_id, row, mode, now, http)
+      .<span class="fstat-no" title="function not covered" >catch((e</span>: unknown): ShipOutcome =&gt; (<span class="cstat-no" title="statement not covered" >{ ok: false, error: e instanceof Error ? e.message.slice(0, 200) : "failed" }))</span>;
+    const ref = `${d.label} order ${row.external_order_id}`;
+    if (r.ok) {
+      result.arranged.push({ externalOrderId: row.external_order_id, how: r.how });
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (phones) {
+        await sendAdminAlert(phones, "notify", "Shipment arranged",
+          `${ref} · ${r.how}${r.provider || r.tracking ? ` · ${[r.provider, r.tracking].filter(Boolean).join(" ")}` : ""} · pack the bars and print the label from Dispatch`)
+          .<span class="fstat-no" title="function not covered" >catch(() =&gt; <span class="cstat-no" title="statement not covered" >n</span>ull)</span>;
+      }
+      continue;
+    }
+    const final = attempt &gt;= MAX_ATTEMPTS;
+    result.failed.push({ externalOrderId: row.external_order_id, error: r.error, final });
+    // Keep the reason on the order (the tile shows it as the marketplace's last reply) — a
+    // refusal before the fulfil call itself (e.g. no drop-off offered) would otherwise be lost.
+    await db.from("marketplace_order_imports")
+      .update({ fulfil_error: `Auto-dispatch try ${attempt}/${MAX_ATTEMPTS}: ${r.error}`.slice(0, 300), updated_at: now.toISOString() })
+      .eq("channel", d.channel).eq("external_order_id", row.external_order_id);
+    if (final) {
+      await fileEscalation({
+        agentName: `${d.channel}_auto_dispatch`,
+        subject: `${ref}: shipment not arranged`,
+        detail: `${MAX_ATTEMPTS} automatic tries failed — last reply: ${r.error}. Arrange it from the Dispatch tile.`,
+        alertKey: `${d.channel}_auto_dispatch:${row.external_order_id}`,
+        payload: { page: "/admin?tab=dispatch", channel: d.channel, externalOrderId: row.external_order_id, orderId: row.order_id },
+      }, db);
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (phones) {
+        await sendAdminAlert(phones, "high", "Shipment not arranged", `${ref} · ${MAX_ATTEMPTS} tries failed (${r.error}) · arrange it from Dispatch`).<span class="fstat-no" title="function not covered" >catch(() =&gt; <span class="cstat-no" title="statement not covered" >n</span>ull)</span>;
+      }
+    }
+  }
+  return result;
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-11-21T17:31:51.360Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

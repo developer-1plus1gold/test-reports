@@ -1,0 +1,736 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/lazada/create-listing.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/lazada</a> create-listing.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">37.12% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>49/132</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">32.25% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>40/124</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">47.61% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>10/21</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">35.05% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>34/97</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">58x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">33x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Create a Lazada listing for one of our products (Mukesh 2026-11-19: put the 1 g and 2.5 g
+ * Nadir on Lazada and TikTok). Server-only, except the pure helpers.
+ *
+ * The listing is CLONED from a sibling we already sell on Lazada (same refinery where we
+ * have one): its category and product attributes, and its parcel, are what Lazada already
+ * accepted for a bar like this — nothing is typed by hand. What changes is ours: the name,
+ * the description (the shop-tile facts text the Shopee and TikTok listings use, no
+ * "investment" wording), our SKU, the price from the Lazada pricing settings (the same
+ * plannedUpdate the price push sends, refused below restock cost), our stock, and the
+ * gallery: the product's own images as JPG (Lazada takes JPG/PNG only) + our PSPM
+ * registration certificate LAST, like every other listing.
+ *
+ * Shapes (Lazada API reference, open.lazada.com):
+ *  - GetProductItem GET /product/item/get?item_id → data.primary_category, data.attributes,
+ *    data.skus[] (package_* live on the SKU)
+ *  - MigrateImage  POST /image/migrate (see licence-image.ts)
+ *  - CreateProduct POST /product/create, payload `&lt;Request&gt;&lt;Product&gt;&lt;PrimaryCategory/&gt;
+ *    &lt;Images/&gt;&lt;Attributes/&gt;&lt;Skus&gt;&lt;Sku/&gt;&lt;/Skus&gt;&lt;/Product&gt;&lt;/Request&gt;` → data.item_id,
+ *    data.sku_list[{ seller_sku, sku_id, shop_sku }]
+ * A new listing goes through Lazada's review; it is recorded `pending` and the reconcile
+ * read moves it to `active`. The price + stock push take it over from there.
+ */
+import type { SupabaseClient } from "@supabase/supabase-js";
+import { lazadaCall } from "./client";
+import { getAccessToken } from "./connection";
+import { lazadaLicenceUrl, migrateImageXml, LAZADA_MAX_IMAGES } from "./licence-image";
+import { plannedUpdate } from "@/lib/marketplace/planned-update";
+import { loadPriceConfig } from "@/lib/marketplace/price-config";
+import { ACTIONABLE_MATCH } from "@/lib/marketplace/mapping";
+import { MAX_SPOT_AGE_MS } from "@/lib/marketplace/price-push";
+import { getSpotPayload } from "@/lib/spot/fetch-spot";
+import { fetchPremiums } from "@/lib/premiums";
+import { shopLineForProduct, type ShopPriceable } from "@/lib/shop-pricing";
+import { fetchExportProducts, hostShopeeImages } from "@/lib/shopee/server";
+import { tiktokDescription } from "@/lib/tiktok-shop/listing-draft";
+import { defaultSku } from "@/lib/shopee/sku";
+import { loadRestockCosts } from "@/lib/pricing/strategy-data";
+import type { ShopeeSourceProduct } from "@/lib/shopee/types";
+&nbsp;
+const CHANNEL = "lazada";
+type Http = { fetchImpl?: typeof fetch };
+&nbsp;
+// XML 1.0 forbids most control characters; one stray one makes Lazada answer "E005 Invalid
+// Request Format" for the whole payload, so they are dropped before escaping.
+// eslint-disable-next-line no-control-regex
+const xml = (s: string) =&gt; s.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\uFFFE\uFFFF]/g, "").replace(/&amp;/g, "&amp;amp;").replace(/&lt;/g, "&amp;lt;").replace(/&gt;/g, "&amp;gt;").replace(/"/g, "&amp;quot;").replace(/'/g, "&amp;apos;");
+&nbsp;
+/** Product attributes that are the sibling's OWN content, never copied onto a new listing. */
+const OWN_CONTENT = new Set(["name", "description", "short_description", "name_ms", "description_ms", "short_description_ms", "name_en", "description_en", "video", "promotion_whitebkg_image",
+  // Set by Lazada itself (how the sibling was created), not a listing attribute.
+  "source"]);
+const XML_NAME = /^[A-Za-z_][A-Za-z0-9_]*$/;
+/** SKU fields copied from the sibling: the parcel (what Lazada's carriers already accepted). */
+const PARCEL_FIELDS = ["package_weight", "package_length", "package_width", "package_height", "package_content"] as const;
+&nbsp;
+export interface Template {
+  itemId: string;
+  categoryId: string;
+  attributes: Record&lt;string, string&gt;;
+  parcel: Partial&lt;Record&lt;(typeof PARCEL_FIELDS)[number], string&gt;&gt;;
+}
+&nbsp;
+/** Pure: GetProductItem data → the parts a new listing inherits. */
+export function templateOf(itemId: string, data: unknown): Template {
+  const d = (data ?? <span class="branch-1 cbranch-no" title="branch not covered" >{}) as { primary_category?: unknown; attributes?: Record&lt;string, unknown&gt;; skus?: Array&lt;Record&lt;string, unknown&gt;&gt; };</span>
+  const categoryId = String(d.primary_category ?? "");
+  if (!/^\d+$/.test(categoryId)) throw new Error("the sibling listing has no Lazada category");
+  const attributes: Record&lt;string, string&gt; = {};
+  for (const [k, v] of Object.entries(d.attributes ?? <span class="branch-1 cbranch-no" title="branch not covered" >{})</span>) {
+    // Only names that are valid XML element names travel (they become &lt;k&gt;…&lt;/k&gt;).
+    if (!XML_NAME.test(k) || OWN_CONTENT.has(k) || v == null || typeof v === "object" || v === "") continue;
+    attributes[k] = String(v);
+  }
+  const sku = (Array.isArray(d.skus) ? d.skus[0] : null) ?? {};
+  const parcel: Template["parcel"] = {};
+  for (const f of PARCEL_FIELDS) if (sku[f] != null &amp;&amp; sku[f] !== "") parcel[f] = String(sku[f]);
+  return { itemId, categoryId, attributes, parcel };
+}
+&nbsp;
+/** Pure: the CreateProduct payload. */
+/** Pure: a weight in the sibling's own format ("5G" → "1G", "2.5G"; "5 g" → "1 g"). */
+export function weightLike(siblingValue: string, grams: number): string {
+  const g = Number.isInteger(grams) ? String(grams) : String(Number(grams.toFixed(2)));
+  const m = /^\s*[\d.]+\s*([A-Za-z]+)\s*$/.exec(siblingValue);
+  return m ? siblingValue.replace(/[\d.]+/, g) : `${g}G`;
+}
+&nbsp;
+export function createProductXml(t: Template, l: { name: string; descriptionHtml: string; sellerSku: string; price: number; quantity: number; images: string[]; grams: number }): string {
+  if (!(l.price &gt; 0)) throw new Error("no price");
+  if (!l.images.length) throw new Error("no images");
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!(l.grams &gt; 0)) throw new Error("no weight");
+  // The sibling's weight and box contents describe the SIBLING (first live preview, 11-19:
+  // a 1 g bar would have gone up as weight "5G", "1 x 5 gram Gold Bar"): ours replace them.
+  const attrs: Record&lt;string, string&gt; = { ...t.attributes, name: l.name, description: l.descriptionHtml };
+  if (attrs.weight_of_gold) attrs.weight_of_gold = weightLike(attrs.weight_of_gold, l.grams);
+  const parcel: Record&lt;string, string&gt; = { ...t.parcel, package_content: `1 x ${l.name}` } as Record&lt;string, string&gt;;
+  const attrXml = Object.entries(attrs).map(([k, v]) =&gt; `&lt;${k}&gt;${xml(v)}&lt;/${k}&gt;`).join("");
+  const parcelXml = Object.entries(parcel).map(([k, v]) =&gt; `&lt;${k}&gt;${xml(String(v))}&lt;/${k}&gt;`).join("");
+  const imgs = l.images.slice(0, LAZADA_MAX_IMAGES).map((u) =&gt; `&lt;Image&gt;${xml(u)}&lt;/Image&gt;`).join("");
+  return `&lt;?xml version="1.0" encoding="UTF-8" ?&gt;&lt;Request&gt;&lt;Product&gt;&lt;PrimaryCategory&gt;${t.categoryId}&lt;/PrimaryCategory&gt;`
+    + `&lt;Images&gt;${imgs}&lt;/Images&gt;&lt;Attributes&gt;${attrXml}&lt;/Attributes&gt;`
+    + `&lt;Skus&gt;&lt;Sku&gt;&lt;SellerSku&gt;${xml(l.sellerSku)}&lt;/SellerSku&gt;&lt;quantity&gt;${Math.max(0, Math.floor(l.quantity))}&lt;/quantity&gt;`
+    + `&lt;price&gt;${l.price.toFixed(2)}&lt;/price&gt;${parcelXml}&lt;/Sku&gt;&lt;/Skus&gt;&lt;/Product&gt;&lt;/Request&gt;`;
+}
+&nbsp;
+/** Pure: the sibling to clone — a live, confirmed Lazada listing of the same refinery where
+ *  there is one (Nadir for Nadir), else of the nearest weight. */
+export function pickSibling(p: { label: string; grams: number }, siblings: Array&lt;{ item_id: string; label: string; grams: number }&gt;): string | null {
+  const brand = (p.label.match(/(nadir|pamp|valcambi|argor|perth|maple|heraeus)/i)?.[1] ?? "").toLowerCase();
+  const pool = brand ? siblings.filter((s) =&gt; s.label.toLowerCase().includes(brand)) : [];
+  const from = pool.length ? pool : siblings;
+  if (!from.length) return null;
+  return [...from].sort((a, b) =&gt; Math.abs(a.grams - p.grams) - Math.abs(b.grams - p.grams))[0].item_id;
+}
+&nbsp;
+export interface LazadaCreateRow {
+  productId: string; title: string; ok: boolean; itemId?: string; sellerSku?: string; price?: number; error?: string;
+  /** dryRun only: the exact CreateProduct payload, with our own image URLs in place of Lazada's. */
+  payload?: string; templateItemId?: string; templateAttributeKeys?: string[];
+}
+&nbsp;
+async function <span class="fstat-no" title="function not covered" >freshSpot(): Promise&lt;number | null&gt; {</span>
+  const payload = <span class="cstat-no" title="statement not covered" >await getSpotPayload()</span>;
+<span class="cstat-no" title="statement not covered" >  if ("error" in payload) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+  const spot = <span class="cstat-no" title="statement not covered" >payload.currencies?.SGD?.gram ?? null;</span>
+  const age = <span class="cstat-no" title="statement not covered" >Math.max(payload.xauAgeMs ?? Infinity, payload.fxAgeMs ?? 0);</span>
+<span class="cstat-no" title="statement not covered" >  return spot &amp;&amp; !payload.xauStale &amp;&amp; !payload.fxStale &amp;&amp; age &lt;= MAX_SPOT_AGE_MS ? spot : null;</span>
+}
+&nbsp;
+/** Creates one Lazada listing per product id. Each product stands alone: one failure never stops the rest. */
+export async function <span class="fstat-no" title="function not covered" >createLazadaListings(d</span>b: SupabaseClient, productIds: string[], now: Date, http: Http = <span class="branch-0 cbranch-no" title="branch not covered" >{}, o</span>pts: { dryRun?: boolean } = <span class="branch-0 cbranch-no" title="branch not covered" >{}): Promise&lt;{ rows: LazadaCreateRow[]; error?: string }&gt; {</span>
+  const auth = <span class="cstat-no" title="statement not covered" >await getAccessToken(db, now);</span>
+<span class="cstat-no" title="statement not covered" >  if (!auth) <span class="cstat-no" title="statement not covered" >return { rows: [], error: "Lazada is not connected" };</span></span>
+  const <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >call = &lt;T&gt;(p</span>ath: string, params: Record&lt;string, string&gt;, method?: "GET") =&gt;</span>
+<span class="cstat-no" title="statement not covered" >    lazadaCall&lt;T&gt;(path, params, { appKey: auth.appKey, appSecret: auth.appSecret, accessToken: auth.token, fetchImpl: http.fetchImpl, ...(method ? { method } : {}) });</span>
+&nbsp;
+  const [products, { data: mapped }, cfg, spot] = <span class="cstat-no" title="statement not covered" >await Promise.all([</span>
+    fetchExportProducts(),
+    db.from("marketplace_listings").select("product_id, item_id, seller_sku, marketplace_status, match_source").eq("channel", CHANNEL).not("product_id", "is", null),
+    loadPriceConfig(db, CHANNEL),
+    freshSpot(),
+  ]);
+<span class="cstat-no" title="statement not covered" >  if (spot == null) <span class="cstat-no" title="statement not covered" >return { rows: [], error: "The gold price is not fresh — try again in a minute." };</span></span>
+  const rowsMapped = (<span class="cstat-no" title="statement not covered" >mapped ?? []) as Array&lt;{ product_id: string; item_id: string | null; seller_sku: string; marketplace_status: string | null; match_source: string }&gt;;</span>
+  const already = <span class="cstat-no" title="statement not covered" >new Set(rowsMapped.<span class="fstat-no" title="function not covered" >map((r</span>) =&gt; <span class="cstat-no" title="statement not covered" >r.product_id)</span>);</span>
+  const byId = <span class="cstat-no" title="statement not covered" >new Map(products.<span class="fstat-no" title="function not covered" >map((p</span>) =&gt; <span class="cstat-no" title="statement not covered" >[p.id, p])</span>);</span>
+  const siblings = <span class="cstat-no" title="statement not covered" >rowsMapped</span>
+    .<span class="fstat-no" title="function not covered" >filter((r</span>) =&gt; <span class="cstat-no" title="statement not covered" >r.item_id &amp;&amp; r.marketplace_status === "active" &amp;&amp; (ACTIONABLE_MATCH as readonly string[]).includes(r.match_source))</span>
+    .<span class="fstat-no" title="function not covered" >map((r</span>) =&gt; (<span class="cstat-no" title="statement not covered" >{ item_id: r.item_id!, label: byId.get(r.product_id)?.label ?? "", grams: Number(byId.get(r.product_id)?.grams ?? 0) }))</span>;
+  const [premiums, restock] = <span class="cstat-no" title="statement not covered" >await Promise.all([fetchPremiums(), loadRestockCosts(db).<span class="fstat-no" title="function not covered" >catch(() =&gt; <span class="cstat-no" title="statement not covered" >n</span>ew Map() as Awaited&lt;ReturnType&lt;typeof loadRestockCosts&gt;&gt;)</span>]);</span>
+&nbsp;
+  // The licence, once: Lazada hosts it, every new gallery ends with it. A dry run sends nothing.
+  const lic = <span class="cstat-no" title="statement not covered" >opts.dryRun ? null : await call&lt;{ data?: { image?: { url?: string } } }&gt;("/image/migrate", { payload: migrateImageXml(lazadaLicenceUrl()) });</span>
+  const licenceUrl = <span class="cstat-no" title="statement not covered" >opts.dryRun ? lazadaLicenceUrl() : lic?.data?.image?.url;</span>
+<span class="cstat-no" title="statement not covered" >  if (!licenceUrl) <span class="cstat-no" title="statement not covered" >return { rows: [], error: "Lazada did not return a URL for the licence image" };</span></span>
+&nbsp;
+  const templates = <span class="cstat-no" title="statement not covered" >new Map&lt;string, Template&gt;();</span>
+  const rows: LazadaCreateRow[] = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >  for (const id of productIds) {</span>
+    const p = <span class="cstat-no" title="statement not covered" >byId.get(id) as ShopeeSourceProduct | undefined;</span>
+<span class="cstat-no" title="statement not covered" >    if (!p) { <span class="cstat-no" title="statement not covered" >rows.push({ productId: id, title: id, ok: false, error: "not a gold product on our shop" }); <span class="cstat-no" title="statement not covered" >c</span>ontinue; }</span></span>
+    const title = <span class="cstat-no" title="statement not covered" >p.label;</span>
+<span class="cstat-no" title="statement not covered" >    if (already.has(id)) { <span class="cstat-no" title="statement not covered" >rows.push({ productId: id, title, ok: false, error: "already on Lazada (a Lazada listing is mapped to it)" }); <span class="cstat-no" title="statement not covered" >c</span>ontinue; }</span></span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const siblingId = <span class="cstat-no" title="statement not covered" >pickSibling({ label: p.label, grams: Number(p.grams) }, siblings);</span>
+<span class="cstat-no" title="statement not covered" >      if (!siblingId) <span class="cstat-no" title="statement not covered" >throw new Error("no live Lazada listing to copy the category from");</span></span>
+      let t = <span class="cstat-no" title="statement not covered" >templates.get(siblingId);</span>
+<span class="cstat-no" title="statement not covered" >      if (!t) {</span>
+<span class="cstat-no" title="statement not covered" >        t = templateOf(siblingId, (await call&lt;{ data?: unknown }&gt;("/product/item/get", { item_id: siblingId }, "GET"))?.data);</span>
+<span class="cstat-no" title="statement not covered" >        templates.set(siblingId, t);</span>
+      }
+      const base = <span class="cstat-no" title="statement not covered" >shopLineForProduct(p as unknown as ShopPriceable, 1, spot, premiums, 0).priceEach;</span>
+      const cost = <span class="cstat-no" title="statement not covered" >restock.get(p.id);</span>
+      const plan = <span class="cstat-no" title="statement not covered" >plannedUpdate({ baseSgd: base ?? null, status: p.status, stock_qty: p.stock_qty }, { price: null, qty: null, specialPrice: null }, cfg,</span>
+        { restockCostSgd: cost ? cost.sgdPerG * Number(p.grams) : null });
+<span class="cstat-no" title="statement not covered" >      if (plan.price == null) <span class="cstat-no" title="statement not covered" >throw new Error(plan.notes.join("; ") || "no price");</span></span>
+&nbsp;
+      const own = <span class="cstat-no" title="statement not covered" >{ ...p, product_media: p.product_media.<span class="fstat-no" title="function not covered" >filter((<span class="cstat-no" title="statement not covered" >m</span>) =&gt; (m.kind ?? "image") === "image")</span> };</span>
+      const sellerSku = <span class="cstat-no" title="statement not covered" >defaultSku(p);</span>
+<span class="cstat-no" title="statement not covered" >      if (opts.dryRun) {</span>
+        const images = <span class="cstat-no" title="statement not covered" >[...own.product_media.<span class="fstat-no" title="function not covered" >map((m</span>) =&gt; <span class="cstat-no" title="statement not covered" >m.url)</span>.slice(0, LAZADA_MAX_IMAGES - 1), licenceUrl];</span>
+        const payload = <span class="cstat-no" title="statement not covered" >createProductXml(t, { name: title, descriptionHtml: tiktokDescription(p), sellerSku, price: plan.price, quantity: plan.stock ?? 0, images, grams: Number(p.grams) });</span>
+<span class="cstat-no" title="statement not covered" >        rows.push({ productId: p.id, title, ok: true, sellerSku, price: plan.price, payload, templateItemId: t.itemId, templateAttributeKeys: Object.keys(t.attributes) });</span>
+<span class="cstat-no" title="statement not covered" >        continue;</span>
+      }
+      const <span class="cstat-no" title="statement not covered" >jpgs = (await hostShopeeImages([own]))[p.id] ?? [];</span>
+      const images: string[] = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >      for (const u of jpgs.slice(0, LAZADA_MAX_IMAGES - 1)) {</span>
+        const m = <span class="cstat-no" title="statement not covered" >await call&lt;{ data?: { image?: { url?: string } } }&gt;("/image/migrate", { payload: migrateImageXml(u) });</span>
+<span class="cstat-no" title="statement not covered" >        if (m?.data?.image?.url) <span class="cstat-no" title="statement not covered" >images.push(m.data.image.url);</span></span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (!images.length) <span class="cstat-no" title="statement not covered" >throw new Error("none of the product's images could be sent to Lazada");</span></span>
+<span class="cstat-no" title="statement not covered" >      images.push(licenceUrl);</span>
+&nbsp;
+      const created = <span class="cstat-no" title="statement not covered" >await call&lt;{ data?: { item_id?: number | string; sku_list?: Array&lt;{ seller_sku?: string; sku_id?: number | string; shop_sku?: string }&gt; } }&gt;(</span>
+        "/product/create",
+        { payload: createProductXml(t, { name: title, descriptionHtml: tiktokDescription(p), sellerSku, price: plan.price, quantity: plan.stock ?? 0, images, grams: Number(p.grams) }) },
+      );
+      const itemId = <span class="cstat-no" title="statement not covered" >created?.data?.item_id;</span>
+      const sku = <span class="cstat-no" title="statement not covered" >created?.data?.sku_list?.<span class="fstat-no" title="function not covered" >find((s</span>) =&gt; <span class="cstat-no" title="statement not covered" >s.seller_sku === sellerSku)</span> ?? created?.data?.sku_list?.[0];</span>
+<span class="cstat-no" title="statement not covered" >      if (itemId == null || sku?.sku_id == null) <span class="cstat-no" title="statement not covered" >throw new Error("Lazada did not return the item and SKU ids");</span></span>
+      const iso = <span class="cstat-no" title="statement not covered" >now.toISOString();</span>
+      const { error: dbErr } = <span class="cstat-no" title="statement not covered" >await db.from("marketplace_listings").upsert({</span>
+        channel: CHANNEL, seller_sku: sellerSku, item_id: String(itemId), sku_id: String(sku.sku_id), shop_sku: sku.shop_sku ?? null,
+        name: title.slice(0, 500), marketplace_status: "pending", marketplace_qty: plan.stock ?? 0, marketplace_price: plan.price,
+        category: t.categoryId, product_id: p.id, match_source: "confirmed", match_reason: "Created from admin",
+        matched_at: iso, last_seen_at: iso, last_pushed_at: iso, updated_at: iso,
+      }, { onConflict: "channel,seller_sku" });
+<span class="cstat-no" title="statement not covered" >      if (dbErr) <span class="cstat-no" title="statement not covered" >throw new Error(`listed on Lazada (${itemId}) but our mapping did not save — confirm it in Admin → Marketplaces`);</span></span>
+<span class="cstat-no" title="statement not covered" >      rows.push({ productId: p.id, title, ok: true, itemId: String(itemId), sellerSku, price: plan.price });</span>
+    } catch (e) {
+<span class="cstat-no" title="statement not covered" >      rows.push({ productId: id, title, ok: false, error: (e instanceof Error ? e.message : String(e)).slice(0, 300) });</span>
+    }
+  }
+<span class="cstat-no" title="statement not covered" >  return { rows };</span>
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-11-21T17:31:51.360Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

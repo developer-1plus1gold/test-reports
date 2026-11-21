@@ -1,0 +1,451 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/tiktok/backfill.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/tiktok</a> backfill.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">84.61% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>44/52</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">65.51% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>38/58</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">76.92% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>10/13</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">86.11% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>31/36</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * TikTok backfill — post existing Drumbeat reels to TikTok, one a day (Mukesh 2026-11-17).
+ * Server-only. Design: docs/tiktok-organic-integration.md step 3b.
+ *
+ * Mukesh's rule: reuse what already went out on Instagram — he approved and posted it.
+ * So preparing a piece COPIES, never generates:
+ *   - the chosen Instagram caption → an approved TikTok caption (unless TikTok has one)
+ *   - the chosen Instagram hashtags → TikTok hashtags (when there are any)
+ *   - the Instagram reel (first approved VIDEO on its channel post, else the piece's
+ *     newest approved video) + its Reel cover → the TikTok channel post
+ *   - `tiktok` appended to target_channels
+ * Publishing then goes through the normal publish route (the daily cron calls it), so
+ * every Drumbeat gate still applies; a published piece takes TikTok as an ADDED channel.
+ */
+import type { SupabaseClient } from "@supabase/supabase-js";
+import { CHOSEN_DRAFT_STATUSES } from "@/lib/marketing/draft-approval";
+import { OPERATOR_APPROVED_ASSET_STATUSES } from "@/lib/marketing/publish-gate";
+&nbsp;
+export const BACKFILL_AGENT = "tiktok_backfill";
+&nbsp;
+export class BackfillPrepError extends Error {}
+&nbsp;
+interface Draft { id: string; content: Record&lt;string, unknown&gt; }
+&nbsp;
+async function chosenDraft(db: SupabaseClient, pieceId: string, kind: "caption" | "hashtags", target: string): Promise&lt;Draft | null&gt; {
+  const { data } = await db.from("marketing_drafts")
+    .select("id, content")
+    .eq("content_piece_id", pieceId).eq("draft_kind", kind).eq("target", target)
+    .in("status", [...CHOSEN_DRAFT_STATUSES])
+    .order("approved_at", { ascending: false, nullsFirst: false })
+    .order("created_at", { ascending: false })
+    .limit(1);
+  return ((data ?? <span class="branch-1 cbranch-no" title="branch not covered" >[])</span>[0] as Draft | undefined) ?? null;
+}
+&nbsp;
+async function copyDraft(db: SupabaseClient, pieceId: string, kind: "caption" | "hashtags", content: Record&lt;string, unknown&gt;, now: Date) {
+  const { error } = await db.from("marketing_drafts").insert({
+    content_piece_id: pieceId, draft_kind: kind, target: "tiktok", variant_label: "from Instagram",
+    content, status: "approved", generated_by_agent: BACKFILL_AGENT,
+    approved_by: "admin (Instagram copy)", approved_at: now.toISOString(),
+  });
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (error) <span class="cstat-no" title="statement not covered" >throw new BackfillPrepError(`Could not copy the Instagram ${kind} to TikTok: ${error.message}`);</span>
+}
+&nbsp;
+interface AssetRow { id: string; mime_type: string; status: string; created_at: string }
+&nbsp;
+/** The reel to post: the first approved video on the Instagram channel post, else the
+ *  piece's newest approved video. Null when the piece has no approved video at all. */
+export function pickReel(igAssetIds: string[], assets: AssetRow[]): AssetRow | null {
+  const ok = (a: AssetRow) =&gt; a.mime_type.startsWith("video/")
+    &amp;&amp; (OPERATOR_APPROVED_ASSET_STATUSES as readonly string[]).includes(a.status);
+  const byId = new Map(assets.map((a) =&gt; [a.id, a]));
+  for (const id of igAssetIds) { const a = byId.get(id); if (a &amp;&amp; ok(a)) return a; }
+  return [...assets].filter(ok).sort((x, y) =&gt; y.created_at.localeCompare(x.created_at))[0] ?? null;
+}
+&nbsp;
+export async function prepareBackfillPiece(db: SupabaseClient, pieceId: string, now: Date): Promise&lt;void&gt; {
+  const { data: piece } = await db.from("marketing_content_pieces")
+    .select("id, target_channels").eq("id", pieceId).maybeSingle();
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!piece) <span class="cstat-no" title="statement not covered" >throw new BackfillPrepError("The piece no longer exists");</span>
+&nbsp;
+  // Caption + hashtags: copy Instagram's chosen ones unless TikTok already has its own.
+  if (!(await chosenDraft(db, pieceId, "caption", "tiktok"))) {
+    const ig = await chosenDraft(db, pieceId, "caption", "instagram");
+    if (!ig) throw new BackfillPrepError("No approved Instagram caption to reuse");
+    await copyDraft(db, pieceId, "caption", ig.content, now);
+  }
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (!(await chosenDraft(db, pieceId, "hashtags", "tiktok"))) {
+    const igTags = await chosenDraft(db, pieceId, "hashtags", "instagram");
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (igTags) await copyDraft(db, pieceId, "hashtags", igTags.content, now);
+  }
+&nbsp;
+  // Media: the Instagram reel + its cover.
+  const [{ data: posts }, { data: assets }] = await Promise.all([
+    db.from("marketing_channel_posts").select("channel, asset_ids, cover_asset_id")
+      .eq("content_piece_id", pieceId).in("channel", ["instagram", "tiktok"]),
+    db.from("marketing_assets").select("id, mime_type, status, created_at").eq("content_piece_id", pieceId),
+  ]);
+  const rows = (posts ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) as Array&lt;{ channel: string; asset_ids: string[] | null; cover_asset_id: string | null }&gt;;</span>
+  if (!rows.some((r) =&gt; r.channel === "tiktok" &amp;&amp; (r.asset_ids ?? <span class="branch-1 cbranch-no" title="branch not covered" >[])</span>.length)) {
+    const ig = rows.find((r) =&gt; r.channel === "instagram");
+    const reel = pickReel(ig?.asset_ids ?? <span class="branch-1 cbranch-no" title="branch not covered" >[], (a</span>ssets ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) as AssetRow[])</span>;
+    if (!reel) throw new BackfillPrepError("No approved video on this piece");
+    const cover = ig?.cover_asset_id &amp;&amp; (assets ?? <span class="branch-1 cbranch-no" title="branch not covered" >[])</span>.some((a) =&gt; a.id === ig.cover_asset_id) ? ig.cover_asset_id : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+    const { error } = await db.from("marketing_channel_posts").upsert({
+      content_piece_id: pieceId, channel: "tiktok", asset_ids: [reel.id], cover_asset_id: cover, updated_at: now.toISOString(),
+    }, { onConflict: "content_piece_id,channel" });
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (error) throw new BackfillPrepError(`Could not assign the reel to TikTok: ${error.message}`);
+  }
+&nbsp;
+  const channels = (piece.target_channels as string[] | null) ?? <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
+  if (!channels.includes("tiktok")) {
+    const { error } = await db.from("marketing_content_pieces")
+      .update({ target_channels: [...channels, "tiktok"], updated_at: now.toISOString() }).eq("id", pieceId);
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (error) <span class="cstat-no" title="statement not covered" >throw new BackfillPrepError(`Could not add TikTok to the piece: ${error.message}`);</span>
+  }
+}
+&nbsp;
+export interface QueueRow { content_piece_id: string; position: number; status: string }
+&nbsp;
+export async function <span class="fstat-no" title="function not covered" >nextQueued(d</span>b: SupabaseClient): Promise&lt;QueueRow | null&gt; {
+  const { data } = <span class="cstat-no" title="statement not covered" >await db.from("tiktok_backfill_queue")</span>
+    .select("content_piece_id, position, status").eq("status", "queued")
+    .order("position", { ascending: true }).limit(1);
+<span class="cstat-no" title="statement not covered" >  return ((data ?? [])[0] as QueueRow | undefined) ?? null;</span>
+}
+&nbsp;
+export async function <span class="fstat-no" title="function not covered" >isPaused(d</span>b: SupabaseClient): Promise&lt;boolean&gt; {
+  const { data } = <span class="cstat-no" title="statement not covered" >await db.from("tiktok_backfill_state").select("paused").eq("id", true).maybeSingle();</span>
+<span class="cstat-no" title="statement not covered" >  return !!data?.paused;</span>
+}
+&nbsp;
+export async function <span class="fstat-no" title="function not covered" >recordOutcome(</span>
+  db: SupabaseClient, pieceId: string, now: Date,
+  outcome: { status: "published"; } | { status: "failed"; error: string },
+): Promise&lt;void&gt; {
+<span class="cstat-no" title="statement not covered" >  await db.from("tiktok_backfill_queue").update({</span>
+    status: outcome.status,
+    attempted_at: now.toISOString(),
+    ...(outcome.status === "published" ? { published_at: now.toISOString(), last_error: null } : { last_error: outcome.error.slice(0, 500) }),
+  }).eq("content_piece_id", pieceId);
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-11-21T17:31:51.360Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

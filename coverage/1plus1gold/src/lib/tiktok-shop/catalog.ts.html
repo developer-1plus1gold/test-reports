@@ -1,0 +1,508 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/tiktok-shop/catalog.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/tiktok-shop</a> catalog.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">81.01% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>64/79</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">65.85% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>27/41</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">89.47% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>17/19</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">80.32% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>49/61</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">72x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * TikTok Shop catalog sync (step C groundwork, 2026-11-17) — READ-ONLY.
+ *
+ * Reads what the listing work needs and keeps it current, the way "Load Lazada
+ * products" does, and saves it on the connection row (`api_shapes.tiktokCatalog`)
+ * so it can be reviewed from the database:
+ *   - the category tree under "Jewelry Accessories &amp; Derivatives" (TikTok approved our
+ *     invite-only application for it on 17 Nov) and any gold / bullion / coin leaf;
+ *   - for each such leaf: its rules (certifications, size chart, package dimensions)
+ *     and attributes (required ones, allowed values) — what a listing must carry;
+ *   - the brands available for our refiners (PAMP, Valcambi, Nadir, …);
+ *   - the shop's warehouses (stock is pushed per warehouse);
+ *   - the shop's existing products and SKUs.
+ *
+ * Endpoints, all verified on partner.tiktokshop.com (doc ids in
+ * docs/tiktok-shop-integration.md): GET /product/202309/categories,
+ * …/categories/{id}/rules, …/categories/{id}/attributes, GET /product/202309/brands,
+ * GET /logistics/202309/warehouses, POST /product/202502/products/search.
+ * ▶ SEA shops MUST pass category_version=v2 (the 7-level tree) — TikTok's docs.
+ * Each section fails on its own: one refused call never hides the others.
+ */
+import type { SupabaseClient } from "@supabase/supabase-js";
+import { ttsCall, type TtsCallOptions } from "./client";
+import { getShopCredentials } from "./connection";
+&nbsp;
+type Creds = { token: string; appKey: string; appSecret: string; shopCipher: string };
+type Http = Pick&lt;TtsCallOptions, "fetchImpl"&gt;;
+&nbsp;
+export interface CategoryNode { id: string; parent_id: string; local_name: string; is_leaf: boolean; permission_statuses?: string[] }
+&nbsp;
+export interface CatalogSnapshot {
+  at: string;
+  approvedTree: string;
+  categories: { total: number; matched: MatchedCategory[] };
+  leaves: Array&lt;{ id: string; path: string; rules: unknown; attributes: unknown; error?: string }&gt;;
+  brands: Array&lt;{ query: string; found: Array&lt;{ id: string; name: string; authorized_status?: string }&gt;; error?: string }&gt;;
+  warehouses: unknown;
+  products: { total: number; items: unknown[] } | null;
+  errors: Record&lt;string, string&gt;;
+}
+&nbsp;
+const APPROVED_TREE = /jewel+e?ry accessories/i;
+const GOLD_WORDS = /gold|bullion|precious|investment|ingot|coin|bar\b|silver/i;
+const BRAND_QUERIES = ["PAMP", "Valcambi", "Nadir", "Royal Canadian Mint", "Argor", "Perth Mint", "Heraeus", "Austrian Mint"];
+const MAX_LEAVES = 12;
+&nbsp;
+export interface MatchedCategory { id: string; path: string; isLeaf: boolean; permission: string[]; inApprovedTree: boolean }
+&nbsp;
+/** Pure: every node under the approved tree, plus any gold-ish node anywhere, with its path. */
+export function matchCategories(nodes: CategoryNode[]): MatchedCategory[] {
+  const byId = new Map(nodes.map((n) =&gt; [n.id, n]));
+  const pathOf = (n: CategoryNode): string =&gt; {
+    const parts: string[] = [];
+    let cur: CategoryNode | undefined = n;
+    for (let i = 0; cur &amp;&amp; i &lt; 10; i++) { parts.unshift(cur.local_name); cur = byId.get(cur.parent_id); }
+    return parts.join(" &gt; ");
+  };
+  const roots = nodes.filter((n) =&gt; APPROVED_TREE.test(n.local_name)).map((n) =&gt; n.id);
+  const under = (n: CategoryNode): boolean =&gt; {
+    let cur: CategoryNode | undefined = n;
+    for (let i = 0; cur &amp;&amp; i &lt; 10; i++) { if (roots.includes(cur.id)) return true; cur = byId.get(cur.parent_id); }
+    return false;
+  };
+  return nodes
+    .filter((n) =&gt; under(n) || GOLD_WORDS.test(n.local_name))
+    .map((n) =&gt; ({ id: n.id, path: pathOf(n), isLeaf: !!n.is_leaf, permission: n.permission_statuses ?? [], inApprovedTree: under(n) }))
+    .sort((a, b) =&gt; a.path.localeCompare(b.path));
+}
+&nbsp;
+/** Pure: the leaves worth reading rules for, within the cap. Order: gold leaves in the
+ *  APPROVED tree (where we may list), other approved-tree leaves, then gold leaves
+ *  elsewhere (for comparison only — we are not approved to list there). */
+export function pickLeaves(matched: MatchedCategory[]): Array&lt;{ id: string; path: string }&gt; {
+  const isGold = (m: MatchedCategory) =&gt; GOLD_WORDS.test(m.path.split(" &gt; ").slice(-1)[0] ?? <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>;
+  const rank = (m: MatchedCategory) =&gt; (m.inApprovedTree ? (isGold(m) ? 0 : 1) : 2);
+  return matched.filter((m) =&gt; m.isLeaf &amp;&amp; (m.inApprovedTree || isGold(m)))
+    .sort((a, b) =&gt; rank(a) - rank(b) || <span class="branch-1 cbranch-no" title="branch not covered" >a.path.localeCompare(b.path))</span>
+    .slice(0, MAX_LEAVES).map(({ id, path }) =&gt; ({ id, path }));
+}
+&nbsp;
+const msg = (e: unknown) =&gt; (e instanceof Error ? e.message : <span class="branch-1 cbranch-no" title="branch not covered" >String(e))</span>.slice(0, 300);
+&nbsp;
+export async function fetchCatalog(creds: Creds, now: Date, http: Http = {}): Promise&lt;CatalogSnapshot&gt; {
+  const base = { appKey: creds.appKey, appSecret: creds.appSecret, accessToken: creds.token, shopCipher: creds.shopCipher, fetchImpl: http.fetchImpl };
+  const errors: Record&lt;string, string&gt; = {};
+  const snap: CatalogSnapshot = {
+    at: now.toISOString(), approvedTree: "Jewelry Accessories &amp; Derivatives",
+    categories: { total: 0, matched: [] }, leaves: [], brands: [], warehouses: null, products: null, errors,
+  };
+&nbsp;
+  try {
+    const data = await ttsCall&lt;{ categories?: CategoryNode[] }&gt;("/product/202309/categories", {
+      ...base, query: { category_version: "v2", locale: "en-US" },
+    });
+    const nodes = data?.categories ?? <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
+    snap.categories = { total: nodes.length, matched: matchCategories(nodes) };
+  } catch (e) { <span class="cstat-no" title="statement not covered" >errors.categories = msg(e); }</span>
+&nbsp;
+  for (const leaf of pickLeaves(snap.categories.matched)) {
+    const entry: CatalogSnapshot["leaves"][number] = { ...leaf, rules: null, attributes: null };
+    try {
+      entry.rules = await ttsCall(`/product/202309/categories/${encodeURIComponent(leaf.id)}/rules`, { ...base, query: { category_version: "v2" } });
+      entry.attributes = await ttsCall(`/product/202309/categories/${encodeURIComponent(leaf.id)}/attributes`, { ...base, query: { category_version: "v2", locale: "en-US" } });
+    } catch (e) { <span class="cstat-no" title="statement not covered" >entry.error = msg(e); }</span>
+    snap.leaves.push(entry);
+  }
+&nbsp;
+  const goldLeaf = pickLeaves(snap.categories.matched)[0]?.id;
+  for (const q of BRAND_QUERIES) {
+    try {
+      const data = await ttsCall&lt;{ brands?: Array&lt;{ id: string; name: string; authorized_status?: string }&gt; }&gt;("/product/202309/brands", {
+        ...base, query: { brand_name: q, page_size: "20", category_version: "v2", ...(goldLeaf ? { category_id: goldLeaf } : <span class="branch-1 cbranch-no" title="branch not covered" >{}) }</span>,
+      });
+      snap.brands.push({ query: q, found: (data?.brands ?? []).<span class="fstat-no" title="function not covered" >map((b</span>) =&gt; (<span class="cstat-no" title="statement not covered" >{ id: String(b.id), name: String(b.name), authorized_status: b.authorized_status }))</span> });
+    } catch (e) { <span class="cstat-no" title="statement not covered" >snap.brands.push({ query: q, found: [], error: msg(e) }); }</span>
+  }
+&nbsp;
+  try { snap.warehouses = await ttsCall("/logistics/202309/warehouses", base); }
+  catch (e) { errors.warehouses = msg(e); }
+&nbsp;
+  try {
+    const data = await ttsCall&lt;{ total_count?: number; products?: unknown[] }&gt;("/product/202502/products/search", {
+      ...base, method: "POST", query: { page_size: "100" }, body: { status: "ALL" },
+    });
+    snap.products = { total: Number(data?.total_count ?? <span class="branch-1 cbranch-no" title="branch not covered" >0)</span>, items: data?.products ?? <span class="branch-1 cbranch-no" title="branch not covered" >[] }</span>;
+  } catch (e) { <span class="cstat-no" title="statement not covered" >errors.products = msg(e); }</span>
+&nbsp;
+  return snap;
+}
+&nbsp;
+/** Runs the read and stores the snapshot on the connection row. Null when not connected. */
+export async function <span class="fstat-no" title="function not covered" >syncCatalog(d</span>b: SupabaseClient, now: Date, http: Http = <span class="branch-0 cbranch-no" title="branch not covered" >{}): Promise&lt;CatalogSnapshot | null&gt; {</span>
+  const creds = <span class="cstat-no" title="statement not covered" >await getShopCredentials(db, now);</span>
+<span class="cstat-no" title="statement not covered" >  if (!creds) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+  const snap = <span class="cstat-no" title="statement not covered" >await fetchCatalog(creds, now, http);</span>
+  const { data } = <span class="cstat-no" title="statement not covered" >await db.from("marketplace_connections").select("api_shapes").eq("channel", "tiktok_shop").maybeSingle();</span>
+  const shapes = <span class="cstat-no" title="statement not covered" >{ ...((data?.api_shapes as Record&lt;string, unknown&gt; | null) ?? {}), tiktokCatalog: snap };</span>
+  const { error } = <span class="cstat-no" title="statement not covered" >await db.from("marketplace_connections").update({ api_shapes: shapes }).eq("channel", "tiktok_shop");</span>
+<span class="cstat-no" title="statement not covered" >  if (error) <span class="cstat-no" title="statement not covered" >throw new Error(`Could not save the TikTok Shop catalog: ${error.message}`);</span></span>
+<span class="cstat-no" title="statement not covered" >  return snap;</span>
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-11-21T17:31:51.360Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    
