@@ -1,0 +1,290 @@
+{
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {},
+        "checks": {
+                "GET / 2xx": {
+                    "name": "GET / 2xx",
+                    "path": "::GET / 2xx",
+                    "id": "2c8a5706449b52855dbfbc3decebd78d",
+                    "passes": 25,
+                    "fails": 0
+                },
+                "GET /api/products 2xx": {
+                    "name": "GET /api/products 2xx",
+                    "path": "::GET /api/products 2xx",
+                    "id": "655c97e7741ac57fb7db72c0030d3747",
+                    "passes": 25,
+                    "fails": 0
+                },
+                "GET /api/premiums 2xx": {
+                    "name": "GET /api/premiums 2xx",
+                    "path": "::GET /api/premiums 2xx",
+                    "id": "933b00a9dc9630458548365974dd1623",
+                    "passes": 25,
+                    "fails": 0
+                },
+                "GET /api/fx-rates 2xx": {
+                    "name": "GET /api/fx-rates 2xx",
+                    "path": "::GET /api/fx-rates 2xx",
+                    "id": "d1cf1936eb57f9f69c76a07e4443e99f",
+                    "passes": 25,
+                    "fails": 0
+                },
+                "POST /api/auth/whatsapp-otp responded": {
+                    "name": "POST /api/auth/whatsapp-otp responded",
+                    "path": "::POST /api/auth/whatsapp-otp responded",
+                    "id": "db9447b95b7b9d402508706eb4539e9c",
+                    "passes": 25,
+                    "fails": 0
+                },
+                "POST /api/auth/passkey/signin/begin 2xx": {
+                    "path": "::POST /api/auth/passkey/signin/begin 2xx",
+                    "id": "da81034187f77e78018a3b654c789d53",
+                    "passes": 1,
+                    "fails": 0,
+                    "name": "POST /api/auth/passkey/signin/begin 2xx"
+                }
+            }
+    },
+    "metrics": {
+        "http_req_connecting": {
+            "avg": 0.07246685714285715,
+            "min": 0,
+            "med": 0,
+            "max": 9.130824,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 126,
+            "thresholds": {
+                "rate<0.01": false
+            },
+            "value": 0
+        },
+        "checks": {
+            "passes": 126,
+            "fails": 0,
+            "thresholds": {
+                "rate>0.95": false
+            },
+            "value": 1
+        },
+        "http_req_waiting": {
+            "med": 46.807875499999994,
+            "max": 2005.739941,
+            "p(90)": 364.51441450000004,
+            "p(95)": 445.90882475,
+            "avg": 203.1550107222223,
+            "min": 9.642701
+        },
+        "http_req_duration{name:GET /api/products}": {
+            "max": 86.065952,
+            "p(90)": 56.7412759,
+            "p(95)": 69.99288559999998,
+            "avg": 47.69054325,
+            "min": 31.538425,
+            "med": 45.139398,
+            "thresholds": {
+                "p(95)<400": false
+            }
+        },
+        "http_req_duration{name:GET /}": {
+            "med": 779.2466959999999,
+            "max": 1161.938248,
+            "p(90)": 853.6007483,
+            "p(95)": 1011.0902402499996,
+            "avg": 787.3698777083335,
+            "min": 530.716098,
+            "thresholds": {
+                "med<900": false,
+                "p(95)<3000": false
+            }
+        },
+        "http_req_sending": {
+            "p(90)": 0.0948845,
+            "p(95)": 0.1151145,
+            "avg": 0.06732683333333335,
+            "min": 0.021782,
+            "med": 0.0526875,
+            "max": 0.265502
+        },
+        "iteration_duration": {
+            "avg": 2474.975502919999,
+            "min": 1670.908845,
+            "med": 2146.291839,
+            "max": 5235.468828,
+            "p(90)": 4007.5208802000006,
+            "p(95)": 4169.3783182
+        },
+        "http_req_duration{name:warmup GET /api/premiums}": {
+            "p(95)": 320.517779,
+            "avg": 320.517779,
+            "min": 320.517779,
+            "med": 320.517779,
+            "max": 320.517779,
+            "p(90)": 320.517779,
+            "thresholds": {
+                "max<60000": false
+            }
+        },
+        "http_req_receiving": {
+            "med": 0.141021,
+            "max": 740.467628,
+            "p(90)": 442.835754,
+            "p(95)": 452.48927775,
+            "avg": 88.32750157936506,
+            "min": 0.043954
+        },
+        "iterations": {
+            "count": 25,
+            "rate": 0.40403716313669924
+        },
+        "vus": {
+            "value": 1,
+            "min": 1,
+            "max": 1
+        },
+        "http_reqs": {
+            "count": 126,
+            "rate": 2.036347302208964
+        },
+        "http_req_duration{name:GET /api/fx-rates}": {
+            "min": 34.906043,
+            "med": 43.254837,
+            "max": 226.771654,
+            "p(90)": 135.59450739999997,
+            "p(95)": 214.29747229999984,
+            "avg": 67.30663245833334,
+            "thresholds": {
+                "p(95)<400": false
+            }
+        },
+        "http_req_duration{name:POST /api/auth/whatsapp-otp}": {
+            "med": 28.114436,
+            "max": 1913.666336,
+            "p(90)": 1807.1633355,
+            "p(95)": 1867.39602215,
+            "avg": 398.82565716666676,
+            "min": 10.171791,
+            "thresholds": {
+                "p(95)<3000": false
+            }
+        },
+        "http_req_duration{name:GET /api/premiums}": {
+            "avg": 42.63484404166667,
+            "min": 31.679421,
+            "med": 42.549683,
+            "max": 58.760523,
+            "p(90)": 52.2693248,
+            "p(95)": 54.641817749999994,
+            "thresholds": {
+                "p(95)<400": false
+            }
+        },
+        "http_req_duration{name:warmup GET /api/fx-rates}": {
+            "avg": 293.899821,
+            "min": 293.899821,
+            "med": 293.899821,
+            "max": 293.899821,
+            "p(90)": 293.899821,
+            "p(95)": 293.899821,
+            "thresholds": {
+                "max<60000": false
+            }
+        },
+        "data_sent": {
+            "count": 29514,
+            "rate": 476.99011331266166
+        },
+        "vus_max": {
+            "value": 1,
+            "min": 1,
+            "max": 1
+        },
+        "data_received": {
+            "count": 10844510,
+            "rate": 175263.40224030265
+        },
+        "http_req_duration{name:warmup GET /api/products}": {
+            "avg": 413.29771,
+            "min": 413.29771,
+            "med": 413.29771,
+            "max": 413.29771,
+            "p(90)": 413.29771,
+            "p(95)": 413.29771,
+            "thresholds": {
+                "max<60000": false
+            }
+        },
+        "http_req_duration{name:warmup GET /}": {
+            "avg": 1097.578915,
+            "min": 1097.578915,
+            "med": 1097.578915,
+            "max": 1097.578915,
+            "p(90)": 1097.578915,
+            "p(95)": 1097.578915,
+            "thresholds": {
+                "max<60000": false
+            }
+        },
+        "http_req_tls_handshaking": {
+            "avg": 0.10943357936507937,
+            "min": 0,
+            "med": 0,
+            "max": 13.788631,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "http_req_blocked": {
+            "max": 102.913817,
+            "p(90)": 0.00040550000000000004,
+            "p(95)": 0.00047349999999999996,
+            "avg": 0.8170800079365077,
+            "min": 0.00021,
+            "med": 0.00028
+        },
+        "http_req_duration{name:POST /api/auth/passkey/signin/begin}": {
+            "med": 352.233198,
+            "max": 352.233198,
+            "p(90)": 352.233198,
+            "p(95)": 352.233198,
+            "avg": 352.233198,
+            "min": 352.233198,
+            "thresholds": {
+                "p(95)<800": false
+            }
+        },
+        "http_req_duration{expected_response:true}": {
+            "med": 46.9396825,
+            "max": 2005.890997,
+            "p(90)": 798.3657760000001,
+            "p(95)": 1082.740816,
+            "avg": 291.54983913492066,
+            "min": 10.171791
+        },
+        "http_req_duration": {
+            "avg": 291.54983913492066,
+            "min": 10.171791,
+            "med": 46.9396825,
+            "max": 2005.890997,
+            "p(90)": 798.3657760000001,
+            "p(95)": 1082.740816
+        },
+        "http_req_duration{name:warmup POST /api/auth/whatsapp-otp}": {
+            "med": 2005.890997,
+            "max": 2005.890997,
+            "p(90)": 2005.890997,
+            "p(95)": 2005.890997,
+            "avg": 2005.890997,
+            "min": 2005.890997,
+            "thresholds": {
+                "max<60000": false
+            }
+        }
+    }
+}

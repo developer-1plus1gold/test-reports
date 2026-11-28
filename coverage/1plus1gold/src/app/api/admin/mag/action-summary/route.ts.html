@@ -1,0 +1,367 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/app/api/admin/mag/action-summary/route.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/app/api/admin/mag/action-summary</a> route.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">78.57% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>33/42</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">51.16% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>22/43</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">78.57% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>11/14</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">90% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>27/30</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line medium'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * GET /api/admin/mag/action-summary — Admin → MAG "Needs your action" (Mukesh 2026-11-28).
+ *
+ * Read-only. Gathers what an admin has to do or watch on MAG from the rows the screen's
+ * sections show — requests, bar audits, reserved-bar schedules, consolidation plans and
+ * (only while MAG is invite-only) access requests — and orders them with the pure
+ * buildMagActionItems (lib/mag/admin-actions.ts). Every action still runs through its
+ * own section's route.
+ */
+import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
+import { checkAdminAuth } from "@/lib/admin-auth";
+import { safeError } from "@/lib/safe-error";
+import { resolveCustomerNames } from "@/lib/admin/customer-names";
+import { readMagOpenToAll } from "@/lib/mag/access";
+import { rhythmEnabled } from "@/lib/mag/reserved-access";
+import { auditState } from "@/lib/mag/admin-filters";
+import { rhythmReport } from "@/lib/mag/reserved-rhythm";
+import { loadConsolidation } from "@/lib/mag/consolidation-server";
+import { weightLabel } from "@/lib/mag/pool-offers";
+import { buildMagActionItems, type ActionBarRow, type ActionRequestRow } from "@/lib/mag/admin-actions";
+&nbsp;
+export const dynamic = "force-dynamic";
+&nbsp;
+const supabaseAdmin = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_KEY!);
+&nbsp;
+type Req = { id: string; customer_id: string; request_type: ActionRequestRow["requestType"]; stage: string; status: string;
+  created_at: string; quote_expires_at: string | null; setup_error: string | null; product_id: string | null; quote_grams: number | string | null };
+type Bar = { id: string; serial: string; status: string; products: { label: string } | null };
+&nbsp;
+export async function GET(req: NextRequest) {
+  const auth = await checkAdminAuth(req);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!auth.ok) <span class="cstat-no" title="statement not covered" >return NextResponse.json({ error: auth.error }, { status: auth.status });</span>
+  try {
+    const now = new Date();
+    const [openToAll, rulesOn, reqRes, barRes, schedules, consolidation] = await Promise.all([
+      readMagOpenToAll(supabaseAdmin),
+      rhythmEnabled(supabaseAdmin),
+      supabaseAdmin.from("mag_pool_requests")
+        .select("id, customer_id, request_type, stage, status, created_at, quote_expires_at, setup_error, product_id, quote_grams")
+        .eq("status", "open").order("created_at", { ascending: true }).limit(500),
+      supabaseAdmin.from("mag_listings").select("id, serial, status, products(label)").in("status", ["active", "draft", "retired"]).limit(1000),
+      rhythmReport(supabaseAdmin, now),
+      loadConsolidation(supabaseAdmin, now.getTime()),
+    ]);
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (reqRes.error) <span class="cstat-no" title="statement not covered" >throw new Error(`requests: ${reqRes.error.message}`);</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (barRes.error) <span class="cstat-no" title="statement not covered" >throw new Error(`listings: ${barRes.error.message}`);</span>
+    const reqs = (reqRes.data ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) as unknown as Req[];</span>
+    const bars = (barRes.data ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) as unknown as Bar[];</span>
+&nbsp;
+    // Bar audits: grams held + the latest signed audit, as the Bars section reads them.
+    const barIds = bars.map((b) =&gt; b.id);
+    const [availRes, auditRes, productRes, accessRes] = await Promise.all([
+      barIds.length ? supabaseAdmin.from("mag_listing_availability").select("listing_id, grams_allocated, grams_held").in("listing_id", barIds) : <span class="branch-1 cbranch-no" title="branch not covered" >Promise.resolve({ data: [], error: null }),</span>
+      barIds.length ? supabaseAdmin.from("mag_bar_audits").select("listing_id, signed_at").in("listing_id", barIds).order("signed_at", { ascending: false }).limit(5000) : <span class="branch-1 cbranch-no" title="branch not covered" >Promise.resolve({ data: [], error: null }),</span>
+      supabaseAdmin.from("products").select("id, label").in("id", [...new Set(reqs.map((r) =&gt; r.product_id).filter(Boolean) as string[])]),
+      openToAll ? Promise.resolve({ data: [], error: null })
+        : supabaseAdmin.from("mag_access_requests").select("customer_id, requested_at").is("enabled_at", null).order("requested_at", { ascending: true }).limit(200),
+    ]);
+    const avail = new Map(((availRes.data ?? <span class="branch-1 cbranch-no" title="branch not covered" >[])</span> as { listing_id: string; grams_allocated: number; grams_held: number }[]).map((a) =&gt; [a.listing_id, a]));
+    const lastAudit = new Map&lt;string, string&gt;();
+    for (const a of (auditRes.data ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) as { listing_id: string; signed_at: string }[]) <span class="cstat-no" title="statement not covered" >i</span>f (!lastAudit.has(a.listing_id)) <span class="cstat-no" title="statement not covered" >lastAudit.set(a.listing_id, a.signed_at);</span></span>
+    const productLabel = new Map(((productRes.data ?? <span class="branch-1 cbranch-no" title="branch not covered" >[])</span> as { id: string; label: string }[]).<span class="fstat-no" title="function not covered" >map((p</span>) =&gt; <span class="cstat-no" title="statement not covered" >[p.id, p.label])</span>);
+&nbsp;
+    const auditDue: ActionBarRow[] = bars.map((b) =&gt; ({
+      id: b.id, serial: b.serial, label: b.products?.label ?? <span class="branch-1 cbranch-no" title="branch not covered" >"", s</span>tatus: b.status,
+      grams_allocated: Number(avail.get(b.id)?.grams_allocated ?? <span class="branch-1 cbranch-no" title="branch not covered" >0)</span>, grams_held: Number(avail.get(b.id)?.grams_held ?? <span class="branch-1 cbranch-no" title="branch not covered" >0)</span>,
+      last_audit_at: lastAudit.get(b.id) ?? null,
+    })).filter((b) =&gt; auditState(b, now.getTime()) === "due");
+&nbsp;
+    const accessRows = (accessRes.data ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) as { customer_id: string; requested_at: string }[];</span>
+    const names = await resolveCustomerNames(supabaseAdmin, [...new Set([...reqs.map((r) =&gt; r.customer_id), ...accessRows.map((a) =&gt; a.customer_id)])]);
+    const nameOf = (id: string) =&gt; names.get(id) ?? <span class="branch-1 cbranch-no" title="branch not covered" >"Customer";</span>
+&nbsp;
+    const items = buildMagActionItems({
+      requests: reqs.map((r) =&gt; ({
+        id: r.id, customerName: nameOf(r.customer_id), requestType: r.request_type, stage: r.stage, status: r.status,
+        createdAt: r.created_at, quoteExpiresAt: r.quote_expires_at, setupError: r.setup_error,
+        label: (r.product_id &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >productLabel.get(r.product_id)) || (r</span>.quote_grams != null ? weightLabel(Number(r.quote_grams)) : <span class="branch-1 cbranch-no" title="branch not covered" >"bar"),</span>
+      })),
+      auditDue,
+      schedules: schedules.<span class="fstat-no" title="function not covered" >map((s</span>) =&gt; (<span class="cstat-no" title="statement not covered" >{ listingId: s.listingId, serial: s.serial, label: s.label, mode: s.mode, strikes: s.strikes, catchUp: s.catchUp, held: s.held }))</span>,
+      consolidations: consolidation.suggestions.<span class="fstat-no" title="function not covered" >map((s</span>) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+        customerName: consolidation.customers[s.customerId]?.name ?? "Customer", label: s.label, kind: s.kind, gramsMoved: s.gramsMoved,
+      })),
+      accessRequests: accessRows.map((a) =&gt; ({ customerName: nameOf(a.customer_id), requestedAt: a.requested_at })),
+      inviteOnly: !openToAll,
+      nowMs: now.getTime(),
+    });
+    return NextResponse.json({ items, inviteOnly: !openToAll, scheduleRulesOn: rulesOn }, { headers: { "Cache-Control": "private, no-store" } });
+  } catch (err) {
+<span class="cstat-no" title="statement not covered" >    return NextResponse.json(safeError(err, "admin/mag/action-summary GET"), { status: 500 });</span>
+  }
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-11-28T16:57:36.232Z
+            </div>
+        <script src="../../../../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../../../../sorter.js"></script>
+        <script src="../../../../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

@@ -1,0 +1,844 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/marketplace/price-push.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/marketplace</a> price-push.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">91.75% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>89/97</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">82.96% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>112/135</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">83.33% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>15/18</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">96.29% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>78/81</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">57x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">57x</span>
+<span class="cline-any cline-yes">1054x</span>
+<span class="cline-any cline-yes">57x</span>
+<span class="cline-any cline-yes">57x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Marketplace price + stock push — the ONE engine for every marketplace (Lazada
+ * 2026-11-16, TikTok Shop 2026-11-17: "exactly the way we did it for Lazada").
+ *
+ * The guards live here so no channel can skip them:
+ *   - the automatic switch gates scheduled and stock-only runs;
+ *   - a stale gold price (&gt; 15 min, or flagged stale) sends no prices;
+ *   - a scheduled run pushes prices only when due (30 min, or gold moved ≥ 0.5 %);
+ *   - a move &gt; 5 % waits for the admin's Approve; below restock cost after fees is never sent;
+ *   - only exact-SKU / confirmed mappings are touched; hidden products never (the export
+ *     list is shop_visible only).
+ * A channel supplies only the TRANSPORT (`PushSender`): how its API takes the updates and
+ * which SKUs it refused. Cards for Control Tower are per channel.
+ */
+import type { SupabaseClient } from "@supabase/supabase-js";
+import { createHash } from "crypto";
+import { runMonitor, type MonitorMatch } from "@/lib/control-tower/automation-monitor";
+import { plannedUpdate, type PlannedUpdate } from "./planned-update";
+import { loadPriceConfig, type PricedChannel } from "./price-config";
+import { ACTIONABLE_MATCH } from "./mapping";
+import { getSpotPayload } from "@/lib/spot/fetch-spot";
+import { loadMarketClosedSettings, pricingSpot } from "@/lib/pricing/market-closed";
+import { marketStatus } from "@/lib/spot/market-hours";
+import { fetchPremiums } from "@/lib/premiums";
+import { shopLineForProduct, type ShopPriceable } from "@/lib/shop-pricing";
+import { fetchExportProducts } from "@/lib/shopee/server";
+import { loadRestockCosts } from "@/lib/pricing/strategy-data";
+&nbsp;
+export const MAX_SPOT_AGE_MS = 15 * 60_000;
+export const PUSH_INTERVAL_MS = 30 * 60_000;
+export const SPOT_MOVE_TRIGGER = 0.005;
+&nbsp;
+export interface SkuUpdate { itemId: string; skuId: string; sellerSku: string; price?: number; quantity?: number }
+&nbsp;
+/** A channel's transport. Returns seller SKU → reason for each update the marketplace refused. */
+export interface PushSender { send(updates: SkuUpdate[]): Promise&lt;Map&lt;string, string&gt;&gt; }
+&nbsp;
+export type PushHttp = { fetchImpl?: typeof fetch };
+&nbsp;
+export interface PushChannel {
+  channel: PricedChannel;
+  /** "Lazada", "TikTok Shop" — in Control Tower text. */
+  label: string;
+  /** Control Tower agent + the admin page the cards link to. */
+  agentName: string;
+  page: string;
+  /** Null when not connected. `http.fetchImpl` is for tests. */
+  connect(db: SupabaseClient, now: Date, http: PushHttp): Promise&lt;PushSender | null&gt;;
+}
+&nbsp;
+/** Whether a scheduled run should push now: 30 min since the last push, or spot moved ≥ 0.5 %. */
+export function pushIsDue(last: { at: Date | null; spot: number | null }, spotNow: number, now: Date): { due: boolean; reason: string } {
+  if (!last.at || last.spot == null || !(last.spot &gt; 0)) return { due: true, reason: "first push" };
+  if (now.getTime() - last.at.getTime() &gt;= PUSH_INTERVAL_MS) return { due: true, reason: "30 minutes since the last push" };
+  const move = Math.abs(spotNow - last.spot) / last.spot;
+  if (move &gt;= SPOT_MOVE_TRIGGER) return { due: true, reason: `gold moved ${(move * 100).toFixed(2)}%` };
+  return { due: false, reason: `last push ${Math.round((now.getTime() - last.at.getTime()) / 60_000)} min ago, gold moved ${(move * 100).toFixed(2)}%` };
+}
+&nbsp;
+export interface PushRow {
+  sellerSku: string;
+  name: string;
+  productId: string;
+  plan: PlannedUpdate;
+  sent: { price: boolean; quantity: boolean };
+  error?: string;
+}
+&nbsp;
+export type PushSkip = "off" | "no_price" | "stale" | "not_due" | "not_connected";
+&nbsp;
+export interface PushResult {
+  ran: boolean;
+  reason: string;
+  /** Why nothing ran, when ran = false. The cron falls back to a stock-only run on stale / not_due. */
+  skip?: PushSkip;
+  spotSgdPerGram: number | null;
+  sent: number;
+  held: PushRow[];
+  belowCost: PushRow[];
+  failed: PushRow[];
+  rows: PushRow[];
+}
+&nbsp;
+export type PushMode =
+  | { kind: "scheduled" }
+  | { kind: "manual" }
+  | { kind: "stock" }
+  | { kind: "approve"; sellerSkus: string[] };
+&nbsp;
+interface ListingRow {
+  seller_sku: string; item_id: string | null; sku_id: string | null; name: string; product_id: string;
+  marketplace_price: number | null; marketplace_qty: number | null; marketplace_special_price: number | null;
+}
+&nbsp;
+export async function runMarketplacePush(db: SupabaseClient, now: Date, mode: PushMode, ch: PushChannel, http: PushHttp = {}): Promise&lt;PushResult&gt; {
+  const empty = (skip: PushSkip, reason: string, spot: number | null = null): PushResult =&gt;
+    ({ ran: false, skip, reason, spotSgdPerGram: spot, sent: 0, held: [], belowCost: [], failed: [], rows: [] });
+  const stockOnly = mode.kind === "stock";
+&nbsp;
+  const cfg = await loadPriceConfig(db, ch.channel);
+  const { data: meta } = await db.from("marketplace_price_config")
+    .select("push_enabled, last_push_at, last_push_spot").eq("channel", ch.channel).maybeSingle();
+  if ((mode.kind === "scheduled" || stockOnly) &amp;&amp; !meta?.push_enabled) return empty("off", "automatic push is switched off");
+&nbsp;
+  let spotSgd: number | null = null;
+  if (!stockOnly) {
+    const payload = await getSpotPayload();
+    <span class="missing-if-branch" title="if path not taken" >I</span>if ("error" in payload) <span class="cstat-no" title="statement not covered" >return empty("no_price", "gold price unavailable — nothing sent");</span>
+    spotSgd = payload.currencies?.SGD?.gram ?? <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+    const age = Math.max(payload.xauAgeMs ?? <span class="branch-1 cbranch-no" title="branch not covered" >Infinity, p</span>ayload.fxAgeMs ?? <span class="branch-1 cbranch-no" title="branch not covered" >0)</span>;
+    if (!spotSgd || payload.xauStale || payload.fxStale || !(age &lt;= MAX_SPOT_AGE_MS)) {
+      return empty("stale", "gold price is stale — no prices sent (same rule as checkout)", spotSgd);
+    }
+    // Marketplaces price off the same PRICING spot as our site — with the weekend
+    // buffer while the market is closed (Mukesh 2026-11-22). The buffer switching on
+    // at the close / off at the reopen moves this spot, which makes the push due.
+    spotSgd = pricingSpot(spotSgd, marketStatus(now), await loadMarketClosedSettings());
+    if (mode.kind === "scheduled") {
+      const due = pushIsDue({ at: meta?.last_push_at ? new Date(meta.last_push_at as string) : <span class="branch-1 cbranch-no" title="branch not covered" >null, s</span>pot: meta?.last_push_spot != null ? Number(meta.last_push_spot) : <span class="branch-1 cbranch-no" title="branch not covered" >null }</span>, spotSgd, now);
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (!due.due) return empty("not_due", `not due: ${due.reason}`, spotSgd);
+    }
+  }
+&nbsp;
+  const sender = await ch.connect(db, now, http);
+  if (!sender) return empty("not_connected", `${ch.label} is not connected`, spotSgd);
+&nbsp;
+  const [{ data: listingRows }, products, premiums, restock] = await Promise.all([
+    db.from("marketplace_listings")
+      .select("seller_sku, item_id, sku_id, name, product_id, marketplace_price, marketplace_qty, marketplace_special_price")
+      .eq("channel", ch.channel).in("match_source", [...ACTIONABLE_MATCH]).not("product_id", "is", null)
+      // An admin-paused listing (a campaign locks its price) is left out of price AND stock.
+      .eq("push_paused", false),
+    fetchExportProducts(),
+    stockOnly ? Promise.resolve(null) : fetchPremiums(),
+    stockOnly ? Promise.resolve(new Map() as Awaited&lt;ReturnType&lt;typeof loadRestockCosts&gt;&gt;)
+      : loadRestockCosts(db).<span class="fstat-no" title="function not covered" >catch(() =&gt; <span class="cstat-no" title="statement not covered" >n</span>ew Map() as Awaited&lt;ReturnType&lt;typeof loadRestockCosts&gt;&gt;)</span>,
+  ]);
+  const byId = new Map(products.map((p) =&gt; [p.id, p]));
+  const approve = mode.kind === "approve" ? new Set(mode.sellerSkus) : null;
+&nbsp;
+  const rows: PushRow[] = [];
+  const updates: SkuUpdate[] = [];
+  for (const l of (listingRows ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) as ListingRow[]) {</span>
+    if (approve &amp;&amp; !approve.has(l.seller_sku)) continue;
+    const p = byId.get(l.product_id);
+    const base = p &amp;&amp; spotSgd != null &amp;&amp; premiums ? shopLineForProduct(p as unknown as ShopPriceable, 1, spotSgd, premiums, 0).priceEach : null;
+    const cost = restock.get(l.product_id);
+    const plan = plannedUpdate(
+      p ? { baseSgd: base ?? null, status: p.status, stock_qty: p.stock_qty } : <span class="branch-1 cbranch-no" title="branch not covered" >null,</span>
+      { price: l.marketplace_price, qty: l.marketplace_qty, specialPrice: l.marketplace_special_price },
+      cfg,
+      { restockCostSgd: cost &amp;&amp; p ? cost.sgdPerG * Number(p.grams) : null },
+    );
+    const sendPrice = !stockOnly &amp;&amp; plan.priceChanges &amp;&amp; !plan.belowCost &amp;&amp; (!plan.needsApproval || approve !== null);
+    const sendQty = plan.stockChanges;
+    const row: PushRow = { sellerSku: l.seller_sku, name: l.name, productId: l.product_id, plan, sent: { price: sendPrice, quantity: sendQty } };
+    rows.push(row);
+    if ((sendPrice || sendQty) &amp;&amp; l.item_id &amp;&amp; l.sku_id) {
+      updates.push({
+        itemId: l.item_id, skuId: l.sku_id, sellerSku: l.seller_sku,
+        ...(sendPrice ? { price: plan.price! } : {}),
+        ...(sendQty ? { quantity: plan.stock! } : {}),
+      });
+    }
+  }
+&nbsp;
+  const failures = updates.length ? await sender.send(updates) : <span class="branch-1 cbranch-no" title="branch not covered" >new Map&lt;string, string&gt;();</span>
+&nbsp;
+  const iso = now.toISOString();
+  for (const u of updates) {
+    const err = failures.get(u.sellerSku);
+    const row = rows.find((r) =&gt; r.sellerSku === u.sellerSku)!;
+    if (err) row.error = err;
+    await db.from("marketplace_listings").update(err
+      ? { last_push_error: err, updated_at: iso }
+      : {
+          ...(u.price != null ? { marketplace_price: u.price } : {}),
+          ...(u.quantity != null ? { marketplace_qty: u.quantity } : {}),
+          last_pushed_at: iso, last_push_error: null, updated_at: iso,
+        }).eq("channel", ch.channel).eq("seller_sku", u.sellerSku);
+  }
+&nbsp;
+  const result: PushResult = {
+    ran: true,
+    reason: mode.kind === "approve" ? "approved by admin" : mode.kind === "manual" ? "Push now" : stockOnly ? "stock only" : <span class="branch-1 cbranch-no" title="branch not covered" >"scheduled",</span>
+    spotSgdPerGram: spotSgd,
+    sent: updates.length - failures.size,
+    held: stockOnly ? [] : rows.filter((r) =&gt; r.plan.needsApproval &amp;&amp; r.plan.priceChanges &amp;&amp; !r.sent.price &amp;&amp; !r.plan.belowCost),
+    belowCost: stockOnly ? [] : rows.filter((r) =&gt; r.plan.belowCost),
+    failed: rows.filter((r) =&gt; r.error),
+    rows,
+  };
+  // A stock-only run leaves the PRICE cadence (last push time / spot / summary) alone.
+  if (stockOnly) return result;
+  await db.from("marketplace_price_config").update({
+    last_push_at: iso, last_push_spot: spotSgd,
+    last_push_summary: { at: iso, reason: result.reason, sent: result.sent, held: result.held.length, belowCost: result.belowCost.length, failed: result.failed.length },
+    updated_at: iso,
+  }).eq("channel", ch.channel);
+  return result;
+}
+&nbsp;
+// ── Control Tower cards ──────────────────────────────────────────────────────
+&nbsp;
+function cardId(channel: string, key: string): string {
+  // Lazada's ids were hashed from "lazada_price_push:&lt;key&gt;" before this was shared — kept, so open cards still match.
+  const h = createHash("sha256").update(`${channel}_price_push:${key}`).digest("hex");
+  return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20, 32)}`;
+}
+&nbsp;
+/** The Control Tower cards a full run leaves open (waiting for approval / below cost; refused by the marketplace). */
+export function pushCards(r: PushResult, ch: Pick&lt;PushChannel, "channel" | "label" | "page"&gt;): MonitorMatch[] {
+  const cards: MonitorMatch[] = [];
+  const waiting = [...r.held, ...r.belowCost];
+  if (waiting.length) {
+    cards.push({
+      id: cardId(ch.channel, "waiting"),
+      summary: `${ch.label}: ${r.held.length} price(s) waiting for your approval, ${r.belowCost.length} below cost not sent — ${waiting.slice(0, 5).map((w) =&gt; w.name).join(", ")}${waiting.length &gt; 5 ? <span class="branch-0 cbranch-no" title="branch not covered" >"…" : "</span>"}`,
+      payload: { page: ch.page, held: r.held.map((h) =&gt; ({ sku: h.sellerSku, price: h.plan.price })), belowCost: r.belowCost.<span class="fstat-no" title="function not covered" >map((h</span>) =&gt; <span class="cstat-no" title="statement not covered" >h.sellerSku)</span> },
+    });
+  }
+  if (r.failed.length) {
+    cards.push({
+      id: cardId(ch.channel, "failed"),
+      summary: `${ch.label} refused ${r.failed.length} update(s) on the last push — ${r.failed.slice(0, 3).map((f) =&gt; `${f.name}: ${f.error}`).join("; ")}`,
+      payload: { page: ch.page, failed: r.failed.map((f) =&gt; ({ sku: f.sellerSku, error: f.error })) },
+    });
+  }
+  return cards;
+}
+&nbsp;
+/**
+ * Keep the two cards in step with a run. Only a FULL run (scheduled or Push now) knows the
+ * current state: a skipped tick or an Approve of a few SKUs leaves the cards as they are.
+ */
+export async function <span class="fstat-no" title="function not covered" >syncMarketplacePushCards(d</span>b: SupabaseClient, r: PushResult, ch: PushChannel, mode: PushMode["kind"] = <span class="branch-0 cbranch-no" title="branch not covered" >"scheduled") {</span>
+<span class="cstat-no" title="statement not covered" >  if (!r.ran || mode === "approve" || mode === "stock") <span class="cstat-no" title="statement not covered" >return null;</span></span>
+<span class="cstat-no" title="statement not covered" >  return runMonitor({ sb: db, agentName: ch.agentName, severity: "approve", entityType: `${ch.channel}_price_push`, matches: pushCards(r, ch) });</span>
+}
+&nbsp;
+/**
+ * The fresh PRICING spot for a marketplace listing (create / recreate), or null when
+ * the gold price is stale — the same freshness rule as the push and checkout, and
+ * the weekend buffer while the market is closed. One copy for Lazada + TikTok Shop.
+ */
+export async function freshMarketplaceSpot(now: Date = new Date()): Promise&lt;number | null&gt; {
+  const [payload, settings] = await Promise.all([getSpotPayload(), loadMarketClosedSettings()]);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if ("error" in payload) <span class="cstat-no" title="statement not covered" >return null;</span>
+  const spot = payload.currencies?.SGD?.gram ?? <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+  const age = Math.max(payload.xauAgeMs ?? <span class="branch-1 cbranch-no" title="branch not covered" >Infinity, p</span>ayload.fxAgeMs ?? <span class="branch-1 cbranch-no" title="branch not covered" >0)</span>;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!(spot &amp;&amp; !payload.xauStale &amp;&amp; !payload.fxStale &amp;&amp; age &lt;= MAX_SPOT_AGE_MS)) <span class="cstat-no" title="statement not covered" >return null;</span>
+  return pricingSpot(spot, marketStatus(now), settings);
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-11-28T16:57:36.232Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

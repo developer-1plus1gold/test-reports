@@ -1,0 +1,988 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/mag/request-setup.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/mag</a> request-setup.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">80.89% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>127/157</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">66.66% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>100/150</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">82.35% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>14/17</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">87.59% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>113/129</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * MAG own-bar / group-pool SET-UP (docs/mag-quote-automation-design.md §2, §4):
+ * after the customer accepts and an admin taps Confirm, the bar is set up with no
+ * further admin work —
+ *
+ *   1. the bar's own MAG bar type at the accepted % (checkout then charges exactly
+ *      the quote — no change to the pricing kernel);
+ *   2. a physical bar of the quoted product from stock (FIFO, with its CoA serial),
+ *      listed reserved / group with closing date = today + the duration (decision 2a:
+ *      the clock starts at set-up); or, with none in stock, ONE BullionKing purchase
+ *      order for it — the request waits as `awaiting_bar` and set-up resumes when the
+ *      bar is received (receipt hook + the lifecycle cron);
+ *   3. the requester added as member (a group pool also gets its share link,
+ *      lib/mag/group-invites.ts);
+ *   4. the request closed as `live` and the customer told "your bar is open".
+ *
+ * RESUMABLE + IDEMPOTENT: each part records what it made on the request (bar type,
+ * listing, PO), so a retry continues where it stopped and never makes a second one.
+ * A failure is written to `setup_error` and returned; nothing is half-listed
+ * without a member, because the member is added before the request goes live and
+ * the listing is the request's own (listing_id) for the retry to find.
+ *
+ * WHY a purchase order, not a consignment obligation (Mukesh asked for "a
+ * consignment order, just like we do for a normal sale"): a sale's consignment
+ * obligation (consignment_procurements) IS that sale's cost of goods, and the table
+ * only accepts an order line or a conversion as its source. A MAG bar's cost is
+ * booked gram by gram from the listing as the customer buys — an obligation would
+ * book the whole bar as sold on day one and count it twice. So the bar is ordered
+ * from BullionKing as owned stock, priced like any BullionKing order (their
+ * StoneX-indexed cost + the 2 % card fee folded in), received and paid the usual way.
+ */
+import { buildSchedule, EMPTY_STATE } from "./reserved-schedule";
+import type { SupabaseClient } from "@supabase/supabase-js";
+import { resolveCustomerNames } from "@/lib/admin/customer-names";
+import { invalidatePremiumCache } from "@/lib/premiums";
+import { invalidateCatalogCache } from "@/lib/products-cache";
+import { createPurchaseOrder, supplierPaymentFeePct } from "@/lib/purchase-orders/create";
+import { assembleSupplierComparison } from "@/lib/pricing/supplier-comparison";
+import { getAdminPhonesCsv } from "@/lib/admin-team";
+import { sendAdminAlert } from "@/lib/twilio";
+import { notifyMagBarOpen } from "@/lib/notifications/notify-customer";
+import { barTypeLabel, windowEndFrom, type DurationUnit } from "./pool-offers";
+import { resolveListingSource, type InventoryBar, type SerialRow } from "./listing-source";
+import { BULLIONKING_SLUG } from "./quote-suggestion";
+import { ensureGroupInvite, joinUrl } from "./group-invites";
+import { CAN, sgLongDate } from "./request-flow";
+import { loadRequest, moveStage, type RequestRow } from "./request-actions";
+&nbsp;
+export type SetupOutcome =
+  | { outcome: "live"; listingId: string }
+  | { outcome: "awaiting_bar"; purchaseOrderId: string; poNumber: string | null }
+  | { outcome: "error"; error: string };
+&nbsp;
+const BULLIONKING_NAME = "BullionKing";
+&nbsp;
+/** Step 1 — the request's own MAG bar type at the accepted %. Reused by the manual "Create bar type" button. */
+export async function createBarTypeForRequest(db: SupabaseClient, r: RequestRow): Promise&lt;{ productId: string; label: string; premiumPct: number }&gt; {
+  if (r.bar_type_product_id) {
+    const { data } = await db.from("products").select("label").eq("id", r.bar_type_product_id).maybeSingle();
+    return { productId: r.bar_type_product_id, label: String((data as { label?: string } | null)?.label ?? <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>, premiumPct: Number(r.premium_pct) };
+  }
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!r.product_id || r.premium_pct == null) <span class="cstat-no" title="statement not covered" >throw new Error("The request has no accepted bar and premium");</span>
+  const { data: src, error: pErr } = await db.from("products")
+    .select("label, grams, refinery, fineness, is_lbma, is_assay, weight_display, dimensions, gst_exempt")
+    .eq("id", r.product_id).maybeSingle();
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (pErr || !src) <span class="cstat-no" title="statement not covered" >throw new Error("The quoted product no longer exists");</span>
+  const names = await resolveCustomerNames(db, [r.customer_id]);
+  const label = barTypeLabel(String(src.label), r.request_type, names.get(r.customer_id) ?? <span class="branch-1 cbranch-no" title="branch not covered" >"customer", r</span>.group_name);
+  const premiumPct = Number(r.premium_pct);
+&nbsp;
+  const { data: created, error: cErr } = await db.from("products").insert({
+    label, grams: Number(src.grams), product_type: "mag",
+    refinery: src.refinery, fineness: src.fineness, is_lbma: src.is_lbma, is_assay: src.is_assay ?? <span class="branch-1 cbranch-no" title="branch not covered" >false,</span>
+    weight_display: src.weight_display, dimensions: src.dimensions, gst_exempt: src.gst_exempt,
+    premium_pct: 0, stock_qty: 0, sort_order: 99, shop_visible: true, vault_eligible: true,
+  }).select("id").single();
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (cErr || !created) <span class="cstat-no" title="statement not covered" >throw new Error(`Could not create the bar type: ${cErr?.message ?? "no row"}`);</span>
+&nbsp;
+  const { error: tErr } = await db.from("standard_premium_tiers")
+    .insert({ product_id: created.id, min_qty: 1, max_qty: null, premium_pct: premiumPct });
+  if (tErr) {
+    // No tier = a 0% bar. Remove the half-made type rather than leave it priced at spot.
+    await db.from("products").delete().eq("id", created.id);
+    throw new Error(`Could not set the bar type's premium: ${tErr.message}`);
+  }
+  await db.rpc("derive_product_presale", { p_product_id: created.id });
+  // Claim it for this request; a concurrent set-up that claimed first wins and ours is removed.
+  const { data: claimed } = await db.from("mag_pool_requests")
+    .update({ bar_type_product_id: created.id }).eq("id", r.id).is("bar_type_product_id", null).select("id");
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!claimed?.length) {
+<span class="cstat-no" title="statement not covered" >    await db.from("standard_premium_tiers").delete().eq("product_id", created.id);</span>
+<span class="cstat-no" title="statement not covered" >    await db.from("products").delete().eq("id", created.id);</span>
+    const again = <span class="cstat-no" title="statement not covered" >await loadRequest(db, r.id);</span>
+<span class="cstat-no" title="statement not covered" >    if (!again?.bar_type_product_id) <span class="cstat-no" title="statement not covered" >throw new Error("Could not link the bar type to the request");</span></span>
+<span class="cstat-no" title="statement not covered" >    return createBarTypeForRequest(db, again);</span>
+  }
+  invalidatePremiumCache();
+  invalidateCatalogCache();
+  return { productId: created.id, label, premiumPct };
+}
+&nbsp;
+/**
+ * A bar of `productId` we can list now: available, oldest first, with a free CoA
+ * serial (its own bound serial, or an unassigned one no bar or listing uses).
+ * Same rule as Admin → MAG's list-a-bar picker.
+ */
+export async function findListableBar(db: SupabaseClient, productId: string): Promise&lt;{ bar: InventoryBar; serial: SerialRow } | { none: "no_bar" | "no_serial" }&gt; {
+  const { data: bars } = await db.from("inventory")
+    .select("id, status, product_id, cost_per_g_sgd, nfc_serial, acquired_at, products(grams, product_type)")
+    .eq("product_id", productId).eq("status", "available").order("acquired_at", { ascending: true }).limit(50);
+  type Row = { id: string; status: string; product_id: string; cost_per_g_sgd: number | null; nfc_serial: string | null; products: { grams: number; product_type: string } | null };
+  const rows = (bars ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) as unknown as Row[];</span>
+  if (rows.length === 0) return { none: "no_bar" };
+  const [{ data: free }, { data: listed }, { data: bound }] = await Promise.all([
+    db.from("nfc_serials").select("serial, status, product_id").eq("product_id", productId).eq("status", "unassigned").limit(500),
+    // A retired listing is history, not a claim on the card: a bar released back to
+    // stock is listed again under its own serial (migration 20261128e).
+    db.from("mag_listings").select("serial").neq("status", "retired").limit(5000),
+    db.from("inventory").select("nfc_serial").not("nfc_serial", "is", null).limit(5000),
+  ]);
+  const freeBySerial = new Map(((free ?? <span class="branch-1 cbranch-no" title="branch not covered" >[])</span> as SerialRow[]).map((s) =&gt; [s.serial, s]));
+  const listedSerials = new Set(((listed ?? <span class="branch-1 cbranch-no" title="branch not covered" >[])</span> as { serial: string }[]).map((l) =&gt; l.serial));
+  const boundSerials = new Set(((bound ?? <span class="branch-1 cbranch-no" title="branch not covered" >[])</span> as { nfc_serial: string }[]).map((b) =&gt; b.nfc_serial));
+  for (const b of rows) {
+    const bar: InventoryBar = {
+      id: b.id, status: b.status, product_id: b.product_id, cost_per_g_sgd: b.cost_per_g_sgd, nfc_serial: b.nfc_serial,
+      product_grams: b.products?.grams ?? <span class="branch-1 cbranch-no" title="branch not covered" >null, p</span>roduct_type: b.products?.product_type ?? <span class="branch-1 cbranch-no" title="branch not covered" >null,</span>
+    };
+    if (b.nfc_serial) {
+      const own = freeBySerial.get(b.nfc_serial);
+      if (own &amp;&amp; !listedSerials.has(own.serial)) return { bar, serial: own };
+      continue;
+    }
+    const pick = [...freeBySerial.values()].<span class="fstat-no" title="function not covered" >find((s</span>) =&gt; <span class="cstat-no" title="statement not covered" >!listedSerials.has(s.serial) &amp;&amp; !boundSerials.has(s.serial))</span>;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (pick) <span class="cstat-no" title="statement not covered" >return { bar, serial: pick };</span>
+  }
+  return { none: "no_serial" };
+}
+&nbsp;
+/** Step 2a — list the bar for the request: reserved / group, closing date from today. */
+async function listBarForRequest(db: SupabaseClient, r: RequestRow, barTypeId: string, bar: InventoryBar, serial: SerialRow): Promise&lt;string&gt; {
+  const { data: type } = await db.from("products").select("grams").eq("id", barTypeId).maybeSingle();
+  const src = resolveListingSource(bar, serial, (type as { grams?: number } | null)?.grams ?? <span class="branch-1 cbranch-no" title="branch not covered" >null)</span>;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!src.ok) <span class="cstat-no" title="statement not covered" >throw new Error(src.error);</span>
+  const { data: moved } = await db.from("inventory")
+    .update({ status: "mag_listed", nfc_serial: src.serial })
+    .eq("id", bar.id).eq("status", "available").select("id");
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!moved?.length) <span class="cstat-no" title="statement not covered" >throw new Error("bar_taken");</span>
+  const openedAt = new Date();
+  const windowEnds = windowEndFrom(openedAt, Number(r.duration_value), r.duration_unit as DurationUnit);
+  const group = r.request_type === "group_pool";
+  // The buying schedule, fixed now (Agreement §1B.3). Enforced only with consent + the switch on.
+  const schedule = buildSchedule({ grams: src.grams, durationValue: Number(r.duration_value), durationUnit: r.duration_unit as DurationUnit, openedAt });
+  const { data: listing, error } = await db.from("mag_listings").insert({
+    product_id: barTypeId, inventory_id: bar.id, serial: src.serial, grams_total: src.grams,
+    piece_grams: src.pieceGrams, house_grams: src.houseGrams, cost_per_g_sgd: src.costPerG, photo_url: null,
+    status: "active", access_type: group ? "group" : "reserved", window_ends_at: windowEnds.toISOString(),
+    group_name: group ? (r.group_name ?? <span class="branch-1 cbranch-no" title="branch not covered" >null) : n</span>ull,
+    rhythm_schedule: schedule, rhythm_state: EMPTY_STATE, rhythm_dry_state: EMPTY_STATE,
+  }).select("id").single();
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (error || !listing) {
+<span class="cstat-no" title="statement not covered" >    await db.from("inventory").update({ status: "available", nfc_serial: bar.nfc_serial }).eq("id", bar.id).eq("status", "mag_listed");</span>
+<span class="cstat-no" title="statement not covered" >    throw new Error(`Could not list the bar: ${error?.message ?? "no row"}`);</span>
+  }
+  const { data: claimed } = await db.from("mag_pool_requests")
+    .update({ listing_id: listing.id }).eq("id", r.id).is("listing_id", null).select("id");
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!claimed?.length) <span class="cstat-no" title="statement not covered" >throw new Error("The request already has a listing — not listing a second bar");</span>
+  return listing.id as string;
+}
+&nbsp;
+/** Step 2b — order the bar from BullionKing (once per request). */
+async function orderFromBullionKing(db: SupabaseClient, r: RequestRow): Promise&lt;{ id: string; poNumber: string }&gt; {
+  const cmp = await assembleSupplierComparison(db, { includeHidden: true });
+  const bk = cmp.suppliers.find((s) =&gt; s.slug === BULLIONKING_SLUG);
+  const row = cmp.rows.find((x) =&gt; x.productId === r.product_id);
+  const cell = bk &amp;&amp; row ? row.cells.find((c) =&gt; c.supplierId === bk.id) : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!row || !cell?.landedPerPieceSgd) <span class="cstat-no" title="statement not covered" >throw new Error("BullionKing has no price for this bar today — order it by hand");</span>
+  const feePct = await supplierPaymentFeePct(db, BULLIONKING_NAME);
+  const unit = Math.round(cell.landedPerPieceSgd * (1 + feePct / 100) * 100) / 100;
+  const names = await resolveCustomerNames(db, [r.customer_id]);
+  const who = names.get(r.customer_id) ?? <span class="branch-1 cbranch-no" title="branch not covered" >"customer";</span>
+  const po = await createPurchaseOrder(db, {
+    supplierName: BULLIONKING_NAME, status: "confirmed", spotSgdAtCreation: cmp.spotSgdPerGram,
+    foldedFeePct: feePct,
+    notes: `MAG ${r.request_type === "group_pool" ? <span class="branch-0 cbranch-no" title="branch not covered" >"group pool" : "</span>own bar"} for ${who} (request ${r.id.slice(0, 8)}). Set-up continues automatically when the bar is received.`,
+  }, [{
+    productId: r.product_id, quantityOrdered: 1, unitCost: unit,
+    premiumPctGold: cell.premiumOverSpotPct ?? <span class="branch-1 cbranch-no" title="branch not covered" >null, s</span>potSgdPerG: cmp.spotSgdPerGram,
+  }]);
+  const { data: claimed } = await db.from("mag_pool_requests")
+    .update({ consignment_po_id: po.id }).eq("id", r.id).is("consignment_po_id", null).select("id");
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!claimed?.length) {
+    // A concurrent set-up ordered first — cancel ours rather than order two bars.
+<span class="cstat-no" title="statement not covered" >    await db.from("purchase_orders").update({ status: "cancelled" }).eq("id", po.id);</span>
+    const again = <span class="cstat-no" title="statement not covered" >await loadRequest(db, r.id);</span>
+<span class="cstat-no" title="statement not covered" >    return { id: again!.consignment_po_id!, poNumber: "" };</span>
+  }
+  const phones = getAdminPhonesCsv();
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (phones) {
+    await sendAdminAlert(phones, "notify", "mag_pool_request",
+      `MAG: no ${row.label} in stock for ${who}'s bar — ${po.poNumber} created for BullionKing (S$${unit.toFixed(2)}). Send it to BullionKing; the bar is listed automatically when it is received.`,
+    ).<span class="fstat-no" title="function not covered" >catch((e</span>rr) =&gt; <span class="cstat-no" title="statement not covered" >console.error("[mag/request-setup] admin alert failed:", err))</span>;
+  }
+  return po;
+}
+&nbsp;
+async function addRequesterAsMember(db: SupabaseClient, listingId: string, customerId: string): Promise&lt;void&gt; {
+  const { error } = await db.from("mag_listing_members").insert({ listing_id: listingId, customer_id: customerId, max_grams: null, added_by: "request" });
+  if (error &amp;&amp; error.code !== "23505") throw new Error(`Could not add the member: ${error.message}`);
+}
+&nbsp;
+/**
+ * Run (or resume) set-up for a confirmed / awaiting-bar request. Safe to call
+ * repeatedly — from Confirm, the PO-receipt hook, the lifecycle cron, or
+ * "Set up now".
+ */
+export async function setUpRequestedBar(db: SupabaseClient, id: string, attempt = 0): Promise&lt;SetupOutcome&gt; {
+  const r = await loadRequest(db, id);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!r) <span class="cstat-no" title="statement not covered" >return { outcome: "error", error: "Request not found" };</span>
+  if (!CAN.runSetup(r.stage)) return { outcome: "error", error: `Nothing to set up at this stage (${r.stage})` };
+  try {
+    const type = await createBarTypeForRequest(db, r);
+    let listingId = r.listing_id;
+    if (!listingId) {
+      const found = await findListableBar(db, r.product_id!);
+      if ("none" in found) {
+        const po = r.consignment_po_id ? { id: r.consignment_po_id, poNumber: null } : await orderFromBullionKing(db, r);
+        await db.from("mag_pool_requests").update({
+          setup_error: found.none === "no_serial" ? "A bar is in stock but has no registered CoA serial — register it in Admin → Serials" : null,
+        }).eq("id", id);
+        if (r.stage !== "awaiting_bar") await moveStage(db, id, r.stage, "awaiting_bar");
+        return { outcome: "awaiting_bar", purchaseOrderId: po.id, poNumber: po.poNumber };
+      }
+      try {
+        listingId = await listBarForRequest(db, r, type.productId, found.bar, found.serial);
+      } catch (e) {
+        // Lost the bar to a sale between finding and taking it: try the next one (3 tries).
+<span class="cstat-no" title="statement not covered" >        if ((e as Error).message !== "bar_taken" || attempt &gt;= 3) <span class="cstat-no" title="statement not covered" >throw e;</span></span>
+<span class="cstat-no" title="statement not covered" >        return setUpRequestedBar(db, id, attempt + 1);</span>
+      }
+    }
+    await addRequesterAsMember(db, listingId, r.customer_id);
+    const { data: l } = await db.from("mag_listings").select("window_ends_at").eq("id", listingId).maybeSingle();
+    const windowEnds = (l as { window_ends_at?: string } | null)?.window_ends_at ?? <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+    // A group pool's share link exists before the requester is told the bar is open.
+    const share = r.request_type === "group_pool" &amp;&amp; windowEnds
+      ? await ensureGroupInvite(db, { listingId, requestId: r.id, ownerId: r.customer_id, expiresAt: windowEnds, maxMembers: r.group_size })
+      : null;
+    const moved = await moveStage(db, id, ["confirmed", "awaiting_bar"], "live", { setup_error: null });
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (moved) {
+      // The bar type is "&lt;catalog bar&gt; — own bar for &lt;name&gt;"; the customer reads the catalog bar.
+      const catalog = type.label.split(" — ")[0];
+      const bar = r.request_type === "group_pool"
+        ? `the ${r.group_name ? `${r.group_name} ` : <span class="branch-1 cbranch-no" title="branch not covered" >""}g</span>roup bar (${catalog})`
+        : `your own bar (${catalog})`;
+      await notifyMagBarOpen(r.customer_id, {
+        bar,
+        // Accepted with the schedule consent → the bar is under it (Agreement §1B).
+        schedule: !!r.schedule_consent_at,
+        premiumPct: `${Number(type.premiumPct.toFixed(2))}%`,
+        closingDate: windowEnds ? sgLongDate(windowEnds) : <span class="branch-1 cbranch-no" title="branch not covered" >"",</span>
+        shareUrl: share ? joinUrl(share.token) : null,
+      }).<span class="fstat-no" title="function not covered" >catch((e</span>rr) =&gt; <span class="cstat-no" title="statement not covered" >console.error("[mag/request-setup] bar-open notice failed:", err))</span>;
+    }
+    return { outcome: "live", listingId };
+  } catch (e) {
+    const msg = (e as Error).message.slice(0, 500);
+    await db.from("mag_pool_requests").update({ setup_error: msg }).eq("id", id);
+    return { outcome: "error", error: msg };
+  }
+}
+&nbsp;
+/** Admin: confirm an accepted request and set it up. */
+export async function confirmAndSetUp(db: SupabaseClient, id: string): Promise&lt;{ ok: true; setup: SetupOutcome } | { ok: false; status: number; error: string }&gt; {
+  const r = await loadRequest(db, id);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!r) <span class="cstat-no" title="statement not covered" >return { ok: false, status: 404, error: "Request not found" };</span>
+  if (!CAN.confirm(r.stage)) return { ok: false, status: 409, error: `Only an accepted request can be confirmed (this one is ${r.stage})` };
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!r.product_id || r.premium_pct == null || !r.duration_value || !r.duration_unit) {
+<span class="cstat-no" title="statement not covered" >    return { ok: false, status: 400, error: "The request has no accepted bar, duration and premium" };</span>
+  }
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!(await moveStage(db, id, "accepted", "confirmed", { confirmed_at: new Date().toISOString() }))) {
+<span class="cstat-no" title="statement not covered" >    return { ok: false, status: 409, error: "The request changed meanwhile — reload and try again" };</span>
+  }
+  return { ok: true, setup: await setUpRequestedBar(db, id) };
+}
+&nbsp;
+/** Received bars of these products → resume every request waiting for one (PO receipt hook + cron). */
+export async function resumeAwaitingBars(
+  db: SupabaseClient, productIds?: readonly string[], opts: { purchaseOrderId?: string } = {},
+): Promise&lt;SetupOutcome[]&gt; {
+  let q = db.from("mag_pool_requests").select("id").eq("stage", "awaiting_bar").order("confirmed_at", { ascending: true }).limit(50);
+  if (opts.purchaseOrderId) q = q.eq("consignment_po_id", opts.purchaseOrderId);
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (productIds) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (productIds.length === 0) <span class="cstat-no" title="statement not covered" >return [];</span>
+    q = q.in("product_id", productIds as string[]);
+  }
+  const { data } = await q;
+  const out: SetupOutcome[] = [];
+  for (const row of (data ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) as { id: string }[]) o</span>ut.push(await setUpRequestedBar(db, row.id));
+  return out;
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-11-28T16:57:36.232Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

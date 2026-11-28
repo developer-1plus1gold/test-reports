@@ -1,0 +1,658 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/documents/order-documents.tsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/documents</a> order-documents.tsx</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">89.55% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>60/67</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">62.82% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>49/78</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>21/21</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">88.23% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>45/51</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * ORDER DOCUMENTS — one PDF holding everything that goes in the parcel (Mukesh
+ * 2026-11-27): the receipt, the packing list, and one Certificate of Authenticity
+ * per card, in that order.
+ *
+ *   • Dispatch prints it with ONE button (admin route, theme "print": the receipt's
+ *     ink-light look) — plain A4, actual size, no settings.
+ *   • The customer receives the SAME file digitally once the order is delivered —
+ *     the paper and the digital copy can never disagree because they are one build.
+ *
+ * Built from the same sources as each document on its own: the receipt from
+ * lib/receipt/load-receipt-data (the receipt route's assembly), the list from the
+ * packing record (buildSlipExtras — supplies never listed), each certificate from
+ * lookupSerial (the /verify page's loader) and coaQr.
+ */
+import type { SupabaseClient } from "@supabase/supabase-js";
+import { renderToBuffer, Document } from "@react-pdf/renderer";
+import sharp from "sharp";
+import { ReceiptPage, type ReceiptData, type ReceiptTheme } from "@/lib/receipt/generateReceiptPdf";
+import { RECEIPT_ORDER_SELECT, RECEIPT_STATUSES, assembleReceiptData, buildReceiptContext } from "@/lib/receipt/load-receipt-data";
+import { attachOperatorSerials, buildSlipExtras } from "@/lib/packing-slip";
+import { loadOrderBars } from "@/lib/admin/order-bars";
+import { findAwaitingGold } from "@/lib/shipping/awaiting-gold";
+import { shipperLabel } from "@/lib/shipperLabel";
+import { lookupSerial, giftBlockVisibility, goldWeightPhrase } from "@/lib/verify-core";
+import { coaQr, coaVerifyUrl } from "@/lib/coa-qr";
+import { CoaPage, PackingListPage, type CoaPageData, type PackingListData } from "./document-pages";
+&nbsp;
+export interface OrderDocuments {
+  orderId:     string;
+  receipt:     ReceiptData;
+  packingList: PackingListData;
+  coas:        CoaPageData[];
+}
+&nbsp;
+const GOLD_TYPES = new Set(["curve", "standard"]);
+&nbsp;
+/** Bar photos are WebP; react-pdf embeds only JPEG/PNG and silently drops the rest. */
+async function photoDataUri(url: string | null): Promise&lt;string | null&gt; {
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (!url) return null;
+<span class="cstat-no" title="statement not covered" >  try {</span>
+    const res = <span class="cstat-no" title="statement not covered" >await fetch(url, { signal: AbortSignal.timeout(10_000) });</span>
+<span class="cstat-no" title="statement not covered" >    if (!res.ok) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+    const jpeg = <span class="cstat-no" title="statement not covered" >await sharp(Buffer.from(await res.arrayBuffer()))</span>
+      .resize({ width: 900, height: 900, fit: "inside", withoutEnlargement: true })
+      .jpeg({ quality: 82 })
+      .toBuffer();
+<span class="cstat-no" title="statement not covered" >    return `data:image/jpeg;base64,${jpeg.toString("base64")}`;</span>
+  } catch {
+<span class="cstat-no" title="statement not covered" >    return null; // a missing photo must never stop the documents; the facts + QR remain</span>
+  }
+}
+&nbsp;
+const fmtFineness = (f: number | null) =&gt; (f ? `${Number(f).toFixed(1)} Au` : <span class="branch-1 cbranch-no" title="branch not covered" >"999.9 Au");</span>
+const fmtDate = (iso: string) =&gt; new Date(iso).toLocaleDateString("en-SG", { day: "2-digit", month: "long", year: "numeric", timeZone: "Asia/Singapore" });
+&nbsp;
+/** One certificate page's data — the same rows, in the same order, as /verify. */
+export async function loadCoaPage(supabase: SupabaseClient, serial: string): Promise&lt;CoaPageData | null&gt; {
+  const v = await lookupSerial(serial, supabase);
+  if (!v) return null;
+  const [qr, photo] = await Promise.all([coaQr(v.serial), photoDataUri(v.image_url)]);
+  const vis = giftBlockVisibility({ hasOwner: !!v.current_owner_customer_id, viewerIsOwner: false, isOutstandingGift: v.is_pending_gift, isPrint: true });
+  return {
+    serial:    v.serial,
+    verifyUrl: coaVerifyUrl(v.serial),
+    photo,
+    qr,
+    rows: [
+      { label: "Serial Number", value: v.serial },
+      { label: "Packed by",     value: "1Plus1Gold" },
+      { label: "Content",       value: v.product_label },
+      { label: "Purity",        value: fmtFineness(v.fineness) },
+      ...(v.product_dimensions ? <span class="branch-0 cbranch-no" title="branch not covered" >[{ label: "Dimensions", value: v.product_dimensions }] : [</span>]),
+      { label: "Source",        value: v.source_label },
+      { label: "Date Packed",   value: fmtDate(v.assigned_at) },
+    ],
+    hasNfc: v.product_type !== "standard",
+    gift: vis.show
+      ? { from: v.current_owner_first_name, message: vis.showNote ? v.gift_message : <span class="branch-1 cbranch-no" title="branch not covered" >null, w</span>eightPhrase: goldWeightPhrase(v.product_grams) }
+      : null,
+  };
+}
+&nbsp;
+/**
+ * Everything for one order, or null when the order has no receipt yet (unpaid /
+ * cancelled). Certificates come from the cards assigned at packing, so call this
+ * after Confirm packing.
+ */
+export async function loadOrderDocuments(supabase: SupabaseClient, orderId: string): Promise&lt;OrderDocuments | null&gt; {
+  const { data: order } = await supabase.from("orders").select(`shipper_order_id, packing_slip_note, ${RECEIPT_ORDER_SELECT}`).eq("id", orderId).single();
+  if (!order || !RECEIPT_STATUSES.has((order as { status: string }).status)) return null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const o = order as any;
+&nbsp;
+  const [ctx, profileRes, linesRes, serialsRes, packedRes, awaiting] = await Promise.all([
+    buildReceiptContext(supabase, order, orderId),
+    supabase.from("profiles").select("phone, full_name").eq("id", o.customer_id).maybeSingle(),
+    supabase.from("order_items").select("id, product_id, quantity, products(label, product_type)").eq("order_id", orderId),
+    supabase.from("nfc_serials").select("serial, order_item_id, manufacturer_serial, assigned_at").eq("order_id", orderId).eq("status", "assigned"),
+    supabase.from("packing_events").select("id").eq("order_id", orderId).maybeSingle(),
+    findAwaitingGold(supabase, orderId),
+  ]);
+  const profile = profileRes.data as { full_name?: string | null; phone?: string | null } | null;
+&nbsp;
+  type Line = { id: string; product_id: string | null; quantity: number; products: { label: string; product_type: string } | null };
+  const lines = (linesRes.data ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) as unknown as Line[];</span>
+  type Card = { serial: string; order_item_id: string | null; manufacturer_serial: string | null; assigned_at: string | null };
+  const cards = ((serialsRes.data ?? <span class="branch-1 cbranch-no" title="branch not covered" >[])</span> as Card[]).sort((a, b) =&gt; String(a.assigned_at).localeCompare(String(b.assigned_at)));
+&nbsp;
+  // Packed accessories (supplies are dropped by buildSlipExtras).
+  const packedItems: { product_id: string; quantity: number }[] = [];
+  const catalogById = new Map&lt;string, { label: string; product_type: string }&gt;();
+  if (packedRes.data?.id) {
+    const { data: pei } = await supabase
+      .from("packing_event_items")
+      .select("product_id, quantity, products(label, product_type)")
+      .eq("packing_event_id", packedRes.data.id);
+    for (const r of (pei ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) as unknown as { product_id: string; quantity: number; products: { label: string; product_type: string } | null }[]) {</span>
+      // Gold has its own table (with serials); a bar ticked into the pack record
+      // must not reappear under "Also in your parcel" (seen live on 283D6360).
+      if (GOLD_TYPES.has(r.products?.product_type ?? <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>) continue;
+      packedItems.push({ product_id: r.product_id, quantity: r.quantity });
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (r.products) catalogById.set(r.product_id, r.products);
+    }
+  }
+&nbsp;
+  // ── Bars, exactly as the HTML packing slip identifies them ────────────────
+  // Same loader as Dispatch's dispatch-preview (lib/admin/order-bars) and the same
+  // card swap (attachOperatorSerials): NFC Serial = the card attached to the line;
+  // "Mfr Serial" when that card carries the refinery's serial, else "Bar ID" =
+  // the CombiBar serial / own serial / inventory id; Source = PO / original order.
+  const nfcByItem: Record&lt;string, { serial: string; manufacturer_serial: string | null }[]&gt; = {};
+  for (const c of cards) <span class="missing-if-branch" title="else path not taken" >E</span>if (c.order_item_id) (nfcByItem[c.order_item_id] ??= []).push({ serial: c.serial, manufacturer_serial: c.manufacturer_serial });
+  const bars = attachOperatorSerials(await loadOrderBars(supabase, orderId), nfcByItem).map((b) =&gt; {
+    const mfr = b.manufacturer_serial?.trim() || null;
+    return {
+      label:   b.product_label || <span class="branch-1 cbranch-no" title="branch not covered" >`${b.grams}g gold bar`,</span>
+      grams:   b.grams,
+      nfc:     b.nfc_serial ?? <span class="branch-1 cbranch-no" title="branch not covered" >null,</span>
+      idLabel: (mfr ? "Mfr Serial" : "Bar ID") as "Mfr Serial" | "Bar ID",
+      idValue: mfr || b.combibar_serial || <span class="branch-2 cbranch-no" title="branch not covered" >b.serial_number || <span class="branch-3 cbranch-no" title="branch not covered" >b</span>.inventory_id.slice(0, 8).toUpperCase(),</span>
+      source:  b.source_label || <span class="branch-1 cbranch-no" title="branch not covered" >"—",</span>
+    };
+  });
+&nbsp;
+  // Gold lines with no bar linked (older orders) + accessories — buildSlipExtras,
+  // exactly as the slip builds them (supplies never listed).
+  const gold = lines.filter((l) =&gt; GOLD_TYPES.has(l.products?.product_type ?? <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>);
+  const extras = buildSlipExtras({
+    hasBars:        bars.length &gt; 0,
+    goldItems:      gold.map((g) =&gt; ({ product_id: g.product_id, label: g.products?.label ?? <span class="branch-1 cbranch-no" title="branch not covered" >"Gold", p</span>roduct_type: g.products?.product_type ?? <span class="branch-1 cbranch-no" title="branch not covered" >"standard", q</span>uantity: g.quantity })),
+    accessoryItems: lines.filter((l) =&gt; l.products?.product_type === "accessory")
+      .map((a) =&gt; ({ product_id: a.product_id, label: a.products?.label ?? <span class="branch-1 cbranch-no" title="branch not covered" >"", q</span>uantity: a.quantity })),
+    packedItems,
+    catalogById,
+  });
+&nbsp;
+  const addr = (o.delivery_address ?? <span class="branch-1 cbranch-no" title="branch not covered" >null) as { full_name?: string; phone?: string; line1?: string; line2?: string; postal_code?: string } | null;</span>
+  const packingList: PackingListData = {
+    ref:         `ORD-${String(o.id).slice(0, 8).toUpperCase()}`,
+    orderedAt:   o.created_at,
+    // Shipping-address name/phone first (gift / ship-to-other), account as fallback — slipHeaderFor.
+    recipient:   { name: addr?.full_name ?? <span class="branch-1 cbranch-no" title="branch not covered" >profile?.full_name ?? <span class="branch-2 cbranch-no" title="branch not covered" >"</span>—", p</span>hone: addr?.phone ?? profile?.phone ?? <span class="branch-2 cbranch-no" title="branch not covered" >null }</span>,
+    addressLine: [addr?.line1, addr?.line2, addr?.postal_code ? `Singapore ${addr.postal_code}` : <span class="branch-1 cbranch-no" title="branch not covered" >null]</span>.filter(Boolean).join(", ") || <span class="branch-1 cbranch-no" title="branch not covered" >"—",</span>
+    carrier:     o.shipper ? shipperLabel(o.shipper, null) : <span class="branch-1 cbranch-no" title="branch not covered" >null,</span>
+    tracking:    o.shipper_order_id ?? <span class="branch-1 cbranch-no" title="branch not covered" >null,</span>
+    note:        (o.packing_slip_note ?? "").trim() || null,
+    bars,
+    goldLines:   extras.filter((e) =&gt; e.product_type !== "accessory").map((e) =&gt; ({ label: e.label, quantity: e.quantity })),
+    accessories: extras.filter((e) =&gt; e.product_type === "accessory").map((e) =&gt; ({ label: e.label, quantity: e.quantity })),
+    // Only the 1 g split cards carry an NFC chip (product type "curve").
+    hasNfcCard:  gold.some((g) =&gt; g.products?.product_type === "curve"),
+    awaiting:    awaiting === null ? null : awaiting.map((a) =&gt; ({ label: a.product_label, quantity: a.quantity, short: a.status === "short" })),
+  };
+&nbsp;
+  const coas = (await Promise.all(cards.map((c) =&gt; loadCoaPage(supabase, c.serial)))).filter((x): x is CoaPageData =&gt; !!x);
+&nbsp;
+  return { orderId, receipt: assembleReceiptData(order, ctx, profile), packingList, coas };
+}
+&nbsp;
+/** The single PDF: receipt, packing list, one certificate per card. */
+export async function renderOrderDocumentsPdf(docs: OrderDocuments, theme: ReceiptTheme): Promise&lt;Buffer&gt; {
+  const ref = docs.orderId.slice(0, 8).toUpperCase();
+  return renderToBuffer(
+    &lt;Document title={`1Plus1Gold order documents — ${ref}`}&gt;
+      &lt;ReceiptPage receipt={docs.receipt} theme={theme} /&gt;
+      &lt;PackingListPage data={docs.packingList} /&gt;
+      {docs.coas.map((c) =&gt; &lt;CoaPage key={c.serial} data={c} /&gt;)}
+    &lt;/Document&gt;,
+  );
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-11-28T16:57:36.232Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

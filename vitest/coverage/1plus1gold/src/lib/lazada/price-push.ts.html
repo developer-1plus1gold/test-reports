@@ -1,0 +1,445 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/lazada/price-push.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/lazada</a> price-push.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">97.72% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>43/44</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">68.18% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>15/22</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">90.9% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>10/11</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">96.96% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>32/33</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">186x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Lazada price + stock push (step 2b part 2, docs/lazada-integration-design.md §4/§4b).
+ *
+ * One function, three callers: the cron (only while the switch is ON), "Push now", and
+ * "Approve" on a held row. Every price comes from plannedUpdate — the same pure rule the
+ * preview shows — so what the admin saw is what Lazada gets.
+ *
+ * Guards (the push REFUSES rather than publishes a bad price):
+ *   • gold price: the same staleness the shop's checkout uses (xau/fx stale or older than
+ *     15 min → nothing is sent);
+ *   • no live base → no price; below restock cost after fees → never sent;
+ *   • a move &gt; JUMP_CAP waits for an admin Approve (its stock still goes);
+ *   • only 'sku' / 'confirmed' mappings, only listings that changed.
+ *
+ * Stock-only runs (`{ kind: "stock" }`, 2c part 2): on every 5-minute tick where no price
+ * push is due — or the gold price is stale — the cron sends just the listings whose stock
+ * changed. Stock needs no gold price, so a website / Lazada / manual sale reaches Lazada
+ * within ~5 min whatever the price cadence. They never touch the price-cadence state.
+ *
+ * ▶ Since 2026-11-17 the run and its guards live in lib/marketplace/price-push (shared
+ * with TikTok Shop); this file is Lazada's transport and its names for the callers.
+ *
+ * Lazada call (verified in Lazada's Node SDK, lazada-api 2.6.0): POST
+ * /product/price_quantity/update with form field `payload` = XML, max 50 SKUs per call
+ * (20 recommended — we send 20).
+ */
+import type { SupabaseClient } from "@supabase/supabase-js";
+import { lazadaCall } from "./client";
+import { getAccessToken } from "./connection";
+import {
+  runMarketplacePush, syncMarketplacePushCards, pushCards as sharedPushCards,
+  type PushChannel, type PushHttp, type PushMode, type PushResult, type SkuUpdate,
+} from "@/lib/marketplace/price-push";
+&nbsp;
+export {
+  MAX_SPOT_AGE_MS, PUSH_INTERVAL_MS, SPOT_MOVE_TRIGGER, pushIsDue,
+  type PushRow, type PushSkip, type PushResult, type PushMode, type SkuUpdate,
+} from "@/lib/marketplace/price-push";
+&nbsp;
+export const BATCH = 20;
+&nbsp;
+// ── Pure pieces ──────────────────────────────────────────────────────────────
+&nbsp;
+const esc = (s: string) =&gt; s.replace(/&amp;/g, "&amp;amp;").replace(/&lt;/g, "&amp;lt;").replace(/&gt;/g, "&amp;gt;").replace(/"/g, "&amp;quot;").replace(/'/g, "&amp;apos;");
+&nbsp;
+/** The UpdatePriceQuantity payload. Only the fields being changed are included. */
+export function buildPriceQuantityXml(items: SkuUpdate[]): string {
+  const skus = items.map((u) =&gt;
+    "&lt;Sku&gt;"
+    + `&lt;ItemId&gt;${esc(u.itemId)}&lt;/ItemId&gt;&lt;SkuId&gt;${esc(u.skuId)}&lt;/SkuId&gt;&lt;SellerSku&gt;${esc(u.sellerSku)}&lt;/SellerSku&gt;`
+    + (u.price != null ? `&lt;Price&gt;${u.price.toFixed(2)}&lt;/Price&gt;` : "")
+    + (u.quantity != null ? `&lt;Quantity&gt;${Math.max(0, Math.trunc(u.quantity))}&lt;/Quantity&gt;` : "")
+    + "&lt;/Sku&gt;").join("");
+  return `&lt;?xml version="1.0" encoding="UTF-8" ?&gt;&lt;Request&gt;&lt;Product&gt;&lt;Skus&gt;${skus}&lt;/Skus&gt;&lt;/Product&gt;&lt;/Request&gt;`;
+}
+&nbsp;
+/** Per-SKU failures Lazada reports inside an otherwise successful call. */
+export function failedSkus(body: unknown): Map&lt;string, string&gt; {
+  const out = new Map&lt;string, string&gt;();
+  const detail = (body as { detail?: unknown })?.detail;
+  if (Array.isArray(detail)) {
+    for (const d of detail as Array&lt;Record&lt;string, unknown&gt;&gt;) {
+      const sku = d.seller_sku ?? <span class="branch-1 cbranch-no" title="branch not covered" >d.SellerSku ?? <span class="branch-2 cbranch-no" title="branch not covered" >d</span>.sellerSku;</span>
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (sku != null) out.set(String(sku), String(d.message ?? <span class="branch-1 cbranch-no" title="branch not covered" >d.code ?? <span class="branch-2 cbranch-no" title="branch not covered" >"</span>rejected")</span>.slice(0, 200));
+    }
+  }
+  return out;
+}
+&nbsp;
+// ── The run ──────────────────────────────────────────────────────────────────
+&nbsp;
+export const LAZADA_PUSH: PushChannel = {
+  channel: "lazada",
+  label: "Lazada",
+  agentName: "lazada_sync",
+  page: "/admin/marketplaces?tab=lazada",
+  async connect(db, now, http) {
+    const auth = await getAccessToken(db, now);
+    if (!auth) return null;
+    return {
+      async send(updates: SkuUpdate[]) {
+        const failures = new Map&lt;string, string&gt;();
+        const call = async (items: SkuUpdate[]) =&gt; {
+          const body = await lazadaCall("/product/price_quantity/update", { payload: buildPriceQuantityXml(items) },
+            { appKey: auth.appKey, appSecret: auth.appSecret, accessToken: auth.token, fetchImpl: http.fetchImpl });
+          for (const [sku, msg] of failedSkus(body)) failures.set(sku, msg);
+        };
+        const reason = (err: unknown) =&gt; (err instanceof Error ? err.message.slice(0, 400) : <span class="branch-1 cbranch-no" title="branch not covered" >"push failed");</span>
+        for (let i = 0; i &lt; updates.length; i += BATCH) {
+          const batch = updates.slice(i, i + BATCH);
+          try {
+            await call(batch);
+          } catch (err) {
+            // ▶ ONE BAD LISTING MUST NOT BLOCK THE OTHER NINETEEN (2026-11-22). Lazada can
+            // refuse a whole call with a bare `E501 Update product failed` because of a
+            // single SKU it will not let us edit (e.g. one still in its review); the
+            // batch then failed together and good listings kept stale prices for a day.
+            // So a refused batch is re-sent one SKU at a time: only the listing Lazada
+            // really refuses fails, with its own reason, and the card names it.
+            if (batch.length === 1) { failures.set(batch[0].sellerSku, reason(err)); continue; }
+            for (const u of batch) {
+              try { await call([u]); } catch (one) { failures.set(u.sellerSku, reason(one)); }
+            }
+          }
+        }
+        return failures;
+      },
+    };
+  },
+};
+&nbsp;
+export function runLazadaPricePush(db: SupabaseClient, now: Date, mode: PushMode, http: PushHttp = {}): Promise&lt;PushResult&gt; {
+  return runMarketplacePush(db, now, mode, LAZADA_PUSH, http);
+}
+&nbsp;
+// ── Control Tower cards ──────────────────────────────────────────────────────
+&nbsp;
+export const pushCards = (r: PushResult) =&gt; sharedPushCards(r, LAZADA_PUSH);
+export const <span class="fstat-no" title="function not covered" >syncPushCards = (d</span>b: SupabaseClient, r: PushResult, mode: PushMode["kind"] = <span class="branch-0 cbranch-no" title="branch not covered" >"scheduled") =&gt;</span>
+<span class="cstat-no" title="statement not covered" >  syncMarketplacePushCards(db, r, LAZADA_PUSH, mode);</span>
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-11-28T16:57:36.232Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

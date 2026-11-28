@@ -1,0 +1,460 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/mag/custody-trail.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/mag</a> custody-trail.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>57/57</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">77.08% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>37/48</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>23/23</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>34/34</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * MAG custody trail for one customer (Mukesh 2026-11-24): "Tinuttha bought 5 g,
+ * sold 3 g and now has 2 g, but that trail is not available, so I can't tell if
+ * the 2 g is correct."
+ *
+ * Why the screen alone can't show it: a partial sell-back SPLITS an allocation
+ * row (20261110c) — the original row is reduced in place (5 g → 2 g) and a new
+ * row carries the sold grams. Nothing on the row says it was ever 5 g.
+ *
+ * The trail is rebuilt from the records that DID keep the history, and it is a
+ * real reconciliation, not a tautology:
+ *   + Bought      — from the ORDER LINES (quantity × grams each), the
+ *                   independent record of what was purchased.
+ *   − Sold back   — allocation rows `sold_back` (+ `sell_requested` = in progress),
+ *                   grouped by their buyback request.
+ *   − Used to pay — rows `redeemed` (MAG spent on another order).
+ *   − Delivered   — rows `delivered` (taken as a physical piece).
+ *   ↔ Moved       — mag_transfers between bars (net zero for the customer).
+ *   = Held        — rows `allocated` + `sell_requested`, which is what the
+ *                   custody screen shows.
+ * `reconciles` is true when bought − sold − used − delivered = held.
+ * Checkout holds (`held`) and abandoned ones (`released`) are not custody.
+ */
+&nbsp;
+export type TrailEventKind = "bought" | "sold_back" | "sell_in_progress" | "used_to_pay" | "delivered" | "moved";
+&nbsp;
+export interface TrailEvent {
+  at: string;
+  kind: TrailEventKind;
+  /** Signed effect on the customer's grams (0 for a move between bars). */
+  grams: number;
+  /** Money for the line: what was paid, or the sell-back payout; null if unknown. */
+  amountSgd: number | null;
+  /** Human reference: order / buyback short id, bars. */
+  ref: string;
+  /** Running grams after this event. */
+  balance: number;
+}
+&nbsp;
+export interface TrailInput {
+  allocations: Array&lt;{
+    id: string; listing_id: string; order_item_id: string | null; grams: number;
+    price_per_g_sgd: number | string | null; status: string; buyback_request_id: string | null;
+    allocated_at: string | null; closed_at: string | null; created_at: string; updated_at: string;
+  }&gt;;
+  orderItems: Array&lt;{ id: string; order_id: string; quantity: number; grams_each: number | string; created_at: string }&gt;;
+  buybacks: Array&lt;{ id: string; status: string; submitted_at: string | null; paid_at: string | null; total_payout_sgd: number | string | null; payout_method: string | null }&gt;;
+  transfers: Array&lt;{ created_at: string; grams: number; from_serial: string | null; to_serial: string | null; reason: string | null }&gt;;
+  serialByListing: Record&lt;string, string | null&gt;;
+}
+&nbsp;
+export interface CustodyTrail {
+  events: TrailEvent[];
+  boughtGrams: number;
+  outGrams: number;
+  heldGrams: number;
+  reconciles: boolean;
+}
+&nbsp;
+const CUSTODY = new Set(["allocated", "sell_requested", "sold_back", "redeemed", "delivered"]);
+const short = (id: string) =&gt; id.slice(0, 8).toUpperCase();
+// `+ 0` turns -0 into 0 (a customer with nothing out would read "−0 g").
+const round = (n: number) =&gt; Math.round(n * 10000) / 10000 + 0;
+&nbsp;
+export function buildCustodyTrail(input: TrailInput): CustodyTrail {
+  const rows = input.allocations.filter((a) =&gt; CUSTODY.has(a.status));
+  const raw: Array&lt;Omit&lt;TrailEvent, "balance"&gt;&gt; = [];
+&nbsp;
+  // + Bought: one event per order line the customer's MAG grams came from.
+  const itemIds = new Set(rows.map((r) =&gt; r.order_item_id).filter((x): x is string =&gt; !!x));
+  for (const item of input.orderItems.filter((i) =&gt; itemIds.has(i.id))) {
+    const grams = Number(item.quantity) * Number(item.grams_each);
+    const priced = rows.filter((r) =&gt; r.order_item_id === item.id &amp;&amp; r.price_per_g_sgd != null);
+    const perG = priced.length ? Number(priced[0].price_per_g_sgd) : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+    const bars = [...new Set(rows.filter((r) =&gt; r.order_item_id === item.id).map((r) =&gt; input.serialByListing[r.listing_id]).filter(Boolean))];
+    raw.push({
+      at: item.created_at, kind: "bought", grams,
+      amountSgd: perG != null ? Math.round(perG * grams * 100) / 100 : <span class="branch-1 cbranch-no" title="branch not covered" >null,</span>
+      ref: `Order ${short(item.order_id)}${bars.length ? ` · bar ${bars.join(", ")}` : <span class="branch-1 cbranch-no" title="branch not covered" >""}`,</span>
+    });
+  }
+&nbsp;
+  // − Sold back / used to pay: grouped by the buyback request the rows point at.
+  const byRequest = new Map&lt;string, typeof rows&gt;();
+  for (const r of rows) {
+    if (!["sold_back", "sell_requested", "redeemed"].includes(r.status)) continue;
+    const key = r.buyback_request_id ?? <span class="branch-1 cbranch-no" title="branch not covered" >`row:${r.id}`;</span>
+    byRequest.set(key, [...(byRequest.get(key) ?? []), r]);
+  }
+  for (const [key, group] of byRequest) {
+    const req = input.buybacks.find((b) =&gt; b.id === key);
+    const grams = group.reduce((s, r) =&gt; s + r.grams, 0);
+    const redeemed = group.every((r) =&gt; r.status === "redeemed") || req?.payout_method === "mag_redeem";
+    const inProgress = group.some((r) =&gt; r.status === "sell_requested");
+    raw.push({
+      at: req?.submitted_at ?? <span class="branch-1 cbranch-no" title="branch not covered" >group[0].updated_at,</span>
+      kind: redeemed ? "used_to_pay" : inProgress ? "sell_in_progress" : "sold_back",
+      // A sell-back in progress is still in our custody (still counted in held).
+      grams: inProgress ? 0 : -grams,
+      amountSgd: req?.total_payout_sgd != null &amp;&amp; !redeemed ? Number(req.total_payout_sgd) : null,
+      ref: `${redeemed ? "Redeem" : "Buyback"} ${req ? short(req.id) : <span class="branch-1 cbranch-no" title="branch not covered" >"—"} </span>· ${grams} g${inProgress ? " in progress" : ""}${req?.paid_at ? " · paid" : ""}`,
+    });
+  }
+&nbsp;
+  // − Delivered.
+  for (const r of rows.filter((x) =&gt; x.status === "delivered")) {
+    raw.push({ at: r.closed_at ?? <span class="branch-1 cbranch-no" title="branch not covered" >r.updated_at, k</span>ind: "delivered", grams: -r.grams, amountSgd: null,
+      ref: `Delivered · bar ${input.serialByListing[r.listing_id] ?? <span class="branch-1 cbranch-no" title="branch not covered" >"—"}` }</span>);
+  }
+&nbsp;
+  // ↔ Moves between bars (no change to the customer's total).
+  for (const t of input.transfers) {
+    raw.push({ at: t.created_at, kind: "moved", grams: 0, amountSgd: null,
+      ref: `${t.grams} g moved ${t.from_serial ?? <span class="branch-1 cbranch-no" title="branch not covered" >"?"} </span>→ ${t.to_serial ?? <span class="branch-1 cbranch-no" title="branch not covered" >"?"}${t</span>.reason ? ` (${t.reason})` : <span class="branch-1 cbranch-no" title="branch not covered" >""}` }</span>);
+  }
+&nbsp;
+  raw.sort((a, b) =&gt; a.at.localeCompare(b.at));
+  let balance = 0;
+  const events = raw.map((e) =&gt; ({ ...e, balance: (balance = round(balance + e.grams)) }));
+&nbsp;
+  const boughtGrams = round(raw.filter((e) =&gt; e.kind === "bought").reduce((s, e) =&gt; s + e.grams, 0));
+  const outGrams = round(raw.filter((e) =&gt; e.grams &lt; 0).reduce((s, e) =&gt; s - e.grams, 0));
+  const heldGrams = round(rows.filter((r) =&gt; r.status === "allocated" || r.status === "sell_requested").reduce((s, r) =&gt; s + r.grams, 0));
+  return { events, boughtGrams, outGrams, heldGrams, reconciles: round(boughtGrams - outGrams) === heldGrams };
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-11-28T16:57:36.232Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

@@ -1,0 +1,328 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/mag/reserved-access.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/mag</a> reserved-access.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">90.19% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>46/51</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">69.56% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>32/46</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>7/7</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">97.5% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>39/40</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * MAG reserved bars — the switch, the grams held on a bar, and who may ask for /
+ * accept a reserved bar (Agreement §1B.6–7). Database reads only; no imports from
+ * the quote or pricing modules, so every MAG reader can use it.
+ */
+import type { SupabaseClient } from "@supabase/supabase-js";
+&nbsp;
+/** The schedule rules (Admin → MAG). Off by default: everything is dry-run. */
+export async function rhythmEnabled(db: SupabaseClient): Promise&lt;boolean&gt; {
+  const { data } = await db.from("mag_settings").select("reserved_rhythm_enabled").eq("id", 1).maybeSingle();
+  return (data as { reserved_rhythm_enabled?: boolean } | null)?.reserved_rhythm_enabled === true;
+}
+&nbsp;
+/** Grams held on each bar now (allocated + pending sell-back), and grams in an open checkout. */
+export async function heldOnListings(db: SupabaseClient, ids: string[], now = new Date()): Promise&lt;Map&lt;string, { held: number; pending: number }&gt;&gt; {
+  const out = new Map&lt;string, { held: number; pending: number }&gt;(ids.map((id) =&gt; [id, { held: 0, pending: 0 }]));
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (ids.length === 0) <span class="cstat-no" title="statement not covered" >return out;</span>
+  const { data, error } = await db.from("mag_allocations").select("listing_id, grams, status, hold_expires_at")
+    .in("listing_id", ids).in("status", ["allocated", "sell_requested", "held"]).limit(10000);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (error) <span class="cstat-no" title="statement not covered" >throw new Error(`mag allocations: ${error.message}`);</span>
+  for (const a of (data ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) as { listing_id: string; grams: number; status: string; hold_expires_at: string | null }[]) {</span>
+    const m = out.get(a.listing_id)!;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (a.status === "held") {
+<span class="cstat-no" title="statement not covered" >      if (a.hold_expires_at &amp;&amp; Date.parse(a.hold_expires_at) &gt; now.getTime()) <span class="cstat-no" title="statement not covered" >m.pending += Number(a.grams);</span></span>
+    } else m.held += Number(a.grams);
+  }
+  return out;
+}
+&nbsp;
+/** Releases that count toward the pause (§1B.7): the commitment or the schedule not kept,
+ *  including a bar not complete by its closing date (Mukesh 2026-11-28). */
+export const PAUSE_REASONS = ["commitment", "catch_up", "second_strike", "closing"] as const;
+export const PAUSE_MONTHS = 6;
+const LIVE_STAGES = ["accepted", "confirmed", "awaiting_bar", "live"];
+&nbsp;
+/**
+ * May this customer ask for (or accept) another reserved INDIVIDUAL bar?
+ * §1B.6 one at a time — an own-bar request already accepted / being set up, or a
+ * live reserved bar of theirs that is not complete, delivered or released, blocks it.
+ * §1B.7 — two own-bar reservations released for the schedule → a 6-month pause from
+ * the second. Group pools are not counted. `exceptRequestId`: the request being accepted.
+ */
+export async function reservedBarEligibility(
+  db: SupabaseClient, customerId: string, now = new Date(), exceptRequestId?: string,
+): Promise&lt;{ ok: true } | { ok: false; error: string }&gt; {
+  const { data, error } = await db.from("mag_pool_requests")
+    .select("id, stage, listing_id, mag_listings:listing_id(status, access_type, grams_total, rhythm_released_at, rhythm_release_reason)")
+    .eq("customer_id", customerId).eq("request_type", "own_bar").in("stage", LIVE_STAGES).limit(50);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (error) <span class="cstat-no" title="statement not covered" >throw new Error(`mag requests: ${error.message}`);</span>
+  type L = { status: string; access_type: string; grams_total: number; rhythm_released_at: string | null; rhythm_release_reason: string | null };
+  const rows = (data ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) as unknown as { id: string; stage: string; listing_id: string | null; mag_listings: L | L[] | null }[];</span>
+  const releases: number[] = [];
+  const liveListingIds: { id: string; grams: number }[] = [];
+  for (const r of rows) {
+    if (r.id === exceptRequestId) continue;
+    const l = Array.isArray(r.mag_listings) ? <span class="branch-0 cbranch-no" title="branch not covered" >r.mag_listings[0] : r</span>.mag_listings;
+    if (l?.rhythm_released_at &amp;&amp; (PAUSE_REASONS as readonly string[]).includes(l.rhythm_release_reason ?? <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>) {
+      releases.push(Date.parse(l.rhythm_released_at));
+      continue;
+    }
+    if (r.stage !== "live") return { ok: false, error: "You already have a reserved bar being set up. You can hold one reserved bar at a time." };
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (l &amp;&amp; l.status === "active" &amp;&amp; l.access_type === "reserved" &amp;&amp; r.listing_id) liveListingIds.push({ id: r.listing_id, grams: l.grams_total });
+  }
+  if (liveListingIds.length &gt; 0) {
+    const held = await heldOnListings(db, liveListingIds.map((x) =&gt; x.id), now);
+    // A bar every gram of which is held is complete — the customer may start the next.
+    if (liveListingIds.some((x) =&gt; (held.get(x.id)?.held ?? <span class="branch-1 cbranch-no" title="branch not covered" >0) &lt; x</span>.grams)) {
+      return { ok: false, error: "You already have a reserved bar. You can hold one reserved bar at a time — ask again once it is complete." };
+    }
+  }
+  if (releases.length &gt;= 2) {
+    const second = releases.sort((a, b) =&gt; b - a)[0];
+    const until = new Date(second);
+    until.setUTCMonth(until.getUTCMonth() + PAUSE_MONTHS);
+    if (now &lt; until) {
+      const d = until.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Singapore" });
+      return { ok: false, error: `Two of your reservations ended because the buying schedule was not kept, so you can ask for a new reserved bar from ${d} (MAG Agreement, Section 1B.7). You can still buy grams on any open bar and join any group bar.` };
+    }
+  }
+  return { ok: true };
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-11-28T16:57:36.232Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

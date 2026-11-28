@@ -1,0 +1,523 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for 1plus1gold/src/lib/finance/assemble-financials.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">1plus1gold/src/lib/finance</a> assemble-financials.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">25% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>10/40</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">22.58% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>7/31</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">27.27% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>3/11</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">28.12% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>9/32</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Assemble a full month-end financial-statements dataset — the Income Statement
+ * for the month, its quarter-to-date and its fiscal-year-to-date, plus a
+ * point-in-time Balance Sheet as at month-end — by driving the app's OWN pure
+ * finance engines (buildPnlReport / buildBalanceSheet). One place so the on-demand
+ * PDF route matches the numbers the /admin Ledger screens show.
+ *
+ * Basis is identical to /api/admin/finance/{pnl,balance-sheet}: revenue recognised
+ * at delivery (lifecycle='completed', dated by lifecycle_completed_at), gold =
+ * subtotal_ipm_sgd, COGS = landed cost, internal/demo customers excluded. The balance
+ * sheet is lib/finance/balance-sheet-as-of — the SAME function the Balance Sheet screen
+ * calls (one assembly since 2026-11-18; the screen used to keep its own copy).
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Db = any;
+&nbsp;
+import { getInternalCustomerIds, excludeInternalOrders } from "@/lib/finance/internal-customers";
+import type { Period, Jurisdiction, PnlReport } from "@/lib/finance/pnl";
+import type { BalanceSheet } from "@/lib/finance/balance-sheet";
+import { orderRevenue, type OrderRevenueFields } from "@/lib/finance/order-revenue";
+import { buildPnlForWindow } from "@/lib/finance/pnl-window";
+import { balanceSheetAsOf, BOOKS_START } from "@/lib/finance/balance-sheet-as-of";
+import { sgtDayStart, sgtDayEnd } from "@/lib/finance/sgt-window";
+&nbsp;
+export interface FinancialStatements {
+  /** `heading` is the cover line ("For the month ended 31 October 2026" or, for a
+   *  month still in progress, "For the period 1 to 17 November 2026"); `monthCol` is
+   *  the first column's short header; `asOf` the balance-sheet date. A month that
+   *  has not ended is NEVER labelled with its month-end (2026-11-17 review). */
+  periodLabel:   { month: string; quarter: string; fytd: string; asOf: string; heading?: string; monthCol?: string };
+  /** True when the statement stops before the month's last day (a to-date statement). */
+  partial?: boolean;
+  /** P&amp;L net income from the start of the business to `asOf` — the accumulated
+   *  result the balance sheet carries. Differs from FYTD only by pre-FY activity. */
+  cumulativeNetIncomeSgd?: number;
+  month:         PnlReport;
+  quarter:       PnlReport;
+  /** Results by quarter for the fiscal year: each earlier quarter in full, then the
+   *  current one to date (= `quarter`). Quarters with no revenue and no expenses are
+   *  left out. Optional so older callers / fixtures still render. */
+  quarters?:     Array&lt;{ label: string; start: string; end: string; pnl: PnlReport }&gt;;
+  fytd:          PnlReport;
+  balanceSheet:  BalanceSheet;
+  /** Cumulative expense total on the books at month-end (drives the retained-earnings
+   *  note; differs from FYTD expense by any entry dated before the fiscal year). */
+  expensesToDateSgd: number;
+  /** June order register etc. — the completed, non-internal orders delivered in the month. */
+  orderRegister: Array&lt;{ id: string; completedAt: string | null; channel: string | null; grams: number; goldRev: number; shipping: number; grand: number }&gt;;
+}
+&nbsp;
+function pad(n: number) { return String(n).padStart(2, "0"); }
+function lastDayOfMonth(year: number, month1: number) { return new Date(Date.UTC(year, month1, 0)).getUTCDate(); }
+&nbsp;
+/** P&amp;L for an explicit inclusive [startDate, endDate] window — the SAME assembly
+ *  as the on-screen P&amp;L and its CSV (lib/finance/pnl-window), so the statements
+ *  cannot report a different net income for the same month. */
+async function <span class="fstat-no" title="function not covered" >pnlForWindow(d</span>b: Db, internalIds: string[], startDate: string, endDate: string, period: Period, jurisdiction: Jurisdiction): Promise&lt;PnlReport&gt; {
+<span class="cstat-no" title="statement not covered" >  return buildPnlForWindow(db, {</span>
+    period, jurisdiction, internalIds,
+    at: new Date(sgtDayEnd(endDate)),
+    window: { start: startDate, end: endDate },
+  });
+}
+&nbsp;
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+&nbsp;
+/** Re-exported: the balance sheet's module owns it (one inception date for everything). */
+export { BOOKS_START };
+&nbsp;
+/** The statement's end date: the requested `asOf` clamped into the month, else the
+ *  month's last day. A date after month-end, or before its first day, is clamped. */
+export function statementEndDate(year: number, month1: number, asOf?: string | null): { asOf: string; endDay: number; partial: boolean } {
+  const last = lastDayOfMonth(year, month1);
+  const monthEnd = `${year}-${pad(month1)}-${pad(last)}`;
+  const monthStart = `${year}-${pad(month1)}-01`;
+  if (!asOf || !/^\d{4}-\d{2}-\d{2}$/.test(asOf) || asOf &gt;= monthEnd) return { asOf: monthEnd, endDay: last, partial: false };
+  const clamped = asOf &lt; monthStart ? monthStart : asOf;
+  return { asOf: clamped, endDay: Number(clamped.slice(8, 10)), partial: true };
+}
+&nbsp;
+/** Assemble the statement set for a year + month (1-12) — to its month-end, or to
+ *  `opts.asOf` for a month still in progress ("1 to 17 November"). */
+export async function <span class="fstat-no" title="function not covered" >assembleFinancialStatements(</span>
+  db: Db, year: number, month1: number, jurisdiction: Jurisdiction = <span class="branch-0 cbranch-no" title="branch not covered" >"sg", o</span>pts: { asOf?: string | null } = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span>
+): Promise&lt;FinancialStatements&gt; {
+  const internalIds = <span class="cstat-no" title="statement not covered" >await getInternalCustomerIds(db);</span>
+  const { asOf, endDay, partial } = <span class="cstat-no" title="statement not covered" >statementEndDate(year, month1, opts.asOf);</span>
+  const qStart1  = <span class="cstat-no" title="statement not covered" >Math.floor((month1 - 1) / 3) * 3 + 1;          // first month of this quarter</span>
+  const monthStart   = <span class="cstat-no" title="statement not covered" >`${year}-${pad(month1)}-01`;</span>
+  const quarterStart = <span class="cstat-no" title="statement not covered" >`${year}-${pad(qStart1)}-01`;</span>
+  const fytdStart    = <span class="cstat-no" title="statement not covered" >`${year}-01-01`;</span>
+&nbsp;
+  const curQ = <span class="cstat-no" title="statement not covered" >Math.floor((month1 - 1) / 3) + 1;</span>
+  const earlierQ = <span class="cstat-no" title="statement not covered" >Array.from({ length: curQ - 1 <span class="fstat-no" title="function not covered" >}, (_</span>, i) =&gt; {</span>
+    const q = <span class="cstat-no" title="statement not covered" >i + 1, <span class="cstat-no" title="statement not covered" >m</span>1 = (q - 1) * 3 + 1, m</span>3 = <span class="cstat-no" title="statement not covered" >m1 + 2;</span>
+<span class="cstat-no" title="statement not covered" >    return { q, start: `${year}-${pad(m1)}-01`, end: `${year}-${pad(m3)}-${pad(lastDayOfMonth(year, m3))}` };</span>
+  });
+  const [month, quarter, fytd, cumulative, ...earlier] = <span class="cstat-no" title="statement not covered" >await Promise.all([</span>
+    pnlForWindow(db, internalIds, monthStart, asOf, "month", jurisdiction),
+    pnlForWindow(db, internalIds, quarterStart, asOf, "quarter", jurisdiction),
+    pnlForWindow(db, internalIds, fytdStart, asOf, "year", jurisdiction),
+    pnlForWindow(db, internalIds, BOOKS_START, asOf, "year", jurisdiction),
+    ...earlierQ.<span class="fstat-no" title="function not covered" >map((w</span>) =&gt; <span class="cstat-no" title="statement not covered" >pnlForWindow(db, internalIds, w.start, w.end, "quarter", jurisdiction))</span>,
+  ]);
+  const <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >active = (p</span>: PnlReport) =&gt; <span class="cstat-no" title="statement not covered" >Math.abs(p.revenue.total_sgd) &gt; 0.005 || Math.abs(p.expenses.total_sgd) &gt; 0.005;</span></span>
+  const quarters = <span class="cstat-no" title="statement not covered" >[</span>
+    ...earlierQ.<span class="fstat-no" title="function not covered" >map((w</span>, i) =&gt; (<span class="cstat-no" title="statement not covered" >{ label: `Q${w.q}`, start: w.start, end: w.end, pnl: earlier[i] }))</span>.<span class="fstat-no" title="function not covered" >filter((x</span>) =&gt; <span class="cstat-no" title="statement not covered" >active(x.pnl))</span>,
+    { label: `Q${curQ} to date`, start: quarterStart, end: asOf, pnl: quarter },
+  ];
+  // The balance sheet carries the P&amp;L's own inception-to-date result, so equity and
+  // the income statement cannot disagree (see buildBalanceSheet.retainedEarningsSgd).
+  const bs = <span class="cstat-no" title="statement not covered" >await balanceSheetAsOf(db, asOf, { internalIds, retainedEarningsSgd: cumulative.netIncome_sgd, jurisdiction });</span>
+&nbsp;
+  // Order register for the month (delivered, non-internal).
+  const startTs = <span class="cstat-no" title="statement not covered" >sgtDayStart(monthStart), e</span>ndTs = <span class="cstat-no" title="statement not covered" >sgtDayEnd(asOf);</span>
+  const { data: regRows } = <span class="cstat-no" title="statement not covered" >await excludeInternalOrders(</span>
+    db.from("orders").select("id, lifecycle_completed_at, source_channel, total_grams, subtotal_ipm_sgd, discount_ipm_apportioned_sgd, shipping_fee_sgd, grand_total_sgd")
+      .eq("lifecycle", "completed").gte("lifecycle_completed_at", startTs).lte("lifecycle_completed_at", endTs).order("lifecycle_completed_at", { ascending: true }),
+    internalIds,
+  );
+  const <span class="cstat-no" title="statement not covered" >orderRegister = ((regRows ?? []) as Array&lt;Record&lt;string, unknown&gt;&gt;).<span class="fstat-no" title="function not covered" >map((o</span>) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+    id: String(o.id).slice(0, 8), completedAt: (o.lifecycle_completed_at as string | null), channel: (o.source_channel as string | null),
+    grams: Number(o.total_grams ?? 0), goldRev: orderRevenue(o as OrderRevenueFields).gold, shipping: Number(o.shipping_fee_sgd ?? 0), grand: Number(o.grand_total_sgd ?? 0),
+  }));
+&nbsp;
+  const qLabel = <span class="cstat-no" title="statement not covered" >`Q${Math.floor((month1 - 1) / 3) + 1} ${year}`;</span>
+  const mName = <span class="cstat-no" title="statement not covered" >MONTHS[month1 - 1], m</span>Short = <span class="cstat-no" title="statement not covered" >mName.slice(0, 3);</span>
+<span class="cstat-no" title="statement not covered" >  return {</span>
+    periodLabel: {
+      month:   partial ? `1–${endDay} ${mName} ${year}` : `${mName} ${year}`,
+      // First month of a quarter reads "Q4 2026 (Oct)", not "(Oct–Oct)".
+      quarter: qStart1 === month1
+        ? `${qLabel} to date (${partial ? `${mShort} 1–${endDay}` : mShort})`
+        : `${qLabel} to date (${MONTHS[qStart1 - 1].slice(0, 3)}–${partial ? `${endDay} ` : ""}${mShort})`,
+      fytd:    `FY${year} YTD (through ${endDay} ${mShort})`,
+      asOf:    `${endDay} ${mName} ${year}`,
+      heading: partial ? `For the period 1 to ${endDay} ${mName} ${year}` : `For the month ended ${endDay} ${mName} ${year}`,
+      monthCol: partial ? `${mShort} 1–${endDay}` : `${mName} ${year}`,
+    },
+    partial,
+    cumulativeNetIncomeSgd: Math.round(cumulative.netIncome_sgd * 100) / 100,
+    month, quarter, quarters, fytd,
+    balanceSheet: bs.sheet, expensesToDateSgd: Math.round(bs.expensesToDate * 100) / 100,
+    orderRegister,
+  };
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-11-28T16:57:36.232Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    
